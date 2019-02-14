@@ -34,7 +34,6 @@ $brand-color: (
   /* brand */
   light-blue-100             : $brand-blue-dark,
   light-blue-75              : #4069FF,
-  light-blue-50              : #809BFF,
   light-blue-25              : #BFCDFF,
   light-blue-10              : #EAEDFA,
   dark-blue-75               : #46456A,
@@ -59,8 +58,10 @@ $brand-color: (
 );
 
 $root-color: (
+  grey-87                    : tint($base-black, 13%),
   grey-85                    : tint($base-black, 15%),
   grey-78                    : tint($base-black, 22%),
+  grey-60                    : tint($base-black, 40%),
   grey-50                    : tint($base-black, 50%),
   grey-40                    : tint($base-black, 60%),
   grey-35                    : tint($base-black, 65%),
@@ -131,7 +132,7 @@ $color: (
   ),
 
   text: (
-    base                     : map-fetch($brand-color, dark-blue-100),
+    base                     : map-fetch($root-color, grey-87),
     white                    : $base-white,
     faint                    : map-fetch($root-color, grey-12),
     light                    : map-fetch($root-color, grey-25),
