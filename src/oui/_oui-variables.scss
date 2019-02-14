@@ -68,7 +68,7 @@ $root-color: (
   grey-12                    : tint($base-black, 88%),
   grey-06                    : tint($base-black, 94%),
   grey-03                    : tint($base-black, 97%),
-  brand                      : map-fetch($brand-color, light-blue-75),
+  brand                      : map-fetch($brand-color, light-blue-100),
   brand-light                : map-fetch($brand-color, light-blue-25),
   brand-dark                 : map-fetch($brand-color, dark-blue-75),
   warning                    : map-fetch($brand-color, gold),
@@ -106,7 +106,7 @@ $color: (
   ),
 
   link: (
-    base                     : map-fetch($brand-color, light-blue-75),
+    base                     : map-fetch($brand-color, light-blue-100),
     hover                    : map-fetch($brand-color, light-blue-100),
     brand-light              : map-fetch($root-color, brand-light),
     bad-news                 : map-fetch($root-color, bad-news),
@@ -245,8 +245,8 @@ $button: (
       )
     ),
     highlight: (
-      background             : map-fetch($brand-color, light-blue-75),
-      border                 : tint(map-fetch($brand-color, light-blue-75), 10%),
+      background             : map-fetch($brand-color, light-blue-100),
+      border                 : tint(map-fetch($brand-color, light-blue-100), 10%),
       text-shadow            : 0 0 1px rgba(0, 0 , 0, 0.2),
       hover:(
         background           : map-fetch($brand-color, light-blue-100),
@@ -263,8 +263,8 @@ $button: (
     ),
     outline: (
       background             : transparent,
-      border                 : map-fetch($brand-color, light-blue-75),
-      color                  : map-fetch($brand-color, light-blue-75),
+      border                 : map-fetch($brand-color, light-blue-100),
+      color                  : map-fetch($brand-color, light-blue-100),
       hover:(
         border               : map-fetch($brand-color, light-blue-100),
         color                : map-fetch($brand-color, light-blue-100),
@@ -302,7 +302,7 @@ $button: (
     plain: (
       color                  : map-fetch($brand-color, dark-blue-75),
       hover:(
-        color                : map-fetch($brand-color, light-blue-75),
+        color                : map-fetch($brand-color, light-blue-100),
       ),
       active:(
         color                : map-fetch($brand-color, dark-blue-100),
@@ -349,7 +349,7 @@ $token: (
 
 $switch: (
   background-color: (
-    on                       : map-fetch($brand-color, light-blue-75),
+    on                       : map-fetch($brand-color, light-blue-100),
     off                      : map-fetch($brand-color, grey-50)
   )
 );
@@ -358,7 +358,7 @@ $switch: (
 /// Rangeslider
 
 $rangeslider: (
-  background-color           : map-fetch($brand-color, light-blue-75)
+  background-color           : map-fetch($brand-color, light-blue-100)
 );
 
 

@@ -33,7 +33,7 @@
     }
 
     &:hover {
-      color: var(--light-blue-75);
+      color: var(--light-blue-100);
     }
 
     &.is-active {
@@ -44,7 +44,7 @@
         content: '';
         display: block;
         height: 3px;
-        background: var(--light-blue-75);
+        background: var(--light-blue-100);
         position: absolute;
         left: 0;
         right: 0;

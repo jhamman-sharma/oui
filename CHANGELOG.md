@@ -201,7 +201,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - Disclose (new arrow style)
 - Auto align `input[number]`
 - Label no longer bold weight
-- Link colors updated to `--light-blue-75`
+- Link colors updated to `--light-blue-100`
 - `<b>/<strong>` and `weight--bold` now a medium font weight instead of true bold
 - `<hr>` included in .oui-rule as a default (hat-tip @zleach)
 
