@@ -37,7 +37,6 @@ $brand-color: (
   light-blue-50              : #809BFF,
   light-blue-25              : #BFCDFF,
   light-blue-10              : #EAEDFA,
-  light-blue-6               : #F3F6FF,
   dark-blue-75               : #46456A,
 
   /* indicators */
@@ -79,7 +78,7 @@ $root-color: (
   draft                      : map-fetch($brand-color, orange),
   live                       : map-fetch($brand-color, green),
   admin                      : map-fetch($brand-color, indigo),
-  highlight                  : map-fetch($brand-color, light-blue-6)
+  highlight                  : map-fetch($brand-color, light-blue-10)
 );
 
 /// Base Colors
