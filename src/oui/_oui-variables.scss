@@ -53,7 +53,6 @@ $brand-color: (
   dark-blue-25               : $brand-purple-base,
   grey-50                    : #E8E8E8,
   grey-25                    : #F9F9F9,
-  white-40b                  : shade($base-white, 40%),
 
 );
 
@@ -70,8 +69,8 @@ $root-color: (
   grey-06                    : tint($base-black, 94%),
   grey-03                    : tint($base-black, 97%),
   brand                      : map-fetch($brand-color, light-blue-100),
-  brand-light                : map-fetch($brand-color, light-blue-25),
   brand-dark                 : map-fetch($brand-color, dark-blue-75),
+  brand-light                : map-fetch($brand-color, light-blue-25),
   warning                    : map-fetch($brand-color, gold),
   bad-news                   : map-fetch($brand-color, red),
   good-news                  : map-fetch($brand-color, green),
@@ -136,7 +135,7 @@ $color: (
     white                    : $base-white,
     faint                    : map-fetch($root-color, grey-12),
     light                    : map-fetch($root-color, grey-25),
-    muted                    : map-fetch($brand-color, dark-blue-50),
+    muted                    : map-fetch($root-color, grey-60),
     medium                   : map-fetch($root-color, grey-50),
     charcoal                 : map-fetch($root-color, grey-78),
     dark                     : map-fetch($root-color, grey-85),
@@ -366,7 +365,7 @@ $rangeslider: (
 /// Badge
 
 $badge: (
-  background-color           : map-fetch($brand-color, white-40b),
+  background-color           : map-fetch($root-color, grey-40),
   size                       : 17px,
   min-width                  : 28px, // Graphik letter m width approx.
   font-size                  : 10px,

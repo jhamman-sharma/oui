@@ -82,7 +82,7 @@ stories
          <span className="width--50 height--50 display--inline-block background--green"></span>
          <span className="width--50 height--50 display--inline-block background--blue"></span>
          <span className="width--50 height--50 display--inline-block background--orange"></span>
-         <span className="width--50 height--50 display--inline-block background--white-40b"></span>
+         <span className="width--50 height--50 display--inline-block background--grey-40"></span>
 
       </div>
 
