@@ -2,6 +2,46 @@
 /// Mixins
 ////
 
+/**
+ * Sets the width and height of an element
+ */
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+/**
+ * Sets the width and height of an element to be the same,
+ * i.e. a square
+ */
+@mixin square($size) {
+  width: $size;
+  height: $size;
+}
+
+/**
+ * Sets common properties for icons set as background images,
+ * such as the background image itself, size, and background size.
+ * Meant to be used in non-pseudo-element contexts. Width and height
+ * must be set elsewhere.
+ */
+@mixin background-image-icon($icon-url, $width, $height: $width) {
+  background-size: $width $height;
+  background-image: url('/static/img/' + $icon-url);
+  background-repeat: no-repeat;
+}
+
+/**
+ * Sets common properties for icons set as background images in
+ * pseudo-elements. Very similar to background-image-icon above
+ * (and calls it internally), but should be used with pseudo elements.
+ */
+@mixin background-icon($icon-url, $width, $height: $width) {
+  @include background-image-icon($icon-url, $width, $height);
+  @include size($width, $height);
+  content: '';
+}
+
 /// Font Smoothing
 /// @description Better rendering of fonts on OS X. Does not affect IE.
 
