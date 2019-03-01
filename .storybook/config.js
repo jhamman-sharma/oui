@@ -32,6 +32,8 @@ function loadStories() {
   require('./color.story.js');
   require('./borderradius.story.js');
   req.keys().forEach(req);
+  require('./app.story.js');
+  req.keys().forEach(req)
 }
 
 storybook.configure(loadStories, module);
