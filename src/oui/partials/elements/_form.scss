@@ -432,6 +432,7 @@ fieldset {
 .oui-form-note {
   padding-top: spacer(0.5);
   font-size: map-fetch($font, size, micro);
+  color: var(--text-medium-emphasis);
 }
 
 .#{$namespace}form-note--good-news,
