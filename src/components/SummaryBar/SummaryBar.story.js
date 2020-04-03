@@ -34,13 +34,15 @@ storiesOf('SummaryBar/', module)
             <Col
               paddedContent={ 'around' }>
               <h2 className="push-half--bottom">Some Title</h2>
-              Col with border sides
+              Col with border sides &lt;strong&gt; test &lt;/strong&gt; test
             </Col>
             <Col
               paddedContent={ 'around' }
               border={ 'left' }>
-              <h2 className="push-half--bottom">A Longer Page Title</h2>
-              Col with border sides and long-ish content that will definitely run to multiple lines.
+              <div>
+                <h2 className="push-half--bottom">A Longer Page Title</h2>
+                Col with border sides and long-ish content that will definitely run to multiple lines.
+              </div>
             </Col>
             <Col
               paddedContent={ 'around' }
@@ -71,11 +73,11 @@ storiesOf('SummaryBar/', module)
             Col with border sides
           </Col>
           <SummaryBar.Item
-            title={ 'Testing Title' }>
+            title={ `bold &lt;strong&gt; boldme &lt;/strong&gt; bold` }>
             <h2>Test 1</h2>
           </SummaryBar.Item>
           <SummaryBar.Item
-            title={ 'Testing Title' }>
+            title={ ["This is ", <strong>bold me</strong>,  "working."] }>
             Test 2
           </SummaryBar.Item>
           <SummaryBar.Item

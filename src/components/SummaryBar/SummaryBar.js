@@ -6,7 +6,12 @@ import Container from '../Layout/Container';
 
 const Item = props => {
   return (
-    <Col paddedContent="around">{ props.children }</Col>
+    <Col paddedContent="around">
+      <div>
+        { props.title }
+        { props.children }
+      </div>
+    </Col>
   );
 };
 
