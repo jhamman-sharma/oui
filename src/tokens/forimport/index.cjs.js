@@ -39,3 +39,4 @@ exports.blueBase = 'hsla(207, 90%, 54%, 1)';
 exports.blueDark = 'hsla(207, 100%, 38%, 1)';
 exports.iconSmall = '12px';
 exports.iconLarge = '16px';
+exports.nubbinSize = '24px';

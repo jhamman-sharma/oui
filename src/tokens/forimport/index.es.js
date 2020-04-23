@@ -39,3 +39,4 @@ export var blueBase = 'hsla(207, 90%, 54%, 1)';
 export var blueDark = 'hsla(207, 100%, 38%, 1)';
 export var iconSmall = '12px';
 export var iconLarge = '16px';
+export var nubbinSize = '24px';

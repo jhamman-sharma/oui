@@ -15,6 +15,13 @@
       "value": "16px",
       "type": "size",
       "name": "iconlarge"
+    },
+    {
+      "friendlyName": "Nubbin Size",
+      "id": "nubbin-size",
+      "value": "24px",
+      "type": "size",
+      "name": "nubbinSize"
     }
   ]
 }
