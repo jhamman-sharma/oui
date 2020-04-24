@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.0.1 - 2020-04-24
 - [Patch] Update type checking for **ColWithNubbin** ([#1321](https://github.com/optimizely/oui/pull/1321))
 
 ## 46.0.0 - 2020-04-24
