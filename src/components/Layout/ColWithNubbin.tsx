@@ -16,7 +16,7 @@ const ColWithNubbin: React.SFC<ColWithNubbinPropTypes> = ({
   ...props
 }) => {
   let nubbinTopPosition = 0;
-  if (nubbinRef) {
+  if (nubbinRef && nubbinRef instanceof HTMLElement) {
     // 17 is half the distance of the diagonal of the nubbin
     // Actually used the pythagorean theorem:
     // Nubbin is 24 x 24, so 24 * √2 = 33.94 / 2 = 17
