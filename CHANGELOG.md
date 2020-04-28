@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Update react-oui-icons version to 2.8.1 ([#1322](https://github.com/optimizely/oui/pull/1322))
+    - Update `icons.json` to use latest set of icons from v2.8.1
 
 ## 46.0.1 - 2020-04-24
 - [Patch] Update type checking for **ColWithNubbin** ([#1321](https://github.com/optimizely/oui/pull/1321))
