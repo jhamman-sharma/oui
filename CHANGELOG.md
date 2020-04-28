@@ -8,7 +8,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 
 ## 46.0.2 - 2020.04-27
-- [Patch] Update react-oui-icons version to 2.8.1
+- [Patch] Update react-oui-icons version to 2.8.1 ([#1322](https://github.com/optimizely/oui/pull/1322))
 
 ## 46.0.1 - 2020-04-24
 - [Patch] Update type checking for **ColWithNubbin** ([#1321](https://github.com/optimizely/oui/pull/1321))
