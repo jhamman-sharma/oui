@@ -6,8 +6,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
-
-## 46.0.2 - 2020.04-27
 - [Patch] Update react-oui-icons version to 2.8.1 ([#1322](https://github.com/optimizely/oui/pull/1322))
 
 ## 46.0.1 - 2020-04-24
