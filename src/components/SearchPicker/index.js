@@ -300,7 +300,7 @@ class SearchPicker extends React.Component {
   render() {
     const { children, currentFauxFocusIndex } = this.props;
     const { searchQuery, isLoading } = this.state;
-    const { renderInput } = this;
+    const { renderInput, handleOnInputDebounced } = this;
     const availableEntities = this.getAvailableEntities();
     return (
       children({
@@ -308,6 +308,7 @@ class SearchPicker extends React.Component {
         isLoading,
         renderInput,
         searchQuery,
+        makeSearchRequest: handleOnInputDebounced,
         currentFauxFocusIndex,
         resultsText: this.getResultsText(),
       })
