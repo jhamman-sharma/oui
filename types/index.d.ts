@@ -221,6 +221,7 @@ declare module "tokens/forimport/index.es" {
     export var blueDark: string;
     export var iconSmall: string;
     export var iconLarge: string;
+    export var nubbinSize: string;
 }
 declare module "utils/accessibility" {
     export function getAssistiveTextFromColorClass(className: string): string;
@@ -318,6 +319,10 @@ declare module "components/Layout/Container" {
          * Allow the Container to fill available horizontal space.
          */
         fluid?: boolean;
+        /**
+         * Allow the Container to fill available vertical space.
+         */
+        isFullHeight?: boolean;
         /**
          * For testing/debugging only -- show hotpink grid borders and backgrounds.
          */
@@ -4761,6 +4766,20 @@ declare module "components/SelectDropdown/index" {
     import React from "react";
     import PropTypes from "prop-types";
 }
+declare module "components/Layout/Layout.story" {
+    export {};
+}
+declare module "components/Layout/ColWithNubbin" {
+    import React from 'react';
+    type ColWithNubbinPropTypes = {
+        /** Inner contents of the column */
+        children: React.ReactNode;
+        /** A reference to the element that the nubbin should point to */
+        nubbinRef: React.Ref<React.ReactNode>;
+    };
+    const ColWithNubbin: React.SFC<ColWithNubbinPropTypes>;
+    export default ColWithNubbin;
+}
 declare module "utils/poll" {
     /**
      * Method to detect when a given selector appears in the DOM
@@ -5004,7 +5023,7 @@ declare module "components/NavBar/index" {
         type: string;
     };
 }
-declare module "components/Layout/Layout.story" {
+declare module "components/Layout/Templates.story" {
     export {};
 }
 declare module "components/Layout/ThemeProvider" {

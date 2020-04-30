@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.0.4 - 2020-04-30
 - [Patch] Add search function to the **SearchPicker** render prop API ([1323](https://github.com/optimizely/oui/pull/1323))
 
 ## 46.0.3 - 2020-04-28
