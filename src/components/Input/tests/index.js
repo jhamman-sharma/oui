@@ -12,19 +12,25 @@ describe('components/Input', () => {
   });
 
   it('should render error class when displayError prop is true', () => {
-    const component = shallow(<Input type="text" displayError={ true } />).childAt(0);
+    const component = shallow(
+      <Input type="text" displayError={ true } />
+    ).childAt(0);
 
     expect(component.hasClass('oui-form-bad-news')).toBe(true);
   });
 
   it('should render proper text align class when prop is set', () => {
-    const component = shallow(<Input type="text" textAlign="right" />).childAt(0);
+    const component = shallow(<Input type="text" textAlign="right" />).childAt(
+      0
+    );
 
     expect(component.find('input').hasClass('text--right')).toBe(true);
   });
 
   it('should render proper text align class when prop is set', () => {
-    const component = shallow(<Input type="text" textAlign="left" />).childAt(0);
+    const component = shallow(<Input type="text" textAlign="left" />).childAt(
+      0
+    );
 
     expect(component.find('input').hasClass('text--left')).toBe(true);
   });
@@ -45,11 +51,13 @@ describe('components/Input', () => {
 
   it('should call the onChange event handler when the input is changed', () => {
     const handler = {
-      onChange: event => {},
+      onChange: (event) => {},
     };
     spyOn(handler, 'onChange');
 
-    const component = mount(<Input type="text" value="foo" onChange={ handler.onChange } />);
+    const component = mount(
+      <Input type="text" value="foo" onChange={ handler.onChange } />
+    );
 
     component.simulate('change');
 
@@ -58,11 +66,13 @@ describe('components/Input', () => {
 
   it('should call the onFocus event handler when the input gains focus', () => {
     const handler = {
-      onFocus: event => {},
+      onFocus: (event) => {},
     };
     spyOn(handler, 'onFocus');
 
-    const component = mount(<Input type="text" value="foo" onFocus={ handler.onFocus } />);
+    const component = mount(
+      <Input type="text" value="foo" onFocus={ handler.onFocus } />
+    );
 
     component.simulate('focus');
 
@@ -71,11 +81,13 @@ describe('components/Input', () => {
 
   it('should call the onBlur event handler when the input loses focus', () => {
     const handler = {
-      onBlur: event => {},
+      onBlur: (event) => {},
     };
     spyOn(handler, 'onBlur');
 
-    const component = mount(<Input type="text" value="foo" onBlur={ handler.onBlur } />);
+    const component = mount(
+      <Input type="text" value="foo" onBlur={ handler.onBlur } />
+    );
 
     component.simulate('blur');
 
@@ -90,11 +102,13 @@ describe('components/Input', () => {
 
   it('should call the onKeyDown event handler when a key is pressed down', () => {
     const handler = {
-      onKeyDown: event => {},
+      onKeyDown: (event) => {},
     };
     spyOn(handler, 'onKeyDown');
 
-    const component = mount(<Input type="text" value="foo" onKeyDown={ handler.onKeyDown } />);
+    const component = mount(
+      <Input type="text" value="foo" onKeyDown={ handler.onKeyDown } />
+    );
 
     component.simulate('keydown');
 
@@ -103,11 +117,13 @@ describe('components/Input', () => {
 
   it('should call the onInput event handler when the input receives user input', () => {
     const handler = {
-      onInput: event => {},
+      onInput: (event) => {},
     };
     spyOn(handler, 'onInput');
 
-    const component = mount(<Input type="text" value="foo" onInput={ handler.onInput } />);
+    const component = mount(
+      <Input type="text" value="foo" onInput={ handler.onInput } />
+    );
 
     component.simulate('input');
 
@@ -124,7 +140,9 @@ describe('components/Input', () => {
   });
 
   it('should have a properly set test section', () => {
-    const component = shallow(<Input type="text" testSection="foo" />).childAt(0);
+    const component = shallow(<Input type="text" testSection="foo" />).childAt(
+      0
+    );
 
     expect(component.is('[data-test-section="foo"]')).toBe(true);
   });
@@ -148,25 +166,38 @@ describe('components/Input', () => {
   });
 
   it('should have a properly set test section', () => {
-    const component = shallow(<Input type="text" testSection="foo" />).childAt(0);
+    const component = shallow(<Input type="text" testSection="foo" />).childAt(
+      0
+    );
 
     expect(component.is('[data-test-section="foo"]')).toBe(true);
   });
 
   it('should render a label if label is passed', () => {
-    const component = mount(<Input type="text" testSection="foo" label="Input Label" />);
+    const component = mount(
+      <Input type="text" testSection="foo" label="Input Label" />
+    );
 
     expect(component.find('[data-test-section="foo-label"]').length).toBe(1);
   });
 
   it('should render for and id attributes if an id is passed', () => {
-    const component = mount(<Input type="text" testSection="foo" label="Input Label" id="input-01" />);
+    const component = mount(
+      <Input type="text" testSection="foo" label="Input Label" id="input-01" />
+    );
     expect(component.is('[id="input-01"]')).toBe(true);
     expect(component.find('[htmlFor="input-01"]').exists()).toBe(true);
   });
 
   it('should render a label with optional text if label and isOptional is passed', () => {
-    const component = mount(<Input type="text" testSection="foo" label="Input Label" isOptional={ true } />);
+    const component = mount(
+      <Input
+        type="text"
+        testSection="foo"
+        label="Input Label"
+        isOptional={ true }
+      />
+    );
 
     expect(component.text()).toBe('Input Label(Optional)');
   });
@@ -184,7 +215,14 @@ describe('components/Input', () => {
   });
 
   it('should render a label with * if isRequired is passed', () => {
-    const component = mount(<Input type="text" testSection="foo" label="Input Label" isRequired={ true } />);
+    const component = mount(
+      <Input
+        type="text"
+        testSection="foo"
+        label="Input Label"
+        isRequired={ true }
+      />
+    );
 
     expect(component.find('.oui-label--required').length).toBe(1);
   });
@@ -196,14 +234,56 @@ describe('components/Input', () => {
   });
 
   it('should render a note if passed', () => {
-    const component = mount(<Input type="text" testSection="foo" note="A short description" />);
+    const component = mount(
+      <Input type="text" testSection="foo" note="A short description" />
+    );
 
     expect(component.find('[data-test-section="foo-note"]').length).toBe(1);
-    expect(component.find('[data-test-section="foo-note"]').text()).toBe('A short description');
+    expect(component.find('[data-test-section="foo-note"]').text()).toBe(
+      'A short description'
+    );
   });
 
   it('should add a maxLength attribute when maxLength is passed', () => {
     const component = mount(<Input type="text" maxLength={ 50 } />);
     expect(component.find('input').prop('maxLength')).toBe(50);
+  });
+
+  it('should add an Icon to the left when leftIconName passed', () => {
+    const component = mount(<Input type="text" leftIconName="search" />);
+    expect(component.find('.oui-input-icon__left').length).toBe(1);
+    expect(component.find('.oui-icon').length).toBe(1);
+  });
+
+  it('should add an Icon to the right when rightIconName passed', () => {
+    const component = mount(<Input type="text" rightIconName="search" />);
+    expect(component.find('.oui-input-icon__right').length).toBe(1);
+    expect(component.find('.oui-icon').length).toBe(1);
+  });
+
+  it('should add a Clear Button when hasClearButton passed', () => {
+    const component = mount(<Input type="text" hasClearButton={ true } />);
+    expect(component.find('.oui-text-input__clear-button').length).toBe(1);
+    expect(component.find('.oui-icon').length).toBe(1);
+  });
+
+  it('should call the onClearButtonClick event handler when the clear button is clicked', () => {
+    const handler = {
+      onClearButtonClick: (event) => {},
+    };
+    spyOn(handler, 'onClearButtonClick');
+
+    const component = mount(
+      <Input
+        hasClearButton={ true }
+        onClearButtonClick={ handler.onClearButtonClick }
+        type="text"
+        value="foo"
+      />
+    );
+
+    component.find('.oui-button-icon').simulate('click');
+
+    expect(handler.onClearButtonClick).toHaveBeenCalled();
   });
 });
