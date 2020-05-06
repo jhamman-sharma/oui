@@ -8,6 +8,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Feature] Add ability to specify a left or right icon for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
 - [Feature] Add ability to include a Clear Input ButtonIcon with `hasClearButton` for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
+- [Feature] Add ability to remove bottom border and box shadow with `toolbarStyle` in **Toolbar** ([#1327](https://github.com/optimizely/oui/pull/1327))
 
 ## 46.0.4 - 2020-04-30
 - [Patch] Add search function to the **SearchPicker** render prop API ([1323](https://github.com/optimizely/oui/pull/1323))
