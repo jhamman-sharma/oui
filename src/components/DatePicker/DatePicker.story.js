@@ -9,6 +9,7 @@ import { action } from '@storybook/addon-actions';
 import DatePicker from './DatePicker.js';
 import Input from '../Input';
 
+const mockDateForTesting = moment('2020-01-15');
 
 const stories = storiesOf('DatePicker', module);
 stories
@@ -60,7 +61,7 @@ stories.add('Default single date picker', (() => (
         inputId="date-picker-id"
         inputLabel={ text('inputLabel', 'Start Time') }
         inputPlaceholder={ text('inputPlaceholder', 'Select Date') }
-        initialDate={ moment() }
+        initialDate={ mockDateForTesting }
         isFocused={ boolean('isFocused', false) }
         onDateChange={ action('onDateChange') }
       />
@@ -70,7 +71,7 @@ stories.add('Default single date picker', (() => (
     <Container>
       <DatePicker
         inputId="date-picker-id"
-        initialDate={ null }
+        initialDate={ mockDateForTesting }
         isFocused={ boolean('isFocused', true) }
         isFutureDateSelectable={ boolean('isFutureDateSelectable', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
@@ -79,7 +80,7 @@ stories.add('Default single date picker', (() => (
     </Container>
   )))
   .add('Only allow past dates', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DatePicker
         inputId="date-picker-id"
         initialDate={ null }
@@ -91,7 +92,7 @@ stories.add('Default single date picker', (() => (
     </Container>
   )))
   .add('Only allow future dates', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DatePicker
         inputId="date-picker-id"
         initialDate={ null }
@@ -110,7 +111,7 @@ stories.add('Default single date picker', (() => (
       </p>
       <DatePicker
         inputId="date-picker-id"
-        initialDate={ null }
+        initialDate={ mockDateForTesting }
         isFocused={ boolean('isFocused', true) }
         isOutsideRange={ (day) => {return day.day() % 2 === 0; } }
         onDateChange={ action('onDateChange') }
@@ -125,8 +126,7 @@ stories.add('Default single date picker', (() => (
       </p>
       <DatePicker
         inputId="date-picker-id"
-        initialDate={ null }
-        initialVisibleMonth={ () => moment().subtract(1, 'months') }
+        initialVisibleMonth={ () => mockDateForTesting.subtract(1, 'months') }
         isFocused={ boolean('isFocused', true) }
         onDateChange={ action('onDateChange') }
       />
@@ -145,7 +145,7 @@ stories.add('Default single date picker', (() => (
     </Container>
   )))
   .add('Remains open always, even when clicking outside the component', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DatePicker
         inputId="date-picker-id"
         initialDate={ null }

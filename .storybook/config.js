@@ -1,8 +1,6 @@
 import * as storybook from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
-import moment from 'moment';
-import mockDate from 'mockdate';
 
 require('../dist/styles.js');
 require('../src/oui/oui.scss');
@@ -36,8 +34,6 @@ function loadStories() {
   require('./borderradius.story.js');
   req.keys().forEach(req);
 }
-const currYear = moment().get('year');
-mockDate.set(moment(`${currYear}-1-15`));
 
 storybook.configure(loadStories, module);
 storybook.addParameters(options);

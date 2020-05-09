@@ -9,6 +9,8 @@ import { action } from '@storybook/addon-actions';
 import Button from '../Button';
 import DateRangePicker from './DateRangePicker';
 
+const mockDateForTesting = moment('2020-01-15');
+
 const presetPanelOptions = [
   {
     label: 'Last 7 days',
@@ -61,7 +63,7 @@ stories
     </Container>
   )))
   .add('Focused initially', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput={ text('focusedInput (either "startDate" or "endDate"', 'startDate') }
@@ -75,7 +77,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput={ text('focusedInput', 'endDate') }
-        initialStartDate={ moment() }
+        initialStartDate={ mockDateForTesting }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
       />
@@ -86,7 +88,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='endDate'
-        initialStartDate={ moment() }
+        initialStartDate={ mockDateForTesting }
         isFutureDateSelectable={ boolean('isFutureDateSelectable', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
         onDatesChange={ action('onDatesChange') }
@@ -95,11 +97,10 @@ stories
     </Container>
   )))
   .add('Only allow future dates', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='endDate'
-        initialStartDate={ moment() }
         isFutureDateSelectable={ boolean('isFutureDateSelectable', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', false) }
         onDatesChange={ action('onDatesChange') }
@@ -108,7 +109,7 @@ stories
     </Container>
   )))
   .add('Only allow past dates', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='endDate'
@@ -129,7 +130,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='endDate'
-        initialStartDate={ moment() }
+        initialStartDate={ mockDateForTesting }
         isOutsideRange={ (day) => {return day.day() % 2 === 0; } }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
@@ -145,7 +146,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='endDate'
-        initialVisibleMonth={ () => moment().subtract(1, 'months') }
+        initialVisibleMonth={ () => mockDateForTesting.subtract(1, 'months') }
         isOutsideRange={ action('isOutsideRange') }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
@@ -157,6 +158,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         keepOpenOnDateSelect={ boolean('keepOpenOnDateSelect', true) }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
@@ -168,6 +170,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         keepOpenAlways={ boolean('keepOpenAlways', true) }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
@@ -180,6 +183,7 @@ stories
         endDateInputId='end-date-id-0'
         endTimeInputId='endTimeInputId'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         hasTimeInputs={ boolean('hasTimeInputs', true) }
         onDatesChange={ action('onDatesChange') }
         startDateInputId='start-date-id-0'
@@ -188,7 +192,7 @@ stories
     </Container>
   )))
   .add('With preset options panel', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
@@ -205,7 +209,7 @@ stories
     </Container>
   )))
   .add('With buttons panel', (() => (
-    <Container>
+    <Container className="chromatic-ignore">
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
@@ -225,6 +229,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
         keepOpenOnDateSelect={ boolean('keepOpenOndateSelect', true) }
@@ -239,6 +244,7 @@ stories
         endDateInputId='end-date-id-0'
         endTimeInputId='endTimeInputId'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         hasTimeInputs={ boolean('hasTimeInputs', true) }
         onDatesChange={ action('onDatesChange') }
@@ -252,6 +258,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         hasTimeInputs={ boolean('hasTimeInputs', false) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
@@ -271,6 +278,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
         keepOpenOnDateSelect={ boolean('keepOpenOndateSelect', true) }
@@ -289,6 +297,7 @@ stories
       <DateRangePicker
         endDateInputId='end-date-id-0'
         focusedInput='startDate'
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
         keepOpenOnDateSelect={ boolean('keepOpenOndateSelect', true) }
@@ -322,6 +331,7 @@ stories
         endTimeInputId='endTimeInputId'
         focusedInput='startDate'
         hasTimeInputs={ boolean('hasTimeInputs', true) }
+        initialStartDate={ mockDateForTesting }
         isBorderless={ boolean('isBorderless', true) }
         isPastDateSelectable={ boolean('isPastDateSelectable', true) }
         keepOpenOnDateSelect={ boolean('keepOpenOndateSelect', true) }

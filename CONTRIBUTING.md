@@ -109,7 +109,7 @@ stories.addParameters({ chromatic: { disable: true } });
 
 #### VRT for Dates
 
-OUI includes [mockdate](https://github.com/boblauer/MockDate), a library that allows you to override the current system date temporarily, ensuring VRT doesn't fail due to using date changes. See the [Storybook config](https://github.com/optimizely/oui/blob/b331684d50206a8a979dffc23d3081b7c34333c0/.storybook/config.js) for the implementation.
+To prevent stories from failing VRT tests due to system time being used, consider setting the time in the story itself or disabling chromatic for that story if manually setting the time is not applicable.
 
 ## :ship: Release a New Version
 
