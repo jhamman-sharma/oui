@@ -5122,18 +5122,36 @@ code {
 .oui-text-input--read-only:focus {
   border-color: #999999; }
 
-.input-icon {
+.oui-text-input-with-icon--left .oui-text-input {
+  padding-left: 36px; }
+
+.oui-text-input-with-icon--right .oui-text-input {
+  padding-right: 36px; }
+
+.oui-text-input__clear-button {
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 10px; }
+
+.input-icon,
+.oui-input-icon {
   position: relative; }
-  .input-icon__left, .input-icon__right {
+  .input-icon__left, .input-icon__right,
+  .oui-input-icon__left,
+  .oui-input-icon__right {
     transform: translateY(-50%);
     pointer-events: none;
     position: absolute;
     top: 50%; }
-  .input-icon__left {
+  .input-icon__left,
+  .oui-input-icon__left {
     left: 10px; }
-  .input-icon__right {
+  .input-icon__right,
+  .oui-input-icon__right {
     right: 10px; }
-  .input-icon__muted {
+  .input-icon__muted,
+  .oui-input-icon__muted {
     fill: #999999; }
 
 .label,
@@ -6503,7 +6521,7 @@ code {
     border-bottom: 1px solid var(--grey-50);
     position: relative;
     background: var(--white); }
-    .toolbar__content:after {
+    .toolbar__content:not(.toolbar__content--bare):after {
       content: '';
       display: block;
       height: 2px;
