@@ -125,5 +125,17 @@ describe('components/SearchPicker', () => {
           expect(renderedData.resultsText).toEqual({summary: 'Found 1 features matching "202"'});
         });
     });
+    it('should render the number of available entities in the results text', function() {
+      // We need to pass in selected entities to properly test this
+      component.setProps({ selectedEntityIds: [202, 205, 207] });
+      component.update();
+      component.find('input').simulate('mouseenter');
+      component.find('input').simulate('click');
+      component.find('input').simulate('input', { target: { value: 'audience 20' }});
+      return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
+        component.update();
+        expect(renderedData.resultsText).toEqual({summary: 'Found 4 features matching "audience 20"'});
+      });
+    });
   });
 });
