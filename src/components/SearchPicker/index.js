@@ -248,7 +248,7 @@ class SearchPicker extends React.Component {
   getResultsText = () => {
     const { supportedTypes } = this.props;
     const { isLoading, searchQuery } = this.state;
-    const resultCount = this.getResultSet().length;
+    const resultCount = this.getAvailableEntities().length;
     const summaryNoun = supportedTypes.length > 1 ? 'entities' : `${supportedTypes[0]}s`;
     let summary = `Recently created ${summaryNoun}`;
 
