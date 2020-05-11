@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Adjust spacing between drag handle and order number for **Tokens** ([#1328](https://github.com/optimizely/oui/pull/1328))
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
 
 ## 46.1.0 - 2020-05-08

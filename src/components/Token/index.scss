@@ -83,7 +83,9 @@
 .oui-token__number {
   color: map-fetch($color, text, light);
   font-size: map-fetch($font, size, milli);
-  min-width: map-fetch($token, token__number, min-width);
+  // Use same width as icon to force alignment for drag handle
+  // Intentionally only supports up to 2 digits
+  min-width: map-fetch($icon, size, base, width);
 }
 
 .#{$namespace}token__move,

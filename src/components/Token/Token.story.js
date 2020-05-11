@@ -49,6 +49,20 @@ stories
       hasSnugWrap={ boolean('hasSnugWrap', false) }
     />
   </div>)))
+  .add('With ordering', (() => (<div>
+    <Token
+      name="Hello"
+      style="primary"
+      order={ 1 }
+      hasSnugWrap={ boolean('hasSnugWrap', false) }
+    />
+    <Token
+      name="World"
+      style="secondary"
+      order={ 2 }
+      hasSnugWrap={ boolean('hasSnugWrap', false) }
+    />
+  </div>)))
   .add('Draggable with Order specified', () => {
     return (
       <React.Fragment>
@@ -70,7 +84,7 @@ stories
             isDraggable={ true }
             name="Students: Grades K-5"
             onDismiss={ action('token dismissed') }
-            order={ 1 }
+            order={ 2 }
             style="secondary"
           />
         </div>
@@ -81,7 +95,7 @@ stories
             isDraggable={ true }
             name="Students: TK"
             onDismiss={ action('token dismissed') }
-            order={ 1 }
+            order={ 3 }
             style="secondary"
           />
         </div>
@@ -122,6 +136,36 @@ stories
         <p>See this <a href="/?path=/story/draganddrop--with-custom-drag-handle">
           Drag and Drop story</a> for an example implementation
         </p>
+      </div>
+    );
+  })
+  .add('Ordering with new drag handle', () => {
+    return (
+      <div className="flex flex--column">
+        <Token
+          isDraggable={ true }
+          usesDragHandle={ true }
+          name="Move me! I'm in the first place"
+          style="secondary"
+          order={ 1 }
+          showWell={ boolean('showWell', false) }
+        />
+        <Token
+          isDraggable={ true }
+          usesDragHandle={ true }
+          name="Move me! I'm in the second place"
+          style="secondary"
+          order={ 2 }
+          showWell={ boolean('showWell', false) }
+        />
+        <Token
+          isDraggable={ true }
+          usesDragHandle={ true }
+          name="Move me! I'm in the last place"
+          style="secondary"
+          order={ 99 }
+          showWell={ boolean('showWell', false) }
+        />
       </div>
     );
   });

@@ -55,7 +55,7 @@ const Token = ({
         <div className={ `oui-token oui-token--${style}` }>
           <div className="flex flex-align--center">
             <div className={ tokenToolsClasses } data-token-handle>
-              {order && <span className="oui-token__number">{order}</span>}
+              {order && <span className="oui-token__number push--right">{order}</span>}
               {isDraggable && (
                 <div className="oui-icon oui-token__move push--right oui-token__move--drag-handle" { ...dragHandleProps }>
                   <Icon name="hamburger" fill="#ffffff" />
@@ -92,7 +92,7 @@ const Token = ({
         className={ tokenToolsClasses }
         data-token-handle>
         { order &&
-          <span className="oui-token__number">
+          <span className="oui-token__number push--right">
             { order }
           </span>
         }
