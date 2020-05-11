@@ -327,6 +327,17 @@
     margin: 0 !important;
     padding: 0 !important;
     text-shadow: inherit !important;
+
+    &:hover,
+    &:focus {
+      color: map-fetch($color, link, hover) !important;
+
+    }
+
+    &:focus {
+      border: 1px solid var(--light-blue-25) !important;
+      box-shadow: 0px 0px 3px $brand-blue-dark !important;
+    }
   }
 
   // Disabled State

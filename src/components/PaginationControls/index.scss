@@ -2,8 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   .oui-spinner {
     margin-bottom: -5px;
+  }
+
+  // Prevent jumping when focusing on buttons
+  .oui-button--unstyled {
+    border: 1px solid transparent !important;
   }
 }

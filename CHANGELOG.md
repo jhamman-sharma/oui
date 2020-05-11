@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([1326](https://github.com/optimizely/oui/pull/1326))
+- [Patch] Add hover and focus differentiations for `unstyled` **Buttons** ([1326](https://github.com/optimizely/oui/pull/1326))
 - [Patch] Adjust spacing between drag handle and order number for **Tokens** ([#1328](https://github.com/optimizely/oui/pull/1328))
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
 
