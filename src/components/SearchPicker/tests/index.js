@@ -138,4 +138,93 @@ describe('components/SearchPicker', () => {
       });
     });
   });
+
+  describe('searchFunction responses', () => {
+    it('should update state when an Array is returned from searchFunction', () => {
+      onItemSelectedStub = jest.fn();
+      const allGoodSearchFn = jest.fn(() => new Promise(resolve => resolve([
+        {
+          id: 123,
+          name: 'My feature 123',
+          type: 'feature',
+          description: 'A very cool feature',
+        },
+      ])));
+      component = mount(
+        <SearchPicker
+          onItemSelected={ onItemSelectedStub }
+          searchFunction={ allGoodSearchFn }
+          supportedTypes={ ['feature'] }>
+          {(data) => {
+            renderedData = data;
+            return (
+              <div>
+                {data.renderInput()}
+                <p>A list of entities</p>
+              </div>
+            );
+          }}
+        </SearchPicker>
+      );
+      return allGoodSearchFn().then(() => {
+        const defaultResultsState = component.children().instance().state.defaultResults;
+        expect(defaultResultsState).toEqual([
+          {
+            id: 123,
+            name: 'My feature 123',
+            type: 'feature',
+            description: 'A very cool feature',
+          },
+        ]);
+      });
+    });
+    it('should not update state when an object is returned from searchFunction', () => {
+      onItemSelectedStub = jest.fn();
+      const notGoodSearchFn = jest.fn((() => new Promise(resolve => resolve({}))));
+      component = mount(
+        <SearchPicker
+          onItemSelected={ onItemSelectedStub }
+          searchFunction={ notGoodSearchFn }
+          supportedTypes={ ['feature'] }>
+          {(data) => {
+            renderedData = data;
+            return (
+              <div>
+                {data.renderInput()}
+                <p>A list of entities</p>
+              </div>
+            );
+          }}
+        </SearchPicker>
+      );
+      return notGoodSearchFn().then(() => {
+        const defaultResultsState = component.children().instance().state.defaultResults;
+        expect(defaultResultsState).toEqual([]);
+      });
+    });
+    it('should not update state when undefined is returned from searchFunction', () => {
+      onItemSelectedStub = jest.fn();
+      const notGoodSearchFn = jest.fn((() => new Promise(resolve => resolve(undefined))));
+      component = mount(
+        <SearchPicker
+          onItemSelected={ onItemSelectedStub }
+          searchFunction={ notGoodSearchFn }
+          supportedTypes={ ['feature'] }>
+          {(data) => {
+            renderedData = data;
+            return (
+              <div>
+                {data.renderInput()}
+                <p>A list of entities</p>
+              </div>
+            );
+          }}
+        </SearchPicker>
+      );
+      return notGoodSearchFn().then(() => {
+        const defaultResultsState = component.children().instance().state.defaultResults;
+        expect(defaultResultsState).toEqual([]);
+      });
+    });
+  });
 });

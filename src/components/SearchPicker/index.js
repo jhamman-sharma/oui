@@ -110,16 +110,21 @@ class SearchPicker extends React.Component {
       query: '',
       per_page: INITIAL_SEARCH_PAGE_SIZE,
     }).then(results => {
-      const { searchQuery } = this.state;
+      // Make this Promise catch if the results are not an array
+      this.verifyResultOrThrow(results);
       this.setState({
         defaultResults: results,
       });
-      if (!searchQuery) {
-        this.setState({
-          isLoading: false,
-        });
-      }
-    });
+    })
+      .finally(() => {
+        const { searchQuery } = this.state;
+        // Always set loading false as long as searchQuery is empty
+        if (!searchQuery) {
+          this.setState({
+            isLoading: false,
+          });
+        }
+      });
   };
 
   /**
@@ -265,6 +270,21 @@ class SearchPicker extends React.Component {
     return {
       summary,
     };
+  };
+
+  /**
+   * @description Provided an API response, an error will be thrown if the
+   *  provided value is not an Array. This is used within a Promise and
+   *  will only cause the Promise to catch instead of this component.
+   * @param {*} results - The response of the provided searchFunction, which
+   *  is expected to be an Array.
+   */
+  verifyResultOrThrow = results => {
+    if (!Array.isArray(results)) {
+      throw new Error(
+        'SearchPicker props.searchFunction resolved with a value that is not an Array.'
+      );
+    }
   };
 
   /**
