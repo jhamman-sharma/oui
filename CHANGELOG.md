@@ -6,12 +6,15 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
-- [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([1326](https://github.com/optimizely/oui/pull/1326))
-- [Patch] Add hover and focus differentiations for `unstyled` **Buttons** ([1326](https://github.com/optimizely/oui/pull/1326))
+
+## 46.2.0 - 2020-05-15
+- [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([#1326](https://github.com/optimizely/oui/pull/1326))
+- [Feature] Add `centerHeader` prop to **Sheet** to center the title and subtitle text ([#1332](https://github.com/optimizely/oui/pull/1332))
+- [Patch] Add hover and focus differentiations for `unstyled` **Buttons** ([#1326](https://github.com/optimizely/oui/pull/1326))
 - [Patch] Adjust spacing between drag handle and order number for **Tokens** ([#1328](https://github.com/optimizely/oui/pull/1328))
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
-- [Patch] Throw an error in SearchPicker's searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as defaultResults ([1325](https://github.com/optimizely/oui/pull/1325))
-- [Feature] Add `centerHeader` prop to **Sheet** to center the title and subtitle text ([1332](https://github.com/optimizely/oui/pull/1332))
+- [Patch] Throw an error in SearchPicker's searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as defaultResults ([#1325](https://github.com/optimizely/oui/pull/1325))
+
 
 ## 46.1.0 - 2020-05-08
 - [Feature] Add ability to specify a left or right icon for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
@@ -20,7 +23,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Remove mockdate from stories to fix Storybook knobs ([#1329](https://github.com/optimizely/oui/pull/1329))
 
 ## 46.0.4 - 2020-04-30
-- [Patch] Add search function to the **SearchPicker** render prop API ([1323](https://github.com/optimizely/oui/pull/1323))
+- [Patch] Add search function to the **SearchPicker** render prop API ([#1323](https://github.com/optimizely/oui/pull/1323))
 
 ## 46.0.3 - 2020-04-28
 - [Patch] Fix Storybook

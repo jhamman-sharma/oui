@@ -2135,6 +2135,17 @@ blockquote {
     margin: 0 !important;
     padding: 0 !important;
     text-shadow: inherit !important; }
+    
+    .button--unstyled:hover,
+    .button--unstyled:focus,
+    .oui-button--unstyled:hover,
+    .oui-button--unstyled:focus {
+      color: #0037ff !important; }
+    
+    .button--unstyled:focus,
+    .oui-button--unstyled:focus {
+      border: 1px solid var(--light-blue-25) !important;
+      box-shadow: 0px 0px 3px #0037ff !important; }
   
   .button[disabled],
   .button--disabled,
@@ -5438,6 +5449,8 @@ code {
   align-items: center; }
   .oui-pagination-controls .oui-spinner {
     margin-bottom: -5px; }
+  .oui-pagination-controls .oui-button--unstyled {
+    border: 1px solid transparent !important; }
 
 
 .pop--over,
@@ -6462,7 +6475,7 @@ code {
 .oui-token__number {
   color: #bfbfbf;
   font-size: 13px;
-  min-width: 10px; }
+  min-width: 16px; }
 
 .token__move,
 .oui-token__move {
