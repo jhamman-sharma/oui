@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import classNames from 'classnames';
 import ButtonRow from '../ButtonRow';
 import CloseButton from '../CloseButton';
 import Attention from '../Attention';
@@ -15,6 +16,11 @@ const Sheet = props => {
       <div className="push--top flush--bottom">{props.subtitle}</div>
     );
   }
+
+  let headerClasses = classNames({
+    'oui-sheet__header': true,
+    'text--center': props.centerHeader,
+  });
 
   return (
     <div className="oui-sheet__wrapper">
@@ -33,7 +39,7 @@ const Sheet = props => {
             </Attention>
           </div>
         )}
-        <header className="oui-sheet__header">
+        <header className={ headerClasses }>
           <h2 className="flush--bottom">{props.title}</h2>
           {subtitleContent}
         </header>
@@ -47,6 +53,10 @@ const Sheet = props => {
 };
 
 Sheet.propTypes = {
+  /**
+   *  Used to determine if the title & subtitle of the sheet should be centered.
+   */
+  centerHeader: PropTypes.bool,
   /**
    *  The body of the sheet to request information and data from the user.
    */
@@ -87,6 +97,7 @@ Sheet.propTypes = {
 };
 
 Sheet.defaultProps = {
+  centerHeader: false,
   hasCloseButton: true,
   onClose: () => {},
   subtitle: '',

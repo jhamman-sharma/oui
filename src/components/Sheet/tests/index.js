@@ -182,4 +182,24 @@ describe('Sheet Component ', () => {
     expect(component.find('.oui-attention--warning').length).toBe(1);
     expect(component.find('[data-test-section="warning-test-section"]').length).toBe(1);
   });
+
+  it('renders the title in the center when centerHeader is true', () => {
+    const onClickSpy = jest.fn();
+
+    const component = mount(<Sheet
+      title='This is a Sheet'
+      subtitle='This is a subtitle'
+      centerHeader={ true }
+      footerButtonList={ [
+        <Button style="plain" key={ 0 } onClick={ onClickSpy }>
+          No Thanks
+        </Button>,
+        <Button style="highlight" key={ 1 } onClick={ onClickSpy }>
+          Continue
+        </Button>,
+      ] }>
+      <p>Sheets can contain anything, typically forms, in the body.</p>
+    </Sheet>);
+    expect(component.find('.oui-sheet__header').hasClass('text--center')).toBe(true);
+  });
 });

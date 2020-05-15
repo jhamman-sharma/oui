@@ -11,6 +11,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Adjust spacing between drag handle and order number for **Tokens** ([#1328](https://github.com/optimizely/oui/pull/1328))
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
 - [Patch] Throw an error in SearchPicker's searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as defaultResults ([1325](https://github.com/optimizely/oui/pull/1325))
+- [Feature] Add `centerHeader` prop to **Sheet** to center the title and subtitle text ([1332](https://github.com/optimizely/oui/pull/1332))
 
 ## 46.1.0 - 2020-05-08
 - [Feature] Add ability to specify a left or right icon for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
