@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.3.0 - 2020-05-18
 - [Feature] New component **ManagerSideNav** for the vertical navigation of detail pages ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add ability to use `isFullWidth` prop on **Link** to create a full width link ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add `ariaLabel` prop on **Switch** to provide screen readers with context ([#1331](https://github.com/optimizely/oui/pull/1331))
