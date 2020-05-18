@@ -9,6 +9,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Feature] New component **ManagerSideNav** for the vertical navigation of detail pages ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add ability to use `isFullWidth` prop on **Link** to create a full width link ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add `ariaLabel` prop on **Switch** to provide screen readers with context ([#1331](https://github.com/optimizely/oui/pull/1331))
+- [Feature] Add `usesTextLabel` prop to **CopyButton** to use a text label instead of an icon ([#1333](https://github.com/optimizely/oui/pull/1333))
 
 ## 46.2.0 - 2020-05-15
 - [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([#1326](https://github.com/optimizely/oui/pull/1326))

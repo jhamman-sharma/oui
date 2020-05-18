@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, select, boolean } from '@storybook/addon-knobs';
 
 import CopyButton from '../CopyButton';
 
@@ -51,6 +51,15 @@ stories
           'underline': 'underline',
           'unstyled': 'unstyled',
         }, 'none') }
+      />
+    );
+  }))
+  .add('With text', (() => {
+    return (
+      <CopyButton
+        textToCopy={ code }
+        usesTextLabel={ boolean('usesTextLabel', true) }
+        style='highlight'
       />
     );
   }));

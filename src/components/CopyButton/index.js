@@ -15,6 +15,7 @@ const CopyButton = ({
   style,
   testSection,
   textToCopy,
+  usesTextLabel,
 }) => {
 
   return (
@@ -22,9 +23,10 @@ const CopyButton = ({
       text={ textToCopy }>
       <Button
         style={ style === 'none' ? null : style }
+        size={ usesTextLabel ? 'tiny' : null }
         ariaLabel="Copy code snippet"
         testSection={ testSection ? `${testSection}-copy-button` : null }>
-        <Icon name='clipboard' />
+        { usesTextLabel ? 'Copy' : <Icon name='clipboard' /> }
       </Button>
     </CopyToClipboard>
   );
@@ -48,10 +50,16 @@ CopyButton.propTypes = {
   testSection: PropTypes.string,
   /** The text or code that will be copied */
   textToCopy: PropTypes.string.isRequired,
+  /**
+   * Whether or not this should use the word copy
+   * instead of an icon
+   */
+  usesTextLabel: PropTypes.bool,
 };
 
 CopyButton.defaultProps = {
   style: 'plain',
+  usesTextLabel: false,
 };
 
 export default CopyButton;

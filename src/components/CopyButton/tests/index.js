@@ -12,5 +12,12 @@ describe('components/CopyButton', () => {
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 
+  it('should render text when usesTextLabel is true', () => {
+    const component = shallow(
+      <CopyButton textToCopy={ 'let bingo = "BINGO"' } testSection="fake-test-section" usesTextLabel={ true } style="highlight"/>
+    );
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
 });
 

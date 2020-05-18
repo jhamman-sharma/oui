@@ -14,6 +14,7 @@ exports[`components/CopyButton should render children the icon button 1`] = `
     onBlur={[Function]}
     onClick={[Function]}
     onMouseDown={[Function]}
+    size={null}
     style="plain"
     testSection="fake-test-section-copy-button"
     width="default"
@@ -21,6 +22,30 @@ exports[`components/CopyButton should render children the icon button 1`] = `
     <Icon
       name="clipboard"
     />
+  </Button>
+</CopyToClipboard>
+`;
+
+exports[`components/CopyButton should render text when usesTextLabel is true 1`] = `
+<CopyToClipboard
+  text="let bingo = \\"BINGO\\""
+>
+  <Button
+    ariaLabel="Copy code snippet"
+    isDisabled={false}
+    isLink={false}
+    isLoading={false}
+    isSubmit={false}
+    loadingText=""
+    onBlur={[Function]}
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    size="tiny"
+    style="highlight"
+    testSection="fake-test-section-copy-button"
+    width="default"
+  >
+    Copy
   </Button>
 </CopyToClipboard>
 `;
