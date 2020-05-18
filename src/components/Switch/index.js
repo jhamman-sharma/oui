@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 const Switch = (props) => {
   const {
+    ariaLabel,
     onClick,
     elementId = 'switch1',
     checked,
@@ -18,10 +19,11 @@ const Switch = (props) => {
 
   return (
     <div
-      className='position--relative'
+      className='position--relative flex flex-align--center'
       data-oui-component={ true }
       data-test-section={ testSection }>
       <input
+        aria-label={ ariaLabel }
         type="checkbox"
         id={ elementId }
         className={ switchClasses }
@@ -38,10 +40,16 @@ const Switch = (props) => {
 };
 
 Switch.propTypes = {
+  /**
+   * Hidden label to describe this switch
+   * Must be used when no clear associated context
+   * is available in the UI.
+   */
+  ariaLabel: PropTypes.string,
   // checked true means the switch is on; false is off
   checked: PropTypes.bool,
   // string for label/input id pair, should be unique to the page
-  elementId: PropTypes.string,
+  elementId: PropTypes.string.isRequired,
   /** Whether it is disabled, will render greyscale if so **/
   isDisabled: PropTypes.bool,
   // onClick function

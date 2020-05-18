@@ -95,7 +95,7 @@
 .oui-switch:focus + label, .oui-switch:active + label {
   box-shadow:
     1px 1px 10px rgba(0, 0, 0, 0.2) inset,
-    0 0 0 1px var(--light-blue-25) !important;
+    0 0 0 2px var(--light-blue-25) !important;
 }
 
 .oui-switch--disabled + label {

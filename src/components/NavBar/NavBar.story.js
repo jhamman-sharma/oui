@@ -12,7 +12,7 @@ const collapsedLogoUrl = 'https://app.optimizely.com/dist/static/img/rebrand/sym
 
 const getLogoUrl = isOpen => isOpen ? openLogoUrl : collapsedLogoUrl;
 
-const stories = storiesOf('NavBar', module);
+const stories = storiesOf('Navigation/NavBar', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

@@ -2,7 +2,7 @@
 
 exports[`components/Switch should render an \`Switch\` with correct props 1`] = `
 <div
-  className="position--relative"
+  className="position--relative flex flex-align--center"
   data-oui-component={true}
 >
   <input

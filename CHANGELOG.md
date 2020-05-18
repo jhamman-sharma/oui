@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] New component **ManagerSideNav** for the vertical navigation of detail pages ([#1331](https://github.com/optimizely/oui/pull/1331))
+- [Feature] Add ability to use `isFullWidth` prop on **Link** to create a full width link ([#1331](https://github.com/optimizely/oui/pull/1331))
+- [Feature] Add `ariaLabel` prop on **Switch** to provide screen readers with context ([#1331](https://github.com/optimizely/oui/pull/1331))
 
 ## 46.2.0 - 2020-05-15
 - [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([#1326](https://github.com/optimizely/oui/pull/1326))
@@ -13,7 +16,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Add hover and focus differentiations for `unstyled` **Buttons** ([#1326](https://github.com/optimizely/oui/pull/1326))
 - [Patch] Adjust spacing between drag handle and order number for **Tokens** ([#1328](https://github.com/optimizely/oui/pull/1328))
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
-- [Patch] Throw an error in SearchPicker's searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as defaultResults ([#1325](https://github.com/optimizely/oui/pull/1325))
+- [Patch] Throw an error in **SearchPicker's** searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as `defaultResults` ([#1325](https://github.com/optimizely/oui/pull/1325))
 
 
 ## 46.1.0 - 2020-05-08

@@ -67,6 +67,7 @@ stories
         <li><Link href="http://google.com" isDisabled={ boolean('isDisabled', false) } style="muted">{ text('muted', 'Link Muted') }</Link></li>
         <li><Link href="http://google.com" isDisabled={ boolean('isDisabled', false) } style="bad-news">{ text('bad-news', 'Link Bad News') }</Link></li>
         <li className="background--brand"><Link href="http://google.com" isDisabled={ boolean('isDisabled', false) } style="reverse">{ text('reverse', 'Link Reverse') }</Link></li>
+        <li><Link href="http://google.com" isDisabled={ boolean('isDisabled', false) } isFullWidth={ boolean('isFullWidth', true) }>{ text('full width', 'Link with isFullWidth') }</Link></li>
       </ul>
     );
   })

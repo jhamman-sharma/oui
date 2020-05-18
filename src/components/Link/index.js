@@ -13,6 +13,7 @@ const Link = ({
   href,
   onClick,
   isDisabled = false,
+  isFullWidth = false,
   newWindow = false,
   style,
   testSection,
@@ -22,6 +23,8 @@ const Link = ({
     [`link--${style}`]: style,
     ['link--disabled']: isDisabled,
     'pointer-events--none': isDisabled,
+    'width--1-1': isFullWidth,
+    'display--inline-block ': isFullWidth,
   });
 
   if (!href && !onClick) {
@@ -62,6 +65,8 @@ Link.propTypes = {
   href: PropTypes.string,
   /** Disable link and interactivity */
   isDisabled: PropTypes.bool,
+  /** Whether or not this link is full width */
+  isFullWidth: PropTypes.bool,
   /** Open link in new window */
   newWindow: PropTypes.bool,
   /** Click handler function */
