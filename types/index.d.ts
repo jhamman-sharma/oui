@@ -35,6 +35,7 @@ declare module 'optimizely-oui' {
   export { default as Label } from 'components/Label/index';
   export { default as Link } from 'components/Link/index';
   export { default as ListGroup } from 'components/ListGroup/index';
+  export { default as ManagerSideNav } from 'components/ManagerSideNav/index';
   export { default as OverlayWrapper } from 'components/OverlayWrapper/index';
   export { default as Pagination } from 'components/Pagination/index';
   export { default as PaginationControls } from 'components/PaginationControls/index';
@@ -626,13 +627,14 @@ declare module "components/ButtonRow/index" {
 }
 declare module "components/Link/index" {
     export default Link;
-    function Link({ ariaLabel, children, href, onClick, isDisabled, newWindow, style, testSection, }: any): any;
+    function Link({ ariaLabel, children, href, onClick, isDisabled, isFullWidth, newWindow, style, testSection, }: any): any;
     namespace Link {
         export namespace propTypes {
             export const ariaLabel: PropTypes.Requireable<string>;
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export const href: PropTypes.Requireable<string>;
             export const isDisabled: PropTypes.Requireable<boolean>;
+            export const isFullWidth: PropTypes.Requireable<boolean>;
             export const newWindow: PropTypes.Requireable<boolean>;
             export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
             export const style: PropTypes.Requireable<string>;
@@ -838,16 +840,19 @@ declare module "components/CloseButton/index" {
 }
 declare module "components/CopyButton/index" {
     export default CopyButton;
-    function CopyButton({ style, testSection, textToCopy, }: any): any;
+    function CopyButton({ style, testSection, textToCopy, usesTextLabel, }: any): any;
     namespace CopyButton {
         export namespace propTypes {
             export const style: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
             export const textToCopy: PropTypes.Validator<string>;
+            export const usesTextLabel: PropTypes.Requireable<boolean>;
         }
         export namespace defaultProps {
             const style_1: string;
             export { style_1 as style };
+            const usesTextLabel_1: boolean;
+            export { usesTextLabel_1 as usesTextLabel };
         }
     }
     import PropTypes from "prop-types";
@@ -984,6 +989,8 @@ declare module "components/Input/index" {
         displayError?: boolean;
         /** Whether or not to automatically focus this input */
         focus?: boolean;
+        /** Whether or not to add a clear button to right of input */
+        hasClearButton?: boolean;
         /** Id of the input to properly associate with the input's label */
         id?: string;
         /** Prevents input from being modified and appears disabled */
@@ -998,6 +1005,8 @@ declare module "components/Input/index" {
         isRequired?: any;
         /** Text that describes the input */
         label?: string;
+        /** Name of the icon to place on left side of input */
+        leftIconName?: string;
         /**
          * Max value for the `input`. Should be used only when `type` is `number`.
          */
@@ -1020,6 +1029,8 @@ declare module "components/Input/index" {
         onBlur?: (...args: any[]) => any;
         /** Function that fires when the input loses focus after the value changes */
         onChange?: (...args: any[]) => any;
+        /** Function that fires when the input's clear button is clicked */
+        onClearButtonClick?: (...args: any[]) => any;
         /** Function that fires when the input is clicked */
         onClick?: (...args: any[]) => any;
         /** Function that fires when the input gains focus */
@@ -1030,6 +1041,8 @@ declare module "components/Input/index" {
         onKeyDown?: (...args: any[]) => any;
         /** Input placeholder text */
         placeholder?: string;
+        /** Name of the icon to place on right side of input */
+        rightIconName?: string;
         /** Input step value */
         step?: string;
         /** Hook for automated JavaScript tests */
@@ -1819,21 +1832,21 @@ declare module "components/PaginationControls/index" {
             currentPage: number;
         };
         fillPageSlots(): any[];
+        getHrefUrl(pageNumber: any): any;
         renderPageNumbers(): JSX.Element[];
         render(): JSX.Element;
     }
     namespace PaginationControls {
         export namespace propTypes {
             export const currentPage: PropTypes.Validator<number>;
-            export const goToPage: PropTypes.Validator<(...args: any[]) => any>;
+            export const goToPage: PropTypes.Requireable<(...args: any[]) => any>;
+            export function hrefBaseUrl(props: any, propName: any, componentName: any): Error | undefined;
             export const isLoading: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
             export const totalPages: (props: any, propName: any, componentName: any, ...rest: any[]) => any;
             export const totalSlots: (props: any, propName: any, componentName: any, ...rest: any[]) => any;
         }
         export namespace defaultProps {
-            export function goToPage_1(): void;
-            export { goToPage_1 as goToPage };
             const testSection_1: string;
             export { testSection_1 as testSection };
             const totalSlots_1: number;
@@ -5097,6 +5110,125 @@ declare module "components/ListGroup/index" {
 declare module "components/ListGroup/ListGroup.story" {
     export {};
 }
+declare module "components/ManagerSideNav/Header/index" {
+    export default Header;
+    function Header(props: any): JSX.Element;
+    namespace Header {
+        export namespace propTypes {
+            export const backLinkHref: PropTypes.Requireable<string>;
+            export const backLinkOnClick: PropTypes.Requireable<(...args: any[]) => any>;
+            export const backLinkText: PropTypes.Requireable<string>;
+            export const children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            export const hasBackLink: PropTypes.Requireable<boolean>;
+            export const isFullHeight: PropTypes.Requireable<boolean>;
+            export const primaryTitle: PropTypes.Requireable<string>;
+            export const projectName: PropTypes.Validator<string>;
+            export const secondaryTitle: PropTypes.Requireable<string>;
+            export const shouldHeaderScroll: PropTypes.Requireable<boolean>;
+            export const usesMonospaceStyling: PropTypes.Requireable<boolean>;
+        }
+        export namespace defaultProps {
+            const isFullHeight_1: boolean;
+            export { isFullHeight_1 as isFullHeight };
+            const usesMonospaceStyling_1: boolean;
+            export { usesMonospaceStyling_1 as usesMonospaceStyling };
+            const hasBackLink_1: boolean;
+            export { hasBackLink_1 as hasBackLink };
+            const primaryTitle_1: null;
+            export { primaryTitle_1 as primaryTitle };
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/ManagerSideNav/NavList/index" {
+    export default NavList;
+    function NavList(props: any): JSX.Element;
+    namespace NavList {
+        export namespace propTypes {
+            export const children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            export const label: PropTypes.Requireable<string>;
+            export const popover: PropTypes.Requireable<boolean>;
+            export const rightLabel: PropTypes.Requireable<boolean>;
+            export const testSection: PropTypes.Requireable<boolean>;
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/ManagerSideNav/NavItem/index" {
+    export default NavItem;
+    function NavItem(props: any): JSX.Element;
+    namespace NavItem {
+        export namespace propTypes {
+            export const isActive: PropTypes.Requireable<boolean>;
+            export const leftContent: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            export const rightContent: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            export const testSection: PropTypes.Requireable<string>;
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/ManagerSideNav/HeaderDetails/index" {
+    export default HeaderDetails;
+    function HeaderDetails({ items, spaceBelow }: {
+        items: any;
+        spaceBelow: any;
+    }): JSX.Element;
+    namespace HeaderDetails {
+        export namespace propTypes {
+            export const items: PropTypes.Validator<(PropTypes.InferProps<{
+                label: PropTypes.Validator<string>;
+                value: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            }> | null | undefined)[]>;
+            export const spaceBelow: PropTypes.Requireable<boolean>;
+        }
+        export namespace defaultProps {
+            const spaceBelow_1: boolean;
+            export { spaceBelow_1 as spaceBelow };
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/ManagerSideNav/index" {
+    export default ManagerSideNav;
+    function ManagerSideNav(props: any): JSX.Element;
+    namespace ManagerSideNav {
+        export namespace propTypes {
+            export function children(props: any, propName: any): null;
+            export const testSection: PropTypes.Requireable<string>;
+        }
+        export namespace defaultProps {
+            const testSection_1: string;
+            export { testSection_1 as testSection };
+        }
+        export { Header };
+        export { HeaderDetails };
+        export { NavList };
+        export { NavItem };
+    }
+    import PropTypes from "prop-types";
+    import Header from "components/ManagerSideNav/Header";
+    import HeaderDetails from "components/ManagerSideNav/HeaderDetails";
+    import NavList from "components/ManagerSideNav/NavList";
+    import NavItem from "components/ManagerSideNav/NavItem";
+}
+declare module "components/Switch/index" {
+    export default Switch;
+    function Switch(props: any): JSX.Element;
+    namespace Switch {
+        export namespace propTypes {
+            export const ariaLabel: PropTypes.Requireable<string>;
+            export const checked: PropTypes.Requireable<boolean>;
+            export const elementId: PropTypes.Validator<string>;
+            export const isDisabled: PropTypes.Requireable<boolean>;
+            export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
+            export const testSection: PropTypes.Requireable<string>;
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/ManagerSideNav/ManagerSideNav.story" {
+    export {};
+}
 declare module "components/NavBar/NavBar.story" {
     export {};
 }
@@ -5420,6 +5552,14 @@ declare module "components/SearchPicker/index" {
          */
         getResultsText: () => any;
         /**
+         * @description Provided an API response, an error will be thrown if the
+         *  provided value is not an Array. This is used within a Promise and
+         *  will only cause the Promise to catch instead of this component.
+         * @param {*} results - The response of the provided searchFunction, which
+         *  is expected to be an Array.
+         */
+        verifyResultOrThrow: (results: any) => void;
+        /**
          * A render method passed to children so that they can render the search
          * input component wherever they like.
          * @param {Object} props - Any additional props to pass to the <Input>.
@@ -5508,6 +5648,7 @@ declare module "components/Sheet/index" {
     function Sheet(props: any): JSX.Element;
     namespace Sheet {
         export namespace propTypes {
+            export const centerHeader: PropTypes.Requireable<boolean>;
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export const footerButtonList: PropTypes.Validator<any[]>;
             export const hasCloseButton: PropTypes.Requireable<boolean>;
@@ -5519,6 +5660,8 @@ declare module "components/Sheet/index" {
             export const warningTestSection: PropTypes.Requireable<string>;
         }
         export namespace defaultProps {
+            const centerHeader_1: boolean;
+            export { centerHeader_1 as centerHeader };
             const hasCloseButton_1: boolean;
             export { hasCloseButton_1 as hasCloseButton };
             export function onClose_1(): void;
@@ -5723,20 +5866,6 @@ declare module "components/Steps/index" {
 }
 declare module "components/Steps/Steps.story" {
     export {};
-}
-declare module "components/Switch/index" {
-    export default Switch;
-    function Switch(props: any): JSX.Element;
-    namespace Switch {
-        export namespace propTypes {
-            export const checked: PropTypes.Requireable<boolean>;
-            export const elementId: PropTypes.Requireable<string>;
-            export const isDisabled: PropTypes.Requireable<boolean>;
-            export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
-            export const testSection: PropTypes.Requireable<string>;
-        }
-    }
-    import PropTypes from "prop-types";
 }
 declare module "components/Switch/Switch.story" {
     export {};
@@ -6005,6 +6134,62 @@ declare module "components/TokensInput/index" {
 declare module "components/TokensInput/TokensInput.story" {
     export {};
 }
+declare module "components/Toolbar/ToolbarItemContents/index" {
+    export default ToolbarItemContents;
+    function ToolbarItemContents(props: any): JSX.Element;
+    namespace ToolbarItemContents {
+        export namespace propTypes {
+            export const icon: PropTypes.Requireable<string>;
+            export const isDropdown: PropTypes.Requireable<boolean>;
+            export const label: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            export const title: PropTypes.Requireable<string>;
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/Toolbar/ToolbarButton/index" {
+    export default ToolbarButton;
+    function ToolbarButton(props: any, context: any): JSX.Element;
+    namespace ToolbarButton {
+        export namespace propTypes {
+            export const icon: PropTypes.Requireable<string>;
+            export const isActive: PropTypes.Requireable<boolean>;
+            export const isDisabled: PropTypes.Requireable<boolean>;
+            export const isDropdown: PropTypes.Requireable<boolean>;
+            export const label: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
+            export const testSection: PropTypes.Requireable<string>;
+            export const title: PropTypes.Requireable<string>;
+        }
+        export namespace defaultProps {
+            const isDropdown_1: boolean;
+            export { isDropdown_1 as isDropdown };
+            const isActive_1: boolean;
+            export { isActive_1 as isActive };
+            const isDisabled_1: boolean;
+            export { isDisabled_1 as isDisabled };
+        }
+    }
+    import PropTypes from "prop-types";
+}
+declare module "components/Toolbar/ToolbarLink/index" {
+    export default ToolbarLink;
+    function ToolbarLink(props: any, context: any): JSX.Element;
+    namespace ToolbarLink {
+        export namespace propTypes {
+            export const href: PropTypes.Requireable<string>;
+            export const icon: PropTypes.Requireable<string>;
+            export const isActive: PropTypes.Requireable<boolean>;
+            export const isDisabled: PropTypes.Requireable<boolean>;
+            export const isDropdown: PropTypes.Requireable<boolean>;
+            export const label: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
+            export const testSection: PropTypes.Requireable<string>;
+            export const title: PropTypes.Requireable<string>;
+        }
+    }
+    import PropTypes from "prop-types";
+}
 declare module "components/Toolbar/index" {
     export default Toolbar;
     function Toolbar(props: any): JSX.Element;
@@ -6017,6 +6202,7 @@ declare module "components/Toolbar/index" {
             const isBottomToolbar_1: PropTypes.Requireable<boolean>;
             export { isBottomToolbar_1 as isBottomToolbar };
             export const testSection: PropTypes.Requireable<string>;
+            export const toolbarStyle: PropTypes.Requireable<string>;
         }
         export { ToolbarButton as Button };
         export { ToolbarLink as Link };
@@ -6024,68 +6210,23 @@ declare module "components/Toolbar/index" {
         export { Left };
     }
     import PropTypes from "prop-types";
-    function ToolbarButton(props: any, context: any): JSX.Element;
-    namespace ToolbarButton {
-        export namespace propTypes_1 {
-            export const icon: PropTypes.Requireable<string>;
-            export const isActive: PropTypes.Requireable<boolean>;
-            export const isDisabled: PropTypes.Requireable<boolean>;
-            export const isDropdown: PropTypes.Requireable<boolean>;
-            export const label: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
-            const testSection_1: PropTypes.Requireable<string>;
-            export { testSection_1 as testSection };
-            export const title: PropTypes.Requireable<string>;
-        }
-        export { propTypes_1 as propTypes };
-        export namespace defaultProps_1 {
-            const isDropdown_1: boolean;
-            export { isDropdown_1 as isDropdown };
-            const isActive_1: boolean;
-            export { isActive_1 as isActive };
-            const isDisabled_1: boolean;
-            export { isDisabled_1 as isDisabled };
-        }
-        export { defaultProps_1 as defaultProps };
-    }
-    function ToolbarLink(props: any, context: any): JSX.Element;
-    namespace ToolbarLink {
-        export namespace propTypes_2 {
-            export const href: PropTypes.Requireable<string>;
-            const icon_1: PropTypes.Requireable<string>;
-            export { icon_1 as icon };
-            const isActive_2: PropTypes.Requireable<boolean>;
-            export { isActive_2 as isActive };
-            const isDisabled_2: PropTypes.Requireable<boolean>;
-            export { isDisabled_2 as isDisabled };
-            const isDropdown_2: PropTypes.Requireable<boolean>;
-            export { isDropdown_2 as isDropdown };
-            const label_1: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            export { label_1 as label };
-            const onClick_1: PropTypes.Requireable<(...args: any[]) => any>;
-            export { onClick_1 as onClick };
-            const testSection_2: PropTypes.Requireable<string>;
-            export { testSection_2 as testSection };
-            const title_1: PropTypes.Requireable<string>;
-            export { title_1 as title };
-        }
-        export { propTypes_2 as propTypes };
-    }
+    import ToolbarButton from "components/Toolbar/ToolbarButton";
+    import ToolbarLink from "components/Toolbar/ToolbarLink";
     function Right(props: any): JSX.Element;
     namespace Right {
-        export namespace propTypes_3 {
+        export namespace propTypes_1 {
             const children_1: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export { children_1 as children };
         }
-        export { propTypes_3 as propTypes };
+        export { propTypes_1 as propTypes };
     }
     function Left(props: any): JSX.Element;
     namespace Left {
-        export namespace propTypes_4 {
+        export namespace propTypes_2 {
             const children_2: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             export { children_2 as children };
         }
-        export { propTypes_4 as propTypes };
+        export { propTypes_2 as propTypes };
     }
 }
 declare module "components/Toolbar/Toolbar.story" {

@@ -35,6 +35,7 @@ declare module 'optimizely-oui' {
   export { default as Label } from 'components/Label/index';
   export { default as Link } from 'components/Link/index';
   export { default as ListGroup } from 'components/ListGroup/index';
+  export { default as ManagerSideNav } from 'components/ManagerSideNav/index';
   export { default as OverlayWrapper } from 'components/OverlayWrapper/index';
   export { default as Pagination } from 'components/Pagination/index';
   export { default as PaginationControls } from 'components/PaginationControls/index';
