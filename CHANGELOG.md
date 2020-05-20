@@ -24,6 +24,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Update **Token** and **Sortable** to always use hamburger drag handle by default ([#1337](https://github.com/optimizely/oui/pull/1337))
 - [Patch] Update react-oui-icons version to 2.9.0 ([#1336](https://github.com/optimizely/oui/pull/1336))
     - Update `icons.json` to use latest set of icons from v2.9.0
+- [Patch] Add `spellCheck` prop to **Input** component
 
 ## 46.3.1 - 2020-05-19
 - [Patch] Export **ManagerSideNav** info for TypeScript ([#1334](https://github.com/optimizely/oui/pull/1334))

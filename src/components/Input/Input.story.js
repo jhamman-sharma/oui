@@ -34,6 +34,7 @@ stories
         onChange={ action('on change') }
         onBlur={ action('on blur') }
         onKeyDown={ action('on key press') }
+        spellCheck={ boolean('spellCheck', false) }
         placeholder={ text('placeholder', 'just a placeholder') }
         isRequired={ boolean('isRequired', false) }
         type={ select('type', ['text', 'password', 'number', 'date'], 'text') }

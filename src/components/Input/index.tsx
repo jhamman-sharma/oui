@@ -91,6 +91,9 @@ type InputProps = {
   /** Name of the icon to place on right side of input */
   rightIconName?: string;
 
+  /** Disables spellcheck when true */
+  spellCheck?: boolean;
+
   /** Input step value */
   step?: string;
 
@@ -144,6 +147,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
       onKeyDown,
       placeholder,
       rightIconName,
+      spellCheck,
       step,
       testSection,
       textAlign,
@@ -204,6 +208,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
           onFocus={onFocus}
           min={min}
           max={max}
+          spellCheck={spellCheck}
           step={step}
           {...(typeof maxLength === 'undefined' ? {} : { maxLength })}
           data-test-section={testSection}
@@ -299,6 +304,7 @@ Input.displayName = 'Input';
 Input.defaultProps = {
   note: null,
   isRequired: false,
+  spellCheck: true,
 };
 
 export default Input;

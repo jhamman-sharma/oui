@@ -1059,6 +1059,8 @@ declare module "components/Input/index" {
         placeholder?: string;
         /** Name of the icon to place on right side of input */
         rightIconName?: string;
+        /** Disables spellcheck when true */
+        spellCheck?: boolean;
         /** Input step value */
         step?: string;
         /** Hook for automated JavaScript tests */
