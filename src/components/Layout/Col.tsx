@@ -54,10 +54,22 @@ type ColPropTypes = {
    * )}
    */
   small?: column;
+
+  /** Identifier for automated tests */
+  testSection?: string;
 };
 const Col: React.SFC<ColPropTypes> = React.forwardRef(
   (
-    { as: Component = 'div', border, children, overflow, paddedContent = 'none', isReadingColumn, ...props },
+    {
+      as: Component = 'div',
+      border,
+      children,
+      overflow,
+      paddedContent = 'none',
+      isReadingColumn,
+      testSection,
+      ...props
+    },
     ref?: React.Ref<HTMLElement | React.ElementType>
   ) => {
     const prefix = 'col';
@@ -74,10 +86,10 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
       classes.push(`padded-content--${paddedContent}`);
     }
     if (isReadingColumn) {
-    children = <div className="reading-column">{children}</div>
+      children = <div className="reading-column">{children}</div>
     }
     DEVICE_SIZES.forEach(brkPoint => {
-      let propValue = props[brkPoint];
+      const propValue = props[brkPoint];
       delete props[brkPoint];
       let span;
       let offset;
@@ -100,7 +112,20 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
     if (!spans.length) {
       spans.push(prefix); // plain 'col'
     }
-    return <Component {...props} children={children} ref={ref} className={classNames(...spans, ...classes)}></Component>;
+    const hostElemProps = {};
+    if (typeof Component === 'string' && testSection) {
+      // Change testSection to data-test-section when the root is a native element.
+      hostElemProps['data-test-section'] = testSection;
+    }
+    return (
+      <Component
+        {...hostElemProps}
+        {...props}
+        children={children}
+        ref={ref}
+        className={classNames(...spans, ...classes)}
+      />
+    );
   }
 );
 

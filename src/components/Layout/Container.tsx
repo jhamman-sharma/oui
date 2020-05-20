@@ -36,14 +36,33 @@ type ContainerProps = {
    * Add top margin space between rows.
    */
   pushRowsTop?: boolean;
+
+  /** Identifier for automated tests */
+  testSection?: string;
 };
 
 const Container: React.SFC<ContainerProps> = React.forwardRef(
-  ({ as: Component = 'div', fluid, isFullHeight, outlineDebug, paddedContent, pullRowPadding, pushRowsTop, ...props }, ref) => {
+  ({
+    as: Component = 'div',
+    fluid,
+    isFullHeight,
+    outlineDebug,
+    paddedContent,
+    pullRowPadding,
+    pushRowsTop,
+    testSection,
+    ...props
+  }, ref) => {
     const prefix = 'container';
+    const hostElemProps = {};
+    if (typeof Component === 'string' && testSection) {
+      // Change testSection to data-test-section when the root is a native element.
+      hostElemProps['data-test-section'] = testSection;
+    }
     return (
       <Component
         ref={ref}
+        {...hostElemProps}
         {...props}
         className={classNames(
           fluid ? `${prefix}-fluid` : prefix,

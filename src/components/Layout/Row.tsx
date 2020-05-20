@@ -43,6 +43,9 @@ type RowProps = {
   /** Whether this row should wrap at small screen sizes */
   shouldWrap?: boolean;
 
+  /** Identifier for automated tests */
+  testSection?: string;
+
   /**
    * How to vertically align content
    */
@@ -60,6 +63,7 @@ const Row: React.SFC<RowProps> = React.forwardRef(
       paddedContent,
       removeGutters,
       shouldWrap,
+      testSection,
       verticalAlignment,
       ...props
     },
@@ -87,8 +91,18 @@ const Row: React.SFC<RowProps> = React.forwardRef(
     if (verticalAlignment) {
       classes.push(`flex-align--${verticalAlignment}`);
     }
+    const hostElemProps = {};
+    if (typeof Component === 'string' && testSection) {
+      // Change testSection to data-test-section when the root is a native element.
+      hostElemProps['data-test-section'] = testSection;
+    }
     return (
-      <Component {...props} ref={ref} className={classNames('row', classes, removeGutters && 'gutters--remove')} />
+      <Component
+        {...hostElemProps}
+        {...props}
+        ref={ref}
+        className={classNames('row', classes, removeGutters && 'gutters--remove')}
+      />
     );
   }
 );

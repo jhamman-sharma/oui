@@ -340,6 +340,8 @@ declare module "components/Layout/Container" {
          * Add top margin space between rows.
          */
         pushRowsTop?: boolean;
+        /** Identifier for automated tests */
+        testSection?: string;
     };
     const Container: React.SFC<ContainerProps>;
     export default Container;
@@ -379,6 +381,8 @@ declare module "components/Layout/Row" {
         removeGutters?: boolean;
         /** Whether this row should wrap at small screen sizes */
         shouldWrap?: boolean;
+        /** Identifier for automated tests */
+        testSection?: string;
         /**
          * How to vertically align content
          */
@@ -747,6 +751,8 @@ declare module "components/Layout/Col" {
          * )}
          */
         small?: column;
+        /** Identifier for automated tests */
+        testSection?: string;
     };
     const Col: React.SFC<ColPropTypes>;
     export default Col;
