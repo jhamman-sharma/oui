@@ -9,6 +9,9 @@ describe('components/ExampleComponent', function() {
   let component;
   let fnMock = jest.fn(event => { return event; });
 
+// todo: test only one icon exists per col
+// todo: check length 2-5
+
   beforeEach(function() {
     component = mount(
       <ExampleComponent

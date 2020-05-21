@@ -3,9 +3,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, number, boolean, select } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
-import Col from '../Layout/Col';
-import Row from '../Layout/Row';
-import Container from '../Layout/Container';
 
 import SummaryBar from './index.js';
 
@@ -20,54 +17,30 @@ storiesOf('SummaryBar/', module)
   .add('Default', (() => {
     return (
       <div>
-        <Container
-          outlineDebug={ false }
-          pushRowsTop={ false }
-          pullRowPadding={ false }
-          paddedContent={ 'around' }
-          removeGutters={ false }
-          fluid={ true }>
-          <Row
-            removeGutters={ false }
-            border={ 'ends' }
-            paddedContent={ 'ends' }>
-            <Col
-              paddedContent={ 'around' }>
-              <h2 className="push-half--bottom">Some Title</h2>
-              Col with border sides &lt;strong&gt; test &lt;/strong&gt; test
-            </Col>
-            <Col
-              paddedContent={ 'around' }
-              border={ 'left' }>
-              <div>
-                <h2 className="push-half--bottom">A Longer Page Title</h2>
-                Col with border sides and long-ish content that will definitely run to multiple lines.
-              </div>
-            </Col>
-            <Col
-              paddedContent={ 'around' }
-              border={ 'left' }>
-              Col with border sides
-            </Col>
-            <Col
-              paddedContent={ 'around' }
-              border={ 'left' }>
-              Col with border sides
-            </Col>
-            <Col
-              paddedContent={ 'around' }
-              border={ 'left' }>
-              Col with border right
-            </Col>
-          </Row>
-        </Container>
-
-        <br/>
-
         <SummaryBar
           title={ 'Summary Bar Title' }
+          titleText={ 'Summary Bar Title Text' }
           subtitle={ 'Subtitle but should it contain other elements?' }>
-          <Col
+          <SummaryBar.SummaryBarCol
+            headerTitle={ 'Primary Metric' }
+            headerHelpContent={ 'Test me out' }
+            bodyHelpContent={ 'Test body out' }
+            bodyContent={{'value': 'Increase in unique comversions per visitor...' }}>
+          </SummaryBar.SummaryBarCol>
+          <SummaryBar.SummaryBarCol
+            headerTitle={ 'Primary Metric' }
+            headerHelpContent={ 'Test me out' }
+            bodyHelpContent={ 'Test body out' }
+            bodyContent={{'value': 'Increase in unique comversions per visitor...' }}>
+          </SummaryBar.SummaryBarCol>
+          <SummaryBar.SummaryBarCol
+            headerTitle={ '' }
+            headerHelpContent={ '' }
+            bodyHelpContent={ '' }
+            bodyContent={{}}>
+          </SummaryBar.SummaryBarCol>
+
+          {/* <Col
             paddedContent={ 'around' }>
             <h2 className="push-half--bottom">Some Title</h2>
             Col with border sides
@@ -91,7 +64,7 @@ storiesOf('SummaryBar/', module)
           <SummaryBar.Item
             title={ 'Testing Title' }>
             Test 5
-          </SummaryBar.Item>
+          </SummaryBar.Item> */}
         </SummaryBar>
       </div>
     );
