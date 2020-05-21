@@ -9,12 +9,17 @@ describe('components/Dropdown/DropdownBlockLinkText', () => {
   });
 
   it('should render text', () => {
-    const component = shallow(<DropdownBlockLinkText text='foo' />);
+    const component = shallow(<DropdownBlockLinkText text="foo" />);
     expect(component.text()).toBe('foo');
   });
 
   it('should render with test section', () => {
     const component = shallow(<DropdownBlockLinkText testSection="goose"></DropdownBlockLinkText>);
     expect(component.is('[data-test-section="block-link-text-goose"]')).toBe(true);
+  });
+
+  it('should render an icon if external icon is true', () => {
+    const component = shallow(<DropdownBlockLinkText hasExternalIcon={ true } testSection="goose"></DropdownBlockLinkText>);
+    expect(component.find('.oui-dropdown__block-link--icon').length).toBe(1);
   });
 });

@@ -1467,6 +1467,8 @@ declare module "components/Dropdown/DropdownBlockLink/index" {
             export const isMultiSelect: PropTypes.Requireable<boolean>;
             export const minWidth: PropTypes.Requireable<string | number>;
             export const onClick: PropTypes.Validator<(...args: any[]) => any>;
+            export const onMouseEnter: PropTypes.Requireable<(...args: any[]) => any>;
+            export const onMouseLeave: PropTypes.Requireable<(...args: any[]) => any>;
             export const testSection: PropTypes.Requireable<string>;
             export const trackId: PropTypes.Requireable<string>;
             export const value: PropTypes.Requireable<string>;
@@ -1482,6 +1484,7 @@ declare module "components/Dropdown/DropdownBlockLinkText/index" {
             export const text: null;
         }
         export namespace propTypes {
+            export const hasExternalIcon: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
             const text_1: PropTypes.Requireable<string>;
             export { text_1 as text };

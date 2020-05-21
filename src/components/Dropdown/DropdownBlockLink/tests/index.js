@@ -3,7 +3,6 @@ import DropdownBlockLink from '../index';
 import { shallow, mount } from 'enzyme';
 import { mountToJson } from 'enzyme-to-json';
 
-
 describe('components/Dropdown/DropdownBlockLink', () => {
   it('should render as a `div`', () => {
     const component = shallow(<DropdownBlockLink>foo</DropdownBlockLink>);
@@ -56,13 +55,47 @@ describe('components/Dropdown/DropdownBlockLink', () => {
     expect(obj.func).toHaveBeenCalled();
   });
 
+  it('should call function that is passed in as `onMouseEnter`', () => {
+    const onClickMock = jest.fn();
+    const onMouseEnterMock = jest.fn();
+
+    const component = shallow(
+      <DropdownBlockLink onClick={ onClickMock } onMouseEnter={ onMouseEnterMock }>
+        Hello!
+      </DropdownBlockLink>
+    );
+
+    component.simulate('mouseenter');
+
+    expect(onMouseEnterMock).toHaveBeenCalled();
+  });
+
+  it('should call function that is passed in as `onMouseLeave`', () => {
+    const onClickMock = jest.fn();
+    const onMouseLeaveMock = jest.fn();
+
+    const component = shallow(
+      <DropdownBlockLink onClick={ onClickMock } onMouseLeave={ onMouseLeaveMock }>
+        Hello!
+      </DropdownBlockLink>
+    );
+
+    component.simulate('mouseleave');
+
+    expect(onMouseLeaveMock).toHaveBeenCalled();
+  });
+
   it('should add a checkbox when isMultiSelect is true', () => {
     const component = shallow(<DropdownBlockLink isMultiSelect={ true }>foo</DropdownBlockLink>);
     expect(component.find('Checkbox').length).toBe(1);
   });
 
   it('should add a checked checkbox when isItemSelected is true', () => {
-    const component = mount(<DropdownBlockLink isItemSelected={ true } isMultiSelect={ true }>foo</DropdownBlockLink>);
+    const component = mount(
+      <DropdownBlockLink isItemSelected={ true } isMultiSelect={ true }>
+        foo
+      </DropdownBlockLink>
+    );
     expect(mountToJson(component)).toMatchSnapshot();
   });
 });

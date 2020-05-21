@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Icon from 'react-oui-icons';
 
 export default function DropdownBlockLinkText(props) {
   const testSection = props.testSection ? 'block-link-text-' + props.testSection : null;
   return (
-    <span { ...(testSection ? { 'data-test-section': testSection } : {}) }>
-      { props.text }
+    <span className="flex flex-justified--between" { ...(testSection ? { 'data-test-section': testSection } : {}) }>
+      {props.text}
+      {props.hasExternalIcon && (
+        <span className="oui-dropdown__block-link--icon">
+          <Icon name="external" size="small" />
+        </span>
+      )}
     </span>
   );
 }
@@ -14,6 +20,8 @@ DropdownBlockLinkText.defaultProps = {
 };
 
 DropdownBlockLinkText.propTypes = {
+  /** adds external icon when true */
+  hasExternalIcon: PropTypes.bool,
   /** test section from parent */
   testSection: PropTypes.string,
   /** text, if provided */

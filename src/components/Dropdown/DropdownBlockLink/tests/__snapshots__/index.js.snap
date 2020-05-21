@@ -9,6 +9,8 @@ exports[`components/Dropdown/DropdownBlockLink should add a checked checkbox whe
   <div
     className="link oui-dropdown__block-link"
     onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
     style={Object {}}
   >
     <Checkbox

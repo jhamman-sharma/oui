@@ -311,10 +311,10 @@ stories.add('Multi Select', () => {
   return (
     <Container>
       <div>
-        <p>Add <code>isMultiSelect = true</code>
+        <p>
+          Add <code>isMultiSelect = true</code>
           for each BlockLink that should include a checkbox, and
-          <code>isItemSelected = true</code> for each item that
-          should appear as checked/selected
+          <code>isItemSelected = true</code> for each item that should appear as checked/selected
         </p>
       </div>
       <Dropdown
@@ -328,7 +328,7 @@ stories.add('Multi Select', () => {
         <Dropdown.Contents>
           {data.map((item, index) => {
             return (
-              <Dropdown.ListItem key={ index } >
+              <Dropdown.ListItem key={ index }>
                 <Dropdown.BlockLink
                   isMultiSelect={ true }
                   isItemSelected={ item.title === 'Manual' }
@@ -352,9 +352,7 @@ stories.add('Custom hide function', () => {
         render props pattern
       </Link>
       .{' '}
-      <Link
-        href="https://github.com/optimizely/oui/blob/devel/src/components/Dropdown/Dropdown.story.js"
-        newWindow={ true }>
+      <Link href="https://github.com/optimizely/oui/blob/devel/src/components/Dropdown/Dropdown.story.js" newWindow={ true }>
         Click here
       </Link>{' '}
       to see this story's source code.
@@ -405,6 +403,33 @@ stories.add('Custom hide function', () => {
       </Dropdown>
     </Container>,
   ];
+});
+
+stories.add('With external icon hover actions', () => {
+  return (
+    <Container>
+      <Dropdown
+        buttonContent={ text('buttonContent', 'Default Dropdown') }
+        width={ number('width', 300) }
+        arrowIcon={ select('arrowIcon', { up: 'up', down: 'down', left: 'left', right: 'right', none: 'none' }, 'down') }>
+        <Dropdown.Contents>
+          {data.map((item, index) => {
+            return (
+              <Dropdown.ListItem key={ index }>
+                <Dropdown.BlockLink
+                  onClick={ action('click on complex item') }
+                  onMouseEnter={ action('enter complex item') }
+                  onMouseLeave={ action('leave complex item') }
+                  value={ item.title }>
+                  <Dropdown.BlockLinkText text={ item.title } hasExternalIcon={ true } />
+                </Dropdown.BlockLink>
+              </Dropdown.ListItem>
+            );
+          })}
+        </Dropdown.Contents>
+      </Dropdown>
+    </Container>
+  );
 });
 
 const Container = styled.div`
