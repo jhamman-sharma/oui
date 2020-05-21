@@ -164,7 +164,7 @@ class SortableGroup extends React.Component {
         <div
           className="oui-icon oui-sortable__group__handle cursor--move"
           data-test-section={ `${baseTestSection}-handle` }>
-          <Icon fill="#c7c7c7" name="ellipsis" />
+          <Icon fill="#c7c7c7" name="hamburger" />
         </div>
       </div>
     );

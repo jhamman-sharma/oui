@@ -523,6 +523,8 @@ declare module "components/Token/index" {
             export { style_1 as style };
             const showWell_1: boolean;
             export { showWell_1 as showWell };
+            const usesDragHandle_1: boolean;
+            export { usesDragHandle_1 as usesDragHandle };
         }
     }
     import PropTypes from "prop-types";

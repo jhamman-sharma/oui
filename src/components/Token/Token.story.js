@@ -63,6 +63,22 @@ stories
       hasSnugWrap={ boolean('hasSnugWrap', false) }
     />
   </div>)))
+  .add('Draggable', () => {
+    return (
+      <div>
+        <Token
+          isDraggable={ true }
+          usesDragHandle={ true }
+          name="Move me!"
+          style="secondary"
+          showWell={ boolean('showWell', false) }
+        />
+        <p>See this <a href="/?path=/story/draganddrop--with-custom-drag-handle">
+          Drag and Drop story</a> for an example implementation
+        </p>
+      </div>
+    );
+  })
   .add('Draggable with Order specified', () => {
     return (
       <React.Fragment>
@@ -123,23 +139,7 @@ stories
         style="primary"
       />);
   })
-  .add('With new drag handle', () => {
-    return (
-      <div>
-        <Token
-          isDraggable={ true }
-          usesDragHandle={ true }
-          name="Move me!"
-          style="secondary"
-          showWell={ boolean('showWell', false) }
-        />
-        <p>See this <a href="/?path=/story/draganddrop--with-custom-drag-handle">
-          Drag and Drop story</a> for an example implementation
-        </p>
-      </div>
-    );
-  })
-  .add('Ordering with new drag handle', () => {
+  .add('Vertical ordering with no well', () => {
     return (
       <div className="flex flex--column">
         <Token

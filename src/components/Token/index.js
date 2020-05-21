@@ -183,6 +183,7 @@ Token.defaultProps = {
   isDismissible: false,
   style: 'secondary',
   showWell: true,
+  usesDragHandle: true,
 };
 
 export default Token;

@@ -12,7 +12,7 @@
   border-top: 1px solid map-fetch($color, ui, light);
 
   &__handle {
-    transform: rotate(90deg);
+    padding-right: spacer(1);
     color: darken(map-fetch($color, ui, base), 10);
     box-sizing: content-box;
   }

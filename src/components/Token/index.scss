@@ -81,11 +81,12 @@
 
 .#{$namespace}token__number,
 .oui-token__number {
-  color: map-fetch($color, text, light);
+  color: map-fetch($color, text, white);
   font-size: map-fetch($font, size, milli);
   // Use same width as icon to force alignment for drag handle
   // Intentionally only supports up to 2 digits
   min-width: map-fetch($icon, size, base, width);
+  text-align: right;
 }
 
 .#{$namespace}token__move,
