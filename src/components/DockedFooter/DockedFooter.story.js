@@ -27,14 +27,8 @@ class ScrollContainer extends React.Component {
     super(props);
     // 1.) create the reference here.
     this.scrollableNodeRef = React.createRef();
-    this.state = { scrollable: null };
   }
-
-  componentDidMount() {
-    // 3.) Use the ref to store the node in state
-    this.setState({ scrollable: this.scrollableNodeRef.current });
-  }
-
+  
   render() {
     return (
       <div
@@ -44,8 +38,8 @@ class ScrollContainer extends React.Component {
         className="height--300 overflow-y--auto">
         {this.props.children}
         <DockedFooter
-          // 4.) Pass the node to the DockedFooter as a prop
-          scrollRef={ this.state.scrollable }
+          // 3.) Pass the current node to the DockedFooter as a prop
+          scrollRef={ this.scrollableNodeRef && this.scrollableNodeRef.current }
           testSection={ 'docked-footer-more-content' }
           includesMargin={ true }
           rightGroup={ !this.props.hasCenterGroup && [
