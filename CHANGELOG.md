@@ -8,7 +8,6 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))
 - [Feature] Add ability to have external icon show on hover for **DropdownBlockLinkText** items using `hasExternalIcon` prop ([#1340](https://github.com/optimizely/oui/pull/1340))
-- [Feature] Utilize the new `useTextLabel` prop in the **CopyButton** in **Code** via `copyButtonUsesTextLabel` ([#1342](https://github.com/optimizely/oui/pull/1342))
 - [Patch] Update **Token** and **Sortable** to always use hamburger drag handle by default ([#1337](https://github.com/optimizely/oui/pull/1337))
 - [Patch] Update react-oui-icons version to 2.9.0 ([#1336](https://github.com/optimizely/oui/pull/1336))
     - Update `icons.json` to use latest set of icons from v2.9.0

@@ -113,21 +113,4 @@ describe('components/Code', () => {
 
     expect(component.find('[data-test-section="code-copy-button"]').length).toBe(0);
   });
-
-  it('should add the text `copy` when `copyButtonUsesTextLabel` is true', () => {
-    let code = 'var foo;';
-
-    const component = mount(
-      <Code
-        copyButtonUsesTextLabel={ true }
-        hasCopyButton={ true }
-        testSection="code">
-        { code }
-      </Code>
-    );
-
-    const copyButton = component.find('[data-test-section="code-copy-button"]')
-    expect(copyButton.length).toBe(1);
-    expect(copyButton.text()).toBe('Copy');
-  });
 });
