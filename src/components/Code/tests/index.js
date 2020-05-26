@@ -126,7 +126,7 @@ describe('components/Code', () => {
       </Code>
     );
 
-    const copyButton = component.find('[data-test-section="code-copy-button"]')
+    const copyButton = component.find('[data-test-section="code-copy-button"]');
     expect(copyButton.length).toBe(1);
     expect(copyButton.text()).toBe('Copy');
   });
