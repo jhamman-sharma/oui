@@ -55,6 +55,7 @@ stories
     return (
       <Code
         copyButtonStyle="none"
+        copyButtonUsesTextLabel={ boolean('copyButtonUsesTextLabel', false) }
         hasCopyButton={ boolean('hasCopyButton', true) }
         isHighlighted={ true }
         testSection='my-code-box'
