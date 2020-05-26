@@ -74,6 +74,7 @@ class Code extends React.Component {
       type,
       hasCopyButton,
       copyButtonStyle,
+      copyButtonUsesTextLabel,
       testSection,
       className,
       ouiStyle = true,
@@ -94,7 +95,12 @@ class Code extends React.Component {
       <div data-oui-component={ true } className="position--relative">
         { hasCopyButton &&
           <div style={{position: 'absolute', top: '5px', right: '5px' }}>
-            <CopyButton textToCopy={ children } testSection={ testSection } style={ copyButtonStyle }/>
+            <CopyButton
+              textToCopy={ children }
+              usesTextLabel={ copyButtonUsesTextLabel }
+              testSection={ testSection }
+              style={ copyButtonStyle }
+            />
           </div>
         }
         <pre
@@ -125,6 +131,8 @@ Code.propTypes = {
     'unstyled',
     'none',
   ]),
+  /** Copy button displays `Copy` instead of icon */
+  copyButtonUsesTextLabel: PropTypes.bool,
   /** Adds a copy button to code examples */
   hasCopyButton: PropTypes.bool,
   /** Apply syntax highlighting to the code */
@@ -139,6 +147,10 @@ Code.propTypes = {
   testSection: PropTypes.string,
   /** How the code should be displayed */
   type: PropTypes.oneOf(['inline', 'block']).isRequired,
+};
+
+Code.defaultProps = {
+  copyButtonUsesTextLabel: false,
 };
 
 export default Code;
