@@ -369,7 +369,7 @@ $token: (
 $switch: (
   background-color: (
     on                       : $brand-blue-dark,
-    off                      : map-fetch($brand-color, grey-50)
+    off                      : $grey-dark
   )
 );
 
