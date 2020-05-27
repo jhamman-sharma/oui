@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.4.0 - 2020-05-26
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))
 - [Feature] Add ability to have external icon show on hover for **DropdownBlockLinkText** items using `hasExternalIcon` prop ([#1340](https://github.com/optimizely/oui/pull/1340))
 - [Feature] Utilize the new `useTextLabel` prop in the **CopyButton** in **Code** via `copyButtonUsesTextLabel` ([#1346](https://github.com/optimizely/oui/pull/1346))
