@@ -46,7 +46,7 @@
 
     &:hover {
       color: var(--light-blue-100);
-      background-color: var(--light-blue-6);
+      background-color: var(--light-blue-10);
     }
 
     &--active {
@@ -95,7 +95,7 @@
 .oui-block-list__link:hover,
 .oui-block-list__link:focus,
 .oui-block-list__item--has-focus {
-  background-color: var(--light-blue-6);
+  background-color: var(--light-blue-10);
   outline: none;
 }
 
