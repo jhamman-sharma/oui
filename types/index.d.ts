@@ -882,6 +882,8 @@ declare module "components/Code/index" {
             className: PropTypes.Requireable<string>;
             /** Style for the CopyButton */
             copyButtonStyle: PropTypes.Requireable<string>;
+            /** Copy button displays `Copy` instead of icon */
+            copyButtonUsesTextLabel: PropTypes.Requireable<boolean>;
             /** Adds a copy button to code examples */
             hasCopyButton: PropTypes.Requireable<boolean>;
             /** Apply syntax highlighting to the code */
@@ -895,6 +897,9 @@ declare module "components/Code/index" {
             /** How the code should be displayed */
             type: PropTypes.Validator<string>;
         };
+        export namespace defaultProps {
+            export const copyButtonUsesTextLabel: boolean;
+        }
     }
     import React from "react";
     import PropTypes from "prop-types";
@@ -1786,20 +1791,15 @@ declare module "components/DockedFooter/index" {
         state: {
             isDocked: boolean;
             listenersSet: boolean;
-            dockedFooterNode: null;
-            parentNode: null;
             atBottom: boolean;
-            shouldDockByHeight: boolean;
         };
         dockedFooterRef: React.RefObject<any>;
-        storeThisNode(): void;
-        domNodesInState(): boolean;
-        setShouldDockByHeight(): void;
         setAtBottom(): void;
         setEventListeners(): void;
         throttle(delay: any, fn: any): (...args: any[]) => any;
-        componentDidMount(): void;
         componentDidUpdate(prevProps: any, prevState: any): void;
+        domNodesPresent: () => boolean;
+        setIsDocked: (callback: any) => void;
         componentWillUnmount(): void;
         render(): JSX.Element;
     }
