@@ -8,6 +8,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
 - [Patch] Add default props for `onMouseEnter` and `onMouseLeave` in **DropdownBlockLink** to prevent errors ([#1349](https://github.com/optimizely/oui/pull/1349))
+- [Patch] Rewrite **DockedFooter** for simplicty, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
 
 ## 46.4.0 - 2020-05-26
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))
@@ -17,11 +18,6 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Update **Token** and **Sortable** to always use hamburger drag handle by default ([#1337](https://github.com/optimizely/oui/pull/1337))
 - [Patch] Update react-oui-icons version to 2.9.0 ([#1336](https://github.com/optimizely/oui/pull/1336))
     - Update `icons.json` to use latest set of icons from v2.9.0
-<<<<<<< HEAD
-=======
-- [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
-- [Patch] Simplify **DockedFooter** story ([#1341](https://github.com/optimizely/oui/pull/1341))
->>>>>>> Update changelog
 
 ## 46.3.1 - 2020-05-19
 - [Patch] Export **ManagerSideNav** info for TypeScript ([#1334](https://github.com/optimizely/oui/pull/1334))
