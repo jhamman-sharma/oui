@@ -34,7 +34,7 @@
 
       &:hover {
         cursor: pointer;
-        background-color: map-fetch($brand-color, light-blue-6);
+        background-color: var(--highlight);
       }
 
       &.is-active {
