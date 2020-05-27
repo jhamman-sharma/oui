@@ -58,6 +58,8 @@ export const DropdownBlockLink = props => {
 
 DropdownBlockLink.defaultProps = {
   isLink: true,
+  onMouseEnter: () => {},
+  onMouseLeave: () => {},
 };
 
 DropdownBlockLink.propTypes = {
