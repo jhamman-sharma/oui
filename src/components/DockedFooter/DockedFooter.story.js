@@ -33,8 +33,7 @@ const ScrollContainer = function({
     <div
       // 2.) Use a ref callback to set the parent ref
       //     in state once rendered, which triggers an update
-      //     to DockedFooter, so that it can adjust its
-      //     placement
+      //     to DockedFooter, so that it can adjust its placement
       ref={ newRef => setParentRef(newRef) }
       data-test-section="scroll container"
       className="height--300 overflow-y--auto">

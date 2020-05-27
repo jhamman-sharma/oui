@@ -12,9 +12,6 @@ class DockedFooter extends React.Component {
       atBottom: true,
     };
     this.dockedFooterRef = React.createRef();
-    this.setAtBottom = this.setAtBottom.bind(this);
-    this.setEventListeners = this.setEventListeners.bind(this);
-    this.throttle = this.throttle.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -29,7 +26,7 @@ class DockedFooter extends React.Component {
     return !!this.dockedFooterRef.current && !!this.props.scrollRef;
   }
 
-  setEventListeners() {
+  setEventListeners = () => {
     if (!this.state.listenersSet && this.domNodesPresent()) {
       let scrollContainer = this.props.scrollRef;
       window.addEventListener(
@@ -58,7 +55,7 @@ class DockedFooter extends React.Component {
     }
   }
 
-  throttle(delay, fn) {
+  throttle = (delay, fn) => {
     let lastCall = 0;
     return function(...args) {
       const now = (new Date()).getTime();
@@ -87,7 +84,7 @@ class DockedFooter extends React.Component {
 
   }
 
-  setAtBottom() {
+  setAtBottom = () => {
     if (this.domNodesPresent()) {
       const atBottom = this.props.scrollRef.scrollHeight - this.props.scrollRef.scrollTop === this.props.scrollRef.clientHeight;
       let newState = {
