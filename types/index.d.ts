@@ -345,7 +345,7 @@ declare module "components/Layout/Container" {
     export default Container;
 }
 declare module "components/Layout/Row" {
-    import React from 'react';
+    import React, { Ref } from 'react';
     type RowProps = {
         /**
          * @default 'row'
@@ -371,6 +371,8 @@ declare module "components/Layout/Row" {
          * Pad inner content.
          */
         paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove';
+        /** Optional pass through ref. */
+        ref?: Ref<HTMLElement>;
         /**
          * Removes gutters and negative margins.
          */
@@ -697,7 +699,7 @@ declare module "components/ButtonIcon/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Layout/Col" {
-    import React from 'react';
+    import React, { Ref } from 'react';
     /** colSize shorthand */
     type colSizeShorthand = boolean | number | 'fitContent' | 'fillSpace';
     type column = colSizeShorthand | {
@@ -735,6 +737,8 @@ declare module "components/Layout/Col" {
         overflow?: 'overflow-y--scroll' | 'overflow-x--auto' | 'overflow-y--auto';
         /** Add default amount of padding. */
         paddedContent?: 'around' | 'sides' | 'ends' | 'none';
+        /** Optional pass through ref. */
+        ref?: Ref<HTMLElement>;
         /**
          * The number of columns to span on small devices (≥576px)
          *

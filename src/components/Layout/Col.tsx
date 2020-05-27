@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { Ref } from 'react';
 const DEVICE_SIZES = ['large', 'small'];
 
 /** colSize shorthand */
@@ -44,6 +44,8 @@ type ColPropTypes = {
 
   /** Add default amount of padding. */
   paddedContent?: 'around' | 'sides' | 'ends' | 'none';
+  /** Optional pass through ref. */
+  ref?: Ref<HTMLElement>;
   /**
    * The number of columns to span on small devices (≥576px)
    *

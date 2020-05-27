@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { Ref } from 'react';
 
 type RowProps = {
   /**
@@ -31,6 +31,9 @@ type RowProps = {
    * Pad inner content.
    */
   paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove';
+
+  /** Optional pass through ref. */
+  ref?: Ref<HTMLElement>;
 
   /**
    * Removes gutters and negative margins.
