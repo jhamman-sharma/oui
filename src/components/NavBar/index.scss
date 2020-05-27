@@ -65,7 +65,7 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 .root-nav__link .link--reverse {
   color: var(--dark-blue-100) !important;
   &:hover, &:active {
-    color: var(--light-blue-75) !important;
+    color: var(--light-blue-100) !important;
   }
 }
 .root-nav__link .link--reverse.admin--color {
@@ -140,7 +140,7 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
 .root-nav__link--primary {
   &:hover {
     background: var(--light-blue-10);
-    color: var(--light-blue-75);
+    color: var(--light-blue-100);
   }
 
   &.is-active,
@@ -155,7 +155,7 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
     color: var(--dark-blue-100);
   }
   &:hover {
-    color: var(--light-blue-75);
+    color: var(--light-blue-100);
   }
 }
 .root-nav__link--secondary,

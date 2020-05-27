@@ -174,7 +174,7 @@
           background: var(--highlight);
           cursor: pointer;
           border-top: 1px solid var(--grey-50);
-          color: var(--light-blue-75);
+          color: var(--light-blue-100);
         }
 
         &--disabled {
@@ -196,7 +196,7 @@
         &.is-active {
           background: map-fetch($root-color, highlight);
           border-top: 1px solid var(--grey-50);
-          color: var(--light-blue-75);
+          color: var(--light-blue-100);
         }
 
         &--nested {
