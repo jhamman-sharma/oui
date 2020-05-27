@@ -160,7 +160,10 @@ DockedFooter.propTypes = {
   /**
    * Ref from parent element for DockedFooter to set listeners
    */
-  scrollRef: PropTypes.node,
+  scrollRef: PropTypes.oneOfType([
+    PropTypes.func, 
+    PropTypes.shape({ current: PropTypes.elementType })
+  ]),
   /**
    * Identifier used to create data-test-section attributes for testing.
    */
