@@ -9,91 +9,53 @@ class DockedFooter extends React.Component {
     this.state = {
       isDocked: true,
       listenersSet: false,
-      dockedFooterNode: null,
-      parentNode: null,
       atBottom: true,
-      shouldDockByHeight: true,
     };
     this.dockedFooterRef = React.createRef();
-    this.storeThisNode = this.storeThisNode.bind(this);
-    this.domNodesInState = this.domNodesInState.bind(this);
-    this.setShouldDockByHeight = this.setShouldDockByHeight.bind(this);
-    this.setAtBottom = this.setAtBottom.bind(this);
-    this.setEventListeners = this.setEventListeners.bind(this);
-    this.throttle = this.throttle.bind(this);
-  }
-
-  componentDidMount() {
-    this.storeThisNode();
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.scrollRef !== prevProps.scrollRef) {
-      this.setState({ parentNode: this.props.scrollRef });
-    }
+      this.setIsDocked();
 
-    if (this.state.parentNode !== prevState.parentNode) {
-      this.setShouldDockByHeight();
-      this.setAtBottom();
-    }
-
-    if (this.state.shouldDockByHeight !== prevState.shouldDockByHeight) {
-      this.setState({ isDocked: this.state.shouldDockByHeight});
-    }
-
-    if (this.state.atBottom !== prevState.atBottom) {
-      this.setState({ isDocked: !this.state.atBottom});
-    }
-
-    this.setEventListeners();
-  }
-
-  storeThisNode() {
-    if (this.dockedFooterRef.current !== null) {
-      this.setState({ dockedFooterNode: this.dockedFooterRef.current });
+      this.setEventListeners();
     }
   }
 
-  domNodesInState() {
-    return !!this.state.dockedFooterNode && !!this.state.parentNode;
+  domNodesPresent = () => {
+    return !!this.dockedFooterRef.current && !!this.props.scrollRef;
   }
 
-  setEventListeners() {
-    if (!this.state.listenersSet && this.domNodesInState()) {
-      let scrollContainer = this.state.parentNode;
+  setEventListeners = () => {
+    if (!this.state.listenersSet && this.domNodesPresent()) {
+      let scrollContainer = this.props.scrollRef;
       window.addEventListener(
         'resize',
-        this.throttle(3, this.setShouldDockByHeight),
-        { passive: false },
-        { useCapture: true }
-      );
-      window.addEventListener(
-        'mousemove',
-        this.throttle(3, this.setShouldDockByHeight),
+        this.throttle(3, () => this.setIsDocked()),
         { passive: false },
         { useCapture: true }
       );
       scrollContainer.addEventListener(
         'scroll',
-        this.throttle(3, this.setAtBottom),
+        this.throttle(3, () => this.setAtBottom()),
         { passive: true }
       );
       scrollContainer.addEventListener(
         'wheel',
-        this.throttle(3, this.setAtBottom),
+        this.throttle(3, () => this.setAtBottom()),
         { passive: true }
       );
-      scrollContainer.addEventListener('click', this.setShouldDockByHeight, {
+      scrollContainer.addEventListener('click', () => this.setIsDocked(), {
         passive: true,
       });
-      scrollContainer.addEventListener('keydown', this.setShouldDockByHeight, {
+      scrollContainer.addEventListener('keydown', () => this.setIsDocked(), {
         passive: true,
       });
       this.setState({ listenersSet: true });
     }
   }
 
-  throttle(delay, fn) {
+  throttle = (delay, fn) => {
     let lastCall = 0;
     return function(...args) {
       const now = (new Date()).getTime();
@@ -105,23 +67,29 @@ class DockedFooter extends React.Component {
     };
   }
 
-  setShouldDockByHeight() {
-    if (this.domNodesInState()) {
+  setIsDocked = (callback) => {
+    if (this.domNodesPresent()) {
+      const shouldDockByHeight = this.dockedFooterRef.current.offsetTop >=
+      this.props.scrollRef.offsetHeight -
+        this.dockedFooterRef.current.offsetHeight;
       const newState = {
-        shouldDockByHeight:
-      this.state.dockedFooterNode.offsetTop >=
-      this.state.parentNode.offsetHeight -
-        this.state.dockedFooterNode.offsetHeight,
+        isDocked: shouldDockByHeight,
       };
-      this.setState(newState);
+
+      return this.setState(newState, () => {
+        this.setAtBottom();
+      });
     }
     this.setAtBottom();
+
   }
 
-  setAtBottom() {
-    if (this.domNodesInState()) {
+  setAtBottom = () => {
+    if (this.domNodesPresent()) {
+      const atBottom = this.props.scrollRef.scrollHeight - this.props.scrollRef.scrollTop === this.props.scrollRef.clientHeight;
       let newState = {
-        atBottom: this.state.parentNode.scrollHeight - this.state.parentNode.scrollTop === this.state.parentNode.clientHeight,
+        atBottom: atBottom,
+        isDocked: !atBottom,
       };
       this.setState(newState);
     }
@@ -131,22 +99,22 @@ class DockedFooter extends React.Component {
     window.removeEventListener('resize', this.throttle(3, this.shouldDock));
     window.removeEventListener(
       'mousemove',
-      this.throttle(5, this.setShouldDockByHeight),
+      this.throttle(5, this.setIsDocked),
       { passive: false },
       { useCapture: true }
     );
-    this.state.parentNode.removeEventListener(
+    this.props.scrollRef.removeEventListener(
       'scroll',
       this.throttle(3, this.setAtBottom),
       { passive: true }
     );
-    this.state.parentNode.removeEventListener('wheel', this.throttle(3, this.setAtBottom), {
+    this.props.scrollRef.removeEventListener('wheel', this.throttle(3, this.setAtBottom), {
       passive: true,
     });
-    this.state.parentNode.removeEventListener('click', this.shouldDock, {
+    this.props.scrollRef.removeEventListener('click', this.shouldDock, {
       passive: true,
     });
-    this.state.parentNode.removeEventListener('keydown', this.shouldDock, {
+    this.props.scrollRef.removeEventListener('keydown', this.shouldDock, {
       passive: true,
     });
   }
@@ -192,7 +160,10 @@ DockedFooter.propTypes = {
   /**
    * Ref from parent element for DockedFooter to set listeners
    */
-  scrollRef: PropTypes.node,
+  scrollRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.elementType }),
+  ]),
   /**
    * Identifier used to create data-test-section attributes for testing.
    */

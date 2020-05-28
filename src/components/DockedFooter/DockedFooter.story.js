@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
@@ -22,53 +22,47 @@ import Code from '../Code/index.js';
  * of the ScrollContainer component below.
  */
 
-class ScrollContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    // 1.) create the reference here.
-    this.scrollableNodeRef = React.createRef();
-    this.state = { scrollable: null };
-  }
+const ScrollContainer = function({
+  children,
+  hasCenterGroup,
+}) {
+  // 1.) Setup a state to hold the parent ref
+  const [ parentRef, setParentRef ] = useState(null);
 
-  componentDidMount() {
-    // 3.) Use the ref to store the node in state
-    this.setState({ scrollable: this.scrollableNodeRef.current });
-  }
-
-  render() {
-    return (
-      <div
-        // 2.) assign the reference to the parent container element/component
-        ref={ this.scrollableNodeRef }
-        data-test-section="scroll container"
-        className="height--300 overflow-y--auto">
-        {this.props.children}
-        <DockedFooter
-          // 4.) Pass the node to the DockedFooter as a prop
-          scrollRef={ this.state.scrollable }
-          testSection={ 'docked-footer-more-content' }
-          includesMargin={ true }
-          rightGroup={ !this.props.hasCenterGroup && [
-            <Button style="plain" key={ 0 } onClick={ noop }>
+  return (
+    <div
+      // 2.) Use a ref callback to set the parent ref
+      //     in state once rendered, which triggers an update
+      //     to DockedFooter, so that it can adjust its placement
+      ref={ newRef => setParentRef(newRef) }
+      data-test-section="scroll container"
+      className="height--300 overflow-y--auto">
+      {children}
+      <DockedFooter
+        // 3.) Pass the parent ref to the DockedFooter as a prop
+        scrollRef={ parentRef }
+        testSection={ 'docked-footer-more-content' }
+        includesMargin={ true }
+        rightGroup={ !hasCenterGroup && [
+          <Button style="plain" key={ 0 } onClick={ noop }>
               Cancel
-            </Button>,
-            <Button style="highlight" key={ 1 } onClick={ noop }>
+          </Button>,
+          <Button style="highlight" key={ 1 } onClick={ noop }>
               Confirm
-            </Button>,
-          ] }
-          centerGroup={ this.props.hasCenterGroup && [
-            <PaginationControls
-              key={ 0 }
-              currentPage={ 2 }
-              totalPages={ 10 }
-              goToPage={ action('page changed') }
-            />,
-          ] }
-        />
-      </div>
-    );
-  }
-}
+          </Button>,
+        ] }
+        centerGroup={ hasCenterGroup && [
+          <PaginationControls
+            key={ 0 }
+            currentPage={ 2 }
+            totalPages={ 10 }
+            goToPage={ action('page changed') }
+          />,
+        ] }
+      />
+    </div>
+  );
+};
 
 ScrollContainer.propTypes = {
   children: PropTypes.node,

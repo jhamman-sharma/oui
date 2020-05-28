@@ -8,6 +8,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
 - [Patch] Add default props for `onMouseEnter` and `onMouseLeave` in **DropdownBlockLink** to prevent errors ([#1349](https://github.com/optimizely/oui/pull/1349))
+- [Patch] Rewrite **DockedFooter** for simplicty, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
 
 ## 46.4.0 - 2020-05-26
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))
