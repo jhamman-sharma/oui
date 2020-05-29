@@ -23,6 +23,37 @@ Highlight.registerLanguage('scss', require('highlight.js/lib/languages/scss'));
 Highlight.registerLanguage('swift', require('highlight.js/lib/languages/swift'));
 Highlight.registerLanguage('go', require('highlight.js/lib/languages/go'));
 
+/* Helper fn. for wrapBlock() */
+function wrapLine(line, limit) {
+  if (line.length <= limit) {
+    return [line];
+  }
+  return [
+    ...wrapLine(line.slice(0, limit), limit),
+    ...wrapLine(line.slice(limit), limit),
+  ];
+}
+
+/**
+ * Given a string with 0+ lines (delimited by \n), break each line into multiple
+ * according to "limit", and returns the broken lines as a single multiline
+ * string.
+ *
+ * @param {String} s - Input string, existing newlines are preserved in the
+ *   output.
+ * @param {Number} limit - Number of characters until a line is wrapped.
+ * @returns {String}
+ */
+function wrapBlock(s, limit) {
+  if (s.length < limit) {
+    return s;
+  }
+  return s
+    .split('\n')
+    .flatMap(line => wrapLine(line, limit))
+    .join('\n');
+}
+
 /**
  * Display code either inline or in its own block.
  * @param {Object} props - Properties passed to component
@@ -40,10 +71,15 @@ class Code extends React.Component {
     const {
       isHighlighted,
       language,
+      maxLineLength,
       type,
       testSection,
     } = this.props;
     let code = this.props.children;
+
+    if (type === 'block' && maxLineLength) {
+      code = wrapBlock(code, maxLineLength);
+    }
 
     if (isHighlighted) {
       // Code that uses syntax highlighting needs to have
@@ -141,6 +177,11 @@ Code.propTypes = {
   language: PropTypes.oneOf(['cs', 'css', 'diff', 'html', 'java', 'javascript',
     'js', 'jsx', 'markdown', 'md', 'objectivec', 'php', 'python', 'ruby', 'scss',
     'swift', 'go']),
+  /**
+   * (Optional) Wrap each line of props.children to be at most maxLineLength
+   * chars long.
+ */
+  maxLineLength: PropTypes.number,
   /** ouiStyle */
   ouiStyle: PropTypes.bool,
   /** Hook for automated JavaScript tests */
@@ -151,6 +192,7 @@ Code.propTypes = {
 
 Code.defaultProps = {
   copyButtonUsesTextLabel: false,
+  maxLineLength: null,
 };
 
 export default Code;
