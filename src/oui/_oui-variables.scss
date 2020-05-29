@@ -33,11 +33,8 @@ $brand-color: (
 
   /* brand */
   light-blue-100             : $brand-blue-dark,
-  light-blue-75              : #4069FF,
-  light-blue-50              : #809BFF,
   light-blue-25              : #BFCDFF,
   light-blue-10              : #EAEDFA,
-  light-blue-6               : #F3F6FF,
   dark-blue-75               : #46456A,
 
   /* indicators */
@@ -51,18 +48,16 @@ $brand-color: (
 
   /* greys */
   dark-blue-100              : $brand-purple-dark,
-  dark-blue-50               : #83839B,
-  dark-blue-25               : $brand-purple-base,
   grey-50                    : #E8E8E8,
   grey-25                    : #F9F9F9,
-  paper                      : #FDFDFD,
-  white-40b                  : shade($base-white, 40%),
 
 );
 
 $root-color: (
+  grey-87                    : tint($base-black, 13%),
   grey-85                    : tint($base-black, 15%),
   grey-78                    : tint($base-black, 22%),
+  grey-60                    : tint($base-black, 40%),
   grey-50                    : tint($base-black, 50%),
   grey-40                    : tint($base-black, 60%),
   grey-35                    : tint($base-black, 65%),
@@ -70,16 +65,16 @@ $root-color: (
   grey-12                    : tint($base-black, 88%),
   grey-06                    : tint($base-black, 94%),
   grey-03                    : tint($base-black, 97%),
-  brand                      : map-fetch($brand-color, light-blue-75),
-  brand-light                : map-fetch($brand-color, light-blue-25),
+  brand                      : $brand-blue-dark,
   brand-dark                 : map-fetch($brand-color, dark-blue-75),
+  brand-light                : map-fetch($brand-color, light-blue-25),
   warning                    : map-fetch($brand-color, gold),
   bad-news                   : map-fetch($brand-color, red),
   good-news                  : map-fetch($brand-color, green),
   draft                      : map-fetch($brand-color, orange),
   live                       : map-fetch($brand-color, green),
   admin                      : map-fetch($brand-color, indigo),
-  highlight                  : map-fetch($brand-color, light-blue-6)
+  highlight                  : map-fetch($brand-color, light-blue-10)
 );
 
 /// Base Colors
@@ -108,8 +103,8 @@ $color: (
   ),
 
   link: (
-    base                     : map-fetch($brand-color, light-blue-75),
-    hover                    : map-fetch($brand-color, light-blue-100),
+    base                     : $brand-blue-dark,
+    hover                    : $brand-blue-dark,
     brand-light              : map-fetch($root-color, brand-light),
     bad-news                 : map-fetch($root-color, bad-news),
     white                    : $base-white
@@ -133,7 +128,7 @@ $color: (
   ),
 
   text: (
-    base                     : map-fetch($brand-color, dark-blue-100),
+    base                     : map-fetch($root-color, grey-87),
     white                    : $base-white,
     faint                    : map-fetch($root-color, grey-12),
     light                    : map-fetch($root-color, grey-25),
@@ -247,29 +242,29 @@ $button: (
       )
     ),
     highlight: (
-      background             : map-fetch($brand-color, light-blue-75),
-      border                 : tint(map-fetch($brand-color, light-blue-75), 10%),
+      background             : $brand-blue-dark,
+      border                 : tint($brand-blue-dark, 10%),
       text-shadow            : 0 0 1px rgba(0, 0 , 0, 0.2),
       hover: (
-        background           : map-fetch($brand-color, light-blue-100),
-        border               : tint(map-fetch($brand-color, light-blue-100), 10%),
+        background           : $brand-blue-dark,
+        border               : tint($brand-blue-dark, 10%),
       ),
       active: (
-        background           : shade(map-fetch($brand-color, light-blue-100), 20%),
-        border               : shade(map-fetch($brand-color, light-blue-100), 30%),
+        background           : shade($brand-blue-dark, 20%),
+        border               : shade($brand-blue-dark, 30%),
         box-shadow           : inset 0 1px 3px 0 rgba(0, 0, 0, 0.5),
       ),
       focus: (
-        border               : map-fetch($brand-color, light-blue-100),
+        border               : $brand-blue-dark,
       )
     ),
     outline: (
       background             : transparent,
-      border                 : map-fetch($brand-color, light-blue-75),
-      color                  : map-fetch($brand-color, light-blue-75),
+      border                 : $brand-blue-dark,
+      color                  : $brand-blue-dark,
       hover: (
-        border               : map-fetch($brand-color, light-blue-100),
-        color                : map-fetch($brand-color, light-blue-100),
+        border               : $brand-blue-dark,
+        color                : $brand-blue-dark,
       ),
       active: (
         border               : map-fetch($brand-color, dark-blue-100),
@@ -284,8 +279,8 @@ $button: (
         arrow-color          : map-fetch($root-color, brand),
       ),
       focus: (
-        border               : map-fetch($brand-color, light-blue-100),
-        arrow-color          : map-fetch($brand-color, light-blue-100),
+        border               : $brand-blue-dark,
+        arrow-color          : $brand-blue-dark,
       ),
       active: (
         border               : map-fetch($color, background, brand),
@@ -319,9 +314,9 @@ $button: (
       )
     ),
     plain: (
-      color                  : map-fetch($brand-color, dark-blue-75),
+      color                  : map-fetch($brand-color, dark-blue-100),
       hover: (
-        color                : map-fetch($brand-color, light-blue-75),
+        color                : map-fetch($brand-color, light-blue-100),
       ),
       active: (
         color                : map-fetch($brand-color, dark-blue-100),
@@ -345,7 +340,7 @@ $token: (
     tertiary                 : map-fetch($brand-color, grey-50),
     error                    : map-fetch($brand-color, red)
   ),
-  selected                   : map-fetch($brand-color, light-blue-100),
+  selected                   : $brand-blue-dark,
   font-color: (
     light                    : $base-white,
     dark                     : map-fetch($brand-color, dark-blue-100)
@@ -357,7 +352,7 @@ $token: (
     width                    : 12px,
     height                   : 12px
   ),
-  move-drag-handle           : map-fetch($brand-color, white-40b),
+  move-drag-handle           : map-fetch($root-color, grey-40),
   border-radius              : 5px,
   text-shadow                : 0 0 1px rgba(0, 0, 0, 0.2),
   padding                    : 4px
@@ -384,7 +379,7 @@ $rangeslider: (
 /// Badge
 
 $badge: (
-  background-color           : map-fetch($brand-color, white-40b),
+  background-color           : map-fetch($root-color, grey-40),
   size                       : 17px,
   min-width                  : 28px, // Graphik letter m width approx.
   font-size                  : 10px,
