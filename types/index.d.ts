@@ -890,6 +890,11 @@ declare module "components/Code/index" {
             isHighlighted: PropTypes.Requireable<boolean>;
             /** Specify a language for the syntax highlighter */
             language: PropTypes.Requireable<string>;
+            /**
+             * (Optional) Wrap each line of props.children to be at most maxLineLength
+             * chars long.
+           */
+            maxLineLength: PropTypes.Requireable<number>;
             /** ouiStyle */
             ouiStyle: PropTypes.Requireable<boolean>;
             /** Hook for automated JavaScript tests */
@@ -899,6 +904,7 @@ declare module "components/Code/index" {
         };
         export namespace defaultProps {
             export const copyButtonUsesTextLabel: boolean;
+            export const maxLineLength: null;
         }
     }
     import React from "react";
