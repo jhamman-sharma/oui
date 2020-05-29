@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.4.1 - 2020-05-29
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
 - [Patch] Add default props for `onMouseEnter` and `onMouseLeave` in **DropdownBlockLink** to prevent errors ([#1349](https://github.com/optimizely/oui/pull/1349))
 - [Patch] Rewrite **DockedFooter** for simplicty, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
