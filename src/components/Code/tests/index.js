@@ -130,4 +130,20 @@ describe('components/Code', () => {
     expect(copyButton.length).toBe(1);
     expect(copyButton.text()).toBe('Copy');
   });
+
+  describe('text wrapping', () => {
+    it('should wrap text when `maxLineLength` is specified', () => {
+      const component = render(
+        <Code type="block" maxLineLength={ 5 }>{ 'helloworldhello' }</Code>
+      );
+      expect(component.text()).toBe('hello\nworld\nhello');
+    });
+
+    it('should not wrap when `type` is "inline"', () => {
+      const component = render(
+        <Code type="inline" maxLineLength={ 5 }>{ 'helloworldhello' }</Code>
+      );
+      expect(component.text()).toBe('helloworldhello');
+    });
+  });
 });
