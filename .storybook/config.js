@@ -26,6 +26,7 @@ const a11y = {
 };
 
 const req = require.context('../src/', true, /story\.(js|ts)x?$/);
+const reqHelperClasses = require.context('../.storybook/helper_classes/', true, /story\.(js|ts)x?$/);
 
 function loadStories() {
   require('./overview.story.js');
@@ -33,6 +34,7 @@ function loadStories() {
   require('./css.story.js');
   require('./borderradius.story.js');
   req.keys().forEach(req);
+  reqHelperClasses.keys().forEach(reqHelperClasses);
 }
 
 storybook.configure(loadStories, module);

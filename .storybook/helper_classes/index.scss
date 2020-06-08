@@ -1,0 +1,98 @@
+// 1. flex--none in the app?
+// 2. flex-wrap
+// 3. flex-self--
+// ?  flex-overflow-fix still needed?
+/// Axiom Tokens
+@import "../../src/tokens/forimport/index";
+
+body,
+html {
+  overflow: auto;
+}
+
+.demo-only-helper-box-container {
+  padding: 6px;
+  background: $magenta-light;
+  margin: auto 8px;
+  color: $smoke-light;
+
+  &--width-100 {
+    width: 100px;
+
+    .flex--none {
+      width: auto;
+    }
+  }
+
+  div {
+    background: $magenta-dark;
+    width: 60px;
+    height: 60px;
+    margin: 6px;
+  }
+
+  &--width-300 {
+    width: 300px;
+
+    .flex-shrink--none {
+      width: auto;
+    }
+
+    .flex-grow--none {
+      width: auto;
+    }
+  }
+}
+
+.demo-only-subsection {
+  margin-top: 24px;
+}
+
+.box,
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+  background: #0081ba; // brand
+  //background: #F4B852 // oakland
+  &,
+  button {
+    color: #fff !important;
+    border-color: #fff !important;
+  }
+}
+
+.box-2 {
+  opacity: 0.9;
+}
+
+.box-3 {
+  opacity: 0.8;
+}
+
+.box-4 {
+  opacity: 0.7;
+}
+
+.example {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+  margin-left: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+}
+
+.ex_wrong,
+.ex_right {
+  padding: 20px 20px 0;
+  margin-bottom: 20px;
+}
+
+.ex_wrong {
+  border-left: 2px solid red;
+}
+
+.ex_right {
+  border-left: 2px solid green;
+}
