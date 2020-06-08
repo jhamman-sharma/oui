@@ -37,8 +37,8 @@ const Disclose = ({
   return (
     <div className={ arrowClass } style={{marginTop: '-1px'}}>
       <a onClick={ toggle } className={ linkClass }>
-        <div className='oui-disclose__arrow'>
-          <span className="oui-disclose__symbol push-half--right"></span>
+        <div className='flex oui-disclose__arrow'>
+          <span className="oui-disclose__symbol push-half--right" />
           { title }
         </div>
       </a>
@@ -56,7 +56,10 @@ Disclose.propTypes = {
   indented: PropTypes.bool,
   isOpen: PropTypes.bool,
   noBorder: PropTypes.bool,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOf([
+    PropTypes.node,
+    PropTypes.string,
+  ]).isRequired,
   toggle: PropTypes.func,
 };
 
