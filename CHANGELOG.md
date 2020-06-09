@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.4.2 - 2020-06-08
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))
 - [Patch] Define missing components for typescript declarations ([#1352](https://github.com/optimizely/oui/pull/1352))
 
