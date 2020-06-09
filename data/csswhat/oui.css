@@ -6594,6 +6594,29 @@ code {
   padding-top: 2px;
   padding-bottom: 2px; }
 
+.oui-tile {
+  max-height: 72px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #e0e0e0; }
+  .oui-tile:hover {
+    border: solid 1px #4069FF; }
+  .oui-tile--selected {
+    border: solid 1px #4069FF;
+    background-color: #e6ebff; }
+  .oui-tile:focus-within {
+    border: solid 1px #4069FF; }
+  .oui-tile .oui-button--unstyled:focus {
+    border: none !important;
+    box-shadow: none !important; }
+
+.oui-tile__order-number {
+  min-width: 16px; }
+
+.oui-tile__drag-handle {
+  display: flex;
+  cursor: move; }
+
 .token-wrap,
 .oui-token-wrap {
   display: inline-flex;
