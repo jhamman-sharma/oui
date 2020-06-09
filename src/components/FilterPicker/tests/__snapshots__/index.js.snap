@@ -120,6 +120,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
       </ul>
     </ul>
     <[object Object]
+      hasSpellCheck={true}
       isFilter={true}
       isRequired={false}
       note={null}
@@ -135,6 +136,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with CUSTOM keysTo
         onInput={[Function]}
         placeholder="Browse for Audiences"
         required={false}
+        spellCheck={true}
         type="search"
       />
     </[object Object]>
@@ -752,6 +754,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
       </ul>
     </ul>
     <[object Object]
+      hasSpellCheck={true}
       isFilter={true}
       isRequired={false}
       note={null}
@@ -767,6 +770,7 @@ exports[`components/FilterPicker with Immutable data (mocked) with DEFAULT keysT
         onInput={[Function]}
         placeholder="Browse for Audiences"
         required={false}
+        spellCheck={true}
         type="search"
       />
     </[object Object]>
@@ -1359,6 +1363,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
       </ul>
     </ul>
     <[object Object]
+      hasSpellCheck={true}
       isFilter={true}
       isRequired={false}
       note={null}
@@ -1374,6 +1379,7 @@ exports[`components/FilterPicker with POJO data with CUSTOM keysToSearch and cus
         onInput={[Function]}
         placeholder="Browse for Audiences"
         required={false}
+        spellCheck={true}
         type="search"
       />
     </[object Object]>
@@ -1967,6 +1973,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
       </ul>
     </ul>
     <[object Object]
+      hasSpellCheck={true}
       isFilter={true}
       isRequired={false}
       note={null}
@@ -1982,6 +1989,7 @@ exports[`components/FilterPicker with POJO data with DEFAULT keysToSearch and cu
         onInput={[Function]}
         placeholder="Browse for Audiences"
         required={false}
+        spellCheck={true}
         type="search"
       />
     </[object Object]>
