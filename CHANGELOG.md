@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Add Storybook example for **SearchPicker** in a **Dropdown** ([#1355](https://github.com/optimizely/oui/pull/1355))
 
 ## 46.5.0 - 2020-06-09
 - [Feature] Add new **Tile** component for displaying details and actions for various items ([#1350](https://github.com/optimizely/oui/pull/1350))
@@ -15,7 +16,6 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## 46.4.2 - 2020-06-08
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))
 - [Patch] Define missing components for typescript declarations ([#1352](https://github.com/optimizely/oui/pull/1352))
-- [Patch] Add Storybook example for **SearchPicker** in a **Dropdown** ([#1355](https://github.com/optimizely/oui/pull/1355))
 
 ## 46.4.1 - 2020-05-29
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
