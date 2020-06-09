@@ -18,6 +18,9 @@ type InputProps = {
   /** Whether or not to add a clear button to right of input */
   hasClearButton?: boolean;
 
+  /** Disables spell checking when set to false */
+  hasSpellCheck?: boolean;
+
   /** Id of the input to properly associate with the input's label */
   id?: string;
 
@@ -123,6 +126,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
       displayError,
       focus,
       hasClearButton,
+      hasSpellCheck,
       id,
       isDisabled,
       isFilter,
@@ -204,6 +208,7 @@ const Input: React.SFC<InputProps> = React.forwardRef(
           onFocus={onFocus}
           min={min}
           max={max}
+          spellCheck={hasSpellCheck}
           step={step}
           {...(typeof maxLength === 'undefined' ? {} : { maxLength })}
           data-test-section={testSection}
@@ -299,6 +304,7 @@ Input.displayName = 'Input';
 Input.defaultProps = {
   note: null,
   isRequired: false,
+  hasSpellCheck: true,
 };
 
 export default Input;

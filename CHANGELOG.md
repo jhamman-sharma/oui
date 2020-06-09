@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+  - [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
 
 ## 46.4.2 - 2020-06-08
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))

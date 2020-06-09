@@ -23,6 +23,7 @@ stories
       <Input
         defaultValue={ text('defaultValue', 'some default value') }
         displayError={ boolean('displayError', false) }
+        hasSpellCheck={ boolean('hasSpellCheck', false) }
         id="input-01"
         isFilter={ boolean('isFilter', false) }
         isDropdown={ boolean('isDropdown', true) }

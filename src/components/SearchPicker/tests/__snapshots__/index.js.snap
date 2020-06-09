@@ -28,6 +28,7 @@ exports[`components/SearchPicker default case should render component same as sn
   >
     <div>
       <[object Object]
+        hasSpellCheck={true}
         isFilter={true}
         isRequired={false}
         note={null}
@@ -46,6 +47,7 @@ exports[`components/SearchPicker default case should render component same as sn
           onKeyDown={[Function]}
           placeholder="Search for features"
           required={false}
+          spellCheck={true}
           type="search"
           value=""
         />
