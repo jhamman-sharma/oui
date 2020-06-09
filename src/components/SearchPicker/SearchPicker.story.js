@@ -107,4 +107,53 @@ stories
         )}
       </SearchPicker>
     );
+  })
+  .add('In a Dropdown', () => {
+    return (
+      <Dropdown buttonContent="Selected Variation Name" arrowIcon="down" shouldHideChildrenOnClick={ false } style="outline">
+        {({ handleHideChildren }) => (
+          <Dropdown.Contents minWidth={ 600 } direction="right">
+            <Dropdown.ListItem>
+              <Dropdown.BlockLink
+                hasFauxFocus={ false }
+                onClick={ action('click create dropdown block link') }>
+                <div className="flex flex-align--center">
+                  Create new variation
+                </div>
+              </Dropdown.BlockLink>
+            </Dropdown.ListItem>
+
+            <SearchPicker
+              onItemSelected={ action('keyboard selection item') }
+              additionalItems={ 1 }
+              searchFunction={ searchFunction }
+              supportedTypes={ ['variation'] }>
+              {({
+                availableEntities,
+                renderInput,
+                isLoading,
+                searchQuery,
+                currentFauxFocusIndex,
+                resultsText,
+              }) => (
+                <>'                 '<Dropdown.ListItem>
+                  { renderInput() }
+                </Dropdown.ListItem>'                 '<Dropdown.ListItem ignoreToggle={ true }>
+                  <span className="micro muted soft--sides">{resultsText.summary}</span>
+                </Dropdown.ListItem>'                 '{availableEntities.map((item, index) => (
+                  <Dropdown.ListItem key={ index }>
+                    <Dropdown.BlockLink
+                      hasFauxFocus={ currentFauxFocusIndex === index + 1 }
+                      onClick={ action(`click dropdown block link ${item.name}`) }>
+                      <Dropdown.BlockLinkText text={ item.name } />
+                      <Dropdown.BlockLinkSecondaryText secondaryText={ item.description } />
+                    </Dropdown.BlockLink>
+                  </Dropdown.ListItem>
+                ))}'                 '{isLoading && <Spinner hasOverlay={ true } />}'               '</>
+              )}
+            </SearchPicker>
+          </Dropdown.Contents>
+        )}
+      </Dropdown>
+    );
   });
