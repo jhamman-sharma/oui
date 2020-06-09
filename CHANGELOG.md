@@ -10,6 +10,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## 46.4.2 - 2020-06-08
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))
 - [Patch] Define missing components for typescript declarations ([#1352](https://github.com/optimizely/oui/pull/1352))
+- [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
 
 ## 46.4.1 - 2020-05-29
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
@@ -24,7 +25,6 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Update **Token** and **Sortable** to always use hamburger drag handle by default ([#1337](https://github.com/optimizely/oui/pull/1337))
 - [Patch] Update react-oui-icons version to 2.9.0 ([#1336](https://github.com/optimizely/oui/pull/1336))
     - Update `icons.json` to use latest set of icons from v2.9.0
-- [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
 
 ## 46.3.1 - 2020-05-19
 - [Patch] Export **ManagerSideNav** info for TypeScript ([#1334](https://github.com/optimizely/oui/pull/1334))

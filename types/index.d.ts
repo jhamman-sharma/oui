@@ -1007,6 +1007,8 @@ declare module "components/Input/index" {
         focus?: boolean;
         /** Whether or not to add a clear button to right of input */
         hasClearButton?: boolean;
+        /** Disables spell checking when set to false */
+        hasSpellCheck?: boolean;
         /** Id of the input to properly associate with the input's label */
         id?: string;
         /** Prevents input from being modified and appears disabled */
@@ -1059,8 +1061,6 @@ declare module "components/Input/index" {
         placeholder?: string;
         /** Name of the icon to place on right side of input */
         rightIconName?: string;
-        /** Disables spellcheck when true */
-        spellCheck?: boolean;
         /** Input step value */
         step?: string;
         /** Hook for automated JavaScript tests */
