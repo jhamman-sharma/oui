@@ -43,6 +43,7 @@ declare module 'optimizely-oui' {
   export { default as OverlayWrapper } from 'components/OverlayWrapper/index';
   export { default as Pagination } from 'components/Pagination/index';
   export { default as PaginationControls } from 'components/PaginationControls/index';
+  export { default as Tile } from 'components/Tile/index';
   export { default as ProgressBar } from 'components/ProgressBar/index';
   export { default as ProgressDots } from 'components/ProgressDots/index';
   export { default as Popover } from 'components/Popover/index';

@@ -17,7 +17,7 @@ stories
   ));
 
 stories
-  .add('Default', (() => {
+  .add('Simple string body', (() => {
     return (
       <Card
         title={ text('title', 'Card Title') }

@@ -6,7 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
-  - [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
+- [Feature] Add new **Tile** component for displaying details and actions for various items ([#1350](https://github.com/optimizely/oui/pull/1350))
+- [Patch] Add `buttonRef` prop to **ButtonIcon** to be used as a dropdown activator ([#1350](https://github.com/optimizely/oui/pull/1350))
+- [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
 
 ## 46.4.2 - 2020-06-08
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))
@@ -15,7 +17,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## 46.4.1 - 2020-05-29
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
 - [Patch] Add default props for `onMouseEnter` and `onMouseLeave` in **DropdownBlockLink** to prevent errors ([#1349](https://github.com/optimizely/oui/pull/1349))
-- [Patch] Rewrite **DockedFooter** for simplicty, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
+- [Patch] Rewrite **DockedFooter** for simplicity, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
 
 ## 46.4.0 - 2020-05-26
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))

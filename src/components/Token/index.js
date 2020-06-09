@@ -45,6 +45,7 @@ const Token = ({
   });
   const { fontClass, fillColor } = getStylingInfo(style);
 
+
   if (usesDragHandle) {
     return (
       /* eslint-disable react/jsx-boolean-value */

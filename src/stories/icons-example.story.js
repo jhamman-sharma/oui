@@ -29,10 +29,10 @@ stories.add('Everything', () => {
     border-radius: 8px;
     box-sizing: border-box;
     display: flex;
-    height: 100px;
+    height: 150px;
     justify-content: center;
     margin: 5px;
-    padding: 20px 10px
+    padding: 30px 10px
     text-align: center;
     width: 100px;
     &:after {
@@ -40,12 +40,11 @@ stories.add('Everything', () => {
       transition: all 0.4s ease;
       content: '${icon.title}';
       font-family: Helvetica;
-      font-size: 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
       max-width: 90px;
       position: absolute;
-      margin-top: 70px;
-    }
-    &:hover:after {
+      margin-top: 100px;
       color: #666;
     }
   `;

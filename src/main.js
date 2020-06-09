@@ -57,6 +57,7 @@ export { default as Table } from './components/Table';
 export { default as TabNav } from './components/TabNav';
 export { default as Textarea } from './components/Textarea';
 export { default as TextField } from './components/TextField';
+export { default as Tile } from './components/Tile';
 export { default as Toolbar } from './components/Toolbar';
 export { default as Token } from './components/Token';
 export { default as TokensInput } from './components/TokensInput';

@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { FILL_COLOR_MAP } from '../../utils/accessibility';
 
 const ButtonIcon = ({
+  buttonRef,
   iconFill,
   iconName,
   isDisabled,
@@ -32,6 +33,7 @@ const ButtonIcon = ({
       data-test-section={ testSection }
       disabled={ isDisabled }
       onClick={ handleOnClick }
+      ref={ buttonRef }
       title={ title }>
       <Icon name={ iconName } size={ size } fill={ fillColor }/>
     </button>
@@ -39,6 +41,11 @@ const ButtonIcon = ({
 };
 
 ButtonIcon.propTypes = {
+  /** React ref to the underlying button component */
+  buttonRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
   /**
    *  Color to use for the fill of the icon
    */

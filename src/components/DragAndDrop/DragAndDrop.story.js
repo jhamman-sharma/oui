@@ -7,13 +7,15 @@ import { action } from '@storybook/addon-actions';
 
 import DragAndDropStateless from './index';
 import Token from '../Token';
+import Tile from '../Tile';
+import Col from '../Layout/Col';
 
 const itemsWithoutGroups = [
-  { id: 1, type: 'item', text: 'Item A' },
-  { id: 2, type: 'item', text: 'Item B' },
-  { id: 3, type: 'item', text: 'Item C' },
-  { id: 4, type: 'item', text: 'Item D' },
-  { id: 5, type: 'item', text: 'Item E' },
+  { id: 1, type: 'item', text: 'Item A', description: 'ID: 0123' },
+  { id: 2, type: 'item', text: 'Item B', description: 'ID: 4567' },
+  { id: 3, type: 'item', text: 'Item C', description: 'ID: 8910' },
+  { id: 4, type: 'item', text: 'Item D', description: 'ID: 1112' },
+  { id: 5, type: 'item', text: 'Item E', description: 'ID: 1314' },
 ];
 
 const renderTokenItem = ({ item, index, snapshot }) => (
@@ -37,6 +39,20 @@ const renderTokenItemWithAdjustedDragging = ({ item, index, snapshot, dragHandle
       dragHandleProps={ dragHandleProps }
     />
   </div>
+);
+
+const renderTileItem = ({ item, index, snapshot, dragHandleProps }) => (
+  <Col small="6">
+    <Tile
+      name={ item['text'] }
+      description={ item['description'] }
+      onPillClick={ action('onPillClick') }
+      isDraggable={ true }
+      testSection="with-warning"
+      dragHandleProps={ dragHandleProps }
+      onDismiss={ action('on Dismiss Click') }
+    />
+  </Col>
 );
 
 // Helper wrapper class to store the state so the stories are usable/interactive
@@ -94,6 +110,17 @@ stories
         onDragEnd={ action('get new order of items') }
         useCustomDragHandle={ true }
         renderItem={ renderTokenItemWithAdjustedDragging }
+      />
+    );
+  })
+  .add('Using Tile', () => {
+    return (
+      <DragAndDrop
+        idForDroppableRegion={ 'droppable-story-demo' }
+        items={ itemsWithoutGroups }
+        onBeforeCapture={ action('do something before dragging begins') }
+        onDragEnd={ action('get new order of items') }
+        renderItem={ renderTileItem }
       />
     );
   });

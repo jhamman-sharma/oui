@@ -43,6 +43,7 @@ declare module 'optimizely-oui' {
   export { default as OverlayWrapper } from 'components/OverlayWrapper/index';
   export { default as Pagination } from 'components/Pagination/index';
   export { default as PaginationControls } from 'components/PaginationControls/index';
+  export { default as Tile } from 'components/Tile/index';
   export { default as ProgressBar } from 'components/ProgressBar/index';
   export { default as ProgressDots } from 'components/ProgressDots/index';
   export { default as Popover } from 'components/Popover/index';
@@ -669,7 +670,8 @@ declare module "components/Button/example/index" {
 }
 declare module "components/ButtonIcon/index" {
     export default ButtonIcon;
-    function ButtonIcon({ iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
+    function ButtonIcon({ buttonRef, iconFill, iconName, isDisabled, onClick, size, style, testSection, title, }: {
+        buttonRef: any;
         iconFill: any;
         iconName: any;
         isDisabled: any;
@@ -681,6 +683,9 @@ declare module "components/ButtonIcon/index" {
     }): JSX.Element;
     namespace ButtonIcon {
         export namespace propTypes {
+            export const buttonRef: PropTypes.Requireable<((...args: any[]) => any) | PropTypes.InferProps<{
+                current: PropTypes.Requireable<Element>;
+            }>>;
             export const iconFill: PropTypes.Requireable<string>;
             export const iconName: PropTypes.Validator<string>;
             export const isDisabled: PropTypes.Requireable<boolean>;
@@ -1934,6 +1939,99 @@ declare module "components/DragAndDrop/index" {
         }
     }
     import PropTypes from "prop-types";
+}
+declare module "components/Tile/index" {
+    export type TileProps = {
+        /**
+         * Description of the item for this reference Tile
+         */
+        description?: string;
+        /**
+         * Optional properties to include when using Tile
+         * in DragAndDrop component
+         */
+        dragHandleProps?: object;
+        /**
+         * Optional dropdown items to add to right side of Tile
+         * Descriptions are optional, title and onClick required
+         */
+        dropdownItems?: {
+            text: string;
+            description?: string;
+            onClick: (...args: any[]) => any;
+        }[];
+        /**
+         * Whether or not this Tile has margin on the ends
+         * True by default
+         */
+        hasSpacing?: boolean;
+        /**
+         * Whether or not this Tile has a warning popover
+         */
+        hasWarning?: boolean;
+        /**
+         * Whether or not this Tile includes a drag handle
+         */
+        isDraggable?: boolean;
+        /**
+         * Whether or not this Tile is currently selected/active
+         */
+        isSelected?: boolean;
+        /**
+         * Function to call when copy button is clicked
+         * Supplying this function adds a copy button
+         * to the tile
+         */
+        onCopy?: (...args: any[]) => any;
+        /**
+         * Function to call when delete button is clicked
+         * Supplying this function adds a delete button
+         * to the tile
+         */
+        onDismiss?: (...args: any[]) => any;
+        /**
+         * Function to call when edit button is clicked
+         * Supplying this function adds an edit button
+         * to the tile
+         */
+        onEdit?: (...args: any[]) => any;
+        /**
+         * Function to call when the main area of the Tile is clicked
+         * If function is not supplied, main content of the Tile
+         * will not be clickable (div instead of a button)
+         */
+        onTileClick?: (...args: any[]) => any;
+        /**
+         * Optional number used to indicate the order of Tiles
+         */
+        order?: number;
+        /**
+         * Optional string used to indicate status before action items
+         */
+        status?: string;
+        /**
+         * String to use for testing
+         */
+        testSection?: string;
+        /**
+         * Title of the Tile, required
+         */
+        name: string;
+        /**
+         * Whether or not the title of this Tile displays in monospace font
+         */
+        usesMonospaceName?: boolean;
+        /**
+         * The content of the warning popover
+         */
+        warningContent?: any;
+        /**
+         * The title of the warning popover
+         */
+        warningTitle?: string;
+    };
+    const Tile: ({ description, dragHandleProps, dropdownItems, hasSpacing, hasWarning, isDraggable, isSelected, name, onCopy, onDismiss, onEdit, onTileClick, order, status, testSection, usesMonospaceName, warningContent, warningTitle, }: TileProps) => JSX.Element;
+    export default Tile;
 }
 declare module "components/DragAndDrop/DragAndDrop.story" {
     export {};
@@ -6095,6 +6193,9 @@ declare module "components/Textarea/example/index" {
         examples: JSX.Element[];
     }[];
     export default _default;
+}
+declare module "components/Tile/Tile.story" {
+    export {};
 }
 declare module "components/Token/Token.story" {
     export {};

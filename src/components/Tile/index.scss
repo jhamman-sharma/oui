@@ -1,0 +1,33 @@
+.oui-tile {
+  max-height: 72px;
+  background-color: white;
+  border-radius: map-fetch($border, radius, base);
+  border: 1px solid map-fetch($border, color, base);
+
+  &:hover {
+    border: solid 1px map-fetch($color, ui, brand);
+  }
+
+  &--selected {
+    border: solid 1px map-fetch($color, ui, brand);
+    background-color: $brand-blue-light;
+  }
+
+  &:focus-within {
+    border: solid 1px map-fetch($color, ui, brand);
+  }
+
+  .oui-button--unstyled:focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.oui-tile__order-number {
+  min-width: 16px;
+}
+
+.oui-tile__drag-handle {
+  display: flex;
+  cursor: move;
+}
