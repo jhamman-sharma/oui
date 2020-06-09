@@ -1,9 +1,10 @@
-import React from 'react';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import React from "react";
+import classNames from "classnames";
+import PropTypes from "prop-types";
 
 const TR = ({
   isActive,
+  isHighlighted,
   noBorder,
   noHover,
   borderStyle,
@@ -12,26 +13,25 @@ const TR = ({
   children,
 }) => {
   let classes = classNames({
-    'oui-table-row--active': isActive,
-    'no-border': noBorder,
-    'hover--disabled': noHover,
+    "oui-table-row--active": isActive,
+    "oui-table-row--highlighted": isHighlighted,
+    "no-border": noBorder,
+    "hover--disabled": noHover,
     [`border--${borderStyle}`]: borderStyle,
     [`background--${backgroundColor}`]: backgroundColor,
   });
   return (
-    <tr
-      className={ classes }
-      data-test-section={ testSection }>
-      { children }
+    <tr className={classes} data-test-section={testSection}>
+      {children}
     </tr>
   );
 };
 
 TR.propTypes = {
   /** Background color for each row */
-  backgroundColor: PropTypes.oneOf(['faint', 'light']),
+  backgroundColor: PropTypes.oneOf(["faint", "light"]),
   /** Border style for each row */
-  borderStyle: PropTypes.oneOf(['bottom', 'top', 'sides', 'ends', 'none']),
+  borderStyle: PropTypes.oneOf(["bottom", "top", "sides", "ends", "none"]),
   /** Expects a `Table.TD` or `Table.TH` component */
   children: PropTypes.node,
   /** If true, add active class */
@@ -42,8 +42,10 @@ TR.propTypes = {
   noHover: PropTypes.bool,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
+  /** If true, add highlight class */
+  isHighlighted: PropTypes.bool,
 };
 
-TR.displayName = 'Table.TR';
+TR.displayName = "Table.TR";
 
 export default TR;

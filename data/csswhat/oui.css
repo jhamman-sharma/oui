@@ -3052,6 +3052,9 @@ li > ol {
 .oui-table-row--active {
   background-color: #FFFFFF; }
 
+.oui-table-row--highlighted {
+  background-color: #e6ebff; }
+
 .table--scroll,
 .oui-table--scroll {
   display: flex;
