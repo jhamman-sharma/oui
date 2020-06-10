@@ -1,6 +1,6 @@
-import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const TR = ({
   isActive,
@@ -13,15 +13,15 @@ const TR = ({
   children,
 }) => {
   let classes = classNames({
-    "oui-table-row--active": isActive,
-    "oui-table-row--highlighted": isHighlighted,
-    "no-border": noBorder,
-    "hover--disabled": noHover,
+    'oui-table-row--active': isActive,
+    'oui-table-row--highlighted': isHighlighted,
+    'no-border': noBorder,
+    'hover--disabled': noHover,
     [`border--${borderStyle}`]: borderStyle,
     [`background--${backgroundColor}`]: backgroundColor,
   });
   return (
-    <tr className={classes} data-test-section={testSection}>
+    <tr className={ classes } data-test-section={ testSection }>
       {children}
     </tr>
   );
@@ -29,23 +29,23 @@ const TR = ({
 
 TR.propTypes = {
   /** Background color for each row */
-  backgroundColor: PropTypes.oneOf(["faint", "light"]),
+  backgroundColor: PropTypes.oneOf(['faint', 'light']),
   /** Border style for each row */
-  borderStyle: PropTypes.oneOf(["bottom", "top", "sides", "ends", "none"]),
+  borderStyle: PropTypes.oneOf(['bottom', 'top', 'sides', 'ends', 'none']),
   /** Expects a `Table.TD` or `Table.TH` component */
   children: PropTypes.node,
   /** If true, add active class */
   isActive: PropTypes.bool,
   /** If true, add class to remove border */
-  noBorder: PropTypes.bool,
-  /** If true, remove hover on inner TDs */
-  noHover: PropTypes.bool,
-  /** Hook for automated JavaScript tests */
-  testSection: PropTypes.string,
-  /** If true, add highlight class */
   isHighlighted: PropTypes.bool,
+  /** If true, remove hover on inner TDs */
+  noBorder: PropTypes.bool,
+  /** Hook for automated JavaScript tests */
+  noHover: PropTypes.bool,
+  /** If true, add highlight class */
+  testSection: PropTypes.string,
 };
 
-TR.displayName = "Table.TR";
+TR.displayName = 'Table.TR';
 
 export default TR;

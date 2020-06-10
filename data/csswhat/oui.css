@@ -3053,7 +3053,8 @@ li > ol {
   background-color: #FFFFFF; }
 
 .oui-table-row--highlighted {
-  background-color: #e6ebff; }
+  background-color: #e6ebff;
+  border-radius: 8px; }
 
 .table--scroll,
 .oui-table--scroll {
