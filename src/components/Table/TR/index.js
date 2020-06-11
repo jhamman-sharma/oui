@@ -36,13 +36,13 @@ TR.propTypes = {
   children: PropTypes.node,
   /** If true, add active class */
   isActive: PropTypes.bool,
-  /** If true, add class to remove border */
-  isHighlighted: PropTypes.bool,
-  /** If true, remove hover on inner TDs */
-  noBorder: PropTypes.bool,
-  /** Hook for automated JavaScript tests */
-  noHover: PropTypes.bool,
   /** If true, add highlight class */
+  isHighlighted: PropTypes.bool,
+  /** If true, add class to remove border */
+  noBorder: PropTypes.bool,
+  /** If true, remove hover on inner TDs */
+  noHover: PropTypes.bool,
+  /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
 };
 
