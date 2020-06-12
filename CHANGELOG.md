@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add multiple **LayoutKit** stories and ability to specify `alignSelf` on **Col** ([#1357](https://github.com/optimizely/oui/pull/1357))
 - [Feature] Add `isHighlighted` prop to **Table.TR** to allow row highlighting ([#1356](https://github.com/optimizely/oui/pull/1356))
 - [Patch] Add Storybook example for **SearchPicker** in a **Dropdown** ([#1355](https://github.com/optimizely/oui/pull/1355))
 

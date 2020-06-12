@@ -11,6 +11,7 @@ import Col from './Col';
 import ColWithNubbin from './ColWithNubbin';
 import NavBar from '../NavBar';
 import Attention from '../Attention';
+import Spinner from '../Spinner';
 
 const openLogoUrl =
   'https://app.optimizely.com/dist/static/img/rebrand/logo-f64d2aed989db744b609666199d7d2a2.svg';
@@ -221,5 +222,20 @@ storiesForTemplates
           </Col>
         </Row>
       </Container>
+    );
+  })
+  .add('Spinner', () => {
+    return (
+      <div style={{ height: '550px' }}>
+        <Container
+          isFullHeight={ true }
+          outlineDebug={ boolean('outlineDebug', true) }>
+          <Row verticalAlignment="center">
+            <Col>
+              <Spinner hasOverlay={ true } />
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   });

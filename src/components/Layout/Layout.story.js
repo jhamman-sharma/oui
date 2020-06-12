@@ -1,25 +1,20 @@
 import React from 'react';
 
 import { storiesOf, addParameters } from '@storybook/react';
-import {
-  withKnobs,
-  boolean,
-  number,
-  select,
-} from '@storybook/addon-knobs';
+import { withKnobs, boolean, number, select } from '@storybook/addon-knobs';
 import noop from 'lodash.noop';
 
-import Col from './Col';
-import Row from './Row';
-import Container from './Container';
-import Card from '../Card';
 import Button from '../Button';
 import ButtonIcon from '../ButtonIcon';
-import Code from '../Code';
-import SelectDropdown from '../SelectDropdown';
-import Input from '../Input';
 import ButtonRow from '../ButtonRow';
+import Card from '../Card';
+import Code from '../Code';
+import Col from './Col';
+import Container from './Container';
 import Icon from 'react-oui-icons';
+import Input from '../Input';
+import Row from './Row';
+import SelectDropdown from '../SelectDropdown';
 
 const viewports = {
   iphone5: {
@@ -82,7 +77,7 @@ const borderOptions = {
 const storiesForContainer = storiesOf('LayoutKit/Container', module);
 storiesForContainer
   .addDecorator(withKnobs)
-  .addDecorator(story => <div id="root-preview">{story()}</div>);
+  .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 storiesForContainer
   .add('Default Overview', () => {
@@ -308,7 +303,7 @@ storiesForContainer
 const storiesForRow = storiesOf('LayoutKit/Row', module);
 storiesForRow
   .addDecorator(withKnobs)
-  .addDecorator(story => <div id="root-preview">{story()}</div>);
+  .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 storiesForRow
   .add('Vertical Columns', () => {
@@ -402,7 +397,8 @@ storiesForRow
             <p>All this content</p>
           </Col>
           <Col small={ 4 }>
-            <p>will align to the start of the Row with
+            <p>
+              will align to the start of the Row with
               <code> verticalAlignment = {'start'} </code>
             </p>
           </Col>
@@ -421,10 +417,7 @@ storiesForRow
             </p>
           </Col>
         </Row>
-        <Row
-          removeGutters={ false }
-          shouldWrap={ true }
-          verticalAlignment={ 'end' }>
+        <Row removeGutters={ false } shouldWrap={ true } verticalAlignment={ 'end' }>
           <Col small={ 8 }>
             <p>And this content</p>
           </Col>
@@ -442,7 +435,7 @@ storiesForRow
 const storiesForCol = storiesOf('LayoutKit/Col', module);
 storiesForCol
   .addDecorator(withKnobs)
-  .addDecorator(story => <div id="root-preview">{story()}</div>);
+  .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 storiesForCol
   .add('Changing Order', () => {
@@ -538,6 +531,58 @@ storiesForCol
           <Col>right column</Col>
         </Row>
       </Container>
+    );
+  })
+  .add('As a Reading Column', () => {
+    return (
+      <Container outlineDebug={ boolean('outlineDebug', true) }>
+        <Row>
+          <Col isReadingColumn={ boolean('isReadingColumn', true) }>
+            <h1>I'm a "Reading Column" Col</h1>
+            <Input type="text" label="Name" />
+            <Input type="text" label="Description" />
+          </Col>
+        </Row>
+        <Row>
+          <Col small="7" isReadingColumn={ false } paddedContent="around">
+            <h1>I'm a "7 out of 12" Col</h1>
+            <Input type="text" label="Name" />
+            <Input type="text" label="Description" />
+          </Col>
+        </Row>
+      </Container>
+    );
+  })
+  .add('Vertical Alignment', () => {
+    return (
+      <div style={{ height: '300px' }}>
+        <Container
+          outlineDebug={ boolean('outlineDebug', true) }
+          pushRowsTop={ true }
+          paddedContent={ 'sides' }
+          isFullHeight={ true }>
+          <Row removeGutters={ false } shouldWrap={ false }>
+            <Col small={ 4 } alignSelf={ 'start' }>
+              <p>
+                This Col will align to the start of the Row with
+                <code> alignSelf = {'start'} </code>
+              </p>
+            </Col>
+            <Col small={ 4 } alignSelf={ 'center' }>
+              <p>
+                This Col will align to the center of the Row with
+                <code> alignSelf = {'center'} </code>
+              </p>
+            </Col>
+            <Col small={ 4 } alignSelf={ 'end' }>
+              <p>
+                This Col will align to the end of the Row with
+                <code> alignSelf = {'end'} </code>
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   })
   .add('Example: Responsive Tests', () => {
@@ -664,7 +709,7 @@ storiesForCol
 const storiesForExamples = storiesOf('LayoutKit/Usage Examples', module);
 storiesForExamples
   .addDecorator(withKnobs)
-  .addDecorator(story => <div id="root-preview">{story()}</div>);
+  .addDecorator((story) => <div id="root-preview">{story()}</div>);
 
 storiesForExamples
   .add('URL Rows Match', () => {
@@ -677,7 +722,7 @@ storiesForExamples
           <Col>
             <h6>URL Match</h6>
           </Col>
-          <Col small={ 'auto' }>
+          <Col small={ 'auto' } alignSelf="center">
             <Icon name="close" />
           </Col>
         </Row>

@@ -7,13 +7,15 @@ import { withKnobs } from '@storybook/addon-knobs';
 import Dropdown from '../Dropdown';
 import SearchPicker from './index.js';
 import Spinner from '../Spinner';
+import Icon from 'react-oui-icons';
 
 import { getSearchFunction } from './mock_api';
+import Row from '../Layout/Row';
 
 const searchFunction = getSearchFunction();
 
 const stories = storiesOf('SearchPicker', module);
-stories.addDecorator(withKnobs).addDecorator(story => (
+stories.addDecorator(withKnobs).addDecorator((story) => (
   <div
     id="root-preview"
     style={{
@@ -43,7 +45,9 @@ stories
           <Dropdown width={ 600 } fullWidth={ true } renderActivator={ renderInput }>
             <Dropdown.Contents minWidth={ 600 } isLoading={ isLoading }>
               <Dropdown.ListItem ignoreToggle={ true }>
-                <span className="micro muted soft--sides">{resultsText.summary}</span>
+                <span className="micro muted soft--sides">
+                  {resultsText.summary}
+                </span>
               </Dropdown.ListItem>
               {availableEntities.map((item, index) => (
                 <Dropdown.ListItem key={ index }>
@@ -51,7 +55,9 @@ stories
                     hasFauxFocus={ currentFauxFocusIndex === index }
                     onClick={ action(`click dropdown block link ${item.name}`) }>
                     <Dropdown.BlockLinkText text={ item.name } />
-                    <Dropdown.BlockLinkSecondaryText secondaryText={ item.description } />
+                    <Dropdown.BlockLinkSecondaryText
+                      secondaryText={ item.description }
+                    />
                   </Dropdown.BlockLink>
                 </Dropdown.ListItem>
               ))}
@@ -89,7 +95,9 @@ stories
                 </Dropdown.BlockLink>
               </Dropdown.ListItem>
               <Dropdown.ListItem ignoreToggle={ true }>
-                <span className="micro muted soft--sides">{resultsText.summary}</span>
+                <span className="micro muted soft--sides">
+                  {resultsText.summary}
+                </span>
               </Dropdown.ListItem>
               {availableEntities.map((item, index) => (
                 <Dropdown.ListItem key={ index }>
@@ -97,7 +105,9 @@ stories
                     hasFauxFocus={ currentFauxFocusIndex === index + 1 }
                     onClick={ action(`click dropdown block link ${item.name}`) }>
                     <Dropdown.BlockLinkText text={ item.name } />
-                    <Dropdown.BlockLinkSecondaryText secondaryText={ item.description } />
+                    <Dropdown.BlockLinkSecondaryText
+                      secondaryText={ item.description }
+                    />
                   </Dropdown.BlockLink>
                 </Dropdown.ListItem>
               ))}
@@ -110,19 +120,23 @@ stories
   })
   .add('In a Dropdown', () => {
     return (
-      <Dropdown buttonContent="Selected Variation Name" arrowIcon="down" shouldHideChildrenOnClick={ false } style="outline">
+      <Dropdown
+        buttonContent="Selected Variation Name"
+        arrowIcon="down"
+        shouldHideChildrenOnClick={ false }
+        style="outline">
         {({ handleHideChildren }) => (
           <Dropdown.Contents minWidth={ 600 } direction="right">
             <Dropdown.ListItem>
               <Dropdown.BlockLink
                 hasFauxFocus={ false }
                 onClick={ action('click create dropdown block link') }>
-                <div className="flex flex-align--center">
-                  Create new variation
-                </div>
+                <Row verticalAlignment="center" paddedContent="sides">
+                  <Icon name="add" />
+                  <p className="soft--left flush">Create new variation</p>
+                </Row>
               </Dropdown.BlockLink>
             </Dropdown.ListItem>
-
             <SearchPicker
               onItemSelected={ action('keyboard selection item') }
               additionalItems={ 1 }
@@ -136,20 +150,29 @@ stories
                 currentFauxFocusIndex,
                 resultsText,
               }) => (
-                <>'                 '<Dropdown.ListItem>
-                  { renderInput() }
-                </Dropdown.ListItem>'                 '<Dropdown.ListItem ignoreToggle={ true }>
-                  <span className="micro muted soft--sides">{resultsText.summary}</span>
-                </Dropdown.ListItem>'                 '{availableEntities.map((item, index) => (
-                  <Dropdown.ListItem key={ index }>
-                    <Dropdown.BlockLink
-                      hasFauxFocus={ currentFauxFocusIndex === index + 1 }
-                      onClick={ action(`click dropdown block link ${item.name}`) }>
-                      <Dropdown.BlockLinkText text={ item.name } />
-                      <Dropdown.BlockLinkSecondaryText secondaryText={ item.description } />
-                    </Dropdown.BlockLink>
+                <React.Fragment>
+                  <Dropdown.ListItem>{renderInput()}</Dropdown.ListItem>
+                  <Dropdown.ListItem ignoreToggle={ true }>
+                    <span className="micro muted soft--sides">
+                      {resultsText.summary}
+                    </span>
                   </Dropdown.ListItem>
-                ))}'                 '{isLoading && <Spinner hasOverlay={ true } />}'               '</>
+                  {availableEntities.map((item, index) => (
+                    <Dropdown.ListItem key={ index }>
+                      <Dropdown.BlockLink
+                        hasFauxFocus={ currentFauxFocusIndex === index + 1 }
+                        onClick={ action(
+                          `click dropdown block link ${item.name}`
+                        ) }>
+                        <Dropdown.BlockLinkText text={ item.name } />
+                        <Dropdown.BlockLinkSecondaryText
+                          secondaryText={ item.description }
+                        />
+                      </Dropdown.BlockLink>
+                    </Dropdown.ListItem>
+                  ))}
+                  {isLoading && <Spinner hasOverlay={ true } />}
+                </React.Fragment>
               )}
             </SearchPicker>
           </Dropdown.Contents>

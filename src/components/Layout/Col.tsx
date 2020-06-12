@@ -54,10 +54,15 @@ type ColPropTypes = {
    * )}
    */
   small?: column;
+
+  /**
+   * How to vertically align self
+   */
+  alignSelf?: 'start' | 'center' | 'end';
 };
 const Col: React.SFC<ColPropTypes> = React.forwardRef(
   (
-    { as: Component = 'div', border, children, overflow, paddedContent = 'none', isReadingColumn, ...props },
+    { as: Component = 'div', border, children, overflow, paddedContent = 'none', isReadingColumn, alignSelf, ...props },
     ref?: React.Ref<HTMLElement | React.ElementType>
   ) => {
     const prefix = 'col';
@@ -73,9 +78,13 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
     if (paddedContent !== 'none') {
       classes.push(`padded-content--${paddedContent}`);
     }
-    if (isReadingColumn) {
-    children = <div className="reading-column">{children}</div>
+    if (alignSelf) {
+      classes.push(`align-self-${alignSelf}`);
     }
+    if (isReadingColumn) {
+      children = <div className="reading-column">{children}</div>
+    }
+
     DEVICE_SIZES.forEach(brkPoint => {
       let propValue = props[brkPoint];
       delete props[brkPoint];
