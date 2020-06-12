@@ -69,9 +69,7 @@
 
   &--rule,
   &--rule-no-bottom-border {
-
     > thead {
-
       > th {
         padding-bottom: spacer(1);
       }
@@ -81,7 +79,8 @@
       }
     }
 
-    & > tbody > tr { // scss-lint:disable UnnecessaryParentReference
+    & > tbody > tr {
+      // scss-lint:disable UnnecessaryParentReference
       border-bottom: 1px solid map-fetch($color, ui, light);
 
       // If no `thead` is present we'll have a border top.
@@ -90,17 +89,17 @@
         border-bottom: 1px solid map-fetch($color, ui, light);
       }
     }
-
   }
 
-  &--rule-no-bottom-border > tbody > tr:last-child { // scss-lint:disable UnnecessaryParentReference
+  &--rule-no-bottom-border > tbody > tr:last-child {
+    // scss-lint:disable UnnecessaryParentReference
     border-bottom: 0;
   }
 
   &--wall {
-
     & > thead > tr > th, // scss-lint:disable UnnecessaryParentReference
-    & > tbody > tr > td { // scss-lint:disable UnnecessaryParentReference
+    & > tbody > tr > td {
+      // scss-lint:disable UnnecessaryParentReference
       border-left: 1px solid map-fetch($color, ui, light);
       padding-right: spacer(1);
 
@@ -111,8 +110,8 @@
   }
 
   &--hover {
-
-    & > tbody > tr { // scss-lint:disable UnnecessaryParentReference
+    & > tbody > tr {
+      // scss-lint:disable UnnecessaryParentReference
 
       &:hover {
         background-color: map-fetch($color, background, brand-light);
@@ -121,12 +120,14 @@
     }
 
     & > thead > tr > th:first-child, // scss-lint:disable UnnecessaryParentReference
-    & > tbody > tr > td:first-child { // scss-lint:disable UnnecessaryParentReference
+    & > tbody > tr > td:first-child {
+      // scss-lint:disable UnnecessaryParentReference
       padding-left: spacer(2);
     }
 
     & > thead > tr > th:last-child, // scss-lint:disable UnnecessaryParentReference
-    & > tbody > tr > td:last-child { // scss-lint:disable UnnecessaryParentReference
+    & > tbody > tr > td:last-child {
+      // scss-lint:disable UnnecessaryParentReference
       padding-right: spacer(2);
     }
   }
@@ -162,10 +163,10 @@
   // the `--controls` cell to maintain spacing.
 
   &--add-row {
-
     // Removes top padding of first row so spacing is consistent with other
     // form elements.
-    tbody > tr:first-child > td { // scss-lint:disable UnnecessaryParentReference
+    tbody > tr:first-child > td {
+      // scss-lint:disable UnnecessaryParentReference
       padding-top: 0;
     }
 
@@ -185,6 +186,12 @@
 .#{$namespace}table-row--active,
 .oui-table-row--active {
   background-color: map-fetch($color, background, faint);
+}
+
+// Row is highlighted
+
+.oui-table-row--highlighted {
+  background-color: $brand-blue-light;
 }
 
 /// Scrolling Tables
@@ -258,4 +265,3 @@
   padding-top: spacer(1.5);
   padding-bottom: spacer(1.5);
 }
-

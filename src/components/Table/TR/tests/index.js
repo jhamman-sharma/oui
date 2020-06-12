@@ -22,4 +22,9 @@ describe('components/Table/TR', () => {
     const component = shallow(<TR noBorder={ true } testSection="goose"></TR>);
     expect(component.hasClass('no-border')).toBe(true);
   });
+
+  it('should render with a highlight if isHighlighted is passed', () => {
+    const component = shallow(<TR isHighlighted={ true } testSection="goose"></TR>);
+    expect(component.hasClass('oui-table-row--highlighted')).toBe(true);
+  });
 });

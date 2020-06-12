@@ -1676,8 +1676,9 @@ declare module "components/Table/THead/index" {
 }
 declare module "components/Table/TR/index" {
     export default TR;
-    function TR({ isActive, noBorder, noHover, borderStyle, backgroundColor, testSection, children, }: {
+    function TR({ isActive, isHighlighted, noBorder, noHover, borderStyle, backgroundColor, testSection, children, }: {
         isActive: any;
+        isHighlighted: any;
         noBorder: any;
         noHover: any;
         borderStyle: any;
@@ -1691,6 +1692,7 @@ declare module "components/Table/TR/index" {
             export const borderStyle: PropTypes.Requireable<string>;
             export const children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const isActive: PropTypes.Requireable<boolean>;
+            export const isHighlighted: PropTypes.Requireable<boolean>;
             export const noBorder: PropTypes.Requireable<boolean>;
             export const noHover: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;

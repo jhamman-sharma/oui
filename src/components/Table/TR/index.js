@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 const TR = ({
   isActive,
+  isHighlighted,
   noBorder,
   noHover,
   borderStyle,
@@ -13,16 +14,15 @@ const TR = ({
 }) => {
   let classes = classNames({
     'oui-table-row--active': isActive,
+    'oui-table-row--highlighted': isHighlighted,
     'no-border': noBorder,
     'hover--disabled': noHover,
     [`border--${borderStyle}`]: borderStyle,
     [`background--${backgroundColor}`]: backgroundColor,
   });
   return (
-    <tr
-      className={ classes }
-      data-test-section={ testSection }>
-      { children }
+    <tr className={ classes } data-test-section={ testSection }>
+      {children}
     </tr>
   );
 };
@@ -36,6 +36,8 @@ TR.propTypes = {
   children: PropTypes.node,
   /** If true, add active class */
   isActive: PropTypes.bool,
+  /** If true, add highlight class */
+  isHighlighted: PropTypes.bool,
   /** If true, add class to remove border */
   noBorder: PropTypes.bool,
   /** If true, remove hover on inner TDs */
