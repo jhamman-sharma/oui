@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.6.0 - 2020-06-22
 - [Feature] Add multiple **LayoutKit** stories and ability to specify `alignSelf` on **Col** ([#1357](https://github.com/optimizely/oui/pull/1357))
 - [Feature] Add `isHighlighted` prop to **Table.TR** to allow row highlighting ([#1356](https://github.com/optimizely/oui/pull/1356))
 - [Feature] Update **Tile** to directly render array of Dropdown.ListItem components for `dropdownItems` prop ([#1358](https://github.com/optimizely/oui/pull/1358))
