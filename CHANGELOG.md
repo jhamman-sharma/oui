@@ -8,6 +8,9 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 ## Unreleased
 - [Feature] Add multiple **LayoutKit** stories and ability to specify `alignSelf` on **Col** ([#1357](https://github.com/optimizely/oui/pull/1357))
 - [Feature] Add `isHighlighted` prop to **Table.TR** to allow row highlighting ([#1356](https://github.com/optimizely/oui/pull/1356))
+- [Feature] Update **Tile** to directly render array of Dropdown.ListItem components for `dropdownItems` prop ([#1358](https://github.com/optimizely/oui/pull/1358))
+- [Feature] Add `isDestructive` prop to **Dropdown.BlockLinkText** to render red text ([#1358](https://github.com/optimizely/oui/pull/1358))
+- [Feature] Add `removeBorderTop` prop to **Dropdown.ListItem** to remove top border on a list item ([#1358](https://github.com/optimizely/oui/pull/1358))
 - [Patch] Add Storybook example for **SearchPicker** in a **Dropdown** ([#1355](https://github.com/optimizely/oui/pull/1355))
 
 ## 46.5.0 - 2020-06-09

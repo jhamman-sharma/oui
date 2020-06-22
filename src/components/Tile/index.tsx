@@ -24,12 +24,7 @@ const renderDropdownActivator = (
 );
 
 const renderTileActions = (
-  items: {
-    text: string;
-    description?: string;
-    onClick: (...args: any[]) => any;
-  }[],
-  testSection?: string
+  items: ListItemTypeProps[],
 ) => {
   return (
     <Dropdown
@@ -38,27 +33,19 @@ const renderTileActions = (
       key="dropdown"
     >
       <Dropdown.Contents direction={'right'}>
-        {items.map((item, idx) => (
-          <Dropdown.ListItem key={`dropdown-item-${idx}`}>
-            <Dropdown.BlockLink
-              onClick={item.onClick}
-              testSection={
-                testSection && `${testSection}-dropdown-block-link-${idx}`
-              }
-            >
-              <Dropdown.BlockLinkText text={item.text} />
-              {item.description && (
-                <Dropdown.BlockLinkSecondaryText
-                  secondaryText={item.description}
-                />
-              )}
-            </Dropdown.BlockLink>
-          </Dropdown.ListItem>
-        ))}
+        {items}
       </Dropdown.Contents>
     </Dropdown>
   );
 };
+
+type ListItemTypeProps =  {
+  hardSides?: boolean,
+  hardTop?: boolean,
+  ignoreToggle?: boolean,
+  removeBorderTop?: boolean,
+  role?: string,
+}
 
 export type TileProps = {
   /**
@@ -74,13 +61,9 @@ export type TileProps = {
 
   /**
    * Optional dropdown items to add to right side of Tile
-   * Descriptions are optional, title and onClick required
+   * Should be an array of Dropdown.ListItem items
    */
-  dropdownItems?: {
-    text: string;
-    description?: string;
-    onClick: (...args: any[]) => any;
-  }[];
+  dropdownItems?: ListItemTypeProps[];
 
   /**
    * Whether or not this Tile has margin on the ends
@@ -196,7 +179,7 @@ const Tile = ({
       >
         {name}
       </p>
-      <p className="text--left muted flush micro wrap-text">{description}</p>
+      <p className="text--left muted flush--bottom push-half--top micro wrap-text">{description}</p>
     </>
   );
   return (
@@ -277,7 +260,7 @@ const Tile = ({
             onClick={onDismiss}
           />
         )}
-        {dropdownItems && renderTileActions(dropdownItems, testSection)}
+        {dropdownItems && renderTileActions(dropdownItems)}
       </div>
     </div>
   );

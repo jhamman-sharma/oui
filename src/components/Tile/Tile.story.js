@@ -8,8 +8,43 @@ import Tile from './index';
 import Col from '../Layout/Col';
 import Row from '../Layout/Row';
 import Container from '../Layout/Container';
+import Dropdown from '../Dropdown';
 
 const stories = storiesOf('Tile', module);
+
+const dropdownItems = [
+  <Dropdown.ListItem key={ 0 } role="separator">
+    Percentage Rollout
+  </Dropdown.ListItem>,
+  <Dropdown.ListItem key={ 1 }>
+    <Dropdown.BlockLink
+      onClick={ action('onClick move to top') }
+      testSection={ 'dropdown-block-link-move' }>
+      <Dropdown.BlockLinkText text={ 'Move to top' } />
+    </Dropdown.BlockLink>
+  </Dropdown.ListItem>,
+  <Dropdown.ListItem key={ 2 } removeBorderTop={ true }>
+    <Dropdown.BlockLink
+      onClick={ action('onClick duplicate') }
+      testSection={ 'dropdown-block-link-duplicate' }>
+      <Dropdown.BlockLinkText text={ 'Duplicate' } />
+    </Dropdown.BlockLink>
+  </Dropdown.ListItem>,
+  <Dropdown.ListItem key={ 3 } removeBorderTop={ true }>
+    <Dropdown.BlockLink
+      onClick={ action('onClick archive') }
+      testSection={ 'dropdown-block-link-archive' }>
+      <Dropdown.BlockLinkText text={ 'Archive' } />
+    </Dropdown.BlockLink>
+  </Dropdown.ListItem>,
+  <Dropdown.ListItem key={ 4 }>
+    <Dropdown.BlockLink
+      onClick={ action('onClick delete') }
+      testSection={ 'dropdown-block-link-delete' }>
+      <Dropdown.BlockLinkText text={ 'Delete...' } isDestructive={ true }/>
+    </Dropdown.BlockLink>
+  </Dropdown.ListItem>,
+];
 
 stories
   .addDecorator(withKnobs)
@@ -154,16 +189,7 @@ stories
               warningTitle={ text('warningText', 'This is a warning') }
               warningContent={ <p>Warning details</p> }
               status="Running"
-              dropdownItems={ [
-                {
-                  text: 'Duplicate',
-                  onClick: action('Dropdown Duplicate clicked '),
-                },
-                {
-                  text: 'Open in...',
-                  onClick: action('Dropdown Open In clicked '),
-                },
-              ] }
+              dropdownItems={ dropdownItems }
             />
           </Col>
         </Row>
@@ -179,16 +205,7 @@ stories
               warningTitle={ text('warningText', 'This is a warning') }
               warningContent={ <p>Warning details</p> }
               onCopy={ action('onCopy called') }
-              dropdownItems={ [
-                {
-                  text: 'Duplicate',
-                  onClick: action('Dropdown Duplicate clicked '),
-                },
-                {
-                  text: 'Open in...',
-                  onClick: action('Dropdown Open In clicked '),
-                },
-              ] }
+              dropdownItems={ dropdownItems }
             />
           </Col>
         </Row>
@@ -207,16 +224,7 @@ stories
               onCopy={ action('onCopy called') }
               onDismiss={ action('onDismiss called') }
               onEdit={ action('onEdit called') }
-              dropdownItems={ [
-                {
-                  text: 'Duplicate',
-                  onClick: action('Dropdown Duplicate clicked '),
-                },
-                {
-                  text: 'Open in...',
-                  onClick: action('Dropdown Open In clicked '),
-                },
-              ] }
+              dropdownItems={ dropdownItems }
             />
           </Col>
         </Row>
@@ -289,16 +297,7 @@ stories
               warningTitle={ text('warningText', 'This is a warning') }
               warningContent={ <p>Warning details</p> }
               status="Running"
-              dropdownItems={ [
-                {
-                  text: 'Duplicate',
-                  onClick: action('Dropdown Duplicate clicked '),
-                },
-                {
-                  text: 'Open in...',
-                  onClick: action('Dropdown Open In clicked '),
-                },
-              ] }
+              dropdownItems={ dropdownItems }
             />
           </Col>
         </Row>
@@ -315,16 +314,7 @@ stories
               warningTitle={ text('warningText', 'This is a warning') }
               warningContent={ <p>Warning details</p> }
               onCopy={ action('onCopy called') }
-              dropdownItems={ [
-                {
-                  text: 'Duplicate',
-                  onClick: action('Dropdown Duplicate clicked '),
-                },
-                {
-                  text: 'Open in...',
-                  onClick: action('Dropdown Open In clicked '),
-                },
-              ] }
+              dropdownItems={ dropdownItems }
             />
           </Col>
         </Row>

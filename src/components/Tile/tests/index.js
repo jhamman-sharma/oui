@@ -2,6 +2,7 @@
 import React from 'react';
 import Tile from '../index';
 import { shallow, mount } from 'enzyme';
+import Dropdown from '../../Dropdown';
 
 describe('components/Tile', () => {
   it('should render default, basic tile', () => {
@@ -12,7 +13,6 @@ describe('components/Tile', () => {
   });
 
   it('should render a description when provided', () => {
-
     const component = shallow(<Tile name="Goose" description="Duck" />);
     expect(
       component.find('.oui-tile').containsMatchingElement(<p>Duck</p>)
@@ -162,10 +162,13 @@ describe('components/Tile', () => {
         description="ID:12345678"
         onTileClick={ mockClickFunction }
         dropdownItems={ [
-          {
-            text: 'Duplicate',
-            onClick: mockDropdownAFunction,
-          },
+          <Dropdown.ListItem key={ 2 } removeBorderTop={ true }>
+            <Dropdown.BlockLink
+              onClick={ mockDropdownAFunction }
+              testSection={ 'dropdown-block-link-duplicate' }>
+              <Dropdown.BlockLinkText text={ 'Duplicate' } />
+            </Dropdown.BlockLink>
+          </Dropdown.ListItem>,
         ] }
       />
     );
@@ -173,8 +176,9 @@ describe('components/Tile', () => {
     component.find('.oui-button-icon').simulate('click');
     expect(component.find('.oui-dropdown').length).toBe(1);
     expect(component.find('.oui-dropdown__item').length).toBe(1);
-    component.find('[data-test-section="test-tile-dropdown-block-link-0"]').simulate('click');
+    component
+      .find('[data-test-section="dropdown-block-link-duplicate"]')
+      .simulate('click');
     expect(mockDropdownAFunction).toHaveBeenCalledTimes(1);
-
   });
 });

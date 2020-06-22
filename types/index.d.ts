@@ -757,6 +757,10 @@ declare module "components/Layout/Col" {
          * )}
          */
         small?: column;
+        /**
+         * How to vertically align self
+         */
+        alignSelf?: 'start' | 'center' | 'end';
     };
     const Col: React.SFC<ColPropTypes>;
     export default Col;
@@ -1467,6 +1471,7 @@ declare module "components/Dropdown/DropdownListItem/index" {
             export const hardSides: PropTypes.Requireable<boolean>;
             export const hardTop: PropTypes.Requireable<boolean>;
             export const ignoreToggle: PropTypes.Requireable<boolean>;
+            export const removeBorderTop: PropTypes.Requireable<boolean>;
             export const role: PropTypes.Requireable<string>;
         }
     }
@@ -1510,6 +1515,7 @@ declare module "components/Dropdown/DropdownBlockLinkText/index" {
         }
         export namespace propTypes {
             export const hasExternalIcon: PropTypes.Requireable<boolean>;
+            export const isDestructive: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
             const text_1: PropTypes.Requireable<string>;
             export { text_1 as text };
@@ -1943,6 +1949,13 @@ declare module "components/DragAndDrop/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Tile/index" {
+    type ListItemTypeProps = {
+        hardSides?: boolean;
+        hardTop?: boolean;
+        ignoreToggle?: boolean;
+        removeBorderTop?: boolean;
+        role?: string;
+    };
     export type TileProps = {
         /**
          * Description of the item for this reference Tile
@@ -1955,13 +1968,9 @@ declare module "components/Tile/index" {
         dragHandleProps?: object;
         /**
          * Optional dropdown items to add to right side of Tile
-         * Descriptions are optional, title and onClick required
+         * Should be an array of Dropdown.ListItem items
          */
-        dropdownItems?: {
-            text: string;
-            description?: string;
-            onClick: (...args: any[]) => any;
-        }[];
+        dropdownItems?: ListItemTypeProps[];
         /**
          * Whether or not this Tile has margin on the ends
          * True by default

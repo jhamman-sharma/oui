@@ -1,11 +1,18 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Icon from 'react-oui-icons';
 
 export default function DropdownBlockLinkText(props) {
-  const testSection = props.testSection ? 'block-link-text-' + props.testSection : null;
+  const testSection = props.testSection
+    ? 'block-link-text-' + props.testSection
+    : null;
   return (
-    <span className="flex flex-justified--between" { ...(testSection ? { 'data-test-section': testSection } : {}) }>
+    <span
+      className={ classNames('flex flex-justified--between', {
+        'color--bad-news': props.isDestructive,
+      }) }
+      { ...(testSection ? { 'data-test-section': testSection } : {}) }>
       {props.text}
       {props.hasExternalIcon && (
         <span className="oui-dropdown__block-link--icon">
@@ -22,6 +29,8 @@ DropdownBlockLinkText.defaultProps = {
 DropdownBlockLinkText.propTypes = {
   /** adds external icon when true */
   hasExternalIcon: PropTypes.bool,
+  /** Changes text to red when true */
+  isDestructive: PropTypes.bool,
   /** test section from parent */
   testSection: PropTypes.string,
   /** text, if provided */

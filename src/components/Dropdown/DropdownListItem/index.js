@@ -9,6 +9,7 @@ export default function DropdownListItem(props) {
     'soft--sides': props.role === 'separator',
     'oui-dropdown__item--separator': props.role === 'separator',
     'oui-dropdown__item': true,
+    'no-border': props.removeBorderTop,
   });
 
   function handleMouseDownCapture(event) {
@@ -46,6 +47,8 @@ DropdownListItem.propTypes = {
   hardTop: PropTypes.bool,
   /** Instructs the Dropdown parent to ignore clicks for toggle purposes. */
   ignoreToggle: PropTypes.bool,
+  /** Removes border if true */
+  removeBorderTop: PropTypes.bool,
   /**
    * Aria role for this list item. See roles here:
    * https://www.w3.org/WAI/PF/aria/roles
