@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Patch] Update **Tile** Prop TypeScript definition for `dropdownItems`. Also updated **Tile** stories to be tsx (for TypeScript validation) and the ability for all Stories to use TypeScript. ([#1359](https://github.com/optimizely/oui/pull/1359))
 
 ## 46.6.0 - 2020-06-22
 - [Feature] Add multiple **LayoutKit** stories and ability to specify `alignSelf` on **Col** ([#1357](https://github.com/optimizely/oui/pull/1357))

@@ -1,15 +1,14 @@
-import React from 'react';
-import classNames from 'classnames';
+import React from "react";
+import classNames from "classnames";
 
-import Button from '../Button';
-import OverlayWrapper from '../OverlayWrapper';
-import Popover from '../Popover';
-import Dropdown from '../Dropdown';
-import ButtonIcon from '../ButtonIcon';
-import Icon from 'react-oui-icons';
+import Button from "../Button";
+import OverlayWrapper from "../OverlayWrapper";
+import Popover from "../Popover";
+import Dropdown from "../Dropdown";
+import ButtonIcon from "../ButtonIcon";
+import Icon from "react-oui-icons";
 
-import { greyDark } from '../../tokens/forimport/index.es';
-
+import { greyDark } from "../../tokens/forimport/index.es";
 
 const renderDropdownActivator = (
   { onClick, buttonRef } // eslint-disable-line
@@ -22,30 +21,6 @@ const renderDropdownActivator = (
     onClick={onClick}
   />
 );
-
-const renderTileActions = (
-  items: ListItemTypeProps[],
-) => {
-  return (
-    <Dropdown
-      renderActivator={renderDropdownActivator}
-      placement={'bottom-end'}
-      key="dropdown"
-    >
-      <Dropdown.Contents direction={'right'}>
-        {items}
-      </Dropdown.Contents>
-    </Dropdown>
-  );
-};
-
-type ListItemTypeProps =  {
-  hardSides?: boolean,
-  hardTop?: boolean,
-  ignoreToggle?: boolean,
-  removeBorderTop?: boolean,
-  role?: string,
-}
 
 export type TileProps = {
   /**
@@ -63,7 +38,7 @@ export type TileProps = {
    * Optional dropdown items to add to right side of Tile
    * Should be an array of Dropdown.ListItem items
    */
-  dropdownItems?: ListItemTypeProps[];
+  dropdownItems?: React.ReactNode[];
 
   /**
    * Whether or not this Tile has margin on the ends
@@ -167,26 +142,28 @@ const Tile = ({
   status,
   testSection,
   usesMonospaceName = false,
-  warningContent = '',
+  warningContent = "",
   warningTitle,
 }: TileProps) => {
   const tileContent = (
     <>
       <p
-        className={classNames('text--left flush', {
+        className={classNames("text--left flush", {
           monospace: usesMonospaceName,
         })}
       >
         {name}
       </p>
-      <p className="text--left muted flush--bottom push-half--top micro wrap-text">{description}</p>
+      <p className="text--left muted flush--bottom push-half--top micro wrap-text">
+        {description}
+      </p>
     </>
   );
   return (
     <div
-      className={classNames('oui-tile flex flex-align--center soft', {
-        'oui-tile--selected': isSelected,
-        'push-half--ends': hasSpacing,
+      className={classNames("oui-tile flex flex-align--center soft", {
+        "oui-tile--selected": isSelected,
+        "push-half--ends": hasSpacing,
       })}
       data-test-section={testSection}
     >
@@ -260,7 +237,17 @@ const Tile = ({
             onClick={onDismiss}
           />
         )}
-        {dropdownItems && renderTileActions(dropdownItems)}
+        {dropdownItems && (
+          <Dropdown
+            renderActivator={renderDropdownActivator}
+            placement={"bottom-end"}
+            key="dropdown"
+          >
+            <Dropdown.Contents direction={"right"}>
+              {dropdownItems}
+            </Dropdown.Contents>
+          </Dropdown>
+        )}
       </div>
     </div>
   );
