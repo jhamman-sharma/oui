@@ -64,6 +64,10 @@ Don't let Typescript errors slow down your development if you don't want them to
 
 1. Create branch: `git checkout -b username/branch-name`
 2. Make and commit your changes
+    - If you're creating a **NEW** component in src/components, you'll need to do the following 3 things:
+      1. Add it to the public component interface (src/main.js) 
+      2. Add to the type definition file (types/templates/module-declaration.d.ts). This makes consumers aware of the component and its types.
+      3. Add an entry for the CSS (src/oui/_oui-partials.scss)
 3. Update `CHANGELOG.md` and note your changes directly under "Unreleased":
 
    ```md
@@ -89,8 +93,6 @@ Don't let Typescript errors slow down your development if you don't want them to
    ```
 
    Each time you make code changes you will need to manually run `yarn build` again to ensure your linked module is updated with your latest OUI code changes.
-
-5. If you've added a **_NEW_** React component to `src/components`, add it to the public component interface (`src/main.js`) **_and_** the type definition file (`types/templates/module-declaration.d.ts`). This makes consumers aware of the component and it's types.
 6. Regenerate Typescript definitions by running `yarn generate-types` (for React component changes)
 7. `git push` your changes to GitHub
 8. [Open a pull request](https://github.com/optimizely/oui/compare) of your branch, add at least one reviewer
