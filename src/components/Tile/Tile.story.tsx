@@ -59,7 +59,7 @@ stories
     return (
       <Container>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Alpha"
               description="ID: 123456"
@@ -71,7 +71,7 @@ stories
               warningContent={<p>Warning details</p>}
             />
           </Col>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Beta: We are buttons"
               description="You can click us!"
@@ -135,7 +135,7 @@ stories
     return (
       <Container>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Alpha"
               description="ID:12345678"
@@ -150,7 +150,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Beta"
               description="isSelected is true here"
@@ -166,7 +166,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Charlie"
               description="ID:1357"
@@ -182,7 +182,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Delta"
               description="ID:2468"
@@ -198,7 +198,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Echo"
               description="Increase in unique conversions per visitor for Recurring deposit complete event"
@@ -214,7 +214,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Foxtrot"
               description="All possibilities, as an example. Don't actually do this, please"
@@ -239,7 +239,7 @@ stories
     return (
       <Container>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Alpha"
               description="ID:12345678"
@@ -255,7 +255,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Beta"
               description="isSelected is true here"
@@ -272,7 +272,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Charlie"
               description="ID:1357"
@@ -289,7 +289,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Delta"
               description="ID:2468"
@@ -306,7 +306,7 @@ stories
           </Col>
         </Row>
         <Row>
-          <Col small="6">
+          <Col small={6}>
             <Tile
               name="Zeta"
               description="Increase in unique conversions per visitor for Recurring deposit complete event"
