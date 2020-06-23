@@ -1949,13 +1949,7 @@ declare module "components/DragAndDrop/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Tile/index" {
-    type ListItemTypeProps = {
-        hardSides?: boolean;
-        hardTop?: boolean;
-        ignoreToggle?: boolean;
-        removeBorderTop?: boolean;
-        role?: string;
-    };
+    import React from "react";
     export type TileProps = {
         /**
          * Description of the item for this reference Tile
@@ -1970,7 +1964,7 @@ declare module "components/Tile/index" {
          * Optional dropdown items to add to right side of Tile
          * Should be an array of Dropdown.ListItem items
          */
-        dropdownItems?: ListItemTypeProps[];
+        dropdownItems?: React.ReactNode[];
         /**
          * Whether or not this Tile has margin on the ends
          * True by default
@@ -6205,9 +6199,6 @@ declare module "components/Textarea/example/index" {
     }[];
     export default _default;
 }
-declare module "components/Tile/Tile.story" {
-    export {};
-}
 declare module "components/Token/Token.story" {
     export {};
 }
@@ -6366,3 +6357,4 @@ declare module "components/Toolbar/index" {
 declare module "components/Toolbar/Toolbar.story" {
     export {};
 }
+declare module "components/Tile/Tile.story" { }

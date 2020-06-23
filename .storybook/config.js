@@ -25,7 +25,7 @@ const a11y = {
   },
 };
 
-const req = require.context('../src/', true, /story\.js$/);
+const req = require.context('../src/', true, /story\.(js|ts)x?$/);
 
 function loadStories() {
   require('./overview.story.js');

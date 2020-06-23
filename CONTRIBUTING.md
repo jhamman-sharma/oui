@@ -26,6 +26,8 @@ Every component should contain prop definitions and a robust set of Storybook ex
 3. Include accurate `propType` configurations and comments, as well as `defaultProps` if applicable (these details are pulled into the _show info_ section)
 4. Create multiple stories to accurately showcase your new/updated component and its various states. When applicable, include [knobs](https://github.com/storybookjs/storybook/blob/master/addons/knobs/README.md) in your story to help others understand the different configurations of props.
 
+**_Tip:_** Use a `.tsx` file extension for your Story to ensure your component is typed correctly
+
 ## ʦ Typescript
 
 Typescript is enabled (_but not required_) in this repo. Typescript is a superset of Javascript which is used to enforce static typing of an otherwise untyped dynamic language. It can be a little confusing at first, so here are some tips for developing with Typescript:
