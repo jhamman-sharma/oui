@@ -174,6 +174,37 @@ stories.add("Default", () => {
         </div>
       </section>
 
+      <section class="example">
+        <div class="flex">
+          <div class="flex--1">
+            <h2>.flex-wrap</h2>
+            <p>Apply flex-wrap to a container and all child elements will wrap around in the container.</p>
+          </div>
+          <div class="demo-only-helper-box-container demo-only-helper-box-container--width-300 flex flex-wrap">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+        </div>
+        <div class="demo-only-subsection flex">
+          <div class="flex--1">
+            <h2>.flex-wrap--reverse</h2>
+            <p>Will wrap in reverse</p>
+          </div>
+          <div class="demo-only-helper-box-container demo-only-helper-box-container--width-300 flex flex-wrap--reverse">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+        </div>
+      </section>
+
       <section class="example flex">
         <div class="flex--1">
           <h2>.flex--dead-center</h2>
@@ -182,8 +213,8 @@ stories.add("Default", () => {
           </p>
         </div>
 
-        <div class="box flex--dead-center">
-          <span>1</span>
+        <div class="demo-only-helper-box-container">
+          <div class="flex--dead-center">1</div>
         </div>
       </section>
 
