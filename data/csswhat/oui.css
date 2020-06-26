@@ -3235,6 +3235,12 @@ div[class*="col"].padded-content--remove,
 .padded-content--remove .row > div[class*="col"] {
   padding: 0; }
 
+.padded-content--top.row {
+  padding-top: 15px; }
+
+.padded-content--bottom.row {
+  padding-bottom: 15px; }
+
 .outline--debug .container {
   outline: 1px solid rgba(255, 107, 181, 0.5);
   background: rgba(255, 107, 181, 0.15); }
@@ -6343,6 +6349,9 @@ code {
     .steps__item:first-child::before,
     .oui-steps__item:first-child::before {
       display: none; }
+
+.oui-summary-bar-col-header__help-popover {
+  padding-top: 2px; }
 
 /* don't hide input from screen-readers and keyboard access */
 .oui-switch {

@@ -23,6 +23,14 @@ div[class*="col"].padded-content--remove,
   padding: 0;
 }
 
+.padded-content--top.row{
+    padding-top: spacer(1.5);
+}
+
+.padded-content--bottom.row{
+  padding-bottom: spacer(1.5);
+}
+
 /// Layout Debug
 /// @description For development use only. Not for production!
 /// TODO[1]: Add test so folks can't use this in production

@@ -59,6 +59,7 @@ declare module 'optimizely-oui' {
   export { default as Sortable } from 'components/Sortable/index';
   export { default as Spinner } from 'components/Spinner/index';
   export { default as Steps } from 'components/Steps/index';
+  export { default as SummaryBar } from 'components/SummaryBar/index';
   export { default as Switch } from 'components/Switch/index';
   export { default as Table } from 'components/Table/index';
   export { default as TabNav } from 'components/TabNav/index';
@@ -376,7 +377,7 @@ declare module "components/Layout/Row" {
         /**
          * Pad inner content.
          */
-        paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove';
+        paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove' | 'top' | 'bottom';
         /** Optional pass through ref. */
         ref?: Ref<HTMLElement>;
         /**
@@ -5993,6 +5994,41 @@ declare module "components/Steps/index" {
     import PropTypes from "prop-types";
 }
 declare module "components/Steps/Steps.story" {
+    export {};
+}
+declare module "components/SummaryBar/index" {
+    import React from 'react';
+    type SummaryBarColumn = {
+        /** Header of column */
+        header?: string;
+        /** Content of help popover for header */
+        headerHelpTooltip?: string;
+        /** Content of column */
+        bodyContent?: {
+            /** Content value */
+            value: string;
+            /** Color of content, default is black */
+            color?: 'red' | 'green';
+            /** Determines the size of the content, numbers are large, text is small. */
+            isNumber: boolean;
+            /** Content of help popover for content */
+            helpTooltip?: string;
+        };
+    };
+    type SummaryBarProps = {
+        /** Title of summary bar */
+        title: string;
+        /** Extra info appearing in the top right of the bar. Typically last updated date (ie: Updated March 2, 2020 at 3:00pm (America/Los Angeles)) */
+        extraInfo?: string;
+        /** Content columns where summary info is displayed. Requires 2-5 columns. */
+        columns: SummaryBarColumn[];
+        /** Test section for element */
+        testSection?: string;
+    };
+    export const SummaryBar: React.SFC<SummaryBarProps>;
+    export default SummaryBar;
+}
+declare module "components/SummaryBar/SummaryBar.story" {
     export {};
 }
 declare module "components/Switch/Switch.story" {

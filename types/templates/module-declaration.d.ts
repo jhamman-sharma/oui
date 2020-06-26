@@ -59,6 +59,7 @@ declare module 'optimizely-oui' {
   export { default as Sortable } from 'components/Sortable/index';
   export { default as Spinner } from 'components/Spinner/index';
   export { default as Steps } from 'components/Steps/index';
+  export { default as SummaryBar } from 'components/SummaryBar/index';
   export { default as Switch } from 'components/Switch/index';
   export { default as Table } from 'components/Table/index';
   export { default as TabNav } from 'components/TabNav/index';

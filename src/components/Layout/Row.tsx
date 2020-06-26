@@ -30,7 +30,7 @@ type RowProps = {
   /**
    * Pad inner content.
    */
-  paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove';
+  paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove' | 'top' | 'bottom';
 
   /** Optional pass through ref. */
   ref?: Ref<HTMLElement>;
