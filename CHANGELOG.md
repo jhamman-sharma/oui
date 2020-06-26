@@ -6,6 +6,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.7.0 - 2020-06-26
 - [Feature] Add `hasExternalIcon` to **NavBar** to display an external icon on hover ([#1361](https://github.com/optimizely/oui/pull/1361)).
 - [Feature] New component **SummaryBar** for having key information highlighted in a condensed component ([#1360](https://github.com/optimizely/oui/pull/1360))
 
