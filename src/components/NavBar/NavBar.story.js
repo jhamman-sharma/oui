@@ -85,6 +85,7 @@ stories
           linkLabel="Getting Started"
           testSection="getting-started"
           hasSeparator={ true }
+          hasExternalIcon={ true }
           onClick={ action('PrimaryLink onClick') }
         />
         <NavBar.SecondaryLink
@@ -92,6 +93,7 @@ stories
           type="button"
           linkLabel="Program Management"
           testSection="program-management"
+          hasExternalIcon={ true }
           onClick={ action('SecondaryLink onClick') }
         />
         <NavBar.SecondaryLink
@@ -190,6 +192,7 @@ stories
           linkLabel="Getting Started"
           testSection="getting-started"
           hasSeparator={ true }
+          hasExternalIcon={ true }
           onClick={ action('PrimaryLink onClick') }
         />
         <NavBar.SecondaryLink
@@ -197,6 +200,7 @@ stories
           type="button"
           linkLabel="Program Management"
           testSection="program-management"
+          hasExternalIcon={ true }
           onClick={ action('SecondaryLink onClick') }
         />
         <NavBar.SecondaryLink

@@ -13,6 +13,8 @@ const BUTTON = 'button';
 // Should have a main component on its own.
 class IconLink extends React.PureComponent {
   static propTypes = {
+    /* Boolean, whether an external icon should show */
+    hasExternalIcon: PropTypes.bool,
     /* Boolean, Should show a separator line before this link */
     hasSeparator: PropTypes.bool,
     /* Navigates to this URL when clicked */
@@ -48,6 +50,7 @@ class IconLink extends React.PureComponent {
     isActive: false,
     isOpen: true,
     isSecondaryLink: false,
+    hasExternalIcon: false,
     onClick: () => {},
     type: LINK,
   };
@@ -59,6 +62,7 @@ class IconLink extends React.PureComponent {
       isOpen,
       isSecondaryLink,
       hasSeparator,
+      hasExternalIcon,
       linkLabel,
     } = this.props;
     const iconSize = isSecondaryLink ? 'medium' : 'large';
@@ -79,6 +83,7 @@ class IconLink extends React.PureComponent {
                 'is-active': isActive,
                 'root-nav__link--primary': !isSecondaryLink,
                 'root-nav__link--secondary': isSecondaryLink,
+                'has-external-icon': hasExternalIcon,
               },
             ) }>
             <div className="flex">
@@ -90,6 +95,12 @@ class IconLink extends React.PureComponent {
             <div className={ classNames('root-nav__link__text', ' truncate', { 'root-nav-fader': !isOpen }) }>
               { linkLabel }
             </div>
+            { isOpen && hasExternalIcon && <div className="flex anchor--right root-nav__link-external-icon">
+              <Icon
+                name={ 'external' }
+                size={ 'small' }
+              />
+            </div>}
           </div>
         </Poptip>
       </React.Fragment>

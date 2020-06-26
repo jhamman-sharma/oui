@@ -137,15 +137,26 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
   }
 }
 
+.root-nav__link-external-icon {
+  visibility: hidden;
+}
+
 .root-nav__link--primary {
   &:hover {
     background: var(--light-blue-10);
     color: var(--light-blue-75);
+    .root-nav__link-external-icon {
+      visibility: visible;
+    }
   }
 
   &.is-active,
   &.is-active:hover {
     background: var(--light-blue-10);
+  }
+
+  &.has-external-icon {
+    padding-right: 18px;
   }
 }
 
@@ -156,6 +167,12 @@ $root-shadow: inset -1px 0 3px 0 rgba(0, 0, 0, 0.1);
   }
   &:hover {
     color: var(--light-blue-75);
+    .root-nav__link-external-icon {
+      visibility: visible;
+    }
+  }
+  &.has-external-icon {
+    padding-right: 18px;
   }
 }
 .root-nav__link--secondary,

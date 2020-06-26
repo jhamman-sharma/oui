@@ -4984,6 +4984,7 @@ declare module "components/NavBar/IconLink/index" {
     export default IconLink;
     class IconLink extends React.PureComponent<any, any, any> {
         static propTypes: {
+            hasExternalIcon: PropTypes.Requireable<boolean>;
             hasSeparator: PropTypes.Requireable<boolean>;
             href: PropTypes.Requireable<string>;
             iconName: PropTypes.Validator<string>;
@@ -5001,6 +5002,7 @@ declare module "components/NavBar/IconLink/index" {
             isActive: boolean;
             isOpen: boolean;
             isSecondaryLink: boolean;
+            hasExternalIcon: boolean;
             onClick: () => void;
             type: string;
         };
@@ -5131,6 +5133,7 @@ declare module "components/NavBar/index" {
     }
     import CurrentUserMenu from "components/NavBar/CurrentUserMenu";
     const linkPropTypes: {
+        hasExternalIcon: PropTypes.Requireable<boolean>;
         /** Should show a separator line before this link. */
         hasSeparator: PropTypes.Requireable<boolean>;
         /** Url to Navigate to when type is link. */

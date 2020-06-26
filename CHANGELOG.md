@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add `hasExternalIcon` to **NavBar** to display an external icon on hover ([#1361](https://github.com/optimizely/oui/pull/1361)).
 
 ## 46.6.1 - 2020-06-23
 - [Patch] Update **Tile** Prop TypeScript definition for `dropdownItems`. Also updated **Tile** stories to be tsx (for TypeScript validation) and the ability for all Stories to use TypeScript. ([#1359](https://github.com/optimizely/oui/pull/1359))

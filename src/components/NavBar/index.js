@@ -12,6 +12,8 @@ const PUSH_STATE = 'pushstate';
 const BUTTON = 'button';
 
 const linkPropTypes = {
+  /* Boolean, whether an external icon should show */
+  hasExternalIcon: PropTypes.bool,
   /** Should show a separator line before this link. */
   hasSeparator: PropTypes.bool,
   /** Url to Navigate to when type is link. */
