@@ -49,6 +49,6 @@ TR.propTypes = {
   testSection: PropTypes.string,
 };
 
-TR.displayName = 'Table.TR';
+TR.displayName = 'TR';
 
 export default TR;
