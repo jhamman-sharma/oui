@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-const stories = storiesOf('Overview/', module);
+const stories = storiesOf('Overview', module);
 stories
   .addDecorator(story => (
     <div id="root-preview">
@@ -10,7 +10,7 @@ stories
   ));
 
 stories
-  .add('Color', () => {
+  .add('NewColor', () => {
     return (<div>
 
       <h1>Colors</h1>
