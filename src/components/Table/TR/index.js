@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-const TR = ({
+const TR = React.forwardRef(({
   isActive,
   isHighlighted,
   noBorder,
@@ -11,7 +11,7 @@ const TR = ({
   backgroundColor,
   testSection,
   children,
-}) => {
+}, ref) => {
   let classes = classNames({
     'oui-table-row--active': isActive,
     'oui-table-row--highlighted': isHighlighted,
@@ -21,11 +21,14 @@ const TR = ({
     [`background--${backgroundColor}`]: backgroundColor,
   });
   return (
-    <tr className={ classes } data-test-section={ testSection }>
-      {children}
+    <tr
+      className={ classes }
+      data-test-section={ testSection }
+      ref={ ref }>
+      { children }
     </tr>
   );
-};
+});
 
 TR.propTypes = {
   /** Background color for each row */
@@ -46,6 +49,6 @@ TR.propTypes = {
   testSection: PropTypes.string,
 };
 
-TR.displayName = 'Table.TR';
+TR.displayName = 'TR';
 
 export default TR;

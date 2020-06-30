@@ -1683,30 +1683,8 @@ declare module "components/Table/THead/index" {
 }
 declare module "components/Table/TR/index" {
     export default TR;
-    function TR({ isActive, isHighlighted, noBorder, noHover, borderStyle, backgroundColor, testSection, children, }: {
-        isActive: any;
-        isHighlighted: any;
-        noBorder: any;
-        noHover: any;
-        borderStyle: any;
-        backgroundColor: any;
-        testSection: any;
-        children: any;
-    }): JSX.Element;
-    namespace TR {
-        export namespace propTypes {
-            export const backgroundColor: PropTypes.Requireable<string>;
-            export const borderStyle: PropTypes.Requireable<string>;
-            export const children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            export const isActive: PropTypes.Requireable<boolean>;
-            export const isHighlighted: PropTypes.Requireable<boolean>;
-            export const noBorder: PropTypes.Requireable<boolean>;
-            export const noHover: PropTypes.Requireable<boolean>;
-            export const testSection: PropTypes.Requireable<string>;
-        }
-        export const displayName: string;
-    }
-    import PropTypes from "prop-types";
+    const TR: React.ForwardRefExoticComponent<React.RefAttributes<any>>;
+    import React from "react";
 }
 declare module "components/Table/TH/index" {
     export default TH;
@@ -5996,41 +5974,6 @@ declare module "components/Steps/index" {
 declare module "components/Steps/Steps.story" {
     export {};
 }
-declare module "components/SummaryBar/index" {
-    import React from 'react';
-    type SummaryBarColumn = {
-        /** Header of column */
-        header?: string;
-        /** Content of help popover for header */
-        headerHelpTooltip?: string;
-        /** Content of column */
-        bodyContent?: {
-            /** Content value */
-            value: string;
-            /** Color of content, default is black */
-            color?: 'red' | 'green';
-            /** Determines the size of the content, numbers are large, text is small. */
-            isNumber: boolean;
-            /** Content of help popover for content */
-            helpTooltip?: string;
-        };
-    };
-    type SummaryBarProps = {
-        /** Title of summary bar */
-        title: string;
-        /** Extra info appearing in the top right of the bar. Typically last updated date (ie: Updated March 2, 2020 at 3:00pm (America/Los Angeles)) */
-        extraInfo?: string;
-        /** Content columns where summary info is displayed. Requires 2-5 columns. */
-        columns: SummaryBarColumn[];
-        /** Test section for element */
-        testSection?: string;
-    };
-    export const SummaryBar: React.SFC<SummaryBarProps>;
-    export default SummaryBar;
-}
-declare module "components/SummaryBar/SummaryBar.story" {
-    export {};
-}
 declare module "components/Switch/Switch.story" {
     export {};
 }
@@ -6396,4 +6339,37 @@ declare module "components/Toolbar/index" {
 declare module "components/Toolbar/Toolbar.story" {
     export {};
 }
+declare module "components/SummaryBar/index" {
+    import React from 'react';
+    type SummaryBarColumn = {
+        /** Header of column */
+        header?: string;
+        /** Content of help popover for header */
+        headerHelpTooltip?: string;
+        /** Content of column */
+        bodyContent?: {
+            /** Content value */
+            value: string;
+            /** Color of content, default is black */
+            color?: 'red' | 'green';
+            /** Determines the size of the content, numbers are large, text is small. */
+            isNumber: boolean;
+            /** Content of help popover for content */
+            helpTooltip?: string;
+        };
+    };
+    type SummaryBarProps = {
+        /** Title of summary bar */
+        title: string;
+        /** Extra info appearing in the top right of the bar. Typically last updated date (ie: Updated March 2, 2020 at 3:00pm (America/Los Angeles)) */
+        extraInfo?: string;
+        /** Content columns where summary info is displayed. Requires 2-5 columns. */
+        columns: SummaryBarColumn[];
+        /** Test section for element */
+        testSection: string;
+    };
+    export const SummaryBar: React.SFC<SummaryBarProps>;
+    export default SummaryBar;
+}
+declare module "components/SummaryBar/SummaryBar.story" { }
 declare module "components/Tile/Tile.story" { }
