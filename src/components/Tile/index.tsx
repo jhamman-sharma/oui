@@ -198,7 +198,7 @@ const Tile = ({
         </div>
       )}
       {onTileClick ? (
-        <Button style="unstyled" width="full" onClick={onTileClick}>
+        <Button testSection={`${testSection}-main-tile-button`} style="unstyled" width="full" onClick={onTileClick}>
           {tileContent}
         </Button>
       ) : (
@@ -242,6 +242,7 @@ const Tile = ({
             renderActivator={renderDropdownActivator}
             placement={"bottom-end"}
             key="dropdown"
+            testSection={`${testSection}-action-overflow-button`}
           >
             <Dropdown.Contents direction={"right"}>
               {dropdownItems}

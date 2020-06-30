@@ -138,6 +138,7 @@ stories
           <Col small={6}>
             <Tile
               name="Alpha"
+              testSection="alpha-tile"
               description="ID:12345678"
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
@@ -153,6 +154,7 @@ stories
           <Col small={6}>
             <Tile
               name="Beta"
+              testSection="beta-tile"
               description="isSelected is true here"
               onTileClick={action("onTileClick")}
               isSelected={true}
@@ -169,6 +171,7 @@ stories
           <Col small={6}>
             <Tile
               name="Charlie"
+              testSection="charlie-tile"
               description="ID:1357"
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
@@ -185,6 +188,7 @@ stories
           <Col small={6}>
             <Tile
               name="Delta"
+              testSection="delta-tile"
               description="ID:2468"
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
@@ -201,6 +205,7 @@ stories
           <Col small={6}>
             <Tile
               name="Echo"
+              testSection="echo-tile"
               description="Increase in unique conversions per visitor for Recurring deposit complete event"
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
@@ -217,6 +222,7 @@ stories
           <Col small={6}>
             <Tile
               name="Foxtrot"
+              testSection="foxtrot-tile"
               description="All possibilities, as an example. Don't actually do this, please"
               onTileClick={action("onTileClick")}
               isSelected={boolean("isSelected", false)}
@@ -242,6 +248,7 @@ stories
           <Col small={6}>
             <Tile
               name="Alpha"
+              testSection="alpha-tile"
               description="ID:12345678"
               order={1}
               onTileClick={action("onTileClick")}
@@ -258,6 +265,7 @@ stories
           <Col small={6}>
             <Tile
               name="Beta"
+              testSection="beta-tile"
               description="isSelected is true here"
               order={2}
               onTileClick={action("onTileClick")}
@@ -275,6 +283,7 @@ stories
           <Col small={6}>
             <Tile
               name="Charlie"
+              testSection="charlie-tile"
               description="ID:1357"
               order={3}
               onTileClick={action("onTileClick")}
@@ -292,6 +301,7 @@ stories
           <Col small={6}>
             <Tile
               name="Delta"
+              testSection="delta-tile"
               description="ID:2468"
               order={4}
               onTileClick={action("onTileClick")}
@@ -309,6 +319,7 @@ stories
           <Col small={6}>
             <Tile
               name="Zeta"
+              testSection="zeta-tile"
               description="Increase in unique conversions per visitor for Recurring deposit complete event"
               order={99}
               onTileClick={action("onTileClick")}
