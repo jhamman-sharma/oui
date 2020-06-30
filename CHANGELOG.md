@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))
 
 ## 46.7.0 - 2020-06-26
 - [Feature] Add `hasExternalIcon` to **NavBar** to display an external icon on hover ([#1361](https://github.com/optimizely/oui/pull/1361)).

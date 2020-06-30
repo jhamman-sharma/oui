@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const NavItem = (props) => {
-
   return (
     <li
       className={ classNames({
@@ -11,11 +10,11 @@ const NavItem = (props) => {
         'is-active': props.isActive,
       }) }
       data-test-section={ props.testSection }>
-      <div className="flex flex-justified--between flex-align--center flex--1 soft--ends soft-double--sides">
-        <div className=" flex flex--1 flex-align--center">
-          {props.leftContent}
-        </div>
-        {props.rightContent}
+      <div className="flex flex-justified--between flex-align--center flex--1 height--1-1">
+        {props.leftContent}
+        {props.rightContent && (
+          <div className="soft--right">{props.rightContent}</div>
+        )}
       </div>
     </li>
   );

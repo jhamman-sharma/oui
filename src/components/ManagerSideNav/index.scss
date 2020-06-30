@@ -1,3 +1,6 @@
+$link-padding: spacer(1) spacer(2);
+$nav-item-min-height: 56px;
+
 .oui-manager-side-nav {
   background: #fff;
   min-width: 285px;
@@ -105,7 +108,6 @@
         h5 {
           font-size: 13px;
         }
-
       }
     }
 
@@ -160,14 +162,17 @@
       position: relative;
       border: 1px solid transparent;
       border-bottom: 1px solid var(--grey-50);
-      min-height: 56px;
+      min-height: $nav-item-min-height;
       margin-top: -1px;
 
       &.nav-list__link {
-
         display: flex;
         align-items: center;
         width: 100%;
+
+        .link {
+          padding: $link-padding;
+        }
 
         &:hover {
           transition: background map-fetch($transition-duration, base);
@@ -225,7 +230,6 @@
           font-size: map-fetch($font, size, micro);
           pointer-events: none;
         }
-
       }
     }
   }
@@ -235,7 +239,7 @@
     top: spacer(1);
     right: spacer(1.5);
     cursor: pointer;
-    color: #DDDDDD;
+    color: #dddddd;
 
     &:hover {
       .lego-icon {
@@ -249,8 +253,8 @@
   }
 
   .nav-link {
-    padding: 5px 10px;
-    margin-left: -10px;
+    padding: 5px spacer(1);
+    margin-left: spacer(-1);
     border-radius: 999px;
     &:hover {
       background-color: var(--highlight);
@@ -263,4 +267,19 @@
     }
   }
 
+  .nav-list__link {
+    .oui-manager-side-nav__custom-link {
+      @extend .link;
+      width: 100%;
+      height: 100%;
+      min-height: calc(#{$nav-item-min-height} - 2px);
+      display: flex;
+      align-items: center;
+
+      &--active {
+        background: map-fetch($root-color, highlight);
+        color: var(--light-blue-75);
+      }
+    }
+  }
 }

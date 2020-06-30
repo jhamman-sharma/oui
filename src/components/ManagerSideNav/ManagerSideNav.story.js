@@ -222,4 +222,92 @@ stories
         </ManagerSideNav.NavList>
       </ManagerSideNav>
     );
+  })
+  .add('With a custom link (like a React Router Link)', () => {
+    return (
+      <React.Fragment>
+        <p>
+          Using the classes
+          <em><code> oui-manager-side-nav__custom-link </code></em>
+           and
+          <code><em> oui-manager-side-nav__custom-link--active</em></code>,
+          you can use a custom link for the nav item content and get consistent styling
+        </p>
+        <ManagerSideNav>
+          <ManagerSideNav.Header
+            hasBackLink={ true }
+            backLinkHref="#features"
+            backLinkText="Features"
+            backLinkOnClick={ action('Back link was clicked') }
+            usesMonospaceStyling={ true }
+            projectName="CTP Bank - Full Stack"
+            title="recurring_deposit"
+            friendlyTitle="Recurring Deposit">
+            <ManagerSideNav.HeaderDetails
+              items={ [
+                {
+                  label: 'Created by',
+                  value: 'Sophia Hernandez',
+                },
+              ] }
+            />
+          </ManagerSideNav.Header>
+          <ManagerSideNav.NavList>
+            <ManagerSideNav.NavItem
+              isActive={ false }
+              leftContent={
+                <Link
+                  isFullWidth={ true }
+                  onClick={ action('Default variables item was clicked') }
+                  href="#default-variables">
+                  Default Variables
+                </Link>
+              }
+            />
+            <ManagerSideNav.NavItem
+              isActive={ false }
+              leftContent={
+                <a
+                  href="www.google.com"
+                  className="oui-manager-side-nav__custom-link">
+                  I am a custom link
+                </a>
+              }
+            />
+            <ManagerSideNav.NavItem
+              isActive={ false }
+              leftContent={
+                <a
+                  href="www.google.com"
+                  className="oui-manager-side-nav__custom-link oui-manager-side-nav__custom-link--active">
+                  I am an active custom link
+                </a>
+              }
+            />
+            <ManagerSideNav.NavItem
+              isActive={ false }
+              leftContent={
+                <Link
+                  isFullWidth={ true }
+                  onClick={ action('History item was clicked') }
+                  href="#history">
+                  History
+                </Link>
+              }
+            />
+            <ManagerSideNav.NavItem
+              isActive={ false }
+              leftContent={
+                <Link
+                  isFullWidth={ true }
+                  onClick={ action('Settings item was clicked') }
+                  href="#settings">
+                  Settings
+                </Link>
+              }
+            />
+          </ManagerSideNav.NavList>
+        </ManagerSideNav>
+      </React.Fragment>
+    );
   });
