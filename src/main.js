@@ -11,7 +11,6 @@ export { default as Checkbox } from './components/Checkbox';
 export { default as Code } from './components/Code';
 export { default as CodeDiff } from './components/CodeDiff';
 export { default as Col } from './components/Layout/Col';
-export { default as ColWithNubbin } from './components/Layout/ColWithNubbin';
 export { default as Container } from './components/Layout/Container';
 export { default as CopyButton } from './components/CopyButton';
 export { default as DatePicker } from './components/DatePicker/DatePicker';

@@ -17,7 +17,6 @@ declare module 'optimizely-oui' {
   export { default as Code } from 'components/Code/index';
   export { default as CodeDiff } from 'components/CodeDiff/index';
   export { default as Col } from 'components/Layout/Col';
-  export { default as ColWithNubbin } from 'components/Layout/ColWithNubbin';
   export { default as Container } from 'components/Layout/Container';
   export { default as CopyButton } from 'components/CopyButton/index';
   export { default as DatePicker } from 'components/DatePicker/DatePicker';

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { Ref } from 'react';
+import { nubbinSize } from '../../tokens/forimport/index.es';
 const DEVICE_SIZES = ['large', 'small'];
 
 /** colSize shorthand */
@@ -59,10 +60,24 @@ type ColPropTypes = {
    * How to vertically align self
    */
   alignSelf?: 'start' | 'center' | 'end';
+
+  /** A reference to the element that the nubbin should point to */
+  nubbinRef: React.Ref<React.ReactNode>;
 };
 const Col: React.SFC<ColPropTypes> = React.forwardRef(
   (
-    { as: Component = 'div', border, children, overflow, paddedContent = 'none', isReadingColumn, alignSelf, ...props },
+    {
+      as: Component = 'div',
+      border,
+      children,
+      hasNubbin,
+      nubbinRef,
+      overflow,
+      paddedContent = 'none',
+      isReadingColumn,
+      alignSelf,
+      ...props
+    },
     ref?: React.Ref<HTMLElement | React.ElementType>
   ) => {
     const prefix = 'col';
@@ -82,16 +97,20 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
       classes.push(`align-self-${alignSelf}`);
     }
     if (isReadingColumn) {
-      children = <div className="reading-column">{children}</div>
+      children = <div className="reading-column">{children}</div>;
     }
 
-    DEVICE_SIZES.forEach(brkPoint => {
+    DEVICE_SIZES.forEach((brkPoint) => {
       let propValue = props[brkPoint];
       delete props[brkPoint];
       let span;
       let offset;
       let order;
-      if (propValue !== null && propValue !== undefined && typeof propValue === 'object') {
+      if (
+        propValue !== null &&
+        propValue !== undefined &&
+        typeof propValue === 'object'
+      ) {
         ({ span = 'fillSpace', offset, order } = propValue);
       } else {
         span = propValue;
@@ -103,13 +122,41 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
         classes.push(`order-${brkPoint}-${order}`);
       }
       if (span !== null && span !== undefined) {
-        spans.push(span === 'fillSpace' ? `${prefix}-${brkPoint}` : `${prefix}-${brkPoint}-${span}`);
+        spans.push(
+          span === 'fillSpace'
+            ? `${prefix}-${brkPoint}`
+            : `${prefix}-${brkPoint}-${span}`
+        );
       }
     });
     if (!spans.length) {
       spans.push(prefix); // plain 'col'
     }
-    return <Component {...props} children={children} ref={ref} className={classNames(...spans, ...classes)}></Component>;
+    if (hasNubbin) {
+      let nubbinTopPosition = 0;
+      if (nubbinRef && nubbinRef instanceof HTMLElement) {
+        console.log(nubbinRef);
+        // Adjust the top position to be halfway through the nubbinRef's height
+        nubbinTopPosition = nubbinRef.offsetTop + nubbinRef.offsetHeight / 2;
+      }
+      children = (
+        <>
+          <div
+            className="oui-config-panel__nubbin"
+            style={{ top: nubbinTopPosition }}
+          ></div>
+          {children}
+        </>
+      );
+    }
+    return (
+      <Component
+        {...props}
+        children={children}
+        ref={ref}
+        className={classNames(...spans, ...classes)}
+      ></Component>
+    );
   }
 );
 

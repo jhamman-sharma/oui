@@ -8,7 +8,6 @@ import Token from '../Token';
 import Container from './Container';
 import Row from './Row';
 import Col from './Col';
-import ColWithNubbin from './ColWithNubbin';
 import NavBar from '../NavBar';
 import Attention from '../Attention';
 import Spinner from '../Spinner';
@@ -34,8 +33,13 @@ class ConfigPanelExample extends React.Component {
       <div style={{ height: '500px', width: '100%' }}>
         <Container fluid={ true } isFullHeight={ true }>
           <Row>
-            <Col small={ 6 }>
-              <div className="height--1-1 soft-double">
+            <Col
+              // 4) Pass ref to Col with nubbinRef
+              nubbinRef={ this.state.nubbinPointingRef }
+              hasNubbin={ true }
+              small={ 6 }
+              overflow="overflow-y--auto">
+              <div style={{ height: '700px' }} className="soft-double">
                 <h3>Rules</h3>
                 <p>Explanatory content here</p>
                 <div style={{ height: '100px' }}></div>
@@ -65,12 +69,13 @@ class ConfigPanelExample extends React.Component {
                 </div>
               </div>
             </Col>
-            <ColWithNubbin
-              small={ 6 }
-              // 4) Pass ref to ColWithNubbin
-              nubbinRef={ this.state.nubbinPointingRef }>
-              <h3>Rule Configuration</h3>
-            </ColWithNubbin>
+            <Col paddedContent="remove" overflow="overflow-y--auto" small={ 6 }>
+              <div
+                className="soft-double background--light border--left"
+                style={{ height: '800px' }}>
+                <h3>Rule Configuration</h3>
+              </div>
+            </Col>
           </Row>
         </Container>
       </div>
@@ -89,7 +94,7 @@ storiesForTemplates
       <React.Fragment>
         <div className="push-double--bottom">
           <Attention type="brand">
-            Use a ref passed to ColWithNubbin to place the nubbin properly
+            Use a ref passed to Col to place the nubbin properly with hasNubbin
           </Attention>
         </div>
         <ConfigPanelExample />

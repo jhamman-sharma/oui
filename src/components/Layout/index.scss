@@ -211,16 +211,19 @@ div[class*="fitContent"] {
   padding: 0;
 }
 
-// Styling for ColWithNubbin
+// Styling for Col with a Nubbin
 
 .oui-config-panel__nubbin {
   position: absolute;
   transform: rotate(45deg);
-  margin-left: -21px; //padding plus 1px border
+  right: 0;
+  margin-right: -17px; //padding plus 1px border
+  z-index: 10000;
 }
 
 .oui-config-panel__nubbin::before {
   position: absolute;
+  right: 0;
   width: $nubbin-size;
   height: $nubbin-size;
   content: "";
