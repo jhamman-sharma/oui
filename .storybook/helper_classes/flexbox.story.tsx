@@ -56,13 +56,11 @@ stories.add("Default", () => {
           </div>
         </div>
       </section>
-
       <FlexDirection/>
       <Flex1/>
       <FlexNone/>
       <FlexAligning/>
       <FlexWrap/>
-
       <section className="example">
         <div className="flex">
           <div className="flex--1">
