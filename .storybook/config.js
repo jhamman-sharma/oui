@@ -35,7 +35,6 @@ function loadStories() {
   require('./borderradius.story.js');
   reqHelperClasses.keys().forEach(reqHelperClasses);
   req.keys().forEach(req);
-  reqHelperClasses.keys().forEach(reqHelperClasses);
 }
 
 storybook.configure(loadStories, module);
