@@ -49,7 +49,7 @@ stories
   .add('Without style options (no border, shadow, and/or padding)', () => (
     <div>
       <p className="style--italic">With style set to "bare" = no box-shadow or bottom border</p>
-      <Toolbar toolbarStyle="bare">
+      <Toolbar toolbarStyle={ ['bare'] }>
         <Toolbar.Left>
           <Toolbar.Link href={ 'www.google.com' } label="Link" />
         </Toolbar.Left>
@@ -82,7 +82,7 @@ stories
   ))
   .add('With Dropdowns and styled Buttons', () => (
     <div>
-      <Toolbar toolbarStyle="bare">
+      <Toolbar toolbarStyle={ ['bare'] }>
         <Toolbar.Left>
           <Dropdown
             buttonContent={{

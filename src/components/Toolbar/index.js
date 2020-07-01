@@ -5,20 +5,16 @@ import classNames from 'classnames';
 import ToolbarButton from './ToolbarButton';
 import ToolbarLink from './ToolbarLink';
 
-const Left = props => {
-  return (
-    <div className="toolbar__left">{ props.children }</div>
-  );
+const Left = (props) => {
+  return <div className="toolbar__left">{props.children}</div>;
 };
 
 Left.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const Right = props => {
-  return (
-    <div className="toolbar__right">{ props.children }</div>
-  );
+const Right = (props) => {
+  return <div className="toolbar__right">{props.children}</div>;
 };
 
 Right.propTypes = {
@@ -27,23 +23,23 @@ Right.propTypes = {
 
 const Toolbar = (props) => {
   const toolbarContentClasses = classNames({
-    'toolbar__content': true,
+    toolbar__content: true,
     'toolbar__content--bare': props.toolbarStyle.includes('bare'),
     'toolbar__content--tight': props.toolbarStyle.includes('tight'),
     'background--white': props.isBottomToolbar,
     'border--top': props.isBottomToolbar,
-    'no-border--bottom': props.isBottomToolbar || props.toolbarStyle.includes('bare'),
+    'no-border--bottom':
+      props.isBottomToolbar || props.toolbarStyle.includes('bare'),
     'hard--left': props.isBottomToolbar,
   });
 
   return (
     <div
-      data-oui-component={ true }
+      data-oui-component={true}
       className="toolbar"
-      data-test-section={ props.testSection }>
-      <div className={ toolbarContentClasses }>
-        { props.children }
-      </div>
+      data-test-section={props.testSection}
+    >
+      <div className={toolbarContentClasses}>{props.children}</div>
     </div>
   );
 };
@@ -61,7 +57,7 @@ Toolbar.propTypes = {
   /** Hook to uze for automated testing */
   testSection: PropTypes.string,
   /** The style to use for this toolbar */
-  toolbarStyle: PropTypes.oneOf(['bare', 'tight']),
+  toolbarStyle: PropTypes.arrayOf(PropTypes.oneOf(['bare', 'tight'])),
 };
 
 Toolbar.Button = ToolbarButton;
