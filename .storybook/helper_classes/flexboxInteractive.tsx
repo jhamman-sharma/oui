@@ -342,7 +342,7 @@ export class FlexAligning extends React.Component {
                                 <div>
                                     End
                                 </div>
-                            </div>                           
+                            </div>                            
                         </div>
                     </div>
                 )

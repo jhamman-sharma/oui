@@ -8,14 +8,6 @@
   color: $smoke-light;
   border-radius: 5px;
 
-  &--width-100 {
-    width: 100px;
-
-    .flex--none {
-      width: auto;
-    }
-  }
-
   div {
     background: $magenta-dark;
     width: 60px;
