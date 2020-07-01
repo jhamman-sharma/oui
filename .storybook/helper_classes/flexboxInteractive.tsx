@@ -1,7 +1,7 @@
 import React, { cloneElement, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 
-import classnames from 'classnames';
+import classNames from 'classnames';
 
 import "./index.scss";
 
@@ -10,7 +10,7 @@ import Code from "../../src/components/Code/index";
 import Button from "../../src/components/Button/index";
 import ButtonRow from "../../src/components/ButtonRow/index";
 
-export class FlexboxInteractiveFlexDirection extends React.Component {
+export class FlexDirection extends React.Component {
   state = {
     flexDirection: 'row',
   };
@@ -21,7 +21,7 @@ export class FlexboxInteractiveFlexDirection extends React.Component {
 
   render() {
       const {flexDirection} = this.state;
-        let flexDirectionClassnames = classnames(
+        let flexDirectionClassnames = classNames(
             'demo-only-helper-box-container',
             'demo-only-helper-box-container--width-container',
             'flex',
@@ -54,7 +54,7 @@ export class FlexboxInteractiveFlexDirection extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="flex--1 push--left flex flex-align--center demo-only-code-box">
+                <div className="flex--1 push--left demo-only-code-box">
                     <Code
                         hasCopyButton={true}
                         isHighlighted={true}
@@ -69,8 +69,7 @@ export class FlexboxInteractiveFlexDirection extends React.Component {
   }
 }
 
-
-export class FlexboxInteractiveFlex1 extends React.Component {
+export class Flex1 extends React.Component {
     state = {
       flexDivs: ['flex1', 'regular'],
     };
@@ -86,7 +85,7 @@ export class FlexboxInteractiveFlex1 extends React.Component {
   
     render() {
         const {flexDivs} = this.state;
-          let flexClassnames = classnames(
+          let flexClassnames = classNames(
               'demo-only-helper-box-container',
               'demo-only-helper-box-container--width-parent',
               'demo-only-helper-box-container--height-84',
@@ -150,5 +149,328 @@ export class FlexboxInteractiveFlex1 extends React.Component {
           </section>
       );
     }
-  }
-  
+}
+ 
+export class FlexNone extends React.Component {
+    state = {
+        flexTab: 'none',
+    };
+
+    switchFlexTab = tab => {
+        this.setState({flexTab: tab});
+    }
+
+    render() {
+        const {flexTab} = this.state;
+        let flexDirectionClassnames = classNames(
+            'demo-only-helper-box-container',
+            'flex',
+            {'flex--none': flexTab === 'none',
+            'demo-only-helper-box-container--width-100': flexTab === 'none',
+            'demo-only-helper-box-container--width-300': flexTab !== 'none',
+            [`flex-${flexTab}--none`]: flexTab !== 'none'},
+        ); 
+        let leftContent;
+        let codeContent;
+        switch (flexTab) {
+            case 'none':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Sizes item based on the height and width of the content, but makes
+                            it inflexible meaning it can't shrink. This creates the possibility
+                            of overflowing its container.
+                            It is the equivalent of combining these commands:</p>
+                        <ol className="list--bullet">
+                            <li><code>flex-shrink--none</code></li>
+                            <li><code>flex-grow--none</code></li>
+                            <li><code>flex-basis: auto</code></li>
+                        </ol>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex--none">Some long text to make it overflow.</div>
+                            </div>
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex--none'>\n       Some long text to make it overflow.\n   </div>\n</div>"
+                break;
+            case 'shrink':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Target element will not shrink. It will size based on its content
+                            and not wrap the content. Other elements will shrink to make space
+                            for it. There's a possibility for the flexbox container's elements
+                            to overflow.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex-shrink--none">
+                                    Some long text to make everything overflow.
+                                </div>
+                                <div>2</div>
+                                <div>3</div>
+                            </div>
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex-shrink--none'>\n       Some long text to make it overflow.\n   </div>\n   <div>1</div>\n   <div>2</div>\n</div>"
+                break;
+            case 'grow':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Target element will not grow according to its flex container size.
+                            It will accomodate its content's size, but not fill its container.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex-grow--none">Some short text.</div>
+                            </div>
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex-grow--none'>\n       Some short text.\n   </div>\n</div>"
+                break;
+        }
+        return (
+            <section className="example flex flex--column">
+                <div className="push--bottom">
+                    <TabNav activeTab={flexTab} style={['sub']}>
+                        <TabNav.Tab onClick={() => this.switchFlexTab('none')} tabId="none">
+                            flex--none
+                        </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('shrink')} tabId="shrink">
+                            flex-shrink--none
+                        </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('grow')} tabId="grow">
+                            flex-grow--none
+                        </TabNav.Tab> 
+                    </TabNav>
+                </div>
+                <div className="flex flex--row">
+                    {leftContent}
+                    <div className="flex--1 push--left demo-only-code-box">
+                        <Code
+                            hasCopyButton={true}
+                            isHighlighted={true}
+                            type={ 'block'}
+                            language={ 'html'}>
+                            {codeContent}
+                        </Code>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+}
+
+export class FlexAligning extends React.Component {
+    state = {
+        flexTab: 'align',
+    };
+
+    switchFlexTab = tab => {
+        this.setState({flexTab: tab});
+    }
+
+    render() {
+        const {flexTab} = this.state;
+        let flexDirectionClassnames = classNames(
+            'demo-only-helper-box-container',
+            {'demo-only-helper-box-container--tall-children': flexTab === 'align',
+            'demo-only-helper-box-container--wide-children': flexTab === 'justified',
+            'flex': flexTab !== 'center',}
+        ); 
+        let leftContent;
+        let codeContent;
+        switch (flexTab) {
+            case 'align':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Allows for vertical alignment.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex flex-align--start">
+                                    <span>Start</span>
+                                </div>
+
+                                <div className="flex flex-align--center">
+                                    <span>Center</span>
+                                </div>
+
+                                <div className="flex flex-align--end">
+                                    <span>End</span>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex flex-align--start'>\n        <span>Start</span>\n    </div>\n    <div className='flex flex-align--center'>\n        <span>Center</span>\n    </div>\n    <div className='flex flex-align--end'>\n        <span>End</span>\n  </div>\n</div>"
+                break;
+            case 'justified':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Allows for horizontal alignment.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex flex-justified--start">
+                                    <span>Start</span>
+                                </div>
+
+                                <div className="flex flex-justified--center">
+                                    <span>Center</span>
+                                </div>
+
+                                <div className="flex flex-justified--end">
+                                    <span>End</span>
+                                </div>
+                            </div>                           
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex flex-justified--start'>\n        <span>Start</span>\n    </div>\n    <div className='flex flex-justified--center'>\n        <span>Center</span>\n    </div>\n    <div className='flex flex-justified--end'>\n        <span>End</span>\n  </div>\n</div>"
+                break;
+            case 'center':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Easy vertical and horizontal centering, no parent .flex necessary.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex--dead-center">1</div>
+                            </div>                           
+                        </div>
+                    </div>
+                )
+                codeContent = "<div>\n   <div className='flex--dead-center'>1</div>\n</div>"
+                break;
+        }
+        return (
+            <section className="example flex flex--column">
+                <div className="push--bottom">
+                    <TabNav activeTab={flexTab} style={['sub']}>
+                        <TabNav.Tab onClick={() => this.switchFlexTab('align')} tabId="align">
+                            flex-align--(start, center, end)
+                        </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('justified')} tabId="justified">
+                            flex-justified--(start, center, end)
+                        </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('center')} tabId="center">
+                            flex--dead-center
+                        </TabNav.Tab> 
+                    </TabNav>
+                </div>
+                <div className="flex flex--row">
+                    {leftContent}
+                    <div className="flex--1 push--left demo-only-code-box">
+                        <Code
+                            hasCopyButton={true}
+                            isHighlighted={true}
+                            type={ 'block'}
+                            language={ 'html'}>
+                            {codeContent}
+                        </Code>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+}
+
+export class FlexWrap extends React.Component {
+    state = {
+        flexTab: 'wrap',
+    };
+
+    switchFlexTab = tab => {
+        this.setState({flexTab: tab});
+    }
+
+    render() {
+        const {flexTab} = this.state;
+        let flexDirectionClassnames = classNames(
+            'demo-only-helper-box-container',
+            'flex',
+            'demo-only-helper-box-container--width-300',
+            {'flex-wrap': flexTab ==='wrap',
+            'flex-wrap--reverse': flexTab === 'reverse'}
+        ); 
+        let leftContent;
+        let codeContent;
+        switch (flexTab) {
+            case 'wrap':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                        Apply <code>flex-wrap</code> to a container and all child elements will wrap around in the container.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>                           
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex flex-wrap'>\n   <div>1</div>\n   <div>2</div>\n   <div>3</div>\n   <div>4</div>\n   <div>5</div>\n   <div>6</div>\n</div>"
+                break;
+            case 'reverse':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Apply <code>flex-wrap--reverse</code> to a container and all child elements will wrap around in the container in reverse order.
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div>1</div>
+                                <div>2</div>
+                                <div>3</div>
+                                <div>4</div>
+                                <div>5</div>
+                                <div>6</div>
+                            </div>                           
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex flex-wrap--reverse'>\n   <div>1</div>\n   <div>2</div>\n   <div>3</div>\n   <div>4</div>\n   <div>5</div>\n   <div>6</div>\n</div>"
+                break;
+        }
+        return (
+            <section className="example flex flex--column">
+                <div className="push--bottom">
+                    <TabNav activeTab={flexTab} style={['sub']}>
+                        <TabNav.Tab onClick={() => this.switchFlexTab('wrap')} tabId="wrap">
+                            flex-wrap
+                        </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('reverse')} tabId="reverse">
+                            flex-wrap--reverse
+                        </TabNav.Tab> 
+                    </TabNav>
+                </div>
+                <div className="flex flex--row">
+                    {leftContent}
+                    <div className="flex--1 push--left demo-only-code-box">
+                        <Code
+                            hasCopyButton={true}
+                            isHighlighted={true}
+                            type={ 'block'}
+                            language={ 'html'}>
+                            {codeContent}
+                        </Code>
+                    </div>
+                </div>
+            </section>
+        );
+    }
+}

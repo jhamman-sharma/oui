@@ -57,11 +57,22 @@ html {
   &--height-84 {
     height: 84px;
   }
+
+  &--tall-children {
+    div {
+      height: 120px;
+    }
+  }
+
+  &--wide-children {
+    div {
+      width: 120px;
+    }
+  }
 }
 
 .demo-only-code-box {
-  width: 300px;
-  height: 100%;
+  margin: auto;
 }
 
 .demo-only-subsection {
