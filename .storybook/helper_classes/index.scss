@@ -17,14 +17,6 @@ html {
   color: $smoke-light;
   border-radius: 5px;
 
-  &--width-100 {
-    width: 100px;
-
-    .flex--none {
-      width: auto;
-    }
-  }
-
   div {
     background: $magenta-dark;
     width: 60px;
@@ -44,6 +36,10 @@ html {
     .flex-grow--none {
       width: auto;
     }
+
+    .flex--none {
+      width: auto;
+    }
   }
 
   &--width-contents {
@@ -58,16 +54,12 @@ html {
     height: 84px;
   }
 
-  &--tall-children {
-    div {
-      height: 120px;
-    }
+  &--height-160 {
+    min-height: 160px;
   }
 
-  &--wide-children {
-    div {
-      width: 120px;
-    }
+  &--width-160 {
+    min-width: 160px;
   }
 }
 

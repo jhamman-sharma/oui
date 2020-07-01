@@ -29,6 +29,7 @@ export class FlexDirection extends React.Component {
         ); 
     return (
         <section className="example flex flex--column">
+            <h2>Flex direction</h2>
             <div className="push--bottom">
                 <TabNav activeTab={flexDirection} style={['sub']}>
                     <TabNav.Tab onClick={() => this.switchFlexDirection('row')} tabId="row">
@@ -110,6 +111,7 @@ export class Flex1 extends React.Component {
         codeContents += "\n</div>";
         return (
             <section className="example flex flex--column">
+                <h2>Sizing</h2>
                 <div className="push--bottom">
                     <TabNav activeTab="flex1" style={['sub']}>
                         <TabNav.Tab tabId="flex1">
@@ -166,9 +168,10 @@ export class FlexNone extends React.Component {
             'demo-only-helper-box-container',
             'flex',
             {'flex--none': flexTab === 'none',
-            'demo-only-helper-box-container--width-100': flexTab === 'none',
-            'demo-only-helper-box-container--width-300': flexTab !== 'none',
+            // 'demo-only-helper-box-container--width-100': flexTab === 'none',
+            // 'demo-only-helper-box-container--width-300': flexTab !== 'none',
             [`flex-${flexTab}--none`]: flexTab !== 'none'},
+            'demo-only-helper-box-container--width-300',
         ); 
         let leftContent;
         let codeContent;
@@ -186,14 +189,17 @@ export class FlexNone extends React.Component {
                             <li><code>flex-grow--none</code></li>
                             <li><code>flex-basis: auto</code></li>
                         </ol>
-                        <div className="flex--dead-center">
+                        <div className="flex--dead-center push--top flex--column">
                             <div className={flexDirectionClassnames}>
-                                <div className="flex--none">Some long text to make it overflow.</div>
+                                <div className="flex--none">Some long text to make everything overflow.</div>
+                            </div>
+                            <div className={flexDirectionClassnames + " push--top"}>
+                                <div className="flex--none">Some short text.</div>
                             </div>
                         </div>
                     </div>
                 )
-                codeContent = "<div className='flex'>\n   <div className='flex--none'>\n       Some long text to make it overflow.\n   </div>\n</div>"
+                codeContent = "<div className='flex'>\n   <div className='flex--none'>\n       Some long text to make everything overflow.\n   </div>\n</div>\n<div className='flex'>\n   <div className='flex--none'>\n       Some short text.\n   </div>\n</div>"
                 break;
             case 'shrink':
                 leftContent = (
@@ -236,6 +242,7 @@ export class FlexNone extends React.Component {
         }
         return (
             <section className="example flex flex--column">
+                <h2>Restricting flex</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
                         <TabNav.Tab onClick={() => this.switchFlexTab('none')} tabId="none">
@@ -279,8 +286,9 @@ export class FlexAligning extends React.Component {
         const {flexTab} = this.state;
         let flexDirectionClassnames = classNames(
             'demo-only-helper-box-container',
-            {'demo-only-helper-box-container--tall-children': flexTab === 'align',
-            'demo-only-helper-box-container--wide-children': flexTab === 'justified',
+            {'demo-only-helper-box-container--height-160': flexTab!=='justified',
+            'demo-only-helper-box-container--width-160': flexTab==='justified' || flexTab ==='center',
+            'flex--dead-center': flexTab === 'center',
             'flex': flexTab !== 'center',}
         ); 
         let leftContent;
@@ -290,51 +298,55 @@ export class FlexAligning extends React.Component {
                 leftContent = (
                     <div className="flex--1">
                         <p className="push--left">
-                            Allows for vertical alignment.
+                            Vertically aligns any children.
                         </p>
                         <div className="flex--dead-center">
-                            <div className={flexDirectionClassnames}>
-                                <div className="flex flex-align--start">
-                                    <span>Start</span>
+                            <div className={flexDirectionClassnames + " flex-align--start"}>
+                                <div>
+                                    Start
                                 </div>
-
-                                <div className="flex flex-align--center">
-                                    <span>Center</span>
+                            </div>
+                            <div className={flexDirectionClassnames + " flex-align--center"}>
+                                <div>
+                                    Center
                                 </div>
-
-                                <div className="flex flex-align--end">
-                                    <span>End</span>
+                            </div>
+                            <div className={flexDirectionClassnames + " flex-align--end"}>
+                                <div>
+                                    End
                                 </div>
                             </div>                           
                         </div>
                     </div>
                 )
-                codeContent = "<div className='flex'>\n   <div className='flex flex-align--start'>\n        <span>Start</span>\n    </div>\n    <div className='flex flex-align--center'>\n        <span>Center</span>\n    </div>\n    <div className='flex flex-align--end'>\n        <span>End</span>\n  </div>\n</div>"
+                codeContent = "<div className='flex flex-align--start'>\n   <div>Start</div>\n</div>\n<div className='flex flex-align--center'>\n   <div>Center</div>\n</div>\n<div className='flex flex-align--end'>\n    <div>End</div>\n</div>"
                 break;
             case 'justified':
                 leftContent = (
                     <div className="flex--1">
                         <p className="push--left">
-                            Allows for horizontal alignment.
+                            Horizontally aligns children.
                         </p>
-                        <div className="flex--dead-center">
-                            <div className={flexDirectionClassnames}>
-                                <div className="flex flex-justified--start">
-                                    <span>Start</span>
+                        <div className="flex--dead-center flex--column">
+                            <div className={flexDirectionClassnames + " flex-justified--start"}>
+                                <div>
+                                    Start
                                 </div>
-
-                                <div className="flex flex-justified--center">
-                                    <span>Center</span>
+                            </div>
+                            <div className={flexDirectionClassnames + " push--top flex-justified--center"}>
+                                <div>
+                                    Center
                                 </div>
-
-                                <div className="flex flex-justified--end">
-                                    <span>End</span>
+                            </div>
+                            <div className={flexDirectionClassnames + " push--top flex-justified--end"}>
+                                <div>
+                                    End
                                 </div>
-                            </div>                           
+                            </div>                            
                         </div>
                     </div>
                 )
-                codeContent = "<div className='flex'>\n   <div className='flex flex-justified--start'>\n        <span>Start</span>\n    </div>\n    <div className='flex flex-justified--center'>\n        <span>Center</span>\n    </div>\n    <div className='flex flex-justified--end'>\n        <span>End</span>\n  </div>\n</div>"
+                codeContent = "<div className='flex flex-justified--start'>\n   <div>Start</div>\n</div>\n<div className='flex flex-justified--center'>\n   <div>Center</div>\n</div>\n<div className='flex flex-justified--end'>\n    <div>End</div>\n</div>"
                 break;
             case 'center':
                 leftContent = (
@@ -344,21 +356,52 @@ export class FlexAligning extends React.Component {
                         </p>
                         <div className="flex--dead-center">
                             <div className={flexDirectionClassnames}>
-                                <div className="flex--dead-center">1</div>
+                                <div>center</div>
                             </div>                           
                         </div>
                     </div>
                 )
-                codeContent = "<div>\n   <div className='flex--dead-center'>1</div>\n</div>"
+                codeContent = "<div className='flex--dead-center'>\n    <div>center</div>\n</div>"
+                break;
+            case 'self':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Vertically aligns itself (vs <code>flex-align--</code> which aligns its children).
+                        </p>
+                        <div className="flex--dead-center">
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex-self--start">
+                                    Start
+                                </div>
+                            </div>
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex-self--center">
+                                    Center
+                                </div>
+                            </div>
+                            <div className={flexDirectionClassnames}>
+                                <div className="flex-self--end">
+                                    End
+                                </div>
+                            </div>                         
+                        </div>
+                    </div>
+                )
+                codeContent = "<div className='flex'>\n   <div className='flex-self--start'>Start</div>\n</div>\n<div className='flex'>\n   <div className='flex-self--center'>Center</div>\n</div>\n<div className='flex'>\n    <div className='flex-self--end'>End</div>\n</div>"
                 break;
         }
         return (
             <section className="example flex flex--column">
+                <h2>Aligning</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
                         <TabNav.Tab onClick={() => this.switchFlexTab('align')} tabId="align">
                             flex-align--(start, center, end)
-                        </TabNav.Tab> 
+                        </TabNav.Tab>
+                        <TabNav.Tab onClick={() => this.switchFlexTab('self')} tabId="self">
+                            flex--self-(start, center, end)
+                        </TabNav.Tab>  
                         <TabNav.Tab onClick={() => this.switchFlexTab('justified')} tabId="justified">
                             flex-justified--(start, center, end)
                         </TabNav.Tab> 
@@ -448,6 +491,7 @@ export class FlexWrap extends React.Component {
         }
         return (
             <section className="example flex flex--column">
+                <h2>Wrap</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
                         <TabNav.Tab onClick={() => this.switchFlexTab('wrap')} tabId="wrap">
