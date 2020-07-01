@@ -39,7 +39,6 @@ export class FlexboxInteractiveFlexDirection extends React.Component {
                     </TabNav.Tab> 
                 </TabNav>
             </div>
-            
             <div className="flex flex--row">
                 <div className="flex--1">
                     <p className="push--left">
@@ -55,7 +54,7 @@ export class FlexboxInteractiveFlexDirection extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="flex--1 push--left">
+                <div className="flex--1 push--left flex flex-align--center demo-only-code-box">
                     <Code
                         hasCopyButton={true}
                         isHighlighted={true}
@@ -119,7 +118,6 @@ export class FlexboxInteractiveFlex1 extends React.Component {
                         </TabNav.Tab> 
                     </TabNav>
                 </div>
-              
                 <div className="flex flex--row">
                     <div className="flex--1">
                         <p className="push--left">
@@ -127,20 +125,18 @@ export class FlexboxInteractiveFlex1 extends React.Component {
                              <code>flex--1</code> will distribute width among siblings.
                         </p>
                         <div className="flex--dead-center push--bottom">
-                        
                             <div className={flexClassnames}>
                                 {flexDivsDisplay}
                             </div>
-
                         </div>
                         <ButtonRow
                             centerGroup={ [
                                 <Button style="outline" onClick={() => this.addDiv('flex1')}>Add Flex--1</Button>,
                                 <Button style="outline" onClick={() => this.addDiv('regular')}>Add Regular</Button>,
-                                <Button style="outline" onClick={() => this.clearAll()}>Clear all</Button>,
+                                <Button style="danger-outline" onClick={() => this.clearAll()}>Clear all</Button>,
                             ]}/>
                     </div>
-                    <div className="flex--1 push--left">
+                    <div className="flex--1 push--left demo-only-code-box">
                         <Code
                             hasCopyButton={true}
                             isHighlighted={true}

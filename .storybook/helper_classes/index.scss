@@ -59,15 +59,19 @@ html {
   }
 }
 
+.demo-only-code-box {
+  width: 300px;
+  height: 100%;
+}
+
 .demo-only-subsection {
   margin-top: 24px;
 }
 
 .example {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   margin-left: 50px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   width: 90%;
 }

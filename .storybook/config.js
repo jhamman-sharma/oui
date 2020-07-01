@@ -33,8 +33,8 @@ function loadStories() {
   require('./tokens.story.js');
   require('./css.story.js');
   require('./borderradius.story.js');
-  req.keys().forEach(req);
   reqHelperClasses.keys().forEach(reqHelperClasses);
+  req.keys().forEach(req);
 }
 
 storybook.configure(loadStories, module);

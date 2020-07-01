@@ -4,6 +4,8 @@ import classnames from 'classnames';
 
 import { withKnobs, select } from "@storybook/addon-knobs";
 import "./index.scss";
+import TabNav from "../../src/components/TabNav/index";
+import Code from "../../src/components/Code/index";
 
 import { FlexboxInteractiveFlexDirection, FlexboxInteractiveFlex1 } from "./flexboxInteractive";
 
@@ -348,37 +350,44 @@ stories.add("Default", () => {
 .add("Interactive", () => {
   return (
     <div>
-      <FlexboxInteractiveFlexDirection/>
-      <FlexboxInteractiveFlex1/>
-      <section className="example">
-        <div className="flex">
+      <section className="example flex flex--column">
+        <TabNav activeTab="flex" style={['dashboard']}>
+          <TabNav.Tab tabId="flex">
+            flex
+          </TabNav.Tab> 
+        </TabNav>
+        <div className="flex flex--row push--top">
           <div className="flex--1">
-            <h2>.flex--1</h2>
-            <p>Fill available width, which stretches backgrounds.</p>
-          </div>
-          <div className="demo-only-helper-box-container demo-only-helper-box-container--width-300 flex">
-            <div className="flex--1">
-              <code>flex--1</code> container
+            <p>
+              Flex container. Typically other elements with flex specifications
+              will live in a flex container.
+            </p>
+            <ol className="list--numbered">
+              <li>Defines a flex container (light purple box)</li>
+              <li>Children are flex items (dark purple boxes)</li>
+            </ol>
+            <div className="flex--dead-center flex flex--1">
+              <div className="demo-only-helper-box-container flex">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+              </div>
             </div>
-            <div>2</div>
           </div>
-        </div>
-        <div className="demo-only-subsection flex">
-          <div className="flex--1">
-            <h2>.flex--1, .flex--1</h2>
-            <p>Distribute width across siblings.</p>
-          </div>
-          <div className="demo-only-helper-box-container demo-only-helper-box-container--width-300 flex">
-            <div className="flex--1">
-              <code>flex--1</code> container
-            </div>
-            <div className="flex--1">
-              <code>flex--1</code> container
-            </div>
+          <div className="flex--1 demo-only-code-box flex flex--align-center ">
+            <Code
+              hasCopyButton={true}
+              isHighlighted={true}
+              type={ 'block'}
+              language={ 'html'}>
+              { `<div className='flex'>\n  <div>1</div>\n  <div>2</div>\n  <div>3</div>\n</div>`}
+            </Code>
           </div>
         </div>
       </section>
 
+      <FlexboxInteractiveFlexDirection/>
+      <FlexboxInteractiveFlex1/>
       <section className="example flex">
         <div className="flex--1">
           <h2>.flex--none</h2>
