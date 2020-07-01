@@ -28,10 +28,11 @@ Right.propTypes = {
 const Toolbar = (props) => {
   const toolbarContentClasses = classNames({
     'toolbar__content': true,
-    'toolbar__content--bare': props.toolbarStyle === 'bare',
+    'toolbar__content--bare': props.toolbarStyle.includes('bare'),
+    'toolbar__content--tight': props.toolbarStyle.includes('tight'),
     'background--white': props.isBottomToolbar,
     'border--top': props.isBottomToolbar,
-    'no-border--bottom': props.isBottomToolbar || props.toolbarStyle === 'bare',
+    'no-border--bottom': props.isBottomToolbar || props.toolbarStyle.includes('bare'),
     'hard--left': props.isBottomToolbar,
   });
 
@@ -49,6 +50,7 @@ const Toolbar = (props) => {
 
 Toolbar.defaultProps = {
   isBottomToolbar: false,
+  toolbarStyle: [],
 };
 
 Toolbar.propTypes = {
@@ -59,7 +61,7 @@ Toolbar.propTypes = {
   /** Hook to uze for automated testing */
   testSection: PropTypes.string,
   /** The style to use for this toolbar */
-  toolbarStyle: PropTypes.oneOf(['bare']),
+  toolbarStyle: PropTypes.oneOf(['bare', 'tight']),
 };
 
 Toolbar.Button = ToolbarButton;
