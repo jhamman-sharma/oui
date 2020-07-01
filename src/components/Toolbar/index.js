@@ -35,11 +35,10 @@ const Toolbar = (props) => {
 
   return (
     <div
-      data-oui-component={true}
+      data-oui-component={ true }
       className="toolbar"
-      data-test-section={props.testSection}
-    >
-      <div className={toolbarContentClasses}>{props.children}</div>
+      data-test-section={ props.testSection }>
+      <div className={ toolbarContentClasses }>{props.children}</div>
     </div>
   );
 };
