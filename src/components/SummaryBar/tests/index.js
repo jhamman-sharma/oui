@@ -1,6 +1,8 @@
 import React from 'react';
 import SummaryBar from '../index';
 import { shallow, mount } from 'enzyme';
+import { mountToJson } from 'enzyme-to-json';
+
 
 const basicColumns = [
   {
@@ -111,18 +113,18 @@ const popOverColumns = [
 
 describe('components/SummaryBar', () => {
   it('should render correctly', () => {
-    const component = shallow(
+    const component = mount(
       <SummaryBar testSection={ 'summary-bar-test' } columns={ basicColumns } title={ 'Test bar' } />
     );
     expect(
       component
         .find('[data-test-section="summary-bar-test"]')
-        .find('[data-test-section="summary-bar-test-col-1-header"]')
+        .find('div[data-test-section="summary-bar-test-col-1-header"]')
         .text()).toBe('Test header');
     expect(
       component
         .find('[data-test-section="summary-bar-test"]')
-        .find('[data-test-section="summary-bar-test-col-1-content"]')
+        .find('div[data-test-section="summary-bar-test-col-1-content"]')
         .text()).toBe('Test content');
   });
   it('should not render over 5 columns', () => {
