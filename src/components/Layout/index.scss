@@ -130,6 +130,8 @@ div[class*="col"].padded-content--remove,
   width: 100%;
   padding-right: spacer(1.5);
   padding-left: spacer(1.5);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .col {
@@ -137,6 +139,8 @@ div[class*="col"].padded-content--remove,
   flex-basis: 0;
   flex-grow: 1;
   max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .col-auto {
@@ -218,10 +222,10 @@ div[class*="fitContent"] {
   transform: rotate(45deg);
   right: 0;
   margin-right: -17px; //padding plus 1px border
-  z-index: 10000;
+  z-index: map-fetch($z-index, poptip);
 }
 
-.oui-config-panel__nubbin::before {
+.oui-config-panel__nubbin::after {
   position: absolute;
   right: 0;
   width: $nubbin-size;
@@ -230,4 +234,8 @@ div[class*="fitContent"] {
   border-left: 1px solid map-fetch($border, color, base);
   border-bottom: 1px solid map-fetch($border, color, base);
   background-color: map-fetch($color, background, light);
+}
+
+.col__shadow {
+  box-shadow: -1px 0px 0px 0px #E0E0E0;
 }

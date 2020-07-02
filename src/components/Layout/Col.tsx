@@ -1,6 +1,5 @@
 import classNames from 'classnames';
 import React, { Ref } from 'react';
-import { nubbinSize } from '../../tokens/forimport/index.es';
 const DEVICE_SIZES = ['large', 'small'];
 
 /** colSize shorthand */
@@ -28,6 +27,10 @@ type ColPropTypes = {
   border?: 'top' | 'bottom' | 'left' | 'right' | 'sides' | 'ends' | 'all';
   /** Inner contents. */
   children: React.ReactNode;
+  /** Whether or not this column has a nubbin */
+  hasNubbin?: boolean;
+  /** Whether or not this column has a box-shadow */
+  hasShadow?: boolean;
   /** Whether or not this is a reading column layout */
   isReadingColumn?: boolean;
   /**
@@ -41,12 +44,11 @@ type ColPropTypes = {
   /**
    * Force overflow scrolling
    */
-  overflow?: 'overflow-y--scroll' | 'overflow-x--auto' | 'overflow-y--auto';
-
+  overflow?: 'overflow-y--scroll' | 'overflow-x--auto' | 'overflow-y--auto' | 'overflow-x--hidden';
   /** Add default amount of padding. */
   paddedContent?: 'around' | 'sides' | 'ends' | 'none';
   /** Optional pass through ref. */
-  ref?: Ref<HTMLElement>;
+  colRef?: React.RefObject<HTMLElement>;
   /**
    * The number of columns to span on small devices (≥576px)
    *
@@ -55,30 +57,30 @@ type ColPropTypes = {
    * )}
    */
   small?: column;
-
   /**
    * How to vertically align self
    */
   alignSelf?: 'start' | 'center' | 'end';
-
   /** A reference to the element that the nubbin should point to */
-  nubbinRef: React.Ref<React.ReactNode>;
+  nubbinRef?: HTMLElement | HTMLDivElement | null;
 };
-const Col: React.SFC<ColPropTypes> = React.forwardRef(
+
+const Col =
   (
     {
       as: Component = 'div',
       border,
       children,
+      colRef,
       hasNubbin,
+      hasShadow,
       nubbinRef,
       overflow,
       paddedContent = 'none',
       isReadingColumn,
       alignSelf,
       ...props
-    },
-    ref?: React.Ref<HTMLElement | React.ElementType>
+    }: ColPropTypes
   ) => {
     const prefix = 'col';
     const spans: string[] = [];
@@ -96,8 +98,28 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
     if (alignSelf) {
       classes.push(`align-self-${alignSelf}`);
     }
+    if (hasShadow) {
+      classes.push('col__shadow');
+    }
     if (isReadingColumn) {
       children = <div className="reading-column">{children}</div>;
+    }
+    if (hasNubbin) {
+      let nubbinTopPosition = 0;
+      if (nubbinRef && nubbinRef instanceof HTMLElement) {
+        // Adjust the top position to be halfway through the nubbinRef's height
+        nubbinTopPosition = nubbinRef.offsetTop + nubbinRef.offsetHeight / 2;
+      }
+      children = (
+        <>
+          <div
+            className="oui-config-panel__nubbin"
+            style={{ top: nubbinTopPosition }}
+          ></div>
+          {children}
+        </>
+      );
+      classes.push('overflow-x--hidden');
     }
 
     DEVICE_SIZES.forEach((brkPoint) => {
@@ -132,33 +154,16 @@ const Col: React.SFC<ColPropTypes> = React.forwardRef(
     if (!spans.length) {
       spans.push(prefix); // plain 'col'
     }
-    if (hasNubbin) {
-      let nubbinTopPosition = 0;
-      if (nubbinRef && nubbinRef instanceof HTMLElement) {
-        console.log(nubbinRef);
-        // Adjust the top position to be halfway through the nubbinRef's height
-        nubbinTopPosition = nubbinRef.offsetTop + nubbinRef.offsetHeight / 2;
-      }
-      children = (
-        <>
-          <div
-            className="oui-config-panel__nubbin"
-            style={{ top: nubbinTopPosition }}
-          ></div>
-          {children}
-        </>
-      );
-    }
+
     return (
       <Component
         {...props}
         children={children}
-        ref={ref}
+        ref={colRef}
         className={classNames(...spans, ...classes)}
       ></Component>
     );
-  }
-);
+  };
 
 Col.displayName = 'Col';
 

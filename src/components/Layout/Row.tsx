@@ -33,7 +33,7 @@ type RowProps = {
   paddedContent?: 'none' | 'around' | 'sides' | 'ends' | 'remove' | 'top' | 'bottom';
 
   /** Optional pass through ref. */
-  ref?: Ref<HTMLElement>;
+  rowRef?: React.RefObject<HTMLElement>;
 
   /**
    * Removes gutters and negative margins.
@@ -49,7 +49,7 @@ type RowProps = {
   verticalAlignment?: 'start' | 'center' | 'end';
 };
 
-const Row: React.SFC<RowProps> = React.forwardRef(
+const Row: React.SFC<RowProps> =
   (
     {
       as: Component = 'div',
@@ -59,11 +59,11 @@ const Row: React.SFC<RowProps> = React.forwardRef(
       outlineDebug,
       paddedContent,
       removeGutters,
+      rowRef,
       shouldWrap,
       verticalAlignment,
       ...props
-    },
-    ref
+    }
   ) => {
     const classes: string[] = [];
     if (border) {
@@ -88,10 +88,9 @@ const Row: React.SFC<RowProps> = React.forwardRef(
       classes.push(`flex-align--${verticalAlignment}`);
     }
     return (
-      <Component {...props} ref={ref} className={classNames('row', classes, removeGutters && 'gutters--remove')} />
+      <Component {...props} ref={rowRef} className={classNames('row', classes, removeGutters && 'gutters--remove')} />
     );
-  }
-);
+  };
 
 Row.displayName = 'Row';
 

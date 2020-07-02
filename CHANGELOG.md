@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Release] Remove **ColWithNubbin** in favor of `hasNubbin` and `nubbinRef` props on Col ([#1368](https://github.com/optimizely/oui/pull/1368))
+- [Feature] Add `colRef` and `rowRef` to allow passing refs to **Col** and **Row** respectively ([#1368](https://github.com/optimizely/oui/pull/1368))
+- [Feature] Add `tileRef` to **Tile** to allow passing a ref ([#1368](https://github.com/optimizely/oui/pull/1368))
 - [Feature] Added new Storybook examples detailing Flexbox helper classes ([#1367](https://github.com/optimizely/oui/pull/1367))
 - [Feature] Add ability to sort table columns to **Table.TH** ([#1365](https://github.com/optimizely/oui/pull/1365))
 

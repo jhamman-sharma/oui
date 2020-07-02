@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Ref } from "react";
 import classNames from "classnames";
 
 import Button from "../Button";
@@ -94,6 +94,9 @@ export type TileProps = {
    */
   order?: number;
 
+  /** Optional pass through ref. */
+  tileRef?: RefType;
+
   /**
    * Optional string used to indicate status before action items
    */
@@ -125,7 +128,9 @@ export type TileProps = {
   warningTitle?: string;
 };
 
-const Tile = ({
+export type RefType = React.RefObject<HTMLDivElement>
+
+const Tile =  ({
   description,
   dragHandleProps,
   dropdownItems,
@@ -141,6 +146,7 @@ const Tile = ({
   order,
   status,
   testSection,
+  tileRef,
   usesMonospaceName = false,
   warningContent = "",
   warningTitle,
@@ -166,6 +172,7 @@ const Tile = ({
         "push-half--ends": hasSpacing,
       })}
       data-test-section={testSection}
+      ref={ tileRef }
     >
       {order && (
         <span className="oui-tile__order-number milli text--right push--right">
@@ -253,5 +260,7 @@ const Tile = ({
     </div>
   );
 };
+
+Tile.displayName = 'Tile';
 
 export default Tile;
