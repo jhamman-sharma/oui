@@ -10,7 +10,7 @@ import { FlexAligning,
   FlexDirection, 
   Flex1, 
   FlexNone,
-  FlexWrap } from "./FlexboxInteractive";
+  FlexWrap } from "./flexboxInteractive";
 
 const stories = storiesOf("HelperClasses/Flexbox", module);
 stories
