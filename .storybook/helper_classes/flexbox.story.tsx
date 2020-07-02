@@ -1,8 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import classnames from 'classnames';
 
-import { withKnobs, select } from "@storybook/addon-knobs";
+import { withKnobs } from "@storybook/addon-knobs";
 import "./index.scss";
 import TabNav from "../../src/components/TabNav/index";
 import Code from "../../src/components/Code/index";
@@ -21,7 +20,7 @@ stories
 stories.add("Default", () => {
   return (
     <div>
-      <section className="example flex flex--column">
+      <section className="demo-only-section flex flex--column">
         <h2>Flex container</h2>
         <TabNav activeTab="flex" style={['sub']}>
           <TabNav.Tab tabId="flex">

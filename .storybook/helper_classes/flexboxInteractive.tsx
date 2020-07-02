@@ -1,5 +1,4 @@
-import React, { cloneElement, isValidElement } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 import classNames from 'classnames';
 
@@ -28,7 +27,7 @@ export class FlexDirection extends React.Component {
             `flex--${flexDirection}`,
         ); 
     return (
-        <section className="example flex flex--column">
+        <section className="demo-only-section flex flex--column">
             <h2>Flex direction</h2>
             <div className="push--bottom">
                 <TabNav activeTab={flexDirection} style={['sub']}>
@@ -110,7 +109,7 @@ export class Flex1 extends React.Component {
         })
         codeContents += "\n</div>";
         return (
-            <section className="example flex flex--column">
+            <section className="demo-only-section flex flex--column">
                 <h2>Sizing</h2>
                 <div className="push--bottom">
                     <TabNav activeTab="flex1" style={['sub']}>
@@ -122,7 +121,7 @@ export class Flex1 extends React.Component {
                 <div className="flex flex--row">
                     <div className="flex--1">
                         <p className="push--left">
-                            Fill available width, which stretches backgrounds. Multiple 
+                            Fill available width, which stretches backgrounds. Multiple{" "} 
                              <code>flex--1</code> will distribute width among siblings.
                         </p>
                         <div className="flex--dead-center push--bottom">
@@ -241,7 +240,7 @@ export class FlexNone extends React.Component {
                 break;
         }
         return (
-            <section className="example flex flex--column">
+            <section className="demo-only-section flex flex--column">
                 <h2>Restricting flex</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
@@ -392,7 +391,7 @@ export class FlexAligning extends React.Component {
                 break;
         }
         return (
-            <section className="example flex flex--column">
+            <section className="demo-only-section flex flex--column">
                 <h2>Aligning</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
@@ -490,7 +489,7 @@ export class FlexWrap extends React.Component {
                 break;
         }
         return (
-            <section className="example flex flex--column">
+            <section className="demo-only-section flex flex--column">
                 <h2>Wrap</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
