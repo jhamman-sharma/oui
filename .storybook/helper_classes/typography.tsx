@@ -45,27 +45,27 @@ export class Typography extends React.Component {
             <div className="flex flex--row">
                 <Container pushRowsTop={true}>
                     <Row>
-                        <Col>
-                            <code className="flex-self--end">giga</code>
+                        <Col alignSelf="center">
+                            <code>giga</code>
                         </Col>
-                        <Col>
-                            <div className="flex-self--end giga">Typography</div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <code className="flex-self--end">mega</code>
-                        </Col>
-                        <Col>
-                            <div className="flex-self--end mega">Typography</div>
+                        <Col alignSelf="end">
+                            <div className="giga">Typography</div>
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <code className="flex-self--end">kilo</code>
+                        <Col alignSelf="center">
+                            <code>mega</code>
                         </Col>
-                        <Col>
-                            <div className="flex-self--end kilo">Typography</div>
+                        <Col alignSelf="end">
+                            <div className="mega">Typography</div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col alignSelf="center">
+                            <code>kilo</code>
+                        </Col>
+                        <Col alignSelf="end">
+                            <div className="kilo">Typography</div>
                         </Col>
                     </Row>
                     <Row>
@@ -109,8 +109,8 @@ export class Typography extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col>
-                            <code className="flex-self--end">h6, zeta</code>
+                        <Col alignSelf="end">
+                            <code>h6, zeta</code>
                         </Col>
                         <Col>
                             <div className="flex-self--end zeta">Typography</div>
@@ -133,7 +133,7 @@ export class Typography extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-                <div>
+                <div className="demo-only-typography-container">
                     Stuff here
                 </div>
             </div>
