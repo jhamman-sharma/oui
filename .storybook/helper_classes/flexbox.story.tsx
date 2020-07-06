@@ -20,8 +20,9 @@ stories
 stories.add("Default", () => {
   return (
     <div>
-      <section className="demo-only-section flex flex--column">
-        <h2>Flex container</h2>
+      <section className="demo-only-section hard--top flex flex--column">
+        <h1>Flexbox Helper Classes</h1>
+        <p>The following examples illustrate the various flexbox helper classes that are available through OUI's CSS.</p>
         <TabNav activeTab="flex" style={['sub']}>
           <TabNav.Tab tabId="flex">
             flex

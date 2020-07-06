@@ -25,7 +25,12 @@ export class FlexDirection extends React.Component {
             'demo-only-helper-box-container--width-container',
             'flex',
             `flex--${flexDirection}`,
-        ); 
+        );
+    const leftContent = flexDirection === 'row' ? <p className="push--left"> Change direction of flex items from row to column. Use{" "}
+    <code>.flex--row</code> to overspecify the orientation of flex items
+    in a row.</p> : <p className="push--left"> Change direction of flex items from row to column. Use{" "}
+    <code>.flex--column</code> to specify the orientation of flex items
+    in a column.</p>
     return (
         <section className="demo-only-section flex flex--column">
             <h2>Flex direction</h2>
@@ -41,11 +46,7 @@ export class FlexDirection extends React.Component {
             </div>
             <div className="flex flex--row">
                 <div className="flex--1">
-                    <p className="push--left">
-                        Change direction of flex items from row to column. Use{" "}
-                        <code>.flex--row</code> to overspecify the orientation of flex items
-                        in a row.
-                    </p>
+                    {leftContent}
                     <div className="flex--dead-center">
                         <div className={flexDirectionClassnames}>
                             <div>1</div>
@@ -341,11 +342,34 @@ export class FlexAligning extends React.Component {
                                 <div>
                                     End
                                 </div>
-                            </div>                            
+                            </div>                           
                         </div>
                     </div>
                 )
                 codeContent = "<div className='flex flex-justified--start'>\n   <div>Start</div>\n</div>\n<div className='flex flex-justified--center'>\n   <div>Center</div>\n</div>\n<div className='flex flex-justified--end'>\n    <div>End</div>\n</div>"
+                break;
+            case 'between':
+                leftContent = (
+                    <div className="flex--1">
+                        <p className="push--left">
+                            Horizontally aligns children to have equal spacing between them.
+                        </p>
+                        <div className="flex--dead-center flex--column">
+                            <div className={"demo-only-helper-box-container demo-only-helper-box-container--width-300 push--top flex flex-justified--between"}>
+                                <div>
+                                    1
+                                </div>
+                                <div>
+                                    2
+                                </div>
+                                <div>
+                                    3
+                                </div>
+                            </div>  
+                        </div>
+                    </div> 
+                )
+                codeContent = "<div className='flex flex-justified--between'>\n    <div>1</div>\n    <div>2</div>\n    <div>3</div>\n</div>"
                 break;
             case 'center':
                 leftContent = (
@@ -392,18 +416,21 @@ export class FlexAligning extends React.Component {
         }
         return (
             <section className="demo-only-section flex flex--column">
-                <h2>Aligning</h2>
+                <h2>Alignment</h2>
                 <div className="push--bottom">
                     <TabNav activeTab={flexTab} style={['sub']}>
                         <TabNav.Tab onClick={() => this.switchFlexTab('align')} tabId="align">
                             flex-align--(start, center, end)
                         </TabNav.Tab>
                         <TabNav.Tab onClick={() => this.switchFlexTab('self')} tabId="self">
-                            flex--self-(start, center, end)
+                            flex-self--(start, center, end)
                         </TabNav.Tab>  
                         <TabNav.Tab onClick={() => this.switchFlexTab('justified')} tabId="justified">
                             flex-justified--(start, center, end)
                         </TabNav.Tab> 
+                        <TabNav.Tab onClick={() => this.switchFlexTab('between')} tabId="between">
+                            flex-justified--between
+                        </TabNav.Tab>
                         <TabNav.Tab onClick={() => this.switchFlexTab('center')} tabId="center">
                             flex--dead-center
                         </TabNav.Tab> 

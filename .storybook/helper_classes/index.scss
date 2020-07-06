@@ -1,14 +1,5 @@
-// 1. flex--none in the app?
-// 2. flex-wrap
-// 3. flex-self--
-// ?  flex-overflow-fix still needed?
 /// Axiom Tokens
 @import "../../src/tokens/forimport/index";
-
-body,
-html {
-  overflow: auto;
-}
 
 .demo-only-helper-box-container {
   padding: 6px;
