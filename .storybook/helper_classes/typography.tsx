@@ -30,8 +30,8 @@ export class Typography extends React.Component {
             `flex--${flexTab}`,
         ); 
     return (
-        <section className="demo-only-section flex flex--column">
-            <h2>Flex direction</h2>
+        <section className="demo-only-section hard--top flex flex--column">
+            <h1>Typography</h1>
             <div className="push--bottom">
                 <TabNav activeTab={flexTab} style={['sub']}>
                     <TabNav.Tab onClick={() => this.switchFlexDirection('size')} tabId="size">
@@ -43,6 +43,7 @@ export class Typography extends React.Component {
                 </TabNav>
             </div>
             <div className="flex flex--row">
+                <div className="flex--1">
                 <Container pushRowsTop={true}>
                     <Row>
                         <Col alignSelf="center">
@@ -133,8 +134,9 @@ export class Typography extends React.Component {
                         </Col>
                     </Row>
                 </Container>
+                </div>
                 <div className="demo-only-typography-container">
-                    Stuff here
+                        Stuff here
                 </div>
             </div>
             </section>
