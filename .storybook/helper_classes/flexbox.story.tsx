@@ -12,7 +12,7 @@ import { FlexAligning,
   FlexNone,
   FlexWrap } from "./flexboxInteractive";
 
-const stories = storiesOf("HelperClasses/Flexbox", module);
+const stories = storiesOf("Helper Classes/Flexbox", module);
 stories
   .addDecorator(withKnobs)
   .addDecorator((story) => <div id="root-preview">{story()}</div>);
