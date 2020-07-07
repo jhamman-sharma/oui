@@ -26,12 +26,14 @@ const a11y = {
 };
 
 const req = require.context('../src/', true, /story\.(js|ts)x?$/);
+const reqHelperClasses = require.context('../.storybook/helper_classes/', true, /story\.(js|ts)x?$/);
 
 function loadStories() {
   require('./overview.story.js');
   require('./tokens.story.js');
   require('./css.story.js');
   require('./borderradius.story.js');
+  reqHelperClasses.keys().forEach(reqHelperClasses);
   req.keys().forEach(req);
 }
 
