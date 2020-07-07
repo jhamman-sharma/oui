@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add ability to sort table columns to **Table.TH** ([#1365](https://github.com/optimizely/oui/pull/1365))
 
 ## 46.8.0 - 2020-06-30
 - [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))

@@ -1,10 +1,92 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { storiesOf } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 
 import Table from './index.js';
 import Button from '../Button';
+
+// Helper wrapper class to store the state so the stories are usable/interactive
+class SortedTable extends React.Component {
+  state = {
+    tableContents: this.props.tableContents,
+    currentOrder: this.props.currentOrder,
+    currentSortedColumn: this.props.currentSortedColumn,
+  };
+
+  handleSorting = columnName => {
+    // If the user isn't switching sort columns, toggle the sort direction
+    const sortToggleMap = {
+      ['asc']: 'desc',
+      ['desc']: 'asc',
+    };
+    let newOrder = 'asc';
+    if (this.state.currentSortedColumn === columnName) {
+      newOrder = sortToggleMap[this.state.currentOrder];
+    }
+    this.setState({currentOrder: newOrder, currentSortedColumn: columnName});
+    if (newOrder === 'asc') {
+      this.state.tableContents.sort((a, b) => (a[columnName] > b[columnName]) ? 1 : -1);
+    } else {
+      this.state.tableContents.sort((b, a) => (a[columnName] > b[columnName]) ? 1 : -1);
+    }
+  };
+
+  render() {
+    const { currentOrder, tableContents } = this.state;
+    return (
+      <Table>
+        <Table.THead>
+          <Table.TR>
+            <Table.TH
+              sorting={{
+                canSort: true,
+                handleSort: () => this.handleSorting('Experiment'),
+                order: currentOrder}}>
+              Experiment
+            </Table.TH>
+            <Table.TH
+              sorting={{
+                canSort: true,
+                handleSort: () => this.handleSorting('Conversion Rate'),
+                order: currentOrder}}>
+              Conversion Rate
+            </Table.TH>
+            <Table.TH
+              sorting={{
+                canSort: true,
+                handleSort: () => this.handleSorting('Status'),
+                order: currentOrder}}>
+              Status
+            </Table.TH>
+          </Table.TR>
+        </Table.THead>
+        <Table.TBody>
+          {tableContents.map((row, idx) => {
+            return (
+              <Table.TR key={ idx }>
+                <Table.TD>{row.Experiment}</Table.TD>
+                <Table.TD width="20%">{row['Conversion Rate']} </Table.TD>
+                <Table.TD> {row.Status} </Table.TD>
+              </Table.TR>
+            );
+          })}
+        </Table.TBody>
+      </Table>
+    );
+  }
+}
+
+SortedTable.propTypes = {
+  currentOrder: PropTypes.string,
+  currentSortedColumn: PropTypes.string,
+  tableContents: PropTypes.arrayOf(PropTypes.shape({
+    Experiment: PropTypes.string,
+    'Conversion Rate': PropTypes.string,
+    Status: PropTypes.string,
+  })),
+};
 
 const stories = storiesOf('Table', module);
 stories
@@ -260,4 +342,36 @@ stories
         </Table.TBody>
       </Table>
     </div>
-  ));
+  ))
+  .add('Sortable table', () => {
+    let currentOrder = 'asc';
+    let currentSortedColumn = 'Experiment';
+    const tableContents = [
+      {
+        'Experiment': 'Header CTA',
+        'Conversion Rate': '12%',
+        'Status': 'Paused',
+      },
+      {
+        'Experiment': 'Shorter Contact Form',
+        'Conversion Rate': '4%',
+        'Status': 'Draft',
+      },
+      {
+        'Experiment': 'Larger Search Bar',
+        'Conversion Rate': '6.7%',
+        'Status': 'Paused',
+      },
+      {
+        'Experiment': 'Center aligned headline',
+        'Conversion Rate': '9.3%',
+        'Status': 'Running',
+      },
+    ];
+    // See top of file for implementation of a sortable table
+    return (
+      <div>
+        <SortedTable tableContents={ tableContents } currentOrder={ currentOrder } currentSortedColumn={ currentSortedColumn }/>
+      </div>
+    );
+  });

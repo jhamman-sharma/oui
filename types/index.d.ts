@@ -1688,28 +1688,69 @@ declare module "components/Table/TR/index" {
 }
 declare module "components/Table/TH/index" {
     export default TH;
-    function TH({ children, colSpan, isCollapsed, isNumerical, testSection, width, }: {
+    function TH({ children, colSpan, isCollapsed, isNumerical, testSection, width, sorting, }: {
         children: any;
         colSpan: any;
         isCollapsed: any;
         isNumerical: any;
         testSection: any;
         width: any;
+        sorting: any;
     }): JSX.Element;
     namespace TH {
-        export namespace propTypes {
-            export const children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            export const colSpan: PropTypes.Requireable<number>;
-            export const isCollapsed: PropTypes.Requireable<boolean>;
-            export const isNumerical: PropTypes.Requireable<boolean>;
-            export const testSection: PropTypes.Requireable<string>;
-            export const width: PropTypes.Requireable<string>;
-        }
+        export const propTypes: {
+            /** Content within the `Table.TH` component */
+            children: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            /** Number of columns that the cell should span */
+            colSpan: PropTypes.Requireable<number>;
+            /**
+              Tell the cell to take up the least amount of width possible. This only
+              works well if the table layout is `auto`, not `fixed`.
+            */
+            isCollapsed: PropTypes.Requireable<boolean>;
+            /** Right-align the cell if the contents are numerical */
+            isNumerical: PropTypes.Requireable<boolean>;
+            /** Sorting options */
+            sorting: PropTypes.Requireable<PropTypes.InferProps<{
+                /** Indicate if this column should be sortable */
+                canSort: any;
+                /** Function that handles sorting */
+                handleSort: PropTypes.Requireable<(...args: any[]) => any>;
+                /** Current order. One of 'asc' or 'desc' */
+                order: PropTypes.Requireable<string>;
+            }>>;
+            /** Hook for automated JavaScript tests */
+            testSection: PropTypes.Requireable<string>;
+            /** A number with a unit that becomes the width of the `Table` cell */
+            width: PropTypes.Requireable<string>;
+        } | {
+            /** Checks that all the info for sorting is present.
+             *  @param {Object} props Object of props
+             *  @returns {Error} Error or null
+             */
+            sorting: (props: any) => Error;
+            /** Content within the `Table.TH` component */
+            children?: undefined;
+            /** Number of columns that the cell should span */
+            colSpan?: undefined;
+            /**
+              Tell the cell to take up the least amount of width possible. This only
+              works well if the table layout is `auto`, not `fixed`.
+            */
+            isCollapsed?: undefined;
+            /** Right-align the cell if the contents are numerical */
+            isNumerical?: undefined;
+            /** Hook for automated JavaScript tests */
+            testSection?: undefined;
+            /** A number with a unit that becomes the width of the `Table` cell */
+            width?: undefined;
+        };
         export namespace defaultProps {
-            const isCollapsed_1: boolean;
-            export { isCollapsed_1 as isCollapsed };
-            const isNumerical_1: boolean;
-            export { isNumerical_1 as isNumerical };
+            export const isCollapsed: boolean;
+            export const isNumerical: boolean;
+            export namespace sorting {
+                export const canSort: boolean;
+            }
         }
         export const displayName: string;
     }

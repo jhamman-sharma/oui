@@ -1,6 +1,9 @@
 import React from 'react';
 import Table from '../index';
-import { shallow, render } from 'enzyme';
+import TH from '../TH/index';
+import THead from '../THead/index';
+import TR from '../TR/index';
+import { mount, shallow, render } from 'enzyme';
 
 describe('components/Table', () => {
   it('should render as a table', () => {
@@ -61,6 +64,43 @@ describe('components/Table', () => {
     it('should render with a test section', () => {
       const component = shallow(<Table testSection="goose"></Table>);
       expect(component.is('[data-test-section="goose"]')).toBe(true);
+    });
+  });
+
+  describe('with sorting enabled', () => {
+    let component;
+    const mockFunction = jest.fn();
+
+    beforeEach(() => {
+      component = mount(
+        <Table>
+          <THead>
+            <TR>
+              <TH
+                sorting={{
+                  canSort: true,
+                  handleSort: mockFunction,
+                  order: 'asc'}}>
+                Test Header
+              </TH>
+            </TR>
+          </THead>
+        </Table>);
+    });
+
+    it('should render sorting icon when asked for', () => {
+      expect(
+        component
+          .find('[data-test-section="table-header-sort-button"]')
+          .find('[data-test-section="table-header-sort-indicator"]')
+          .length).toBe(1);
+    });
+
+    it('should trigger sorting function when header is pressed', () => {
+      component
+        .find('[data-test-section="table-header-sort-button"]')
+        .simulate('click');
+      expect(mockFunction).toHaveBeenCalled();
     });
   });
 });
