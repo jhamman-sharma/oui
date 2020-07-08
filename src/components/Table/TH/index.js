@@ -20,9 +20,10 @@ const TH = ({
   colSpan,
   isCollapsed,
   isNumerical,
-  testSection,
-  width,
   sorting,
+  testSection,
+  textAlign,
+  width,
 }) => {
   let classes = classNames({
     'oui-numerical': isNumerical,
@@ -31,6 +32,7 @@ const TH = ({
 
   const styles = {
     width: width,
+    textAlign,
   };
 
   const tableHeaderContent = sorting.canSort ? (
@@ -82,6 +84,8 @@ TH.propTypes = {
   }),
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
+  /** Text alignment */
+  textAlign: PropTypes.oneOf(['center', 'right', 'left']),
   /** A number with a unit that becomes the width of the `Table` cell */
   width: PropTypes.string,
 };

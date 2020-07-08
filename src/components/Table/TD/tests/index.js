@@ -56,4 +56,9 @@ describe('components/Table/TD', () => {
     const component = render(<TD colSpan={ 3 }></TD>);
     expect(component.attr('colspan')).toBe('3');
   });
+
+  it('should align text by the given prop', () => {
+    const component = render(<TD textAlign="center"></TD>);
+    expect(component.attr('style')).toContain('text-align:center');
+  });
 });

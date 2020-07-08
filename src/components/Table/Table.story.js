@@ -374,4 +374,43 @@ stories
         <SortedTable tableContents={ tableContents } currentOrder={ currentOrder } currentSortedColumn={ currentSortedColumn }/>
       </div>
     );
+  })
+  .add('Text Alignment', () => {
+    const textAlignment = select('textAlign', { center: 'center', right: 'right', left: 'left'}, 'left');
+
+    return (
+      <div>
+        <Table>
+          <Table.THead>
+            <Table.TR>
+              <Table.TH textAlign={ textAlignment }> Experiment </Table.TH>
+              <Table.TH textAlign={ textAlignment }> Conversion Rate </Table.TH>
+              <Table.TH textAlign={ textAlignment }> Status </Table.TH>
+            </Table.TR>
+          </Table.THead>
+          <Table.TBody>
+            <Table.TR>
+              <Table.TD textAlign={ textAlignment }> Header CTA </Table.TD>
+              <Table.TD textAlign={ textAlignment }> 12% </Table.TD>
+              <Table.TD textAlign={ textAlignment }> Paused </Table.TD>
+            </Table.TR>
+            <Table.TR>
+              <Table.TD textAlign={ textAlignment }> Shorter Contact Form </Table.TD>
+              <Table.TD textAlign={ textAlignment }> 4% </Table.TD>
+              <Table.TD textAlign={ textAlignment }> Draft </Table.TD>
+            </Table.TR>
+            <Table.TR>
+              <Table.TD textAlign={ textAlignment }> Larger search bar </Table.TD>
+              <Table.TD textAlign={ textAlignment }> 6.7% </Table.TD>
+              <Table.TD textAlign={ textAlignment }> Paused </Table.TD>
+            </Table.TR>
+            <Table.TR>
+              <Table.TD textAlign={ textAlignment }> Center aligned headline </Table.TD>
+              <Table.TD textAlign={ textAlignment }> 9.3% </Table.TD>
+              <Table.TD textAlign={ textAlignment }> Running </Table.TD>
+            </Table.TR>
+          </Table.TBody>
+        </Table>
+      </div>
+    );
   });

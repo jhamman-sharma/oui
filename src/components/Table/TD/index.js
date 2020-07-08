@@ -7,6 +7,7 @@ const TD = ({
   colSpan,
   isNumerical = false,
   testSection,
+  textAlign,
   verticalAlign,
   width,
 }) => {
@@ -17,6 +18,7 @@ const TD = ({
 
   const styles = {
     width: width,
+    textAlign,
   };
 
   return (
@@ -39,6 +41,8 @@ TD.propTypes = {
   isNumerical: PropTypes.bool,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
+  /** Text alignment */
+  textAlign: PropTypes.oneOf(['center', 'right', 'left']),
   /** Apply a class that vertically aligns the cells within the children */
   verticalAlign: PropTypes.oneOf(['top', 'middle', 'bottom']),
   /** A number with a unit that becomes the width of the `Table` cell */

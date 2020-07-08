@@ -51,4 +51,9 @@ describe('components/Table/TH', () => {
       expect(componentStyle).not.toContain('width');
     }
   });
+
+  it('should align text by the given prop', () => {
+    const component = render(<TH textAlign="center"></TH>);
+    expect(component.attr('style')).toContain('text-align:center');
+  });
 });
