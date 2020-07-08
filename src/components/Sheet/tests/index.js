@@ -202,4 +202,14 @@ describe('Sheet Component ', () => {
     </Sheet>);
     expect(component.find('.oui-sheet__header').hasClass('text--center')).toBe(true);
   });
+
+  it('does not render the footer when hasFooter is false', () => {
+    const component = mount(<Sheet
+      title='This is a Sheet'
+      subtitle='This is a subtitle'
+      hasFooter={ false }>
+      <p>Sheets can contain anything, typically forms, in the body.</p>
+    </Sheet>);
+    expect(component.find('.oui-sheet__footer').length).toBe(0);
+  });
 });

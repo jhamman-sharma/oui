@@ -44,9 +44,13 @@ const Sheet = props => {
           {subtitleContent}
         </header>
         <div className="oui-sheet__body">{props.children}</div>
-        <footer className="oui-sheet__footer">
-          <ButtonRow rightGroup={ props.footerButtonList } />
-        </footer>
+        {
+          props.hasFooter && (
+            <footer className="oui-sheet__footer">
+              <ButtonRow rightGroup={ props.footerButtonList } />
+            </footer>
+          )
+        }
       </div>
     </div>
   );
@@ -64,11 +68,15 @@ Sheet.propTypes = {
   /**
    * Array of buttons used in the footer of the sheet.
    */
-  footerButtonList: PropTypes.array.isRequired,
+  footerButtonList: PropTypes.array,
   /**
    *  Used to determine if the sheet should have a close button.
    */
   hasCloseButton: PropTypes.bool,
+  /**
+   *  Determines if the sheet should have a footer.
+   */
+  hasFooter: PropTypes.bool,
   /**
    * Function to perform when the sheet is closed.
    */
@@ -98,7 +106,9 @@ Sheet.propTypes = {
 
 Sheet.defaultProps = {
   centerHeader: false,
+  footerButtonList: [],
   hasCloseButton: true,
+  hasFooter: true,
   onClose: () => {},
   subtitle: '',
   testSection: '',
