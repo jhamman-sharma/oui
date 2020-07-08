@@ -1,8 +1,6 @@
 import React from 'react';
 import SummaryBar from '../index';
 import { shallow, mount } from 'enzyme';
-import { mountToJson } from 'enzyme-to-json';
-
 
 const basicColumns = [
   {
