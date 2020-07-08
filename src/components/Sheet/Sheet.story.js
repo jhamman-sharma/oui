@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import Sheet from './index.js';
 import Button from '../Button';
-import Fieldset from '../Fieldset';
+import Fieldset from '../FieldsetNew';
 import Input from '../Input';
 
 const stories = storiesOf('Sheet', module);
@@ -42,15 +42,16 @@ stories
           <Input id="input-01" label="Some data" type="text" />
           <Input id="input-02" label="Some more data" type="text" />
         </Fieldset>
-        <Fieldset
+        <Input id="input-03" label="Some data" type="text" />
+        {/* <Fieldset
           title="Project Description"
           description="Give your project a description"
           isOptional={ true }
           helpIcon={ true }
           popoverTitle="Popover title"
           popoverText="This should help you figure out what to do">
-          <Input id="input-03" label="Some data" type="text" />
-        </Fieldset>
+          
+        </Fieldset> */}
         <Fieldset title="Project Details">
           <Input
             id="input-04"
