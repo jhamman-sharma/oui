@@ -5,6 +5,7 @@ import "./index.scss";
 
 import TabNav from "../../src/components/TabNav/index";
 import Code from "../../src/components/Code/index";
+import Table from "../../src/components/Table/index";
 
 
 const typographySizeInformation = {
@@ -159,17 +160,31 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <TypographyRow onRowClick={() => this.switchSizeRow('micro')} isSelected={typographySize === 'micro'} helperClass='micro' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
+                        <Table>
+                            <Table.THead>
+                                <Table.TR>
+                                    <Table.TH>
+                                        Helper Class
+                                    </Table.TH>
+                                    <Table.TH>
+                                        Example
+                                    </Table.TH>
+                                </Table.TR>
+                            </Table.THead>
+                            <Table.TBody>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('micro')} isSelected={typographySize === 'micro'} helperClass='micro' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
+                            <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
+                            </Table.TBody>
+                        </Table>
                     </div>
                     <div className="demo-only-typography-container demo-only-typography-container--floating color--base soft-double--ends soft-double--sides push-double--top push-double--left border--all border-radius">
                         <div className="flex">
@@ -197,18 +212,32 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <TypographyRow onRowClick={() => this.switchColorRow('base')} isSelected={typographyColor === 'base'} helperClass='color--base'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('charcoal')} isSelected={typographyColor === 'charcoal'} helperClass='color--charcoal'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('muted')} isSelected={typographyColor === 'muted'} helperClass='muted'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('faint')} isSelected={typographyColor === 'faint'} helperClass='faint'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('reverse')} isSelected={typographyColor === 'reverse'} helperClass='reverse' darkBackground={true}/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('warning')} isSelected={typographyColor === 'warning'} helperClass='color--warning'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('draft')} isSelected={typographyColor === 'draft'} helperClass='color--draft'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('bad-news')} isSelected={typographyColor === 'bad-news'} helperClass='color--bad-news'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('brand')} isSelected={typographyColor === 'brand'} helperClass='color--brand'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('good-news')} isSelected={typographyColor === 'good-news'} helperClass='color--good-news'/>
-                        <TypographyRow onRowClick={() => this.switchColorRow('live')} isSelected={typographyColor === 'live'} helperClass='color--live'/>
-                    </div>
+                        <Table>
+                            <Table.THead>
+                                <Table.TR>
+                                    <Table.TH>
+                                        Helper Class
+                                    </Table.TH>
+                                    <Table.TH>
+                                        Example
+                                    </Table.TH>
+                                </Table.TR>
+                            </Table.THead>
+                            <Table.TBody>
+                                <TypographyRow onRowClick={() => this.switchColorRow('base')} isSelected={typographyColor === 'base'} helperClass='color--base'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('charcoal')} isSelected={typographyColor === 'charcoal'} helperClass='color--charcoal'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('muted')} isSelected={typographyColor === 'muted'} helperClass='muted'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('faint')} isSelected={typographyColor === 'faint'} helperClass='faint'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('reverse')} isSelected={typographyColor === 'reverse'} helperClass='reverse' darkBackground={true}/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('warning')} isSelected={typographyColor === 'warning'} helperClass='color--warning'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('draft')} isSelected={typographyColor === 'draft'} helperClass='color--draft'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('bad-news')} isSelected={typographyColor === 'bad-news'} helperClass='color--bad-news'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('brand')} isSelected={typographyColor === 'brand'} helperClass='color--brand'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('good-news')} isSelected={typographyColor === 'good-news'} helperClass='color--good-news'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('live')} isSelected={typographyColor === 'live'} helperClass='color--live'/>
+                            </Table.TBody>
+                        </Table>
+                        </div>
                     <div className="demo-only-typography-container demo-only-typography-container--width-350 color--base soft-double--ends soft-double--sides push--top push-double--left border--all border-radius">
                         <div className="flex">
                             <div className="weight--bold push-double--right">Source</div>
@@ -230,14 +259,28 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <TypographyRow onRowClick={() => this.switchStyleRow('weight--light')} isSelected={typographyStyle === 'weight--light'} helperClass='weight--light' />
-                        <TypographyRow onRowClick={() => this.switchStyleRow('weight--normal')} isSelected={typographyStyle === 'weight--normal'} helperClass='weight--normal'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('weight--bold')} isSelected={typographyStyle === 'weight--bold'} helperClass='weight--bold'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('style--italic')} isSelected={typographyStyle === 'style--italic'} helperClass='style--italic'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('style--normal')} isSelected={typographyStyle === 'style--normal'} helperClass='style--normal'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('underline')} isSelected={typographyStyle === 'underline'} helperClass='underline'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('strike')} isSelected={typographyStyle === 'strike'} helperClass='strike'/>
-                        <TypographyRow onRowClick={() => this.switchStyleRow('caps')} isSelected={typographyStyle === 'caps'} helperClass='caps'/>
+                    <Table>
+                        <Table.THead>
+                            <Table.TR>
+                                <Table.TH>
+                                    Helper Class
+                                </Table.TH>
+                                <Table.TH>
+                                    Example
+                                </Table.TH>
+                            </Table.TR>
+                        </Table.THead>
+                        <Table.TBody>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('weight--light')} isSelected={typographyStyle === 'weight--light'} helperClass='weight--light' />
+                            <TypographyRow onRowClick={() => this.switchStyleRow('weight--normal')} isSelected={typographyStyle === 'weight--normal'} helperClass='weight--normal'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('weight--bold')} isSelected={typographyStyle === 'weight--bold'} helperClass='weight--bold'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('style--italic')} isSelected={typographyStyle === 'style--italic'} helperClass='style--italic'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('style--normal')} isSelected={typographyStyle === 'style--normal'} helperClass='style--normal'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('underline')} isSelected={typographyStyle === 'underline'} helperClass='underline'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('strike')} isSelected={typographyStyle === 'strike'} helperClass='strike'/>
+                            <TypographyRow onRowClick={() => this.switchStyleRow('caps')} isSelected={typographyStyle === 'caps'} helperClass='caps'/>
+                        </Table.TBody>
+                    </Table>
                     </div>
                     <div className="demo-only-typography-container color--base soft-double--ends soft-double--sides push--top push-double--left border--all border-radius">
                         <Code
@@ -277,7 +320,6 @@ interface TypographyRowProps {
     onRowClick: () => void,
     isSelected: boolean,
     helperClass: string,
-    bottomSpace?: boolean,
     isSizeDemonstration?: boolean,
     darkBackground?: boolean,
 }
@@ -286,40 +328,27 @@ class TypographyRow extends React.Component<TypographyRowProps> {
     constructor(props: TypographyRowProps) {
         super(props)
     }
-    state= {
-        rowHovered: false,
-    }
-
-    onRowHover = () => {
-        this.setState({rowHovered: !this.state.rowHovered});
-    }
   
     render() {
-      const {onRowClick, isSelected, helperClass, bottomSpace, isSizeDemonstration, darkBackground} = this.props;
-      let typographyClasses = classNames(
-          'flex',
-          'flex-align--center',
-          'soft--ends',
-          'soft--sides',
-          {
-            'demo-only-typography-row-hovered': this.state.rowHovered,  
-            'demo-only-typography-row-highlight': isSelected,
-            'push--bottom': bottomSpace,
-          }
-      ); 
+      const {onRowClick, isSelected, helperClass, isSizeDemonstration, darkBackground} = this.props;
       let typographyDemonstrationClasses = classNames(
-          'anchor--right',
           helperClass,
           {
               'delta': !isSizeDemonstration,
               'demo-only-typography-dark-background': darkBackground,
           }
       )
+      let classes = classNames(
+        {'oui-table-row--highlighted': isSelected,},
+        'no-border',
+      );
       return (
-        <div className={typographyClasses} onClick={onRowClick} onMouseEnter={this.onRowHover} onMouseLeave={this.onRowHover}>
-            <code>{helperClass}</code>
-            <div className={typographyDemonstrationClasses}>Typography</div>
-        </div>
+        <tr
+            className={ classes }
+            onClick={onRowClick}>
+            <Table.TD verticalAlign="middle"><code className="push--left">{helperClass}</code></Table.TD>
+            <Table.TD verticalAlign="middle"><div className={typographyDemonstrationClasses}>Typography</div></Table.TD>
+        </tr>
                       
       );
     }
