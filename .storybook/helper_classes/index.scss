@@ -66,10 +66,27 @@
   width: 90%;
 }
 
+.demo-only-typography-dark-background{
+  background: $magenta-dark;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 .demo-only-typography-container {
-  width: 50%;
-  position: sticky;
-  top: 0;
-  background-color: red;
-  height: 50px;
+  width: 33%;
+  background: $smoke-light;
+
+  &--floating {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 30%;
+  }
+}
+
+.demo-only-typography-row-highlight {
+  background: $brand-blue-light;
+}
+
+.demo-only-typography-row-hovered {
+  background: $brand-purple-light;
 }

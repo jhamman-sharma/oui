@@ -6,10 +6,10 @@ import "./index.scss";
 
 import { Typography } from "./typography";
 
-const stories = storiesOf("HelperClasses/Typography", module);
+const stories = storiesOf("Helper Classes/Typography", module);
 stories
   .addDecorator(withKnobs)
-  .addDecorator((story) => <div id="root-preview">{story()}</div>);
+  .addDecorator((story) => <div className="soft-quad--sides soft-quad--ends">{story()}</div>);
 
 stories.add("Default", () => {
   return (

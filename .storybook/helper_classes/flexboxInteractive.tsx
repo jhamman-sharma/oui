@@ -37,7 +37,7 @@ export class FlexDirection extends React.Component {
             <div className="push--bottom">
                 <TabNav activeTab={flexDirection} style={['sub']}>
                     <TabNav.Tab onClick={() => this.switchFlexDirection('row')} tabId="row">
-                        flex--row
+                        Size
                     </TabNav.Tab> 
                     <TabNav.Tab onClick={() => this.switchFlexDirection('column')} tabId="column">
                         flex--column
@@ -168,8 +168,6 @@ export class FlexNone extends React.Component {
             'demo-only-helper-box-container',
             'flex',
             {'flex--none': flexTab === 'none',
-            // 'demo-only-helper-box-container--width-100': flexTab === 'none',
-            // 'demo-only-helper-box-container--width-300': flexTab !== 'none',
             [`flex-${flexTab}--none`]: flexTab !== 'none'},
             'demo-only-helper-box-container--width-300',
         ); 
