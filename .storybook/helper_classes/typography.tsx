@@ -22,35 +22,35 @@ const typographySizeInformation = {
         'fontSize': '30px',
         'fontWeight': '300',
         'lineHeight': '1.1',
-        'equivalentElement': 'h1',
+        'equivalentElement': '<h1>',
     },
     'beta':  {
         'fontSize': '26px',
         'fontWeight': '300',
         'lineHeight': '1.1',
-        'equivalentElement': 'h2',
+        'equivalentElement': '<h2>',
     },
     'gamma' :  {
         'fontSize': '20px',
         'fontWeight': '400',
         'lineHeight': '1.1',
-        'equivalentElement': 'h3',
+        'equivalentElement': '<h3>',
     },
     'delta': {
         'fontSize': '18px',
-        'equivalentElement': 'h4',
+        'equivalentElement': '<h4>',
     },
     'epsilon':  {
         'fontSize': '16px',
         'fontWeight': '400',
         'lineHeight': '1.1',
-        'equivalentElement': 'h5',
+        'equivalentElement': '<h5>',
     },
     'zeta':  {
         'fontSize': '14px',
         'fontWeight': '500',
         'lineHeight': '1.1',
-        'equivalentElement': 'h6',
+        'equivalentElement': '<h6>',
     },
     'milli': {
         'fontSize': '13px'
@@ -160,7 +160,7 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <Table>
+                        <Table style="rule">
                             <Table.THead>
                                 <Table.TR>
                                     <Table.TH>
@@ -172,17 +172,17 @@ export class Typography extends React.Component {
                                 </Table.TR>
                             </Table.THead>
                             <Table.TBody>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('micro')} isSelected={typographySize === 'micro'} helperClass='micro' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
-                            <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('micro')} isSelected={typographySize === 'micro'} helperClass='micro' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
+                                <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
                             </Table.TBody>
                         </Table>
                     </div>
@@ -212,7 +212,7 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <Table>
+                        <Table style="rule">
                             <Table.THead>
                                 <Table.TR>
                                     <Table.TH>
@@ -227,7 +227,7 @@ export class Typography extends React.Component {
                                 <TypographyRow onRowClick={() => this.switchColorRow('base')} isSelected={typographyColor === 'base'} helperClass='color--base'/>
                                 <TypographyRow onRowClick={() => this.switchColorRow('charcoal')} isSelected={typographyColor === 'charcoal'} helperClass='color--charcoal'/>
                                 <TypographyRow onRowClick={() => this.switchColorRow('muted')} isSelected={typographyColor === 'muted'} helperClass='muted'/>
-                                <TypographyRow onRowClick={() => this.switchColorRow('faint')} isSelected={typographyColor === 'faint'} helperClass='faint'/>
+                                <TypographyRow onRowClick={() => this.switchColorRow('faint')} isSelected={typographyColor === 'faint'} helperClass='faint' darkBackground={true}/>
                                 <TypographyRow onRowClick={() => this.switchColorRow('reverse')} isSelected={typographyColor === 'reverse'} helperClass='reverse' darkBackground={true}/>
                                 <TypographyRow onRowClick={() => this.switchColorRow('warning')} isSelected={typographyColor === 'warning'} helperClass='color--warning'/>
                                 <TypographyRow onRowClick={() => this.switchColorRow('draft')} isSelected={typographyColor === 'draft'} helperClass='color--draft'/>
@@ -259,7 +259,7 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                    <Table>
+                    <Table style="rule">
                         <Table.THead>
                             <Table.TR>
                                 <Table.TH>
