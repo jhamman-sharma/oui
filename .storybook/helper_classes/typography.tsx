@@ -209,18 +209,18 @@ export class Typography extends React.Component {
                         <TypographyRow onRowClick={() => this.switchColorRow('good-news')} isSelected={typographyColor === 'good-news'} helperClass='color--good-news'/>
                         <TypographyRow onRowClick={() => this.switchColorRow('live')} isSelected={typographyColor === 'live'} helperClass='color--live'/>
                     </div>
-                    <div className="demo-only-typography-container color--base soft-double--ends soft-double--sides push--top push-double--left border--all border-radius">
+                    <div className="demo-only-typography-container demo-only-typography-container--width-350 color--base soft-double--ends soft-double--sides push--top push-double--left border--all border-radius">
                         <div className="flex">
-                            <div className="weight--bold">Source</div>
+                            <div className="weight--bold push-double--right">Source</div>
                             <div className="anchor--right">{currentColor.source}</div>
                         </div>
                         <div className="flex">
-                            <div className="weight--bold">Referencing</div>
+                            <div className="weight--bold push-double--right">Referencing</div>
                             <div className="anchor--right">{currentColor.color}</div>
                         </div>
                         {currentColor.root && 
                             <div className="flex">
-                                <div className="weight--bold">Root color</div>
+                                <div className="weight--bold push-double--right">Root color</div>
                                 <div className="anchor--right">{currentColor.root}</div>
                             </div>}
                     </div>
