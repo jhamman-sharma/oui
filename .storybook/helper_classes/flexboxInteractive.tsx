@@ -37,7 +37,7 @@ export class FlexDirection extends React.Component {
             <div className="push--bottom">
                 <TabNav activeTab={flexDirection} style={['sub']}>
                     <TabNav.Tab onClick={() => this.switchFlexDirection('row')} tabId="row">
-                        Size
+                        flex--row
                     </TabNav.Tab> 
                     <TabNav.Tab onClick={() => this.switchFlexDirection('column')} tabId="column">
                         flex--column
