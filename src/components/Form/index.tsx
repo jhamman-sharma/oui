@@ -1,17 +1,25 @@
 
 import PropTypes from 'prop-types';
 import React from 'react';
+
 import HelpPopover from '../HelpPopover';
 import Section from './Section';
+import Item from './Item';
+import Row from './Row';
 
-const Form = props => (
-  <form data-test-section={ props.testSection } className="oui-form__container">
+import classNames from 'classnames';
+
+
+const Form = props => {
+  const formTitleClasses = classNames(
+    {'push--bottom': props.description,
+    'push-double--bottom': !props.description}
+  )
+  return (
+  <form data-test-section={ props.testSection } className="oui-form-fields">
     { props.title && (
-      <h2 className="push--bottom">
+      <h2 className={formTitleClasses}>
         { props.title }
-        { props.isOptional && (
-          <label className="oui-label__optional">(Optional)</label>
-        ) }
         { props.helpIcon && (
           <HelpPopover
             popoverTitle={ props.popoverTitle }
@@ -25,16 +33,18 @@ const Form = props => (
     ) }
 
     { props.description && (
-      <div className="push--bottom">
+      <h5 className="push-double--bottom">
         { props.description }
-      </div>
+      </h5>
     ) }
 
     { props.children }
   </form>
-);
+)};
 
 Form.Section = Section;
+Form.Item = Item;
+Form.Row = Row;
 
 Form.propTypes = {
   children: PropTypes.node.isRequired,
