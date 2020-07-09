@@ -2,9 +2,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+import classNames from 'classnames';
+
 const Row = props => {
+  const rowClassname = classNames(
+    "push-double--right",
+    {'flex--1': props.fillWidth}
+  )
   const children = props.children.map(child => (
-    <div className="push-double--right">
+    <div className={rowClassname}>
       {child}
     </div>
   ))
@@ -16,6 +22,7 @@ const Row = props => {
 
 Row.propTypes = {
   children: PropTypes.node.isRequired,
+  fillWidth: PropTypes.bool,
   testSection: PropTypes.string,
 };
 
