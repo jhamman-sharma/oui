@@ -126,7 +126,7 @@ const typographyStyleInformation = {
 export class Typography extends React.Component {
   state = {
     typographyTab: 'size',
-    typographySize: 'giga',
+    typographySize: 'micro',
     typographyColor: 'base',
     typographyStyle: 'weight--light',
   };
@@ -144,7 +144,7 @@ export class Typography extends React.Component {
     }
     
     switchTab = tab => {
-        this.setState({typographyTab: tab, typographySize: 'giga', typographyColor: 'base', typographyStyle: 'weight--light'});
+        this.setState({typographyTab: tab, typographySize: 'micro', typographyColor: 'base', typographyStyle: 'weight--light'});
     }
 
   render() {
@@ -159,17 +159,17 @@ export class Typography extends React.Component {
             tabContent = 
                 <div className="flex flex-align--start push-double--sides"> 
                     <div className="flex--1">
-                        <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true} bottomSpace={true}/>
-                        <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true} bottomSpace={true}/>
                         <TypographyRow onRowClick={() => this.switchSizeRow('micro')} isSelected={typographySize === 'micro'} helperClass='micro' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('milli')} isSelected={typographySize === 'milli'} helperClass='milli' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('zeta')} isSelected={typographySize === 'zeta'} helperClass='zeta' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('epsilon')} isSelected={typographySize === 'epsilon'} helperClass='epsilon' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('delta')} isSelected={typographySize === 'delta'} helperClass='delta' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('gamma')} isSelected={typographySize === 'gamma'} helperClass='gamma' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('beta')} isSelected={typographySize === 'beta'} helperClass='beta' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('alpha')} isSelected={typographySize === 'alpha'} helperClass='alpha' isSizeDemonstration={true} bottomSpace={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('kilo')} isSelected={typographySize === 'kilo'} helperClass='kilo' isSizeDemonstration={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('mega')} isSelected={typographySize === 'mega'} helperClass='mega' isSizeDemonstration={true}/>
+                        <TypographyRow onRowClick={() => this.switchSizeRow('giga')} isSelected={typographySize === 'giga'} helperClass='giga' isSizeDemonstration={true}/>
                     </div>
                     <div className="demo-only-typography-container demo-only-typography-container--floating color--base soft-double--ends soft-double--sides push-double--top push-double--left border--all border-radius">
                         <div className="flex">
