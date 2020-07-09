@@ -11,6 +11,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Feature] Add `textAlign` to **Table.TH** & **Table.TD** ([#1370](https://github.com/optimizely/oui/pull/1370))
 - [Feature] Add `hasFooter` and make `footerButtonList` optional on **Sheet** ([#1371](https://github.com/optimizely/oui/pull/1371))
 - [Feature] Add `shouldWrap` ability to **Code** component and prevent copy button from overlapping content ([#1372](https://github.com/optimizely/oui/pull/1372))
+- [Feature] Added new Storybook examples detailing Typography helper classes ([#1373](https://github.com/optimizely/oui/pull/1373))
 
 ## 46.8.0 - 2020-06-30
 - [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))

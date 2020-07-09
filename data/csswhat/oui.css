@@ -2278,16 +2278,21 @@ code {
 
 .pre,
 .oui-pre {
-  margin-bottom: 10px;
   white-space: pre; }
+
+.oui-pre-wrap {
+  white-space: pre-wrap; }
+
+.pre,
+.oui-pre, .oui-pre-wrap {
+  margin-bottom: 10px; }
   .pre code,
-  .oui-pre code {
+  .oui-pre code, .oui-pre-wrap code {
     padding: 10px;
     background: #FFFFFF;
-    overflow-x: auto;
-    display: block;
     border-radius: 5px;
-    border: 1px solid #e0e0e0; }
+    overflow-x: auto;
+    display: block; }
 
 .code,
 .oui-code {
@@ -2295,6 +2300,13 @@ code {
   border-radius: 5px;
   border: 1px solid #e0e0e0;
   padding: 1px 3px; }
+
+.oui-code__container {
+  overflow-wrap: break-word;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px; }
+  .oui-code__container code {
+    margin-right: 55px; }
 
 @font-face {
   font-family: 'Graphik';
@@ -4478,16 +4490,21 @@ code {
 
 .pre,
 .oui-pre {
-  margin-bottom: 10px;
   white-space: pre; }
+
+.oui-pre-wrap {
+  white-space: pre-wrap; }
+
+.pre,
+.oui-pre, .oui-pre-wrap {
+  margin-bottom: 10px; }
   .pre code,
-  .oui-pre code {
+  .oui-pre code, .oui-pre-wrap code {
     padding: 10px;
     background: #FFFFFF;
-    overflow-x: auto;
-    display: block;
     border-radius: 5px;
-    border: 1px solid #e0e0e0; }
+    overflow-x: auto;
+    display: block; }
 
 .code,
 .oui-code {
@@ -4495,6 +4512,13 @@ code {
   border-radius: 5px;
   border: 1px solid #e0e0e0;
   padding: 1px 3px; }
+
+.oui-code__container {
+  overflow-wrap: break-word;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px; }
+  .oui-code__container code {
+    margin-right: 55px; }
 
 .oui-codediff table > tbody > tr {
   border-top: none;
