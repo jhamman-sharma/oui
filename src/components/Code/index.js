@@ -38,6 +38,7 @@ class Code extends React.Component {
   renderCode() {
     let dangerouslySetInnerHTML = null;
     const {
+      hasCopyButton,
       isHighlighted,
       language,
       type,
@@ -54,12 +55,17 @@ class Code extends React.Component {
       };
       code = null;
     }
+    let codeClasses = classNames(
+      {
+        'oui-code': type === 'inline',
+        'oui-code__offset-content': type !== 'inline' && hasCopyButton,
+      });
 
     return (
       /* eslint-disable react/no-danger */
       <code
         data-oui-component={ true }
-        className={ type === 'inline' ? 'oui-code' : '' }
+        className={ codeClasses }
         data-test-section={ type === 'inline' && testSection }
         dangerouslySetInnerHTML={ dangerouslySetInnerHTML }>
         { code }

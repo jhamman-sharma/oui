@@ -55,10 +55,11 @@ code {
 
 .oui-code__container {
   overflow-wrap: break-word;
+  background-color:  map-fetch($color, background, faint);
   border: 1px solid map-fetch($border, color, base);
   border-radius: map-fetch($border, radius, base);
 
-  code {
+  .oui-code__offset-content {
     // 5px offset + 48px for copy button + 2px buffer
     margin-right: 55px;
   }
