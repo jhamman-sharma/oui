@@ -6,12 +6,14 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.9.0 - 2020-07-10
 - [Feature] Added new Storybook examples detailing Flexbox helper classes ([#1367](https://github.com/optimizely/oui/pull/1367))
+- [Feature] Added new Storybook examples detailing Typography helper classes ([#1373](https://github.com/optimizely/oui/pull/1373))
 - [Feature] Add ability to sort table columns to **Table.TH** ([#1365](https://github.com/optimizely/oui/pull/1365))
 - [Feature] Add `textAlign` to **Table.TH** & **Table.TD** ([#1370](https://github.com/optimizely/oui/pull/1370))
 - [Feature] Add `hasFooter` and make `footerButtonList` optional on **Sheet** ([#1371](https://github.com/optimizely/oui/pull/1371))
 - [Feature] Add `shouldWrap` ability to **Code** component and prevent copy button from overlapping content ([#1372](https://github.com/optimizely/oui/pull/1372))
-- [Feature] Added new Storybook examples detailing Typography helper classes ([#1373](https://github.com/optimizely/oui/pull/1373))
 
 ## 46.8.0 - 2020-06-30
 - [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))
