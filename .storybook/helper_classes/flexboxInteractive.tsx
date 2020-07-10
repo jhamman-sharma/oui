@@ -168,8 +168,6 @@ export class FlexNone extends React.Component {
             'demo-only-helper-box-container',
             'flex',
             {'flex--none': flexTab === 'none',
-            // 'demo-only-helper-box-container--width-100': flexTab === 'none',
-            // 'demo-only-helper-box-container--width-300': flexTab !== 'none',
             [`flex-${flexTab}--none`]: flexTab !== 'none'},
             'demo-only-helper-box-container--width-300',
         ); 
@@ -342,7 +340,7 @@ export class FlexAligning extends React.Component {
                                 <div>
                                     End
                                 </div>
-                            </div>                           
+                            </div>                            
                         </div>
                     </div>
                 )

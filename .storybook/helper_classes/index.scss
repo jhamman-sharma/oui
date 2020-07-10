@@ -65,3 +65,24 @@
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   width: 90%;
 }
+
+.demo-only-typography-dark-background{
+  background: $magenta-dark;
+  width: 110px;
+  padding-left: 5px;
+}
+
+.demo-only-typography-container {
+  width: 33%;
+  background: $smoke-light;
+
+  &--floating {
+    position: -webkit-sticky; /* for Safari */
+    position: sticky;
+    top: 30%;
+  }
+
+  &--width-350 {
+    width: 350px;
+  }
+}
