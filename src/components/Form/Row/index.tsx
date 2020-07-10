@@ -9,8 +9,8 @@ const Row = props => {
     "push-double--right",
     {'flex--1': props.fillWidth}
   )
-  const children = props.children.map(child => (
-    <div className={rowClassname}>
+  const children = props.children.map((child, idx) => (
+    <div key={idx} className={rowClassname}>
       {child}
     </div>
   ))
