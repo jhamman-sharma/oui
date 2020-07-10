@@ -2303,9 +2303,10 @@ code {
 
 .oui-code__container {
   overflow-wrap: break-word;
+  background-color: #FFFFFF;
   border: 1px solid #e0e0e0;
   border-radius: 5px; }
-  .oui-code__container code {
+  .oui-code__container .oui-code__offset-content {
     margin-right: 55px; }
 
 @font-face {
@@ -4515,9 +4516,10 @@ code {
 
 .oui-code__container {
   overflow-wrap: break-word;
+  background-color: #FFFFFF;
   border: 1px solid #e0e0e0;
   border-radius: 5px; }
-  .oui-code__container code {
+  .oui-code__container .oui-code__offset-content {
     margin-right: 55px; }
 
 .oui-codediff table > tbody > tr {
