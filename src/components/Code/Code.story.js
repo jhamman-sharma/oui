@@ -47,11 +47,43 @@ stories
         testSection='my-code-box'
         type={ select('type', {inline: 'inline', block: 'block'}, 'block') }
         language={ select('language', langOptions, 'js') }>
-        { text('code', 'var foo = `bar`; \nvar bat = `baz`;') }
+        { text(
+          'code', 'var foo = `bar`;\nvar bat = `baz`; var withAReallyReallyLongName = `a value with a really really long string`'
+        ) }
       </Code>
     );
   }))
   .add('With styled copy button', (() => {
+    return (
+      <div>
+        <Code
+          copyButtonStyle="none"
+          copyButtonUsesTextLabel={ false }
+          hasCopyButton={ boolean('hasCopyButton', true) }
+          isHighlighted={ true }
+          testSection='my-code-box'
+          type={ select('type', {inline: 'inline', block: 'block'}, 'block') }
+          language={ select('language', langOptions, 'js') }>
+          { text(
+            'code', 'var foo = `bar`; var bat = `baz`; var withAReallyReallyLongName = `a value with a really really long string`'
+          ) }
+        </Code>
+        <Code
+          copyButtonStyle="highlight"
+          copyButtonUsesTextLabel={ boolean('copyButtonUsesTextLabel', true) }
+          hasCopyButton={ boolean('hasCopyButton', true) }
+          isHighlighted={ true }
+          testSection='my-code-box'
+          type={ select('type', {inline: 'inline', block: 'block'}, 'block') }
+          language={ select('language', langOptions, 'js') }>
+          { text(
+            'code', 'var foo = `bar`; var bat = `baz`; var withAReallyReallyLongName = `a value with a really really long string`'
+          ) }
+        </Code>
+      </div>
+    );
+  }))
+  .add('With wrapping', (() => {
     return (
       <Code
         copyButtonStyle="none"
@@ -60,9 +92,10 @@ stories
         isHighlighted={ true }
         testSection='my-code-box'
         type={ select('type', {inline: 'inline', block: 'block'}, 'block') }
-        language={ select('language', langOptions, 'js') }>
+        language={ select('language', langOptions, 'js') }
+        shouldWrap={ boolean('shouldWrap', true) }>
         { text(
-          'code', 'var foo = `bar`; var bat = `baz`; var withAReallyReallyLongName = `a value with a really really long string`'
+          'code', 'HEYTA1WOHOOjQ2N2YxNDgxLWEzZjEtNDkwNi05OTRhLWMxN2FjJhYWU0ZjozNzUzNmMi00MjUyLTRkZjEtYjhjNy1iMzE1YmEyMj1234567890'
         ) }
       </Code>
     );

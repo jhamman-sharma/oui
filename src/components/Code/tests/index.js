@@ -114,6 +114,21 @@ describe('components/Code', () => {
     expect(component.find('[data-test-section="code-copy-button"]').length).toBe(0);
   });
 
+  it('should add a wrapping class when shouldWrap is true', () => {
+    let code = 'var foo;';
+
+    const component = mount(
+      <Code
+        shouldWrap={ true }
+        type="block"
+        testSection="code">
+        { code }
+      </Code>
+    );
+
+    expect(component.find('.oui-pre-wrap').length).toBe(1);
+  });
+
   it('should add the text `copy` when `copyButtonUsesTextLabel` is true', () => {
     let code = 'var foo;';
 

@@ -75,13 +75,16 @@ class Code extends React.Component {
       hasCopyButton,
       copyButtonStyle,
       copyButtonUsesTextLabel,
+      shouldWrap,
       testSection,
       className,
       ouiStyle = true,
     } = this.props;
-    let classes = classNames(className, {
-      'oui-pre': ouiStyle,
-    });
+    let classes = classNames(className, 'oui-code__container',
+      {
+        'oui-pre': ouiStyle || !shouldWrap,
+        'oui-pre-wrap': shouldWrap,
+      });
 
     if (!children) {
       return null;
@@ -143,6 +146,8 @@ Code.propTypes = {
     'swift', 'go']),
   /** ouiStyle */
   ouiStyle: PropTypes.bool,
+  /** Whether or not the content should wrap */
+  shouldWrap: PropTypes.bool,
   /** Hook for automated JavaScript tests */
   testSection: PropTypes.string,
   /** How the code should be displayed */

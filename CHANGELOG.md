@@ -10,11 +10,12 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Feature] Add ability to sort table columns to **Table.TH** ([#1365](https://github.com/optimizely/oui/pull/1365))
 - [Feature] Add `textAlign` to **Table.TH** & **Table.TD** ([#1370](https://github.com/optimizely/oui/pull/1370))
 - [Feature] Add `hasFooter` and make `footerButtonList` optional on **Sheet** ([#1371](https://github.com/optimizely/oui/pull/1371))
+- [Feature] Add `shouldWrap` ability to **Code** component and prevent copy button from overlapping content ([#1372](https://github.com/optimizely/oui/pull/1372))
 
 ## 46.8.0 - 2020-06-30
 - [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))
 - [Patch] Add test sections to **Tile's** main button and overflow actions button ([#1364](https://github.com/optimizely/oui/pull/1364))
-- [Patch] Add forwardRef to Table.TR component ([#1363](https://github.com/optimizely/oui/pull/1363))
+- [Patch] Add `forwardRef` to **Table.TR** component ([#1363](https://github.com/optimizely/oui/pull/1363))
 
 ## 46.7.0 - 2020-06-26
 - [Feature] Add `hasExternalIcon` to **NavBar** to display an external icon on hover ([#1361](https://github.com/optimizely/oui/pull/1361))

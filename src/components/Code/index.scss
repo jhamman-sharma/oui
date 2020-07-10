@@ -25,16 +25,23 @@ code {
 
 .#{$namespace}pre,
 .oui-pre {
-  margin-bottom: spacer(1);
   white-space: pre;
+}
+
+.oui-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.#{$namespace}pre,
+.oui-pre, .oui-pre-wrap {
+  margin-bottom: spacer(1);
 
   code {
     padding: spacer(1);
     background: map-fetch($color, background, faint);
+    border-radius: map-fetch($border, radius, base);
     overflow-x: auto;
     display: block;
-    border-radius: map-fetch($border, radius, base);
-    border: 1px solid map-fetch($border, color, base);
   }
 }
 
@@ -44,4 +51,15 @@ code {
   border-radius: map-fetch($border, radius, base);
   border: 1px solid map-fetch($border, color, base);
   padding: 1px 3px;
+}
+
+.oui-code__container {
+  overflow-wrap: break-word;
+  border: 1px solid map-fetch($border, color, base);
+  border-radius: map-fetch($border, radius, base);
+
+  code {
+    // 5px offset + 48px for copy button + 2px buffer
+    margin-right: 55px;
+  }
 }
