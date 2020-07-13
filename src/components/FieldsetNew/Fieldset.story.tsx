@@ -13,11 +13,11 @@ stories
 
 stories
   .add(
-    'Default', (() => (
+    'In a form', (() => (
       <div className="push-double--top">
         <Form>
           <Fieldset isRequired={true} title="Fieldset section" 
-            description="The title of the fieldset will be considered the legend of the fieldset. A Fieldset is visually comparable to a Form.Section. Fieldset should only be used if there are multiple inputs in the section that are linked (think address or credit card fields). If they are not closely linked, Form.Section is more appropriate.">
+            description="The title of the fieldset will be considered the legend of the fieldset. The default of a Fieldset (titleSize='large') is visually comparable to a Form.Section. Fieldset should only be used if there are multiple inputs in the section that are linked (think address or credit card fields). If they are not closely linked, Form.Section is more appropriate.">
             <Fieldset.Item>
               <Input
                 label="Input label"
@@ -72,40 +72,82 @@ stories
                 type="text"
               />
             </Form.Item>
+            <Fieldset 
+              titleSize='small' 
+              title="Small fieldset title" 
+              description="We're using a small title because this fieldset belongs in this section.">
+              <Fieldset.Item>
+                <Input
+                  label="Input label"
+                  note="A short description or note about this field."
+                  placeholder="Just a placeholder"
+                  type="text"
+                />
+              </Fieldset.Item>
+              <Fieldset.Item>
+                <Input
+                  label="Input label"
+                  note="A short description or note about this field."
+                  placeholder="Just a placeholder"
+                  type="text"
+                />
+              </Fieldset.Item>
+            </Fieldset>
           </Form.Section>
         </Form>
       </div>
     ))
   )
   .add(
-    'Replicated "New A/B Test"', (() => (
+    'Standalone', (() => (
       <div className="push-double--top">
-        <Form>
-          <Form.Section title="Experiment Name">
-            <Form.Item>
+        <Fieldset isRequired={true} title="Fieldset section" 
+          description="Fieldsets can also be used separately from Forms. However do consider using them in Forms for good practice.">
+          <Fieldset.Item>
+            <Input
+              label="Input label"
+              note="A short description or note about this field."
+              placeholder="Just a placeholder"
+              type="text"
+            />
+          </Fieldset.Item>
+          <Fieldset.Row>
+            <Fieldset.Item>
+              <DatePicker
+                inputId="date-picker-id"
+                initialDate={ null }
+                isFocused={ false }
+              />
+              <p>I appear after the calendar</p>
+            </Fieldset.Item>
+            <Fieldset.Item>
+              <DatePicker
+                inputId="date-picker-id"
+                initialDate={ null }
+                isFocused={ false }
+              />
+              <p>I appear after the calendar</p>
+            </Fieldset.Item>
+          </Fieldset.Row>
+          <Fieldset.Row fillWidth={true}>
+            <Fieldset.Item>
               <Input
-                label="Add a name for your experiment"
+                label="Input label"
+                note="A short description or note about this field."
+                placeholder="Just a placeholder"
                 type="text"
               />
-            </Form.Item>
-          </Form.Section>
-          <Form.Section title="Experiment Key">
-            <Form.Item>
+            </Fieldset.Item>
+            <Fieldset.Item>
               <Input
-                label="Use this to uniquely identify the experiment"
+                label="Input label"
+                note="A short description or note about this field."
+                placeholder="Just a placeholder"
                 type="text"
               />
-            </Form.Item>
-          </Form.Section>
-          <Form.Section isOptional={true} title="Description">
-            <Form.Item>
-              <Input
-                label="What is your experiment? State your hypothesis and notes here."
-                type="text"
-              />
-            </Form.Item>
-          </Form.Section>
-        </Form>
+            </Fieldset.Item>
+          </Fieldset.Row>
+        </Fieldset>
       </div>
     ))
   );

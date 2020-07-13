@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 import Sheet from './index.js';
 import Button from '../Button';
-import Fieldset from '../Fieldset';
+import Fieldset from '../FieldsetNew';
 import Input from '../Input';
 
 const stories = storiesOf('Sheet', module);

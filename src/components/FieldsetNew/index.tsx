@@ -10,8 +10,9 @@ import classNames from 'classnames';
 const Fieldset = props => {
   let headerClasses = classNames(
     'push--bottom',
-    'gamma',
-    {'oui-label--required': props.isRequired}
+    {'gamma': props.titleSize ==='large',
+    'epsilon': props.titleSize ==='small',
+    'oui-label--required': props.isRequired}
   )
   let fieldsetClasses = classNames(
     {'soft-triple--bottom': props.bottomSpacing}
@@ -50,16 +51,35 @@ Fieldset.Row = Row;
 Fieldset.Item = Item;
 
 Fieldset.propTypes = {
+  /** Adds spacing at the bottom. If used in a Form, keep this to true. */
   bottomSpacing: PropTypes.bool,
+  /** Children components. Should be Fieldset.Row or Fieldset.Item for proper spacing */
   children: PropTypes.node.isRequired,
+  /** Description for Fieldset */
   description: PropTypes.node,
+  /** Indicates whether to include a help icon */
   helpIcon: PropTypes.bool,
+  /** Indicates whether to include the "optional" tag to the sectino */
   isOptional: PropTypes.bool,
+  /** Indicates whether to include a red star to the section */
   isRequired: PropTypes.bool,
+  /** Text for popover */
   popoverText: PropTypes.string,
+  /** Title for popover */
   popoverTitle: PropTypes.string,
   testSection: PropTypes.string,
+  /** Title for Fieldset */
   title: PropTypes.string,
+  /** Size of Fieldset title*/
+  titleSize: PropTypes.oneOf([
+    'small',
+    'large',
+  ]),
 };
+
+Fieldset.defaultProps ={
+  bottomSpacing: true,
+  titleSize: 'large',
+}
 
 export default Fieldset;
