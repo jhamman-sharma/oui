@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add ability to change placement of **SelectDropdown** ([#1376](https://github.com/optimizely/oui/pull/1376))
 
 ## 46.9.0 - 2020-07-10
 - [Feature] Added new Storybook examples detailing Flexbox helper classes ([#1367](https://github.com/optimizely/oui/pull/1367))

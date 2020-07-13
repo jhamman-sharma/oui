@@ -25,7 +25,7 @@ class SelectDropdown extends React.Component {
     /**
      * Dropdown direction.
      */
-    dropdownDirection: PropTypes.oneOf(['right', 'left']),
+    dropdownDirection: PropTypes.oneOf(['right', 'left', 'up']),
     /**
      * Should activator and dropdown be full width of container
      */
@@ -79,6 +79,21 @@ class SelectDropdown extends React.Component {
      * an item from dropdown list.
      */
     onChange: PropTypes.func.isRequired,
+    /** Control the placement of the dropdown */
+    placement: PropTypes.oneOf([
+      'top',
+      'top-start',
+      'top-end',
+      'bottom',
+      'bottom-start',
+      'bottom-end',
+      'right',
+      'right-start',
+      'right-end',
+      'left',
+      'left-start',
+      'left-end',
+    ]),
     /**
      * Identifier used to create data-test-section attributes for testing.
      */
@@ -235,11 +250,18 @@ class SelectDropdown extends React.Component {
   };
 
   render() {
-    const { fullWidth, isDisabled, isMultiSelect, zIndex } = this.props;
+    const {
+      fullWidth,
+      isDisabled,
+      isMultiSelect,
+      placement,
+      zIndex,
+    } = this.props;
 
     return (
       <Dropdown
         { ...(zIndex ? { zIndex } : {}) }
+        placement={ placement }
         isDisabled={ isDisabled }
         fullWidth={ fullWidth }
         renderActivator={ this.renderActivator }

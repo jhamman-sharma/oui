@@ -907,6 +907,8 @@ declare module "components/Code/index" {
             language: PropTypes.Requireable<string>;
             /** ouiStyle */
             ouiStyle: PropTypes.Requireable<boolean>;
+            /** Whether or not the content should wrap */
+            shouldWrap: PropTypes.Requireable<boolean>;
             /** Hook for automated JavaScript tests */
             testSection: PropTypes.Requireable<string>;
             /** How the code should be displayed */
@@ -1688,14 +1690,15 @@ declare module "components/Table/TR/index" {
 }
 declare module "components/Table/TH/index" {
     export default TH;
-    function TH({ children, colSpan, isCollapsed, isNumerical, testSection, width, sorting, }: {
+    function TH({ children, colSpan, isCollapsed, isNumerical, sorting, testSection, textAlign, width, }: {
         children: any;
         colSpan: any;
         isCollapsed: any;
         isNumerical: any;
-        testSection: any;
-        width: any;
         sorting: any;
+        testSection: any;
+        textAlign: any;
+        width: any;
     }): JSX.Element;
     namespace TH {
         export const propTypes: {
@@ -1721,6 +1724,8 @@ declare module "components/Table/TH/index" {
             }>>;
             /** Hook for automated JavaScript tests */
             testSection: PropTypes.Requireable<string>;
+            /** Text alignment */
+            textAlign: PropTypes.Requireable<string>;
             /** A number with a unit that becomes the width of the `Table` cell */
             width: PropTypes.Requireable<string>;
         } | {
@@ -1742,6 +1747,8 @@ declare module "components/Table/TH/index" {
             isNumerical?: undefined;
             /** Hook for automated JavaScript tests */
             testSection?: undefined;
+            /** Text alignment */
+            textAlign?: undefined;
             /** A number with a unit that becomes the width of the `Table` cell */
             width?: undefined;
         };
@@ -1773,11 +1780,12 @@ declare module "components/Table/TBody/index" {
 }
 declare module "components/Table/TD/index" {
     export default TD;
-    function TD({ children, colSpan, isNumerical, testSection, verticalAlign, width, }: {
+    function TD({ children, colSpan, isNumerical, testSection, textAlign, verticalAlign, width, }: {
         children: any;
         colSpan: any;
         isNumerical?: boolean | undefined;
         testSection: any;
+        textAlign: any;
         verticalAlign: any;
         width: any;
     }): JSX.Element;
@@ -1787,6 +1795,7 @@ declare module "components/Table/TD/index" {
             export const colSpan: PropTypes.Requireable<number>;
             export const isNumerical: PropTypes.Requireable<boolean>;
             export const testSection: PropTypes.Requireable<string>;
+            export const textAlign: PropTypes.Requireable<string>;
             export const verticalAlign: PropTypes.Requireable<string>;
             export const width: PropTypes.Requireable<string>;
         }
@@ -4878,6 +4887,8 @@ declare module "components/SelectDropdown/index" {
              * an item from dropdown list.
              */
             onChange: PropTypes.Validator<(...args: any[]) => any>;
+            /** Control the placement of the dropdown */
+            placement: PropTypes.Requireable<string>;
             /**
              * Identifier used to create data-test-section attributes for testing.
              */
@@ -5798,8 +5809,9 @@ declare module "components/Sheet/index" {
         export namespace propTypes {
             export const centerHeader: PropTypes.Requireable<boolean>;
             export const children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-            export const footerButtonList: PropTypes.Validator<any[]>;
+            export const footerButtonList: PropTypes.Requireable<any[]>;
             export const hasCloseButton: PropTypes.Requireable<boolean>;
+            export const hasFooter: PropTypes.Requireable<boolean>;
             export const onClose: PropTypes.Requireable<(...args: any[]) => any>;
             export const subtitle: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const testSection: PropTypes.Requireable<string>;
@@ -5810,8 +5822,12 @@ declare module "components/Sheet/index" {
         export namespace defaultProps {
             const centerHeader_1: boolean;
             export { centerHeader_1 as centerHeader };
+            const footerButtonList_1: never[];
+            export { footerButtonList_1 as footerButtonList };
             const hasCloseButton_1: boolean;
             export { hasCloseButton_1 as hasCloseButton };
+            const hasFooter_1: boolean;
+            export { hasFooter_1 as hasFooter };
             export function onClose_1(): void;
             export { onClose_1 as onClose };
             const subtitle_1: string;

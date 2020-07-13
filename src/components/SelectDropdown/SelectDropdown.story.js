@@ -219,6 +219,22 @@ stories.add('Default', (() => {
       />
     </Container>
   );
+})).add('With a change in direction', (() => {
+  return (
+    <Container>
+      <div style={{marginTop: '200px'}}>
+        <p>Placement of dropdown is above</p>
+        <SelectDropdown
+          items={ items }
+          minDropdownWidth={ '400px ' }
+          onChange={ action('SelectDropdown value changed') }
+          placement={ 'top-start' }
+          dropdownDirection="up"
+          value={ 'dog' }
+        />
+      </div>
+    </Container>
+  );
 }));
 
 const Container = styled.div`

@@ -88,7 +88,7 @@ class Code extends React.Component {
     } = this.props;
     let classes = classNames(className, 'oui-code__container',
       {
-        'oui-pre': ouiStyle || !shouldWrap,
+        'oui-pre': ouiStyle && !shouldWrap,
         'oui-pre-wrap': shouldWrap,
       });
 
