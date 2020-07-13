@@ -15,13 +15,14 @@ const Fieldset = props => {
     'oui-label--required': props.isRequired}
   )
   let fieldsetClasses = classNames(
-    {'soft-triple--bottom': props.bottomSpacing}
+    'oui-fieldset',
+    {'push-triple--bottom': props.bottomSpacing}
   )
   return (
   <fieldset data-test-section={ props.testSection } className={fieldsetClasses}>
     { props.title && (
       <legend className={headerClasses}>
-        { props.title }
+        { props.title } Fun times
         { props.isOptional && (
           <label className="oui-label__optional">(Optional)</label>
         ) }
@@ -51,7 +52,7 @@ Fieldset.Row = Row;
 Fieldset.Item = Item;
 
 Fieldset.propTypes = {
-  /** Adds spacing at the bottom. If used in a Form, keep this to true. */
+  /** Adds spacing at the bottom. If used in a Form, make this to true. */
   bottomSpacing: PropTypes.bool,
   /** Children components. Should be Fieldset.Row or Fieldset.Item for proper spacing */
   children: PropTypes.node.isRequired,
@@ -78,7 +79,7 @@ Fieldset.propTypes = {
 };
 
 Fieldset.defaultProps ={
-  bottomSpacing: true,
+  bottomSpacing: false,
   titleSize: 'large',
 }
 
