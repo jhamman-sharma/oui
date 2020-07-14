@@ -6,9 +6,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+
+## 46.10.0 - 2020-07-14
+
 - [Feature] Add ability to change placement of **SelectDropdown** ([#1376](https://github.com/optimizely/oui/pull/1376))
 
 ## 46.9.0 - 2020-07-10
+
 - [Feature] Added new Storybook examples detailing Flexbox helper classes ([#1367](https://github.com/optimizely/oui/pull/1367))
 - [Feature] Added new Storybook examples detailing Typography helper classes ([#1373](https://github.com/optimizely/oui/pull/1373))
 - [Feature] Add ability to sort table columns to **Table.TH** ([#1365](https://github.com/optimizely/oui/pull/1365))
@@ -17,18 +21,22 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Feature] Add `shouldWrap` ability to **Code** component and prevent copy button from overlapping content ([#1372](https://github.com/optimizely/oui/pull/1372))
 
 ## 46.8.0 - 2020-06-30
+
 - [Feature] Add ability to supply custom links to **ManagerSideNav** and style with custom classes ([#1362](https://github.com/optimizely/oui/pull/1362))
 - [Patch] Add test sections to **Tile's** main button and overflow actions button ([#1364](https://github.com/optimizely/oui/pull/1364))
 - [Patch] Add `forwardRef` to **Table.TR** component ([#1363](https://github.com/optimizely/oui/pull/1363))
 
 ## 46.7.0 - 2020-06-26
+
 - [Feature] Add `hasExternalIcon` to **NavBar** to display an external icon on hover ([#1361](https://github.com/optimizely/oui/pull/1361))
 - [Feature] New component **SummaryBar** for having key information highlighted in a condensed component ([#1360](https://github.com/optimizely/oui/pull/1360))
 
 ## 46.6.1 - 2020-06-23
+
 - [Patch] Update **Tile** Prop TypeScript definition for `dropdownItems`. Also updated **Tile** stories to be tsx (for TypeScript validation) and the ability for all Stories to use TypeScript. ([#1359](https://github.com/optimizely/oui/pull/1359))
 
 ## 46.6.0 - 2020-06-22
+
 - [Feature] Add multiple **LayoutKit** stories and ability to specify `alignSelf` on **Col** ([#1357](https://github.com/optimizely/oui/pull/1357))
 - [Feature] Add `isHighlighted` prop to **Table.TR** to allow row highlighting ([#1356](https://github.com/optimizely/oui/pull/1356))
 - [Feature] Update **Tile** to directly render array of Dropdown.ListItem components for `dropdownItems` prop ([#1358](https://github.com/optimizely/oui/pull/1358))
@@ -37,38 +45,45 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Add Storybook example for **SearchPicker** in a **Dropdown** ([#1355](https://github.com/optimizely/oui/pull/1355))
 
 ## 46.5.0 - 2020-06-09
+
 - [Feature] Add new **Tile** component for displaying details and actions for various items ([#1350](https://github.com/optimizely/oui/pull/1350))
 - [Patch] Add `buttonRef` prop to **ButtonIcon** to be used as a dropdown activator ([#1350](https://github.com/optimizely/oui/pull/1350))
 - [Patch] Add `hasSpellCheck` prop to **Input** component ([#1338](https://github.com/optimizely/oui/pull/1338))
 
 ## 46.4.2 - 2020-06-08
+
 - [Patch] Allow **Disclose** to take a node or a string for `title` with `flex` ([#1354](https://github.com/optimizely/oui/pull/1354))
 - [Patch] Define missing components for typescript declarations ([#1352](https://github.com/optimizely/oui/pull/1352))
 
 ## 46.4.1 - 2020-05-29
+
 - [Patch] Update **Col** and **Ref** to accept ref props ([#1343](https://github.com/optimizely/oui/pull/1343))
 - [Patch] Add default props for `onMouseEnter` and `onMouseLeave` in **DropdownBlockLink** to prevent errors ([#1349](https://github.com/optimizely/oui/pull/1349))
 - [Patch] Rewrite **DockedFooter** for simplicity, and update story ([#1341](https://github.com/optimizely/oui/pull/1341))
 
 ## 46.4.0 - 2020-05-26
+
 - [Feature] Add `onMouseEnter` and `onMouseLeave` props to **DropdownBlockLink** ([#1340](https://github.com/optimizely/oui/pull/1340))
 - [Feature] Add ability to have external icon show on hover for **DropdownBlockLinkText** items using `hasExternalIcon` prop ([#1340](https://github.com/optimizely/oui/pull/1340))
 - [Feature] Utilize the new `useTextLabel` prop in the **CopyButton** in **Code** via `copyButtonUsesTextLabel` ([#1346](https://github.com/optimizely/oui/pull/1346))
 - [Patch] Update background color for the Off state of **Switch** to improve contrast ([#1347](https://github.com/optimizely/oui/pull/1347))
 - [Patch] Update **Token** and **Sortable** to always use hamburger drag handle by default ([#1337](https://github.com/optimizely/oui/pull/1337))
 - [Patch] Update react-oui-icons version to 2.9.0 ([#1336](https://github.com/optimizely/oui/pull/1336))
-    - Update `icons.json` to use latest set of icons from v2.9.0
+  - Update `icons.json` to use latest set of icons from v2.9.0
 
 ## 46.3.1 - 2020-05-19
+
 - [Patch] Export **ManagerSideNav** info for TypeScript ([#1334](https://github.com/optimizely/oui/pull/1334))
 
 ## 46.3.0 - 2020-05-18
+
 - [Feature] New component **ManagerSideNav** for the vertical navigation of detail pages ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add ability to use `isFullWidth` prop on **Link** to create a full width link ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add `ariaLabel` prop on **Switch** to provide screen readers with context ([#1331](https://github.com/optimizely/oui/pull/1331))
 - [Feature] Add `usesTextLabel` prop to **CopyButton** to use a text label instead of an icon ([#1333](https://github.com/optimizely/oui/pull/1333))
 
 ## 46.2.0 - 2020-05-15
+
 - [Feature] Add ability to render **PaginationControls** with links (instead of buttons) using `hrefBaseUrl` ([#1326](https://github.com/optimizely/oui/pull/1326))
 - [Feature] Add `centerHeader` prop to **Sheet** to center the title and subtitle text ([#1332](https://github.com/optimizely/oui/pull/1332))
 - [Patch] Add hover and focus differentiations for `unstyled` **Buttons** ([#1326](https://github.com/optimizely/oui/pull/1326))
@@ -76,27 +91,32 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Fix the **SearchPicker** results count ([#1330](https://github.com/optimizely/oui/pull/1330))
 - [Patch] Throw an error in **SearchPicker's** searchFunction Promise chain if the response is not an array. This will prevent a non-Array value from being set as `defaultResults` ([#1325](https://github.com/optimizely/oui/pull/1325))
 
-
 ## 46.1.0 - 2020-05-08
+
 - [Feature] Add ability to specify a left or right icon for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
 - [Feature] Add ability to include a Clear Input ButtonIcon with `hasClearButton` for **Input** ([#1320](https://github.com/optimizely/oui/pull/1320))
 - [Feature] Add ability to remove bottom border and box shadow with `toolbarStyle` in **Toolbar** ([#1327](https://github.com/optimizely/oui/pull/1327))
 - [Patch] Remove mockdate from stories to fix Storybook knobs ([#1329](https://github.com/optimizely/oui/pull/1329))
 
 ## 46.0.4 - 2020-04-30
+
 - [Patch] Add search function to the **SearchPicker** render prop API ([#1323](https://github.com/optimizely/oui/pull/1323))
 
 ## 46.0.3 - 2020-04-28
+
 - [Patch] Fix Storybook
 
 ## 46.0.2 - 2020-04-27
+
 - [Patch] Update react-oui-icons version to 2.8.1 ([#1322](https://github.com/optimizely/oui/pull/1322))
-    - Update `icons.json` to use latest set of icons from v2.8.1
+  - Update `icons.json` to use latest set of icons from v2.8.1
 
 ## 46.0.1 - 2020-04-24
+
 - [Patch] Update type checking for **ColWithNubbin** ([#1321](https://github.com/optimizely/oui/pull/1321))
 
 ## 46.0.0 - 2020-04-24
+
 - [Release] Remove **AutoComplete** component ([#1318](https://github.com/optimizely/oui/pull/1318))
 - [Release] Remove **EditableInput** component ([#1318](https://github.com/optimizely/oui/pull/1318))
 - [Feature] Add **ColWithNubbin** as a wrapper to create a **Col** with a nubbin that points to content in another section ([#1319](https://github.com/optimizely/oui/pull/1319))
@@ -104,21 +124,25 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Feature] Add token for `nubbinSize` to maintain consistent sizing for nubbins ([#1319](https://github.com/optimizely/oui/pull/1319))
 
 ## 45.8.0 - 2020-04-10
+
 - [Feature] Add ability to pass a node or string for the `linkLabel` in **NavBar** ([#1315](https://github.com/optimizely/oui/pull/1315))
 - [Patch] Indicate **Accordion** and **ArrowsInline** as deprecated ([#1314](https://github.com/optimizely/oui/pull/1314))
 - [Patch] Update stories for **LayoutKit** and create Storybook folders for **Container**, **Row**, and **Col**, as well as app specific examples ([#1314](https://github.com/optimizely/oui/pull/1314))
 
 ## 45.7.0 - 2020-04-06
+
 - [Feature] Multiple enhancements to **Select** ([#1313](https://github.com/optimizely/oui/pull/1313))
-    - Add `displayError` and `note` to show an error state and message
-    - Add `isFullWidth` to make **Select** take 100% width of container
-    - Add `onChange` to detect a selection made
-    - For accessibility, add `label`, `isOptional`, and `isRequired` to specify a label for the **Select**
+  - Add `displayError` and `note` to show an error state and message
+  - Add `isFullWidth` to make **Select** take 100% width of container
+  - Add `onChange` to detect a selection made
+  - For accessibility, add `label`, `isOptional`, and `isRequired` to specify a label for the **Select**
 
 ## 45.6.1 - 2020-03-12
+
 - [Patch] Update Chromatic to be a devDependency ([#1309](https://github.com/optimizely/oui/pull/1309))
 
 ## 45.6.0 - 2020-03-11
+
 - [Feature] Add [Chromatic](https://www.chromaticqa.com/) Visual Regression Testing to OUI ([#1303](https://github.com/optimizely/oui/pull/1303))
 - [Patch] Add required asterisk when **Textarea** is required with `isRequired` and `label` props ([#1274](https://github.com/optimizely/oui/pull/1274))
 - [Patch] Fix prop-type errors in **NavBar** ([#1305](https://github.com/optimizely/oui/pull/1305))
@@ -126,83 +150,102 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 - [Patch] Update `muted` class color to have enough contrast against white backgrounds ([#1307](https://github.com/optimizely/oui/pull/1307))
 
 ## 45.5.0 - 2020-03-02
+
 - [Feature] Update **Token** to support custom drag handling with `dragHandleProps` prop from react-beautiful-dnd through use in the **DragAndDrop** component ([#1301](https://github.com/optimizely/oui/pull/1301))
 
 ## 45.4.0 - 2020-02-25
+
 - [Feature] Add ability in **SelectDropdown** to supply a label and content object for `buttonContent` prop ([#1293](https://github.com/optimizely/oui/pull/1293))
 - [Patch] Add `iconFill` prop to the **ButtonIcon** component ([#1199](https://github.com/optimizely/oui/pull/1199))
 - [Patch] Adjust max-height of time **Input** ([#1293](https://github.com/optimizely/oui/pull/1293))
 - [Patch] Update **Button** styles for `plain`, `toggle`, and `underline` focus and hover states ([#1300](https://github.com/optimizely/oui/pull/1300))
 
 ## 45.3.1 - 2020-02-19
+
 - [Patch] Update travis.yml to resolve npm deploy failures
 
 ## 45.3.0 - 2020-02-19
+
 - [Patch] If **SelectDropdown** is `fullWidth`, set **Dropdown** width to 100% ([#1295](https://github.com/optimizely/oui/pull/1295))
 - [Feature] Add new **Avatar** component to use in NavBar and elsewhere ([#1291](https://github.com/optimizely/oui/pull/1291))
 - [Patch] **Code** no longer wraps child text unless a newline is present in the source ([#1294](https://github.com/optimizely/oui/pull/1294))
 
 ## 45.2.1 - 2020-01-30
+
 - [Patch] Add `linkURL` and `linkText` to items on **SelectDropdown** component to allow optional links ([#1286](https://github.com/optimizely/oui/pull/1286))
 
 ## 45.2.0 - 2020-01-28
+
 - [Patch] Update `isReadingColumn` prop on **Col** component to create a nested reading column ([#1285](https://github.com/optimizely/oui/pull/1285))
 - [Patch] Wait for all queries to be complete before showing result summary in **SearchPicker** ([#1284](https://github.com/optimizely/oui/pull/1284))
 - [Patch] Allow for an offset in **SearchPicker** children ([#1281](https://github.com/optimizely/oui/pull/1281))
 - [Feature] Update **DockedFooter** to use a `scrollRef` prop for activating listeners, and add ability to specify `leftGroup`, `rightGroup`, and `centerGroup` button row options ([#1276](https://github.com/optimizely/oui/pull/1276))
 
 ## 45.1.0 - 2020-01-24
+
 - [Feature] Add new **DragAndDrop** component using react-beautiful-dnd that allows for dynamic lists, interactive elements inside the draggable items, and keyboard accessibility ([#1261](https://github.com/optimizely/oui/pull/1261))
 - [Feature] Enable Typescript compilation and generate type definitions for JS and TSX components. ([#1268](https://github.com/optimizely/oui/pull/1268))
 
 ## 45.0.0 - 2020-01-22
+
 - [Release] Remove deprecated CodeDiffLegacy component in favor of **CodeDiff** ([#1277](https://github.com/optimizely/oui/pull/1277))
 - [Patch] Undo parent prop inheritance on Activator in **Dropdown** ([#1278](https://github.com/optimizely/oui/pull/1278))
 
 ## 44.18.0 - 2020-01-16
+
 - [Feature] Adding a `SearchPicker` component ([#1253](https://github.com/optimizely/oui/pull/1253)))
 
 ## 44.17.0 - 2020-01-14
+
 - [Feature] Add ability to **Dropdown** and **SelectDropdown** to support multi select of options with checkboxes using `isMultiSelect` and `isItemSelected` properties ([#1273](https://github.com/optimizely/oui/pull/1273))
 
 ## 44.16.0 - 2020-01-10
+
 - [Feature] Update the **Row** Layout component to support a `verticalAlignment` prop and the **Col** component to support `overflow` options ([#1272](https://github.com/optimizely/oui/pull/1272))
 - [Feature] Add ability in **Dropdown** to supply a label and content object for `buttonContent` prop ([#1270](https://github.com/optimizely/oui/pull/1270))
 - [Feature] Add new helper class `oui-assistive-text` to use for visually hidden, screen-reader-only text ([#1270](https://github.com/optimizely/oui/pull/1270))
 
 ## 44.15.1 - 2020-01-06
+
 - [Patch] Update OUI Webpack babel regex to include react-diff-viewer library. ([#1271](https://github.com/optimizely/oui/pull/1271))
 
 ## 44.15.0 - 2020-01-03
+
 - [Feature] Rewrite CodeDiff and use new diff library. Export old CodeDiff as CodeDiff Legacy. ([#1252](https://github.com/optimizely/oui/pull/1252))
 
 ## 44.14.1 - 2019-12-12
+
 - [Patch] Revert changes to **HelpPopover** from [#1254](https://github.com/optimizely/oui/pull/1254) to resolve monolith implementation issues ([#1265](https://github.com/optimizely/oui/pull/1265))
 
 ## 44.14.0 - 2019-12-11
+
 - [Patch] Undo parent prop inheritance on Activator in **Dropdown** ([#1262](https://github.com/optimizely/oui/pull/1262))
 - [Feature] Add typography helper classes `word-break--all` and `word-break--word` ([#1263](https://github.com/optimizely/oui/pull/1263))
 - [Patch] Restore `<Input>` prop `focus`, which was inadvertently removed in #1256. ([#1264](https://github.com/optimizely/oui/pull/1264))
 
 ## 44.13.4 - 2019-12-06
+
 - [Patch] Align **SelectDropdown** activator text to the left ([#1260](https://github.com/optimizely/oui/pull/1260))
 
 ## 44.13.1 - 2019-12-05
+
 - [Re-release] To fix Storybook deploy error.
 
 ## 44.13.0 - 2019-12-05
+
 - [Feature] Multiple updates to the Layout components for better usability ([#1257](https://github.com/optimizely/oui/pull/1257))
-    - Add ability for **Col** component to be a reading column with `isReadingColumn` prop
-    - Add ability to prevent **Row** from wrapping with `shouldWrap` prop
-    - Update **Container** and **Col** to be flex
+  - Add ability for **Col** component to be a reading column with `isReadingColumn` prop
+  - Add ability to prevent **Row** from wrapping with `shouldWrap` prop
+  - Update **Container** and **Col** to be flex
 - [Patch] Include Optimizely.git reusable mixins as part of [removing Classic CSS debt from the monolith](https://github.com/optimizely/optimizely/pull/11272) ([#1259](https://github.com/optimizely/oui/pull/1259))
 
 ## 44.12.0 - 2019-12-02
+
 - [Patch] Update **Input** to forward refs and accept an `onClick` prop ([#1256](https://github.com/optimizely/oui/pull/1256))
 - [Feature] Several updates to **Dropdown**, notably adding `role` and `hasFauxFocus` props to support accessibility, adding a `renderActivator` render prop, and updating the stories to only use **Dropdown** defined children. Full details in [#1250](https://github.com/optimizely/oui/pull/1250).
 - [Feature] New **DockedFooter** sticky-to-the-bottom button row component ([#1247](https://github.com/optimizely/oui/pull/1247))
 - [Feature] Improve keyboard accessibility by updating **HelpPopover** to use ButtonIcon component and be a focusable element ([#1254](https://github.com/optimizely/oui/pull/1254))
-    - Add ability to associate a **ButtonIcon** with another component, like a **Popover**, using `ariaDescribedBy` and `popoverId` props
+  - Add ability to associate a **ButtonIcon** with another component, like a **Popover**, using `ariaDescribedBy` and `popoverId` props
 - [Patch] Update **SelectDropdown** to accept a `fullWidth` prop ([#1258](https://github.com/optimizely/oui/pull/1258))
 
 ## 44.11.0 - 2019-11-06
