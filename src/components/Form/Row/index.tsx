@@ -22,6 +22,7 @@ const Row = props => {
 
 Row.propTypes = {
   children: PropTypes.node.isRequired,
+  /** Indicates whether items in the row should take up as much width as possible */
   fillWidth: PropTypes.bool,
   testSection: PropTypes.string,
 };

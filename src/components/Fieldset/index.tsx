@@ -9,20 +9,21 @@ import classNames from 'classnames';
 
 const Fieldset = props => {
   let headerClasses = classNames(
-    'push--bottom',
-    {'gamma': props.titleSize ==='large',
+    {'push--bottom': props.titleSize==='large',
+    'push-half--bottom': props.titleSize ==='small',
+    'gamma': props.titleSize ==='large',
     'epsilon': props.titleSize ==='small',
     'oui-label--required': props.isRequired}
   )
   let fieldsetClasses = classNames(
-    'oui-fieldset',
-    {'push-triple--bottom': props.bottomSpacing}
+    {'push-triple--bottom': props.bottomSpacing,
+    'flush--bottom': !props.bottomSpacing}
   )
   return (
   <fieldset data-test-section={ props.testSection } className={fieldsetClasses}>
     { props.title && (
       <legend className={headerClasses}>
-        { props.title } Fun times
+        { props.title }
         { props.isOptional && (
           <label className="oui-label__optional">(Optional)</label>
         ) }
@@ -43,7 +44,6 @@ const Fieldset = props => {
         { props.description }
       </div>
     ) }
-
     { props.children }
   </fieldset>
 )};
@@ -58,11 +58,11 @@ Fieldset.propTypes = {
   children: PropTypes.node.isRequired,
   /** Description for Fieldset */
   description: PropTypes.node,
-  /** Indicates whether to include a help icon */
+  /** Indicates whether to include a help popover */
   helpIcon: PropTypes.bool,
-  /** Indicates whether to include the "optional" tag to the sectino */
+  /** Indicates whether to include the "optional" tag to the fieldset */
   isOptional: PropTypes.bool,
-  /** Indicates whether to include a red star to the section */
+  /** Indicates whether to include a red star to the fieldset */
   isRequired: PropTypes.bool,
   /** Text for popover */
   popoverText: PropTypes.string,
@@ -79,7 +79,7 @@ Fieldset.propTypes = {
 };
 
 Fieldset.defaultProps ={
-  bottomSpacing: false,
+  bottomSpacing: true,
   titleSize: 'large',
 }
 

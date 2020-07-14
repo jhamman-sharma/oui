@@ -48,11 +48,16 @@ Form.Row = Row;
 
 Form.propTypes = {
   children: PropTypes.node.isRequired,
+  /** Description for Form */
   description: PropTypes.node,
+  /** Indicates whether to include a help popover */
   helpIcon: PropTypes.bool,
+  /** Text for popover */
   popoverText: PropTypes.string,
+  /** Title for popover */
   popoverTitle: PropTypes.string,
   testSection: PropTypes.string,
+  /** Title for Form */
   title: PropTypes.string,
 };
 

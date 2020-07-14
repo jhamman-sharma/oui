@@ -94,7 +94,7 @@ stories
     ))
   )
   .add(
-    'Replicated "New A/B Test"', (() => (
+    'Replicated "New A/B Test" form', (() => (
       <div className="push-double--top">
         <Form>
           <Form.Section title="Experiment Name">

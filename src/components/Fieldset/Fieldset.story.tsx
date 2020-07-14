@@ -16,7 +16,7 @@ stories
     'In a form', (() => (
       <div className="push-double--top">
         <Form>
-          <Fieldset isRequired={true} title="Fieldset section" bottomSpacing={true}
+          <Fieldset isRequired={true} title="Fieldset section"
             description="The title of the fieldset will be considered the legend of the fieldset. The default of a Fieldset (titleSize='large') is visually comparable to a Form.Section. Fieldset should only be used if there are multiple inputs in the section that are linked (think address or credit card fields). If they are not closely linked, Form.Section is more appropriate.">
             <Fieldset.Item>
               <Input
@@ -83,6 +83,7 @@ stories
             <Fieldset 
               titleSize='small' 
               title="Small fieldset title" 
+              bottomSpacing={false}
               description="We're using a small title because this fieldset belongs in this section.">
               <Fieldset.Item>
                 <Input

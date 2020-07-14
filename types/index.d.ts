@@ -1360,6 +1360,7 @@ declare module "components/Form/Row/index" {
         (props: any): JSX.Element;
         propTypes: {
             children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** Indicates whether items in the row should take up as much width as possible */
             fillWidth: PropTypes.Requireable<boolean>;
             testSection: PropTypes.Requireable<string>;
         };
