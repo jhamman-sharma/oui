@@ -20,6 +20,7 @@ stories
     <Badge color="draft">Draft</Badge>
     <Badge color="live">Live</Badge>
     <Badge color="primary">Primary</Badge>
+    <Badge color="purple">Purple</Badge>
     <Badge color="plain">Plain</Badge>
     <Badge color="bad-news">Bad News</Badge>
   </div>))

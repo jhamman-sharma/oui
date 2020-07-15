@@ -73,3 +73,7 @@
 .oui-badge--bad-news {
   background: map-fetch($color, ui, bad-news);
 }
+
+.oui-badge--purple {
+  background: $purple-base;
+}
