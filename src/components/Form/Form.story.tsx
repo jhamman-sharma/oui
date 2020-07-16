@@ -22,12 +22,13 @@ stories
                 note="A short description or note about this field."
                 placeholder="Just a placeholder"
                 type="text"
+                id="input-01"
               />
             </Form.Item>
             <Form.Row>
               <Form.Item>
                 <DatePicker
-                  inputId="date-picker-id"
+                  inputId="date-picker-id-1"
                   initialDate={ null }
                   isFocused={ false }
                 />
@@ -35,7 +36,7 @@ stories
               </Form.Item>
               <Form.Item>
                 <DatePicker
-                  inputId="date-picker-id"
+                  inputId="date-picker-id-2"
                   initialDate={ null }
                   isFocused={ false }
                 />
@@ -49,6 +50,7 @@ stories
                   note="A short description or note about this field."
                   placeholder="Just a placeholder"
                   type="text"
+                  id="input-02"
                 />
               </Form.Item>
               <Form.Item>
@@ -57,6 +59,7 @@ stories
                   note="A short description or note about this field."
                   placeholder="Just a placeholder"
                   type="text"
+                  id="input-03"
                 />
               </Form.Item>
             </Form.Row>
@@ -68,6 +71,7 @@ stories
                 note="A short description or note about this field."
                 placeholder="Just a placeholder"
                 type="text"
+                id="input-04"
               />
             </Form.Item>
             <Form.Item>
@@ -76,6 +80,7 @@ stories
                 note="A short description or note about this field."
                 placeholder="Just a placeholder"
                 type="text"
+                id="input-05"
               />
             </Form.Item>
           </Form.Section>
@@ -86,6 +91,7 @@ stories
                 note="A short description or note about this field."
                 placeholder="Just a placeholder"
                 type="text"
+                id="input-06"
               />
             </Form.Item>
           </Form.Section>
@@ -102,6 +108,7 @@ stories
               <Input
                 label="Add a name for your experiment"
                 type="text"
+                id="input-01"
               />
             </Form.Item>
           </Form.Section>
@@ -110,6 +117,7 @@ stories
               <Input
                 label="Use this to uniquely identify the experiment"
                 type="text"
+                id="input-02"
               />
             </Form.Item>
           </Form.Section>
@@ -118,6 +126,7 @@ stories
               <Input
                 label="What is your experiment? State your hypothesis and notes here."
                 type="text"
+                id="input-03"
               />
             </Form.Item>
           </Form.Section>
