@@ -9,6 +9,7 @@ import Table from "../../src/components/Table/index";
 export class Spacing extends React.Component {
   state = {
     spacingTab: 'intro',
+    spacingAddition: 'add',
     spacingOption: 'push',
     spacingAmount: '10px',
     spacingSide: 'all',
@@ -25,18 +26,27 @@ export class Spacing extends React.Component {
     switchSpacingSide = side => {
         this.setState({spacingSide: side});
     }
+
+    switchSpacingAddition = add => {
+        this.setState({spacingAddition: add});
+    }
     
     switchTab = tab => {
-        this.setState({spacingTab: tab, spacingOption: 'push', spacingAmount: '10px', spacingSide: 'all'});
+        this.setState({spacingTab: tab, spacingAddition: 'add', spacingOption: 'push', spacingAmount: '10px', spacingSide: 'all'});
     }
 
   render() {
-    const {spacingTab, spacingOption, spacingAmount, spacingSide} = this.state;
+    const {spacingTab, spacingOption, spacingAmount, spacingSide, spacingAddition} = this.state;
 
     let tabContent;
     let spacingClass = (spacingSide === 'all' ? 
-        (spacingAmount === '10px' ? spacingOption : spacingOption + '-' + spacingAmount)
-         : (spacingAmount === '10px' ? spacingOption + '--' + spacingSide : spacingOption+'-'+spacingAmount+'--'+spacingSide));
+    (spacingAmount === '10px' ? spacingOption : spacingOption + '-' + spacingAmount)
+     : (spacingAmount === '10px' ? spacingOption + '--' + spacingSide : spacingOption+'-'+spacingAmount+'--'+spacingSide));
+    if (spacingAddition === 'remove') {
+        spacingClass = (spacingOption === 'push' ? 
+            (spacingSide === 'all'? 'push flush': 'push flush--'+spacingSide) :
+            (spacingSide === 'all' ? 'soft hard' : 'soft hard--'+spacingSide));
+    } 
     switch (spacingTab) {
         case 'intro':
             const introString = '-{amount}--{side}'
@@ -90,6 +100,21 @@ export class Spacing extends React.Component {
                 <div className="flex flex--column flex-align--start push-double--sides"> 
                     <p>Click through the different options in the columns to get your desired effect.</p>
                     <div className="flex width--1-1">
+                        <div className="width--150 push-quad--left">
+                            <Table>
+                                <Table.THead>
+                                    <Table.TR>
+                                        <Table.TH>
+                                            Remove or add spacing
+                                        </Table.TH>
+                                    </Table.TR>
+                                </Table.THead>
+                                <Table.TBody>
+                                    <SpacingRow onRowClick={() => this.switchSpacingAddition('add')} helperClass='add' isSelected={spacingAddition === 'add'} />
+                                    <SpacingRow onRowClick={() => this.switchSpacingAddition('remove')} helperClass='remove' isSelected={spacingAddition === 'remove'} />
+                                </Table.TBody>
+                            </Table>
+                        </div>
                         <div className="width--150">
                             <Table>
                                 <Table.THead>
@@ -115,11 +140,11 @@ export class Spacing extends React.Component {
                                     </Table.TR>
                                 </Table.THead>
                                 <Table.TBody>
-                                    <SpacingRow onRowClick={() => this.switchSpacingAmount('half')} helperClass='5px' isSelected={spacingAmount === 'half'} />
-                                    <SpacingRow onRowClick={() => this.switchSpacingAmount('10px')} helperClass='10px' isSelected={spacingAmount === '10px'} />
-                                    <SpacingRow onRowClick={() => this.switchSpacingAmount('double')} helperClass='20px' isSelected={spacingAmount === 'double'} />
-                                    <SpacingRow onRowClick={() => this.switchSpacingAmount('triple')} helperClass='30px' isSelected={spacingAmount === 'triple'} />
-                                    <SpacingRow onRowClick={() => this.switchSpacingAmount('quad')} helperClass='40px' isSelected={spacingAmount === 'quad'} />
+                                    <SpacingRow disableClick={spacingAddition === 'remove'} onRowClick={() => this.switchSpacingAmount('half')} helperClass='5px' isSelected={spacingAmount === 'half'} />
+                                    <SpacingRow disableClick={spacingAddition === 'remove'} onRowClick={() => this.switchSpacingAmount('10px')} helperClass='10px' isSelected={spacingAmount === '10px'} />
+                                    <SpacingRow disableClick={spacingAddition === 'remove'} onRowClick={() => this.switchSpacingAmount('double')} helperClass='20px' isSelected={spacingAmount === 'double'} />
+                                    <SpacingRow disableClick={spacingAddition === 'remove'} onRowClick={() => this.switchSpacingAmount('triple')} helperClass='30px' isSelected={spacingAmount === 'triple'} />
+                                    <SpacingRow disableClick={spacingAddition === 'remove'} onRowClick={() => this.switchSpacingAmount('quad')} helperClass='40px' isSelected={spacingAmount === 'quad'} />
                                 </Table.TBody>
                             </Table>
                         </div>
@@ -178,6 +203,7 @@ interface SpacingRowProps {
     onRowClick: () => void,
     isSelected: boolean,
     helperClass: string,
+    disableClick?: boolean,
 }
   
 class SpacingRow extends React.Component<SpacingRowProps> {
@@ -186,16 +212,18 @@ class SpacingRow extends React.Component<SpacingRowProps> {
     }
   
     render() {
-      const {onRowClick, isSelected, helperClass} = this.props;
+      const {onRowClick, isSelected, helperClass, disableClick} = this.props;
       let classes = classNames(
-        {'oui-table-row--highlighted': isSelected,},
+        {'oui-table-row--highlighted': !disableClick && isSelected,
+        'muted': disableClick},
         'no-border',
       );
+
       return (
         <tr
             className={ classes }
             onClick={onRowClick}>
-            <Table.TD verticalAlign="middle"><code className="push--left">{helperClass}</code></Table.TD>
+            <Table.TD verticalAlign="middle"><code className="push-half--left">{helperClass}</code></Table.TD>
         </tr>
                       
       );
