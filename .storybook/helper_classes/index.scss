@@ -86,3 +86,12 @@
     width: 350px;
   }
 }
+
+.demo-only-spacing-push-background {
+  background: $magenta-light;
+}
+
+.demo-only-spacing-soft-background {
+  background: $magenta-dark;
+  border: 3px solid $blue-base;
+}

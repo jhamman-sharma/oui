@@ -4457,6 +4457,9 @@ div[class*="fitContent"] {
 .oui-badge--bad-news {
   background: #FF5B5B; }
 
+.oui-badge--purple {
+  background: #673ab6; }
+
 .oui-button-icon {
   padding: 4px;
   line-height: normal; }
@@ -5662,9 +5665,6 @@ code {
   transition: opacity 150ms ease-in; }
   .root-nav-fader * {
     cursor: default !important; }
-
-.root-nav__project > .oui-badge {
-  background-color: var(--ron-project-badge); }
 
 .oui-dropdown > li.oui-dropdown__item.oui-dropdown__block-link,
 .root-nav__user .lego-block-list__link {
