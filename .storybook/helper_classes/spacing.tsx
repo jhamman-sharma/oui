@@ -53,18 +53,20 @@ export class Spacing extends React.Component {
             tabContent = 
             <div className="reading-column push-double--sides"> 
                 <p>The model for adding padding or margins consists of <code>push{introString}</code> for margins and <code>soft{introString}</code> for padding.</p>
+                <p>The model for removing spacing to override an existing spacing definition consists of <code>flush-(side)</code> for margins and <code>hard-(side)</code> for padding.</p>
                 <h4>Amount of spacing</h4>
-                <p>The options for amount are:
+                <p>The pre-built options for the amount of spacing are:
                     <ul className="list list--bullet">
                         <li>half - 5px</li>
                         <li>double - 20px</li>
                         <li>triple - 30px</li>
                         <li>quad - 40px</li>
                     </ul>
-                    The default (not specifying an amount) is 10px (ie: <code>push--top</code>). Note: in this case there are only two '-' separating the first and last word of the helper class.
+                    The default (not specifying an amount) is 10px (ie: <code>push--top</code>). Note: in this case there are only 
+                    two - separating the first and last word of the helper class.
                 </p>
                 <h4>Location of spacing</h4>
-                <p>The options for side are:
+                <p>The options for where the spacing will be are:
                     <ul className="list list--bullet">
                         <li>top</li>
                         <li>bottom</li>
@@ -75,7 +77,7 @@ export class Spacing extends React.Component {
                     </ul>
                     The default (not specifying a side) applies the margin and padding to all sidees (ie: <code>push-half</code>). Note: in this case there is only one '-' separating the first and last word of the helper class.
                 </p>
-                <p>For examples of how this works go to the <strong>Interactive examples</strong> tab.</p>
+                <p>For examples of how all these option work go to the <strong>Interactive examples</strong> tab.</p>
             </div>
             break;
         case 'examples':
