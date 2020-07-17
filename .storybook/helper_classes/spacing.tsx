@@ -8,7 +8,7 @@ import Table from "../../src/components/Table/index";
 
 export class Spacing extends React.Component {
   state = {
-    spacingTab: 'intro',
+    spacingTab: 'examples',
     spacingAddition: 'add',
     spacingOption: 'push',
     spacingAmount: '10px',
@@ -48,7 +48,7 @@ export class Spacing extends React.Component {
             (spacingSide === 'all' ? 'soft hard' : 'soft hard--'+spacingSide));
     } 
     switch (spacingTab) {
-        case 'intro':
+        case 'about':
             const introString = '-{amount}--{side}'
             tabContent = 
             <div className="reading-column push-double--sides"> 
@@ -88,7 +88,7 @@ export class Spacing extends React.Component {
                 'min-height--50',
                 'max-width--300',
                 `demo-only-spacing-${spacingOption}-background`,
-                {[spacingClass]: spacingOption === 'soft'}
+                {[spacingClass]: spacingOption === 'soft',}
             )
             let internalBoxHelperClasses = classNames(
                 'border-radius',
@@ -104,7 +104,7 @@ export class Spacing extends React.Component {
                 <div className="flex flex--column flex-align--start push-double--sides"> 
                     <p>Click through the different options in the columns to get your desired effect.</p>
                     <div className="flex width--1-1">
-                        <div className="width--150 push-quad--left">
+                        <div className="width--200 push-quad--left soft--sides border--sides">
                             <Table>
                                 <Table.THead>
                                     <Table.TR>
@@ -119,7 +119,7 @@ export class Spacing extends React.Component {
                                 </Table.TBody>
                             </Table>
                         </div>
-                        <div className="width--150">
+                        <div className="width--150 soft--sides border--right">
                             <Table>
                                 <Table.THead>
                                     <Table.TR>
@@ -134,7 +134,7 @@ export class Spacing extends React.Component {
                                 </Table.TBody>
                             </Table>
                         </div>
-                        <div className="width--100">
+                        <div className="width--100 soft--sides border--right">
                             <Table>
                                 <Table.THead>
                                     <Table.TR>
@@ -152,7 +152,7 @@ export class Spacing extends React.Component {
                                 </Table.TBody>
                             </Table>
                         </div>
-                        <div className="width--100">
+                        <div className="width--100 soft--sides border--right">
                             <Table>
                                 <Table.THead>
                                     <Table.TR>
@@ -189,11 +189,11 @@ export class Spacing extends React.Component {
             <p>The following examples illustrate the various spacing helper classes that are available through OUI's CSS.</p>
             <div className="push--bottom">
                 <TabNav activeTab={spacingTab} style={['sub']}>
-                    <TabNav.Tab onClick={() => this.switchTab('intro')} tabId="intro">
-                        Introduction
-                    </TabNav.Tab> 
                     <TabNav.Tab onClick={() => this.switchTab('examples')} tabId="examples">
                         Interactive examples
+                    </TabNav.Tab> 
+                    <TabNav.Tab onClick={() => this.switchTab('about')} tabId="about">
+                        About
                     </TabNav.Tab> 
                 </TabNav>
             </div>
