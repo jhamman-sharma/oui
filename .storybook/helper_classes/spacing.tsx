@@ -75,9 +75,11 @@ export class Spacing extends React.Component {
                         <li>ends - top & bottom</li>
                         <li>sides - right & left</li>
                     </ul>
-                    The default (not specifying a side) applies the margin and padding to all sidees (ie: <code>push-half</code>). Note: in this case there is only one '-' separating the first and last word of the helper class.
+                    The default (not specifying a side) applies the margin and padding to all sides (ie: <code>push-half</code>). Note: in this case there is only one '-' separating the first and last word of the helper class.
                 </p>
                 <p>For examples of how all these option work go to the <strong>Interactive examples</strong> tab.</p>
+                <h4>Kill last child margin</h4>
+                <p>The class <code>kill-last-child-margin</code> sets the bottom margin of a child to be 0. This class is used by adding <code>@extend %kill-last-child-margin;</code> to any applicable css class.</p>
             </div>
             break;
         case 'examples':
