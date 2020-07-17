@@ -7,6 +7,7 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 - [Feature] Add purple **Badge** color option ([#1377](https://github.com/optimizely/oui/pull/1377))
+- [Feature] Added new Storybook examples detailing spacing helper classes ([#1378](https://github.com/optimizely/oui/pull/1378))
 
 ## 46.10.0 - 2020-07-14
 
