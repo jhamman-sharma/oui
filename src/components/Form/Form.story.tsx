@@ -27,7 +27,7 @@ stories
                   id="input-01"
                 />
               </Form.Item>
-              <Form.Row>
+              <Form.Row isFullWidth={true}>
                 <Form.Item>
                   <DatePicker
                     inputId="date-picker-id-1"

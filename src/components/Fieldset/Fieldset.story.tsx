@@ -96,7 +96,7 @@ stories
                 id='input-01'
               />
             </Fieldset.Item>
-            <Fieldset.Row>
+            <Fieldset.Row isFullWidth={true}>
               <Fieldset.Item>
                 <DatePicker
                   inputId="date-picker-id"

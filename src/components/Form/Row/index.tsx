@@ -5,15 +5,17 @@ import React from 'react';
 import classNames from 'classnames';
 
 const Row = props => {
-  const rowClassname = classNames(
-    "push-double--right",
-    {'flex--1': props.isFullWidth}
+  const children = props.children.map((child, idx) => {
+    const rowClassname = classNames(
+      {'flex--1': props.isFullWidth,
+      "push-double--right": idx < (props.children.length -1)}
+    )
+    return (
+      <div key={idx} className={rowClassname}>
+        {child}
+      </div>
+    )}
   )
-  const children = props.children.map((child, idx) => (
-    <div key={idx} className={rowClassname}>
-      {child}
-    </div>
-  ))
   return (
   <div data-test-section={ props.testSection } className="flex">
     {children}
