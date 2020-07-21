@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Update Storybook to organize components ([#1381](https://github.com/optimizely/oui/pull/1381))
 - [Feature] Add purple **Badge** color option ([#1377](https://github.com/optimizely/oui/pull/1377))
 - [Feature] Added new Storybook examples detailing spacing helper classes ([#1378](https://github.com/optimizely/oui/pull/1378))
 
