@@ -62,7 +62,7 @@ Fieldset.propTypes = {
   helpIcon: PropTypes.bool,
   /** Indicates whether to include the "optional" tag to the fieldset */
   isOptional: PropTypes.bool,
-  /** Indicates whether to include a red star to the fieldset */
+  /** Indicates whether to include a required asterisk */
   isRequired: PropTypes.bool,
   /** Text for popover */
   popoverText: PropTypes.string,

@@ -33,9 +33,9 @@ const Form = props => {
     ) }
 
     { props.description && (
-      <h5 className="push-double--bottom">
+      <p className="push-double--bottom epsilon">
         { props.description }
-      </h5>
+      </p>
     ) }
 
     { props.children }

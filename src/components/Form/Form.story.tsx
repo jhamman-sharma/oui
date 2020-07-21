@@ -15,7 +15,7 @@ stories
   .add(
     'Default', (() => (
       <div className="push-double--top">
-        <Col small={ 7 } large={ 7 }>
+        <Col small={ 8 } large={ 5 }>
           <Form title="Form title" description="This is the form description">
             <Form.Section isRequired={true} title="Form section">
               <Form.Item>
@@ -33,6 +33,7 @@ stories
                     inputId="date-picker-id-1"
                     initialDate={ null }
                     isFocused={ false }
+                    isAbsolutelyPositioned={true}
                   />
                   <p>I appear after the calendar</p>
                 </Form.Item>
@@ -41,11 +42,12 @@ stories
                     inputId="date-picker-id-2"
                     initialDate={ null }
                     isFocused={ false }
+                    isAbsolutelyPositioned={true}
                   />
                   <p>I appear after the calendar</p>
                 </Form.Item>
               </Form.Row>
-              <Form.Row fillWidth={true}>
+              <Form.Row isFullWidth={true}>
                 <Form.Item>
                   <Input
                     label="Input label"
@@ -105,7 +107,7 @@ stories
   .add(
     'Replicated "New A/B Test" form', (() => (
       <div className="push-double--top">
-        <Col small={ 7 } large={ 7 }>
+        <Col small={ 8 } large={ 5 }>
           <Form>
             <Form.Section title="Experiment Name">
               <Form.Item>

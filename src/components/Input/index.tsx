@@ -281,7 +281,7 @@ Input.propTypes = {
   id: function verifyIDProp(props) {
     if (props.label && !props.id) {
       return new Error(
-        'Must include an id when a label is specificed for accessibility purposes.'
+        'Inputs must include an id when a label is specified for accessibility purposes.'
       );
     }
     return null;

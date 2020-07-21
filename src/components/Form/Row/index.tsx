@@ -7,7 +7,7 @@ import classNames from 'classnames';
 const Row = props => {
   const rowClassname = classNames(
     "push-double--right",
-    {'flex--1': props.fillWidth}
+    {'flex--1': props.isFullWidth}
   )
   const children = props.children.map((child, idx) => (
     <div key={idx} className={rowClassname}>
@@ -23,7 +23,7 @@ const Row = props => {
 Row.propTypes = {
   children: PropTypes.node.isRequired,
   /** Indicates whether items in the row should take up as much width as possible */
-  fillWidth: PropTypes.bool,
+  isFullWidth: PropTypes.bool,
   testSection: PropTypes.string,
 };
 

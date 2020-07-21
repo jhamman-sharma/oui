@@ -42,13 +42,13 @@ const Section = props => {
 
 Section.propTypes = {
   children: PropTypes.node.isRequired,
-  /** Description for Fieldset */
+  /** Description for Form Section */
   description: PropTypes.node,
   /** Indicates whether to include a help popover */
   helpIcon: PropTypes.bool,
   /** Indicates whether to include the "optional" tag to the section */
   isOptional: PropTypes.bool,
-  /** Indicates whether to include a red star to the section */
+  /** Indicates whether to include a required asterisk */
   isRequired: PropTypes.bool,
   /** Text for popover */
   popoverText: PropTypes.string,
