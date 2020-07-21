@@ -6,7 +6,7 @@ import { withKnobs, number } from '@storybook/addon-knobs';
 
 import Pagination from './index.js';
 
-const stories = storiesOf('Pagination', module);
+const stories = storiesOf('Navigation|Pagination', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (

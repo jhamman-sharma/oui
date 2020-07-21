@@ -7,7 +7,7 @@ import Icon from 'react-oui-icons';
 import Link from './index.js';
 import Button from '../Button';
 
-const stories = storiesOf('Link', module);
+const stories = storiesOf('Informational|Link', module);
 stories
   .addDecorator(withKnobs)
   .addDecorator(story => (
@@ -102,7 +102,7 @@ stories
     );
   });
 
-storiesOf('Link (Fake)', module)
+storiesOf('Informational|Link (Fake)', module)
   .addDecorator(withKnobs)
   .addDecorator(story => (
     <div id="root-preview">
