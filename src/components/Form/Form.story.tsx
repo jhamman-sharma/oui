@@ -35,7 +35,6 @@ stories
                     isFocused={ false }
                     isAbsolutelyPositioned={true}
                   />
-                  <p>I appear after the calendar</p>
                 </Form.Item>
                 <Form.Item>
                   <DatePicker
@@ -44,7 +43,6 @@ stories
                     isFocused={ false }
                     isAbsolutelyPositioned={true}
                   />
-                  <p>I appear after the calendar</p>
                 </Form.Item>
               </Form.Row>
               <Form.Row isFullWidth={true}>

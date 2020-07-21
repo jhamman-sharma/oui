@@ -1361,7 +1361,7 @@ declare module "components/Form/Row/index" {
         propTypes: {
             children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             /** Indicates whether items in the row should take up as much width as possible */
-            fillWidth: PropTypes.Requireable<boolean>;
+            isFullWidth: PropTypes.Requireable<boolean>;
             testSection: PropTypes.Requireable<string>;
         };
     };
@@ -1386,7 +1386,7 @@ declare module "components/Fieldset/index" {
             (props: any): JSX.Element;
             propTypes: {
                 children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-                fillWidth: PropTypes.Requireable<boolean>;
+                isFullWidth: PropTypes.Requireable<boolean>;
                 testSection: PropTypes.Requireable<string>;
             };
         };
@@ -1404,11 +1404,11 @@ declare module "components/Fieldset/index" {
             children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
             /** Description for Fieldset */
             description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-            /** Indicates whether to include a help icon */
+            /** Indicates whether to include a help popover */
             helpIcon: PropTypes.Requireable<boolean>;
-            /** Indicates whether to include the "optional" tag to the sectino */
+            /** Indicates whether to include the "optional" tag to the fieldset */
             isOptional: PropTypes.Requireable<boolean>;
-            /** Indicates whether to include a red star to the section */
+            /** Indicates whether to include a required asterisk */
             isRequired: PropTypes.Requireable<boolean>;
             /** Text for popover */
             popoverText: PropTypes.Requireable<string>;
@@ -6458,13 +6458,20 @@ declare module "components/Form/Section/index" {
         (props: any): JSX.Element;
         propTypes: {
             children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** Description for Form Section */
             description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            /** Indicates whether to include a help popover */
             helpIcon: PropTypes.Requireable<boolean>;
+            /** Indicates whether to include the "optional" tag to the section */
             isOptional: PropTypes.Requireable<boolean>;
+            /** Indicates whether to include a required asterisk */
             isRequired: PropTypes.Requireable<boolean>;
+            /** Text for popover */
             popoverText: PropTypes.Requireable<string>;
+            /** Title for popover */
             popoverTitle: PropTypes.Requireable<string>;
             testSection: PropTypes.Requireable<string>;
+            /** Title for Section */
             title: PropTypes.Requireable<string>;
         };
     };
@@ -6499,17 +6506,22 @@ declare module "components/Form/index" {
             (props: any): JSX.Element;
             propTypes: {
                 children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
-                fillWidth: PropTypes.Requireable<boolean>;
+                isFullWidth: PropTypes.Requireable<boolean>;
                 testSection: PropTypes.Requireable<string>;
             };
         };
         propTypes: {
             children: PropTypes.Validator<string | number | boolean | {} | PropTypes.ReactElementLike | PropTypes.ReactNodeArray>;
+            /** Description for Form */
             description: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+            /** Indicates whether to include a help popover */
             helpIcon: PropTypes.Requireable<boolean>;
+            /** Text for popover */
             popoverText: PropTypes.Requireable<string>;
+            /** Title for popover */
             popoverTitle: PropTypes.Requireable<string>;
             testSection: PropTypes.Requireable<string>;
+            /** Title for Form */
             title: PropTypes.Requireable<string>;
         };
     };

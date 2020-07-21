@@ -20,26 +20,6 @@ stories
           <Form>
             <Fieldset isRequired={true} title="Location"
               description="The title of the fieldset will be considered the legend of the fieldset. The default of a Fieldset (titleSize='large') is visually comparable to a Form.Section. Fieldset should only be used if there are multiple inputs in the section that are linked (think address or credit card fields). If they are not closely linked, Form.Section is more appropriate.">
-              <Fieldset.Row>
-                <Fieldset.Item>
-                  <DatePicker
-                    inputId="date-picker-id"
-                    initialDate={ null }
-                    isFocused={ false }
-                    isAbsolutelyPositioned={true}
-                  />
-                  <p>I appear after the calendar</p>
-                </Fieldset.Item>
-                <Fieldset.Item>
-                  <DatePicker
-                    inputId="date-picker-id"
-                    initialDate={ null }
-                    isFocused={ false }
-                    isAbsolutelyPositioned={true}
-                  />
-                  <p>I appear after the calendar</p>
-                </Fieldset.Item>
-              </Fieldset.Row>
               <Fieldset.Row isFullWidth={true}>
                 <Fieldset.Item>
                   <Input
@@ -124,7 +104,6 @@ stories
                   isFocused={ false }
                   isAbsolutelyPositioned={true}
                 />
-                <p>I appear after the calendar</p>
               </Fieldset.Item>
               <Fieldset.Item>
                 <DatePicker
@@ -133,7 +112,6 @@ stories
                   isFocused={ false }
                   isAbsolutelyPositioned={true}
                 />
-                <p>I appear after the calendar</p>
               </Fieldset.Item>
             </Fieldset.Row>
             <Fieldset.Row isFullWidth={true}>
