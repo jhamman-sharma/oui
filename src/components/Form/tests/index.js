@@ -46,7 +46,7 @@ describe('Form Component ', () => {
         />
       </Form.Item>
     </Form>);
-    expect(component.find('.oui-form-fields').containsMatchingElement(<h5>{descriptionString}</h5>)).toBe(true);
+    expect(component.find('.oui-form-fields').containsMatchingElement(<p>{descriptionString}</p>)).toBe(true);
   });
 
   it('should render a popover when helpIcon is clicked', () => {
@@ -155,11 +155,11 @@ describe('Form Component ', () => {
         expect(component.find('[data-test-section="input-2-form-test"]').length).toBe(1);
       });
 
-      it('takes up full width when fillWidth is true', () => {
+      it('takes up full width when isFullWidth is true', () => {
         const component = mount(<Form
           title='This is a Form'>
           <Form.Section>
-            <Form.Row fillWidth={ true } testSection='row-test-section' >
+            <Form.Row isFullWidth={ true } testSection='row-test-section' >
               <Form.Item>
                 <Input
                   label="Input label"

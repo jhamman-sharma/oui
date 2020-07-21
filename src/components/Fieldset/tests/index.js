@@ -105,11 +105,11 @@ describe('Fieldset Component ', () => {
       expect(component.find('[data-test-section="input-2-fieldset-test"]').length).toBe(1);
     });
 
-    it('takes up full width when fillWidth is true', () => {
+    it('takes up full width when isFullWidth is true', () => {
       const component = mount(<Form
         title='This is a Form'>
         <Fieldset>
-          <Fieldset.Row fillWidth={ true } testSection='row-test-section' >
+          <Fieldset.Row isFullWidth={ true } testSection='row-test-section' >
             <Fieldset.Item>
               <Input
                 label="Input label"
