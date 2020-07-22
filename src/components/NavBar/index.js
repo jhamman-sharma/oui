@@ -58,6 +58,7 @@ SecondaryLink.defaultProps = linkDefaultProps;
 
 const NavBar = (props) => {
   const {
+    footerContent,
     isOpen,
     homeUrl,
     logoUrl,
@@ -78,6 +79,26 @@ const NavBar = (props) => {
       'root-nav__logo--full': isOpen,
       'root-nav__logo--mark': !isOpen,
     });
+
+  const renderPrivacy = () => {
+    let year = new Date().getFullYear();
+    return (
+      <div className="root-nav__user root-nav__link root-nav__link--plain hard--bottom muted">
+        <span className="display--inline-block">©2010&ndash;{ year } Optimizely. <a href="https://www.optimizely.com/privacy/" className="muted underline">Privacy</a></span>
+      </div>
+    );
+  };
+
+  const renderFooterContent = () => {
+    return (
+      <React.Fragment>
+        <hr className="oui-rule push-double--sides hard"/>
+        <div className="root-nav__link root-nav__link--plain flex flex--column flex--1">
+          {footerContent}
+        </div>
+      </React.Fragment>
+    );
+  };
 
   return (
     <nav
@@ -120,6 +141,8 @@ const NavBar = (props) => {
           { renderChildrenByType(SecondaryLink) }
         </ul>
         { renderChildrenByType(CurrentUserMenu) }
+        { isOpen && footerContent && renderFooterContent() }
+        { isOpen && renderPrivacy() }
       </div>
     </nav>
   );
@@ -145,6 +168,8 @@ NavBar.propTypes = {
     }
     return error;
   },
+  /** Component to appear above the privacy statement. */
+  footerContent: PropTypes.node,
   /** Url to navigate to when Brand Logo is clicked. */
   homeUrl: PropTypes.string,
   /** Is Navigation Bar open or closed. */

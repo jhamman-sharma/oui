@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 This file is similar to the format suggested by [Keep a CHANGELOG](https://github.com/olivierlacan/keep-a-changelog).
 
 ## Unreleased
+- [Feature] Add option to specify custom `footerContent` in **NavBar** ([#1384](https://github.com/optimizely/oui/pull/1384))
 - [Feature] Add purple **Badge** color option ([#1377](https://github.com/optimizely/oui/pull/1377))
 - [Feature] Added new Storybook examples detailing spacing helper classes ([#1378](https://github.com/optimizely/oui/pull/1378))
 - [Feature] Add new **Form** component and updated the **Fieldset** component to be accessible ([#1374](https://github.com/optimizely/oui/pull/1374))

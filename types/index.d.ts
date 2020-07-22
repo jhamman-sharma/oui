@@ -5169,7 +5169,6 @@ declare module "components/NavBar/CurrentUserMenu/index" {
         renderEmulate: () => JSX.Element;
         renderLinks: () => JSX.Element;
         renderCurrentUserMenu: () => JSX.Element[];
-        renderPrivacy: () => JSX.Element;
         renderCollapsedCurrentUserMenu: () => JSX.Element;
         render(): JSX.Element;
     }
@@ -5183,6 +5182,7 @@ declare module "components/NavBar/index" {
         export namespace propTypes {
             export const badgeText: PropTypes.Requireable<string>;
             export function children(props: any, propName: any): Error | null;
+            export const footerContent: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const homeUrl: PropTypes.Requireable<string>;
             export const isOpen: PropTypes.Requireable<boolean>;
             export const logoUrl: PropTypes.Requireable<string>;
