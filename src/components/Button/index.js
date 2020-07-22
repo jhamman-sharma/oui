@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Spinner from '../Spinner';
+import Icon from 'react-oui-icons';
 
 /**
  * @param {Object} props - Properties passed to component
@@ -16,10 +17,12 @@ const Button = ({
   isActive,
   isDisabled,
   isLoading,
+  leftIcon,
   loadingText,
   onBlur,
   onClick,
   onMouseDown,
+  rightIcon,
   size,
   style,
   testSection,
@@ -35,6 +38,7 @@ const Button = ({
       [`oui-button--${width}`]: width,
       'is-active': isActive,
       'oui-button--loading': isLoading,
+      'flex flex--dead-center': leftIcon || rightIcon,
     });
 
   const type = isSubmit ? 'submit' : 'button';
@@ -60,6 +64,16 @@ const Button = ({
     );
   }
 
+  const leftIconComp = leftIcon ?
+    (<div className={ 'flex flex-self--center push--right' }>
+      <Icon name={ leftIcon } size={ size === 'large' ? 'medium' : 'small' }/>
+    </div>) : '';
+
+  const rightIconComp = rightIcon ?
+    (<div className={ 'flex flex-self--center push--left' }>
+      <Icon name={ rightIcon } size={ size === 'large' ? 'medium' : 'small' }/>
+    </div>) : '';
+
   return (
     <button
       data-oui-component={ true }
@@ -74,8 +88,11 @@ const Button = ({
       aria-live="polite"
       title={ title }
       ref={ buttonRef }>
-      { isLoading && <Spinner data-test-section="button-spinner" size="tiny"/> }
+      { isLoading ?
+        <Spinner data-test-section="button-spinner" size="tiny"/>
+        : leftIcon && leftIconComp }
       { isLoading ? loadingText || 'Processing' : children }
+      {!isLoading && rightIcon && rightIconComp}
     </button>
   );
 };
@@ -100,6 +117,8 @@ Button.propTypes = {
   isLoading: PropTypes.bool,
   /** Make the button act as a submit button */
   isSubmit: PropTypes.bool,
+  /** Icon to display on the left */
+  leftIcon: PropTypes.node,
   /** When the button adds a spinner, it displays this text */
   loadingText: PropTypes.string,
   /** Function that fires when the button loses focus */
@@ -108,6 +127,8 @@ Button.propTypes = {
   onClick: PropTypes.func,
   /** Function that fires when the button is mouse downed */
   onMouseDown: PropTypes.func,
+  /** Icon to display on the right */
+  rightIcon: PropTypes.node,
   /** Various height and width options */
   size: PropTypes.oneOf([
     'tiny',

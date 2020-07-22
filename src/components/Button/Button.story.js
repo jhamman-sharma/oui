@@ -97,6 +97,74 @@ stories
         ] }
       />);
   })
+  .add('With icon', () => {
+    return (
+      <ButtonRow
+        leftGroup={ [
+          <Button
+            key="1"
+            style="highlight"
+            onClick={ action('I have been clicked') }
+            leftIcon='add'>
+            Left icon
+          </Button>] }
+        centerGroup={ [
+          <Button
+            key="1"
+            style="highlight"
+            onClick={ action('I have been clicked') }
+            rightIcon='external'>
+          Right icon
+          </Button>] }
+        rightGroup={ [
+          <Button
+            key="2"
+            style={ select('style', {
+              'highlight': 'highlight',
+              'danger': 'danger',
+              'danger-outline': 'danger-outline',
+              'outline': 'outline',
+              'outline-reverse': 'outline-reverse',
+              'plain': 'plain',
+              'toggle': 'toggle',
+              'underline': 'underline',
+              'unstyled': 'unstyled',
+            }, 'danger') }
+            isDisabled={ boolean('isDisabled', false) }
+            isActive={ boolean('isActive', false) }
+            isLoading={ boolean('isLoading', false) }
+            width={ select('width', {
+              'default': 'default',
+              'full': 'full'}, 'default') }
+            size={ select('size', {
+              'tiny': 'tiny',
+              'small': 'small',
+              'regular': 'regular',
+              'large': 'large',
+              'narrow': 'narrow',
+              'tight': 'tight'}, 'regular') }
+            onClick={ action('I have been clicked') }
+            leftIcon={ select('leftIcon',
+              {add: 'add',
+                archive: 'archive',
+                'arrow-left': 'arrow-left',
+                audiences: 'audiences',
+                bell: 'bell',
+                ban: 'ban',
+                calendar: 'calendar',
+                check: 'check',
+                close: 'close',
+                download: 'download',
+                elipsis: 'elipsis',
+                exit: 'exit',
+                external: 'external',
+                save: 'save',
+              }, 'calendar') }>
+            { text('customize me!', 'customize me!') }
+          </Button>] }
+      />
+    );
+  })
   .add('Button without an onClick', () => {
     return (
       <Button isLink={ true }>Faux Button</Button>
