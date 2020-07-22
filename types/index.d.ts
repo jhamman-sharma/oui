@@ -5663,7 +5663,7 @@ declare module "components/SearchPicker/index" {
              * A handler for the input element event onKeyDown
              * via @keyboardTracker
              */
-            handleKeyDown: PropTypes.Validator<object>;
+            handleKeyDown: PropTypes.Validator<(...args: any[]) => any>;
             /**
              * The element ref to use for capturing keyboard input.
              * via @keyboardTracker

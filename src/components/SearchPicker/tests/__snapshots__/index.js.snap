@@ -32,7 +32,7 @@ exports[`components/SearchPicker default case should render component same as sn
         isFilter={true}
         isRequired={false}
         note={null}
-        onInput={[Function]}
+        onChange={[Function]}
         onKeyDown={[Function]}
         placeholder="Search for features"
         testSection="filter-features-input"
@@ -43,7 +43,7 @@ exports[`components/SearchPicker default case should render component same as sn
           className="oui-text-input oui-text-input--search"
           data-oui-component={true}
           data-test-section="filter-features-input"
-          onInput={[Function]}
+          onChange={[Function]}
           onKeyDown={[Function]}
           placeholder="Search for features"
           required={false}
