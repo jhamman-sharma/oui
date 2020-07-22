@@ -170,15 +170,6 @@ class CurrentUserMenu extends React.Component {
     ]);
   };
 
-  renderPrivacy = () => {
-    let year = new Date().getFullYear();
-    return (
-      <div className="root-nav__user root-nav__link root-nav__link--plain hard--bottom muted">
-        <span className="display--inline-block">©2010&ndash;{ year } Optimizely. <a href="https://www.optimizely.com/privacy/" className="muted underline">Privacy</a></span>
-      </div>
-    );
-  }
-
   renderCollapsedCurrentUserMenu = () => {
     const {
       profileAvatarUrl,
@@ -228,7 +219,6 @@ class CurrentUserMenu extends React.Component {
         <div className="root-nav__user root-nav__link root-nav__link--tertiary">
           { isOpen ? this.renderCurrentUserMenu() : this.renderCollapsedCurrentUserMenu() }
         </div>
-        { isOpen && this.renderPrivacy() }
       </div>
     );
   }

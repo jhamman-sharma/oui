@@ -274,6 +274,18 @@ const Input: React.SFC<InputProps> = React.forwardRef(
 );
 
 Input.propTypes = {
+  /** Id to link label and input for accessibility reasons
+   *  @param {Object} props Object of props
+   *  @returns {Error} Error or null
+   */
+  id: function verifyIDProp(props) {
+    if (props.label && !props.id) {
+      return new Error(
+        'Inputs must include an id when a label is specified for accessibility purposes.'
+      );
+    }
+    return null;
+  },
   /** Adds an optional label if there is a label provided
    *  @param {Object} props Object of props
    *  @returns {Error} Error or null

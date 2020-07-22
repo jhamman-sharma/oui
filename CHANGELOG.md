@@ -7,8 +7,10 @@ This file is similar to the format suggested by [Keep a CHANGELOG](https://githu
 
 ## Unreleased
 - [Feature] Update Storybook to organize components ([#1381](https://github.com/optimizely/oui/pull/1381))
+- [Feature] Add option to specify custom `footerContent` in **NavBar** ([#1384](https://github.com/optimizely/oui/pull/1384))
 - [Feature] Add purple **Badge** color option ([#1377](https://github.com/optimizely/oui/pull/1377))
 - [Feature] Added new Storybook examples detailing spacing helper classes ([#1378](https://github.com/optimizely/oui/pull/1378))
+- [Feature] Add new **Form** component and updated the **Fieldset** component to be accessible ([#1374](https://github.com/optimizely/oui/pull/1374))
 
 ## 46.10.0 - 2020-07-14
 
