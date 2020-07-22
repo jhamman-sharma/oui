@@ -59,7 +59,7 @@ describe('components/SearchPicker', () => {
       return getDelayedPromise().then(() => {
         component.find('input').simulate('mouseenter');
         component.find('input').simulate('click');
-        component.find('input').simulate('input', { target: { value: '123' }});
+        component.find('input').simulate('change', { target: { value: '123' }});
       })
         // Account for our mock API delay and the debounce delay
         .then(() => getDelayedPromise(MOCK_API_DELAY + 10))
@@ -77,7 +77,7 @@ describe('components/SearchPicker', () => {
         expect(renderedData.isLoading).toBe(false);
         component.find('input').simulate('mouseenter');
         component.find('input').simulate('click');
-        component.find('input').simulate('input', { target: { value: '123' }});
+        component.find('input').simulate('change', { target: { value: '123' }});
       })
         // Wait for debounce
         .then(() => getDelayedPromise(10))
@@ -99,7 +99,7 @@ describe('components/SearchPicker', () => {
         expect(renderedData.resultsText).toEqual({summary: 'Recently created features'});
         component.find('input').simulate('mouseenter');
         component.find('input').simulate('click');
-        component.find('input').simulate('input', { target: { value: '123' }});
+        component.find('input').simulate('change', { target: { value: '123' }});
       })
         // Wait for debounce
         .then(() => getDelayedPromise(10))
@@ -110,7 +110,7 @@ describe('components/SearchPicker', () => {
           expect(renderedData.resultsText).toEqual({summary: 'Searching for "features" matching "123"'});
           component.find('input').simulate('mouseenter');
           component.find('input').simulate('click');
-          component.find('input').simulate('input', { target: { value: '202' }});
+          component.find('input').simulate('change', { target: { value: '202' }});
         })
         .then(() => getDelayedPromise(MOCK_API_DELAY))
         .then(() => {
@@ -131,7 +131,7 @@ describe('components/SearchPicker', () => {
       component.update();
       component.find('input').simulate('mouseenter');
       component.find('input').simulate('click');
-      component.find('input').simulate('input', { target: { value: 'audience 20' }});
+      component.find('input').simulate('change', { target: { value: 'audience 20' }});
       return getDelayedPromise(MOCK_API_DELAY + 10).then(() => {
         component.update();
         expect(renderedData.resultsText).toEqual({summary: 'Found 4 features matching "audience 20"'});
