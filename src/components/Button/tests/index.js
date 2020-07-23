@@ -186,4 +186,11 @@ describe('components/Button', () => {
     expect(output.find('button').exists()).toBe(false);
     expect(mountToJson(output)).toMatchSnapshot();
   });
+
+  it('should add an icon if specified', () => {
+    const component = mount(
+      <Button leftIcon="add">Create Campaign</Button>
+    );
+    expect(component.find('Icon').exists()).toBe(true);
+  });
 });

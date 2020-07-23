@@ -140,7 +140,7 @@ declare module "components/Spinner/index" {
 }
 declare module "components/Button/index" {
     export default Button;
-    function Button({ ariaLabel, isSubmit, isLink, children, isActive, isDisabled, isLoading, loadingText, onBlur, onClick, onMouseDown, size, style, testSection, width, buttonRef, title, }: any): any;
+    function Button({ ariaLabel, isSubmit, isLink, children, isActive, isDisabled, isLoading, leftIcon, loadingText, onBlur, onClick, onMouseDown, rightIcon, size, style, testSection, width, buttonRef, title, }: any): any;
     namespace Button {
         export namespace propTypes {
             export const ariaLabel: PropTypes.Requireable<string>;
@@ -153,10 +153,12 @@ declare module "components/Button/index" {
             export const isLink: PropTypes.Requireable<boolean>;
             export const isLoading: PropTypes.Requireable<boolean>;
             export const isSubmit: PropTypes.Requireable<boolean>;
+            export const leftIcon: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const loadingText: PropTypes.Requireable<string>;
             export const onBlur: PropTypes.Requireable<(...args: any[]) => any>;
             export const onClick: PropTypes.Requireable<(...args: any[]) => any>;
             export const onMouseDown: PropTypes.Requireable<(...args: any[]) => any>;
+            export const rightIcon: PropTypes.Requireable<PropTypes.ReactNodeLike>;
             export const size: PropTypes.Requireable<string>;
             export const style: PropTypes.Requireable<string>;
             export const testSection: PropTypes.Requireable<string>;
@@ -5661,7 +5663,7 @@ declare module "components/SearchPicker/index" {
              * A handler for the input element event onKeyDown
              * via @keyboardTracker
              */
-            handleKeyDown: PropTypes.Validator<object>;
+            handleKeyDown: PropTypes.Validator<(...args: any[]) => any>;
             /**
              * The element ref to use for capturing keyboard input.
              * via @keyboardTracker

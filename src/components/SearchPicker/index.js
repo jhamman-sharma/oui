@@ -39,7 +39,7 @@ class SearchPicker extends React.Component {
      * A handler for the input element event onKeyDown
      * via @keyboardTracker
      */
-    handleKeyDown: PropTypes.object.isRequired,
+    handleKeyDown: PropTypes.func.isRequired,
 
     /**
      * The element ref to use for capturing keyboard input.
@@ -301,7 +301,7 @@ class SearchPicker extends React.Component {
     return (
       <Input
         isFilter={ true }
-        onInput={ handleOnInput }
+        onChange={ handleOnInput }
         placeholder={ `Search for ${placeholderNoun}` }
         testSection={ `filter-${placeholderNoun}-input` }
         type="search"
